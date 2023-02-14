@@ -1,5 +1,0 @@
-describe('noop', () => {
-  it('noop', () => {
-    
-  })
-})
