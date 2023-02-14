@@ -1,0 +1,318 @@
+html
+​
+accessKey: ""
+​
+accessKeyLabel: ""
+​
+assignedSlot: null
+​
+attributes: NamedNodeMap [ lang="en" ]
+​
+baseURI: "http://localhost:8082/pdf"
+​
+childElementCount: 2
+​
+childNodes: NodeList [ head, body ]
+​
+children: HTMLCollection { 0: head, 1: body, length: 2 }
+​
+classList: DOMTokenList []
+​
+className: ""
+​
+clientHeight: 961
+​
+clientLeft: 0
+​
+clientTop: 0
+​
+clientWidth: 773
+​
+contentEditable: "inherit"
+​
+contextMenu: null
+​
+dataset: DOMStringMap(0)
+​
+dir: ""
+​
+draggable: false
+​
+firstChild: <head>
+​
+firstElementChild: <head>
+​
+hidden: false
+​
+id: ""
+​
+innerHTML: "<head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><style type=\"text/css\">svg:not(:root).svg-inline--fa {\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  display: inline-block;\n  font-size: inherit;\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.225em;\n}\n.svg-inline--fa.fa-w-1 {\n  width: 0.0625em;\n}\n.svg-inline--fa.fa-w-2 {\n  width: 0.125em;\n}\n.svg-inline--fa.fa-w-3 {\n  width: 0.1875em;\n}\n.svg-inline--fa.fa-w-4 {\n  width: 0.25em;\n}\n.svg-inline--fa.fa-w-5 {\n  width: 0.3125em;\n}\n.svg-inline--fa.fa-w-6 {\n  width: 0.375em;\n}\n.svg-inline--fa.fa-w-7 {\n  width: 0.4375em;\n}\n.svg-inline--fa.fa-w-8 {\n  width: 0.5em;\n}\n.svg-inline--fa.fa-w-9 {\n  width: 0.5625em;\n}\n.svg-inline--fa.fa-w-10 {\n  width: 0.625em;\n}\n.svg-inline--fa.fa-w-11 {\n  width: 0.6875em;\n}\n.svg-inline--fa.fa-w-12 {\n  width: 0.75em;\n}\n.svg-inline--fa.fa-w-13 {\n  width: 0.8125em…"
+​
+innerText: "CARLOS SORIANO\nsoriano.carlitos@gmail.com\nCurrently in St. Louis, MO\n🇪🇸 🇵🇭 🇺🇸 🇨🇳 🇫🇷 🇮🇹 🇩🇪 🇧🇷\nValid Work Visas: USA, EU, UK\nhttps://github.com/shortpoet\nhttps://www.linkedin.com/in/carlos-soriano-49aaa97/\nhttps://www.instagram.com/shortpoet/\nhttps://twitter.com/shortpoet3\nhttps://shortpoet.com\nNATURAL LANGUAGES & CERTIFICATIONS\nEnglish, Spanish, Tagalog (Native)\nMandarin Chinese, French (Fluent)\nItalian (Proficient)\nGerman, Portuguese (Working Knowledge)\nCertified Interpreter\nPROGRAMMING LANGUAGES & TOOLS\nWorkflow\nMobile-First & Responsive Design\nCross Browser Testing & Debugging\nCI/CD\nAgile Development & Scrum\nVisual Studio / VSCode\nDotnet\nFramework 4.x\nCore\nEntity Framework\nRazor\nMVC\nJavascript\nVue\nLeafly\nPlotly\nc3\nPython\nPandas\nMatplotlib\nFlask\nSelenium\nSklearn\nRelational Db\nmsSQL\nmySQL\nEntity Framework\nSQLAlchemy\nDocument Db\nmongoDB\nPymongo\nMarkdown\nHTML\nCSS\nYAML\nMD\nSCSS\nData Vizualization\nD3\nTableau\nMiscellaneous\nCooking\nGardening\nYogaWorks Teacher Traning\nCicerone Beer Server Certification\nAdobe Creative Suite\nOBJECTIVE\n\nAs a lifelong polyglot turned software developer, I have come to describe myself as a Language Data Specialist. A fascination with where human interaction, behaviour and spoken language meets the many layers of data and programming has driven me to provide insight from data sources as they reflect human behavior.\n\nIn this sense, my route into programming was atypical. The call to bridge the gap between my linguistic expertise and (long-dormant) digital dexterity came in the form of my brother’s coaching, freecodecamp, and finally formal training at Washington University St. Louis Data Analytics Boot Camp.\n\nToday, my advanced tech skills combined with my fluency for the most widely spoken languages, allows my clients a unique perspective on their field of choice.\n\nWORK EXPERIENCE\nSOFTWARE ENGINEER\nAPRIL 2019 - PRESENT\nBOEING\n\nCurrent responsibilities include - Ensure data integrity of daily loading from source systems mostly using c#/dotnet and sql scripts with some python and R. Reconstructing legacy Angular data viz products using dotnet and vue. Developing new ETL and frontend architectures and components for reusable data analytics pipeline. Deployment of products using Cloud Foundry, Gitlab CI/CD and other enterprise hosting systems. Liaising with other teams/departments to collaborate in data flow and analytics.\n\nFREELANCE TRANSLATOR / INTERPRETER\nJULY 2011 - PRESENT\nVARIOUS INTERPRETATION AGENCIES\n\nMedical, dental and media conferences, on-site medical and legal interpretation for depositions, insurance and immigration interviews, simultaneous interpretation of contract negotiations, guided tours, consecutive and simultaneous interpretation for training meetings, document translation of many types, including legal, medical, media localization, and various other language-related assignments, primarily in Spanish and Tagalog, some French.\n\nQA TESTER\nDECEMBER 2011 - AUGUST 2014\nGTL MEDIA\n\nTranslator, linguistic tester, translated texts for various media including video games, film, and legal, checked video games for linguistic bugs and translation errors, translation of .xml databases for in-game script\n\nEXECUTIVE ASSISTANT TO THE CEO\nJANUARY 2008 - DECEMBER 2008\nEZI\n\nManila, Philippines. Managed daily operations in a bilingual office setting, supervised staff, attended developmental meetings, tracked and prepared development projects, made calls to and from suppliers and manufacturers, purchased investment property, created investment portfolios and marketing and business plans.\n\nSINOLOGIST\nAUGUST 2003 - JANUARY 2004\nWORLD EYE REPORTS\n\nShanghai, PRC. Translator, Interpreter, media Sales, wrote articles and sold ads for advertorial project based out of Shanghai.\n\nPRODUCT SPECIALIST - SALES\nJULY 2010 - FEBRUARY 2017\nTOYOTA OF HOLLYWOOD & HOLLYWOOD ELECTRICS – ELECTRIC CYCLE DEALERSHIP\n\nNew and Pre-owned Conventional and Electric Car and Cycle Sales; Sales made in English, Spanish, Tagalog, French, and Mandarin, Self-directed marketing efforts\n\nFOOD DELIVERY LOGISTICS\nAPRIL 2017 - APRIL 2019\nDOORDASH AND GRUBHUB\n\nOperating 2 apps at the same time to maximize earnings, while maintaining customer satisfaction and high ratings, experienced first hand the effects of data collection of market and labor fluctuations and how they determined the logic behind the apps while I was learning to code.\n\nGRILL CHEF DE PARTIE\nAUGUST 1998 - AUGUST 2018\nMANY DIFFERENT RESTAURANTS - MOSTLY A COOK, SOMETIMES A BARTENDER\n\nPost Haus Restaurant - St. Moritz, Switzerland stands out as I ran the gamut from helping plan restaurant concept, designed Grill Station, assisted in menu planning and execution, provided back-end data for owners during the length of the contract, offering particular assistance interpreting for members of the multi-cultural staff and management.\n\nEDUCATION\nWASHINGTON UNIVERSITY IN ST. LOUIS\nPYTHON, JAVASCRIPT, TABLEAU\nDATA ANALYTICS CERTIFICATE\n\nUNIVERSITY OF PENNSYLVANIA\nMAJOR IN EAST ASIAN LANGUAGES AND CULTURES, CHINESE CONCENTRATION, RELEVANT COURSEWORK IN LINGUISTICS AND ANTHROPOLOGY\nBACHELOR OF ARTS AND SCIENCES\n\nTHACHER SCHOOL\nEMPHASIS ON ACADEMICS, THE OUTDOORS, CAMPING, HORSEMANSHIP, AND ENVIRONMENTAL AWARENESS, YEAR ABROAD IN FRANCE\nPRIVATE SECONDARY BOARDING SCHOOL\n\nINTERESTS\n\nWhen I'm not knuckle-deep in code, I like to knead bread, dig gardens, vermicompost and cook tasty meals. I do some yoga and pilates to work on the code-bod. I have been known to be insipired by the dramatic muses. Ask for an accent sometime! Being a big fan of perspective, when I started going underwater at age 11, what once was a world of fear turned into a world of wonder. When I can, SCUBA is pretty sweet stuff. Speaking of perspective, here's some shortpoetry..."
+​
+isConnected: true
+​
+isContentEditable: false
+​
+lang: "en"
+​
+lastChild: <body>
+​
+lastElementChild: <body>
+​
+localName: "html"
+​
+namespaceURI: "http://www.w3.org/1999/xhtml"
+​
+nextElementSibling: null
+​
+nextSibling: null
+​
+nodeName: "HTML"
+​
+nodeType: 1
+​
+nodeValue: null
+​
+offsetHeight: 2170
+​
+offsetLeft: 0
+​
+offsetParent: null
+​
+offsetTop: 0
+​
+offsetWidth: 773
+​
+onabort: null
+​
+onanimationcancel: null
+​
+onanimationend: null
+​
+onanimationiteration: null
+​
+onanimationstart: null
+​
+onauxclick: null
+​
+onblur: null
+​
+oncanplay: null
+​
+oncanplaythrough: null
+​
+onchange: null
+​
+onclick: null
+​
+onclose: null
+​
+oncontextmenu: null
+​
+oncopy: null
+​
+oncuechange: null
+​
+oncut: null
+​
+ondblclick: null
+​
+ondrag: null
+​
+ondragend: null
+​
+ondragenter: null
+​
+ondragexit: null
+​
+ondragleave: null
+​
+ondragover: null
+​
+ondragstart: null
+​
+ondrop: null
+​
+ondurationchange: null
+​
+onemptied: null
+​
+onended: null
+​
+onerror: null
+​
+onfocus: null
+​
+onformdata: null
+​
+onfullscreenchange: null
+​
+onfullscreenerror: null
+​
+ongotpointercapture: null
+​
+oninput: null
+​
+oninvalid: null
+​
+onkeydown: null
+​
+onkeypress: null
+​
+onkeyup: null
+​
+onload: null
+​
+onloadeddata: null
+​
+onloadedmetadata: null
+​
+onloadend: null
+​
+onloadstart: null
+​
+onlostpointercapture: null
+​
+onmousedown: null
+​
+onmouseenter: null
+​
+onmouseleave: null
+​
+onmousemove: null
+​
+onmouseout: null
+​
+onmouseover: null
+​
+onmouseup: null
+​
+onmozfullscreenchange: null
+​
+onmozfullscreenerror: null
+​
+onpaste: null
+​
+onpause: null
+​
+onplay: null
+​
+onplaying: null
+​
+onpointercancel: null
+​
+onpointerdown: null
+​
+onpointerenter: null
+​
+onpointerleave: null
+​
+onpointermove: null
+​
+onpointerout: null
+​
+onpointerover: null
+​
+onpointerup: null
+​
+onprogress: null
+​
+onratechange: null
+​
+onreset: null
+​
+onresize: null
+​
+onscroll: null
+​
+onseeked: null
+​
+onseeking: null
+​
+onselect: null
+​
+onselectstart: null
+​
+onshow: null
+​
+onstalled: null
+​
+onsubmit: null
+​
+onsuspend: null
+​
+ontimeupdate: null
+​
+ontoggle: null
+​
+ontransitioncancel: null
+​
+ontransitionend: null
+​
+ontransitionrun: null
+​
+ontransitionstart: null
+​
+onvolumechange: null
+​
+onwaiting: null
+​
+onwebkitanimationend: null
+​
+onwebkitanimationiteration: null
+​
+onwebkitanimationstart: null
+​
+onwebkittransitionend: null
+​
+onwheel: null
+​
+outerHTML: "<html lang=\"en\"><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><style type=\"text/css\">svg:not(:root).svg-inline--fa {\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  display: inline-block;\n  font-size: inherit;\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.225em;\n}\n.svg-inline--fa.fa-w-1 {\n  width: 0.0625em;\n}\n.svg-inline--fa.fa-w-2 {\n  width: 0.125em;\n}\n.svg-inline--fa.fa-w-3 {\n  width: 0.1875em;\n}\n.svg-inline--fa.fa-w-4 {\n  width: 0.25em;\n}\n.svg-inline--fa.fa-w-5 {\n  width: 0.3125em;\n}\n.svg-inline--fa.fa-w-6 {\n  width: 0.375em;\n}\n.svg-inline--fa.fa-w-7 {\n  width: 0.4375em;\n}\n.svg-inline--fa.fa-w-8 {\n  width: 0.5em;\n}\n.svg-inline--fa.fa-w-9 {\n  width: 0.5625em;\n}\n.svg-inline--fa.fa-w-10 {\n  width: 0.625em;\n}\n.svg-inline--fa.fa-w-11 {\n  width: 0.6875em;\n}\n.svg-inline--fa.fa-w-12 {\n  width: 0.75em;\n}\n.svg-inline--fa.fa-w-13 {\n …"
+​
+ownerDocument: HTMLDocument http://localhost:8082/pdf
+​
+parentElement: null
+​
+parentNode: HTMLDocument http://localhost:8082/pdf
+​
+part: DOMTokenList []
+​
+prefix: null
+​
+previousElementSibling: null
+​
+previousSibling: <!DOCTYPE html>
+​
+scrollHeight: 2170
+​
+scrollLeft: 0
+​
+scrollLeftMax: 126
+​
+scrollTop: 0
+​
+scrollTopMax: 1209
+​
+scrollWidth: 899
+​
+shadowRoot: null
+​
+slot: ""
+​
+spellcheck: false
+​
+style: CSS2Properties(0)
+​
+tabIndex: -1
+​
+tagName: "HTML"
+​
+textContent: "svg:not(:root).svg-inline--fa {\n  overflow: visible;\n}\n\n.svg-inline--fa {\n  display: inline-block;\n  font-size: inherit;\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.225em;\n}\n.svg-inline--fa.fa-w-1 {\n  width: 0.0625em;\n}\n.svg-inline--fa.fa-w-2 {\n  width: 0.125em;\n}\n.svg-inline--fa.fa-w-3 {\n  width: 0.1875em;\n}\n.svg-inline--fa.fa-w-4 {\n  width: 0.25em;\n}\n.svg-inline--fa.fa-w-5 {\n  width: 0.3125em;\n}\n.svg-inline--fa.fa-w-6 {\n  width: 0.375em;\n}\n.svg-inline--fa.fa-w-7 {\n  width: 0.4375em;\n}\n.svg-inline--fa.fa-w-8 {\n  width: 0.5em;\n}\n.svg-inline--fa.fa-w-9 {\n  width: 0.5625em;\n}\n.svg-inline--fa.fa-w-10 {\n  width: 0.625em;\n}\n.svg-inline--fa.fa-w-11 {\n  width: 0.6875em;\n}\n.svg-inline--fa.fa-w-12 {\n  width: 0.75em;\n}\n.svg-inline--fa.fa-w-13 {\n  width: 0.8125em;\n}\n.svg-inline--fa.fa-w-14 {\n  width: 0.875em;\n}\n.svg-inline--fa.fa-w-15 {\n  width: 0.9375em;\n}\n.svg-inline--fa.fa-w-16 {\n  width: 1em;\n}\n.svg-inline--fa.fa-w-17 {\n  widt…"
+​
+title: ""
+​
+version: ""
+​
+<prototype>: HTMLHtmlElementPrototype { version: Getter & Setter, … }
+

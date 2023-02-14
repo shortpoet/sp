@@ -1,0 +1,12 @@
+@import "variables.scss";
+
+// Bootstrap SCSS
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+@import "mixins-start.scss";
+@import "./start/landing-start.scss";
+@import "./start/button-float.scss";
+@import "./start/nav-start.scss";
+@import "./start/awards-start.scss";
+@import "./start/section-start.scss";
+@import "./start/global-start.scss";

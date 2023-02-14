@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StartDevIcon.vue renders i if not isImage with class containing source matches snapshot 1`] = `
+<div><i class="sample_source"></i>
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name aws matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="aws-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name aws matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="aws-devicon"> <span class="">aws</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name azure matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="azure-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name azure matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="azure-devicon"> <span class="">azure</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name bash matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="bash-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name bash matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="bash-devicon"> <span class="">bash</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name d3 matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="d3-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name d3 matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="d3-devicon"> <span class="">d3</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name powershell matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="powershell-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name powershell matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="powershell-devicon"> <span class="">powershell</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name tableau matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="tableau-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name tableau matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="tableau-devicon"> <span class="">tableau</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name terraform matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="terraform-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name terraform matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="terraform-devicon"> <span class="">terraform</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name ts matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="vue-ts">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name ts matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="vue-ts"> <span class="">ts</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name vue matches snapshot 1`] = `
+<div><img src="sample_source.jpeg" class="vue-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpeg and name vue matches snapshot with showname 1`] = `<div><img src="sample_source.jpeg" class="vue-devicon"> <span class="">vue</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name aws matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="aws-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name aws matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="aws-devicon"> <span class="">aws</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name azure matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="azure-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name azure matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="azure-devicon"> <span class="">azure</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name bash matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="bash-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name bash matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="bash-devicon"> <span class="">bash</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name d3 matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="d3-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name d3 matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="d3-devicon"> <span class="">d3</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name powershell matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="powershell-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name powershell matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="powershell-devicon"> <span class="">powershell</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name tableau matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="tableau-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name tableau matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="tableau-devicon"> <span class="">tableau</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name terraform matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="terraform-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name terraform matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="terraform-devicon"> <span class="">terraform</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name ts matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="vue-ts">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name ts matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="vue-ts"> <span class="">ts</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name vue matches snapshot 1`] = `
+<div><img src="sample_source.jpg" class="vue-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .jpg and name vue matches snapshot with showname 1`] = `<div><img src="sample_source.jpg" class="vue-devicon"> <span class="">vue</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name aws matches snapshot 1`] = `
+<div><img src="sample_source.png" class="aws-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name aws matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="aws-devicon"> <span class="">aws</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name azure matches snapshot 1`] = `
+<div><img src="sample_source.png" class="azure-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name azure matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="azure-devicon"> <span class="">azure</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name bash matches snapshot 1`] = `
+<div><img src="sample_source.png" class="bash-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name bash matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="bash-devicon"> <span class="">bash</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name d3 matches snapshot 1`] = `
+<div><img src="sample_source.png" class="d3-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name d3 matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="d3-devicon"> <span class="">d3</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name powershell matches snapshot 1`] = `
+<div><img src="sample_source.png" class="powershell-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name powershell matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="powershell-devicon"> <span class="">powershell</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name tableau matches snapshot 1`] = `
+<div><img src="sample_source.png" class="tableau-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name tableau matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="tableau-devicon"> <span class="">tableau</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name terraform matches snapshot 1`] = `
+<div><img src="sample_source.png" class="terraform-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name terraform matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="terraform-devicon"> <span class="">terraform</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name ts matches snapshot 1`] = `
+<div><img src="sample_source.png" class="vue-ts">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name ts matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="vue-ts"> <span class="">ts</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name vue matches snapshot 1`] = `
+<div><img src="sample_source.png" class="vue-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .png and name vue matches snapshot with showname 1`] = `<div><img src="sample_source.png" class="vue-devicon"> <span class="">vue</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name aws matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="aws-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name aws matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="aws-devicon"> <span class="">aws</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name azure matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="azure-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name azure matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="azure-devicon"> <span class="">azure</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name bash matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="bash-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name bash matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="bash-devicon"> <span class="">bash</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name d3 matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="d3-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name d3 matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="d3-devicon"> <span class="">d3</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name powershell matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="powershell-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name powershell matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="powershell-devicon"> <span class="">powershell</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name tableau matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="tableau-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name tableau matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="tableau-devicon"> <span class="">tableau</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name terraform matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="terraform-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name terraform matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="terraform-devicon"> <span class="">terraform</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name ts matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="vue-ts">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name ts matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="vue-ts"> <span class="">ts</span></div>`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name vue matches snapshot 1`] = `
+<div><img src="sample_source.svg" class="vue-devicon">
+  <!---->
+</div>
+`;
+
+exports[`StartDevIcon.vue renders img if isImage with class containing source .svg and name vue matches snapshot with showname 1`] = `<div><img src="sample_source.svg" class="vue-devicon"> <span class="">vue</span></div>`;

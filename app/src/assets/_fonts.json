@@ -1,0 +1,77 @@
+{ 
+  "google": {
+    "google-fonts-plugin": {
+      "fonts": [
+        {
+          "family": "Saira Extra Condensed",
+          "variants": [
+            "100",
+            "200",
+            "300",
+            "400",
+            "500",
+            "600",
+            "700",
+            "800",
+            "900"
+          ]
+        },
+        {
+          "family": "Open Sans",
+          "variants": [
+            "300",
+            "300i",
+            "400",
+            "400i",
+            "500",
+            "500i",
+            "600",
+            "600i",
+            "800",
+            "800i"
+          ]
+        }
+      ],
+      "formats": [
+        "woff2"
+      ],
+      "stats": false
+      // "filename": "fonts.css"
+    }  
+  },
+  "main":
+    [  
+      {
+        "source": "https://webdevsuperfast.github.io/startbootstrap-resume-vue/",
+        "fonts": 
+        [
+          {
+            "font-family": "'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"
+          },
+          {
+            "font-family": "'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';"
+          },    
+          {
+            "family": "Muli",
+            "variants": [
+              "400",
+              "400i",
+              "800",
+              "800i"
+            ]
+          }
+        ]
+      },
+      {
+        "source": "https://github.com/BlackrockDigital/startbootstrap-resume",
+        "fonts": [
+          {
+            "font-family": "'Open Sans', serif;"
+          },
+          {
+            "font-family": "'Saira Extra Condensed', serif;"
+          }
+        ]
+      }
+    ]
+}

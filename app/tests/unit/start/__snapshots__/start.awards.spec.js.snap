@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StartAwards.vue matches snapshot 1`] = `
+<section id="awards" class="resume-section p-3 px-lg-5 d-flex flex-column">
+  <div class="my-auto">
+    <h2 class="heading heading-2 mb-4 mb-md-3">Natural Languages</h2>
+    <ul class="fa-ul mb-0">
+      <li><i class="fluent language-icon fa fa-flag fa-li"></i> <span class="mb-5">Mandarin Chinese, French (Fluent) </span></li>
+      <li><i class="workingKnowledge language-icon fa fa-flag fa-li"></i> <span class="mb-5">German, Portuguese (Working Knowledge) </span></li>
+      <li><i class="proficient language-icon fa fa-flag fa-li"></i> <span class="mb-5">Italian (Proficient) </span></li>
+      <li><i class="native language-icon fa fa-flag fa-li"></i> <span class="mb-5">English, Spanish, Tagalog (Native) </span></li>
+      <li><i class="award-icon fa fa-trophy fa-li"></i>
+        Certified Interpreter
+      </li>
+    </ul>
+  </div>
+</section>
+`;

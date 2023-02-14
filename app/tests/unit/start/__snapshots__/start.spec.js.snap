@@ -1,0 +1,639 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Start.vue start.snapshots matches snapshot 1`] = `
+<div id="resume-anchor" class="main-wrapper">
+  <nav id="sideNav" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"><a href="#about" class="navbar-brand js-scroll-trigger"><span class="d-block d-lg-none">Resume</span> <span id="pic" class="d-none d-lg-block"><img src="" alt="profile pic" class="img-fluid img-profile mx-auto mb-2"></span></a> <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="#about" class="nav-link js-scroll-trigger">About</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link js-scroll-trigger">Skills</a></li>
+        <li class="nav-item"><a href="#awards" class="nav-link js-scroll-trigger">Natural Languages</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link js-scroll-trigger">Experience</a></li>
+        <li class="nav-item"><a href="#education" class="nav-link js-scroll-trigger">Education</a></li>
+        <li class="nav-item"><a href="#interests" class="nav-link js-scroll-trigger">Interests</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container-fluid p-0">
+    <section id="about" class="resume-section p-3 px-lg-5 d-flex d-column">
+      <div class="my-auto">
+        <h1 class="heading heading-1 mb-0">CARLOS
+          <span class="text-primary">SORIANO</span></h1>
+        <div class="ml-2 d-inline-flex flex-column subheading">
+          <div class="d-inline-flex flex-column"><span id="start-flags" class="not-name">🇪🇸 🇵🇭 🇺🇸 🇨🇳 🇫🇷 🇮🇹 🇩🇪 🇧🇷</span> <a href="mailto:soriano.carlitos@gmail.com">soriano.carlitos@gmail.com</a> <span id="start-address">St. Louis, MO (willing to relocate)</span></div>
+          <div class="d-flex flex-column"><span id="start-visas" class="not-name">Valid Work Visas: USA, EU, UK</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="start-socials" class="resume-section pl-3 pl-lg-5 py-1 mt-3 d-flex d-column">
+      <div class="my-auto">
+        <ul class="list-inline list-social-icons mb-0 mt-0">
+          <li class="social-item list-inline-item " style="font-family: FontAwesome;"><a href="https://github.com/shortpoet"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li>
+          <li class="social-item list-inline-item " style="font-family: FontAwesome;"><a href="https://www.linkedin.com/in/carlos-soriano"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></span></a></li>
+          <li class="social-item list-inline-item " style="font-family: FontAwesome;"><a href="https://twitter.com/shortpoet3"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li>
+          <li class="social-item list-inline-item " style="font-family: FontAwesome;"><a href="/"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-home fa-stack-1x fa-inverse"></i></span></a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="skills" class="resume-section pl-3 px-lg-5 mt-5 mb-4 mb-md-3 d-flex flex-column">
+      <div class="my-auto">
+        <h2 class="heading heading-2 mb-4 mb-md-3">Skills</h2>
+        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+        <ul class="list-devicons list-inline list-icons">
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-visualstudio"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-git"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="fa fa-cogs"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-linux"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-docker"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class=""></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-aws"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class=""></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-go"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class=""></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class=""></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-dotnet"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-javascript"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class=""></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class=""></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-python"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-database"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-msql_server"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-sqllite"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-mysql"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-mongodb"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-html5"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-css3"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-bootstrap"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="devicons devicons-sass"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class=""></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class=""></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="fa fa-beer"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="fa fa-user-ninja"></i>
+              <!---->
+            </div>
+          </li>
+          <li class="list-inline-item">
+            <div><i class="fa fa-magic"></i>
+              <!---->
+            </div>
+          </li>
+        </ul>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            Dotnet
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+Framework 4.x
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Core
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Entity Framework
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Razor
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ MVC
+</span></li>
+          </ul>
+        </div>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            Javascript
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+Vue
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Typescript
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Leafly
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Plotly
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ c3
+</span></li>
+          </ul>
+        </div>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            Python
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+Pandas
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Matplotlib
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Flask
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Selenium
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Sklearn
+</span></li>
+          </ul>
+        </div>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            Relational Db
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+msSQL
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ mySQL
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Entity Framework
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ SQLAlchemy
+</span></li>
+          </ul>
+        </div>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            Document Db
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+mongoDB
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Pymongo
+</span></li>
+          </ul>
+        </div>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            Markdown
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+HTML
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ CSS
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ YAML
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ MD
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ SCSS
+</span></li>
+          </ul>
+        </div>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            Data Visualization
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+D3
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Tableau
+</span></li>
+          </ul>
+        </div>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            Workflow
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+Mobile-First &amp; Responsive Design
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Cross Browser Testing &amp; Debugging
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Agile Development &amp; Scrum
+</span></li>
+          </ul>
+        </div>
+        <div class="skill-grid">
+          <div class="subheading mb-3">
+            DevOps
+          </div>
+          <ul class="fa-ul mb-3 skill-list">
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+Docker
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Azure DevOps CI/CD Build &amp; Release Pipelines
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ AWS
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Azure Resource Manager
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Yeoman Templates
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Terraform
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Terratest
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Go
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Powershell
+</span></li>
+            <li><span class="skill"><i class="skill-icon fa fa-check"></i>
+ Bash
+</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="awards" class="resume-section p-3 px-lg-5 d-flex flex-column">
+      <div class="my-auto">
+        <h2 class="heading heading-2 mb-4 mb-md-3">Natural Languages</h2>
+        <ul class="fa-ul mb-0">
+          <li><i class="fluent language-icon fa fa-flag fa-li"></i> <span class="mb-5">Mandarin Chinese, French (Fluent) </span></li>
+          <li><i class="workingKnowledge language-icon fa fa-flag fa-li"></i> <span class="mb-5">German, Portuguese (Working Knowledge) </span></li>
+          <li><i class="proficient language-icon fa fa-flag fa-li"></i> <span class="mb-5">Italian (Proficient) </span></li>
+          <li><i class="native language-icon fa fa-flag fa-li"></i> <span class="mb-5">English, Spanish, Tagalog (Native) </span></li>
+          <li><i class="award-icon fa fa-trophy fa-li"></i>
+            Certified Interpreter
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="start-objective" class="resume-section p-3 px-lg-5 d-flex d-column mb-4 mb-md-3">
+      <div class="aboutme-container">
+        <div class="aboutme-paragraph lead">
+          <p>
+            Through living, studying and, working internationally, I have developed an expertise in language and culture. Considering where spoken languages intersect with data got me interested in programming.
+          </p>
+        </div>
+        <div class="aboutme-paragraph lead">
+          <p>
+            Software engineering is translating business requirements into solutions. I apply my advanced tech skills to analyses that consider where culture and computation converge. This, combined with my fluency for the most widely spoken languages, allows me to engineer unique solutions to diverse problems.
+          </p>
+        </div>
+        <div class="aboutme-paragraph lead">
+          <p>
+            I am eager to collaborate with highly motivated and experienced teams whose constant curiosity is tempered by a drive to produce excellent work.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="experience" class="resume-section p-3 px-lg-5 d-flex flex-column">
+      <div class="my-auto">
+        <h2 class="heading heading-2 start-experience-header mb-4 mb-md-3">Experience</h2>
+        <div class="resume-item d-flex flex-column mb-2">
+          <h2 class="heading heading-2 start-experience-type mb-3">software</h2>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">Senior DevOps Engineer</h3>
+              <div class="start-company subheading mb-3">Facilisgroup</div>
+              <div>
+                <p class="job-1-description-1"> • As senior devops engineer for a greenfield project, owns the infrastructure design and implementation for a customer-facing web app. Uses Azure Resource Manager and Azure Devops to manage CI/CD pipelines and storage, network, security, virtual machines, kubernetes clusters, among other services for front and back end deployments.</p>
+              </div>
+              <div>
+                <p class="job-1-description-2"> • Built infrastructure as code using custom Terraform modules for repeatable and immutable deployments. Ensured processes are well-tested through unit tests written in Go. Wrote extensive documentation to achieve permanence of the solution stack and educate others in the company.</p>
+              </div>
+              <div>
+                <p class="job-1-description-3"> • Developed tools for the team to use to streamline application development and save time by automating repetitive tasks including Powershell modules, template generators, docker containers, and other scripting solutions.</p>
+              </div>
+              <div>
+                <p class="job-1-description-4"> • Additional technologies used: Terraform, Terratest, Go, Docker, Powershell, Bash, Azure Cloud, Agile/SAFe.</p>
+              </div>
+              <div>
+                <p class="job-1-description-5"> </p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2021 (August) - Present</span></div>
+          </div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">Build Engineer &amp; DevOps Application Developer</h3>
+              <div class="start-company subheading mb-3">Stifel Financial</div>
+              <div>
+                <p class="job-2-description-1"> • As a devops application developer, provided dev teams with a self service interface that reduced infrastructure friction using sequential build and release pipelines, infrastructure as code, Azure DevOps extensions, Terraform HCL, and Yeoman Generators, allowing them to spend more time on delivering value.</p>
+              </div>
+              <div>
+                <p class="job-2-description-2"> • As a build engineer, homogenized technical strategy to cloud services with a structured approach to templating new development using build and application templates in yaml, dotnet, &amp; typescript.</p>
+              </div>
+              <div>
+                <p class="job-2-description-3"> • Advocated for and created extensive documentation to assist in understanding these processes and help prepare for disaster recovery scenarios.</p>
+              </div>
+              <div>
+                <p class="job-2-description-4"> • Additional technologies used: Octopus Deploy, TeamCity, TFS, Docker, Powershell, Bash, Jira, Agile/SAFe.</p>
+              </div>
+              <div>
+                <p class="job-2-description-5"> </p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2021 (February) - 2021 (August)</span></div>
+          </div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">Software Engineer</h3>
+              <div class="start-company subheading mb-3">Clip Mgmt (freelance)</div>
+              <div>
+                <p class="job-3-description-1"> • Apply consistent CI/CD procedures to previous and current projects. </p>
+              </div>
+              <div>
+                <p class="job-3-description-2"> • Developed and implemented prototype for G-suite integrated CRM database and multi-role admin panel web app. </p>
+              </div>
+              <div>
+                <p class="job-3-description-3"> • Azure DevOps Pipelines, docker, c#, vuejs, node.js, Gapi, Auth0, REST APIs </p>
+              </div>
+              <div>
+                <p class="job-3-description-4"> • Hosted on Azure, managed through docker containers, Azure pipelines, and GitHub actions to ensure well-tested and consistent deployments. </p>
+              </div>
+              <div>
+                <p class="job-3-description-5"> • Azure MSSQL database interfaced through Entity Framework Core integreted into CI/CD pipeline. </p>
+              </div>
+              <div>
+                <p class="job-3-description-6"> • Authentication to Google API (gmail, sheets, drive, etc) account data and programattic access to services. </p>
+              </div>
+              <div>
+                <p class="job-3-description-7"> • User jwt for authentication. Auth0 and Google as identity providers for different access roles. </p>
+              </div>
+              <div>
+                <p class="job-3-description-8"> • Use cases include managing automated communication, databasing, and visualization of customer interactions and internal metrics. </p>
+              </div>
+              <div>
+                <p class="job-3-description-9"> </p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2020 (June) - 2020 (December)</span></div>
+          </div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">Software Engineer</h3>
+              <div class="start-company subheading mb-3">Boeing - St Louis, MO</div>
+              <div>
+                <p class="job-4-description-1">• Team devops lead - deployment of products using Cloud Foundry, Gitlab CI/CD, bash and powershell scripting, and windows server virtual machine.</p>
+              </div>
+              <div>
+                <p class="job-4-description-2"> • Built an application to assess the validity of employee timesheet entries. A SQL database function checked against translation tables maintained in collaboration with the business operations team. Data output was displayed using d3 for data visualization to help understand labor costs. </p>
+              </div>
+              <div>
+                <p class="job-4-description-3"> • Learned and fully implemented advanced features of the Vue framework for a variety of data analytics applications and reconstructing legacy Angular products to help transition an aging library of corporate applications. </p>
+              </div>
+              <div>
+                <p class="job-4-description-4"> • Parts and labor tracking system to integrate the builds across teams and systems, enabling wider-reaching analytics. </p>
+              </div>
+              <div>
+                <p class="job-4-description-5"> • Centralized data visualization dashboard with responsive layout and reusable data viz components. Charts and tables that are dynamically populated to avoid repetitive hard-coding and save on future similar requests from customers. Wrapper for tableau api to better integrate server and dashboard functionality across apps. </p>
+              </div>
+              <div>
+                <p class="job-4-description-6"> • Ensured data integrity of daily loading from source systems mostly using c#/dotnet and sql scripts with python and R developing new ETL architecture for reusable data analytics pipeline.</p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2019 - 2020 (April)</span></div>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column mb-2">
+          <h2 class="heading heading-2 start-experience-type mb-3">language</h2>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">Translator / Interpreter</h3>
+              <div class="start-company subheading mb-3">Interpretation Agencies (many)</div>
+              <div>
+                <p class="job-1-description-1">Medical, dental and media conferences, on-site medical and legal interpretation for depositions, insurance and immigration interviews, simultaneous interpretation of contract negotiations, guided tours, consecutive and simultaneous interpretation for training meetings, document translation of many types, including legal, medical, media localization, and various other language-related assignments, primarily in Spanish, Tagalog and French.</p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2011 - Present</span></div>
+          </div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">QA Tester</h3>
+              <div class="start-company subheading mb-3">GTL Media- Los Angeles, CA</div>
+              <div>
+                <p class="job-2-description-1">Translator, linguistic tester, translated texts for various media including video games, film, and legal, checked video games for linguistic bugs and translation errors, translation of .xml databases for in-game script</p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2011 - 2014</span></div>
+          </div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">Executive Assistant to the CEO</h3>
+              <div class="start-company subheading mb-3">EZI- Manila, Philippines</div>
+              <div>
+                <p class="job-3-description-1">Managed daily operations in a bilingual office setting, purchased investment property, created investment portfolios, marketing and business plans.</p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2009 - 2010</span></div>
+          </div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">Sinologist (China expert)</h3>
+              <div class="start-company subheading mb-3">World Eye Reports- Shanghai, China</div>
+              <div>
+                <p class="job-4-description-1">Translator, interpreter, media sales, wrote articles and for advertorial project</p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2003 - 2004</span></div>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column mb-2">
+          <h2 class="heading heading-2 start-experience-type mb-3">hospitality</h2>
+          <div class="resume-item d-flex flex-column flex-md-row mb-3">
+            <div class="resume-content mr-auto">
+              <h3 class="heading heading-3 mb-0">Grill Chef de Partie</h3>
+              <div class="start-company subheading mb-3">Many, including Post Haus Restaurant - St. Moritz, Switzerland</div>
+              <div>
+                <p class="job-1-description-1">Expert chef and translator at world-class restaurants</p>
+              </div>
+            </div>
+            <div class="resume-date text-md-right mt-1"><span class="text-primary">2002 - 2018</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="education" class="resume-section p-3 px-lg-5 d-flex flex-column">
+      <div class="my-auto">
+        <h2 class="heading heading-2 mb-4">Education</h2>
+        <div class="resume-item d-flex flex-column flex-md-row mb-4">
+          <div class="resume-content mr-auto">
+            <h3 class="heading heading-3 mb-0">University of Pennsylvania</h3>
+            <div class="start-degree subheading mb-3">Bachelor of Arts and Sciences</div>
+            <div class="start-education-details"></div>
+          </div>
+          <div class="resume-date text-md-right mt-1"><span class="text-primary">Major in East Asian Languages and Cultures, Chinese Concentration, relevant coursework in linguistics and anthropology</span></div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row mb-4">
+          <div class="resume-content mr-auto">
+            <h3 class="heading heading-3 mb-0">Washington University in St. Louis</h3>
+            <div class="start-degree subheading mb-3">Data Analytics Certificate</div>
+            <div class="start-education-details"></div>
+          </div>
+          <div class="resume-date text-md-right mt-1"><span class="text-primary">Python, Javascript, Tableau</span></div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row mb-4">
+          <div class="resume-content mr-auto">
+            <h3 class="heading heading-3 mb-0">Thacher School</h3>
+            <div class="start-degree subheading mb-3">High School</div>
+            <div class="start-education-details"></div>
+          </div>
+          <div class="resume-date text-md-right mt-1"><span class="text-primary">Languages</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="interests" class="resume-section p-3 px-lg-5 d-flex flex-column">
+      <div class="my-auto">
+        <h2 class="heading heading-2 mb-4 mb-md-3">Interests</h2>
+        <p class="mb-4">Kneading bread, digging gardens, vermicomposting and cooking tasty meals. Expert at translations and accents. Yoga teacher training - YogaWorks 200hr. Adobe Creative dabbler. SCUBA certified.
+        </p>
+      </div>
+    </section>
+    <div class="start-target vue-portal-target">
+      <div class="ripple-container">
+        <div class="ripple-mask ripple-mask-hide">
+          <div class="ripple-content">
+            Check out the other layout by clicking the pdf icon.
+          </div>
+        </div>
+        <div class="icon-halo icon-halo-hide">
+          <div class="icon-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="rocket" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="button-float-icon svg-inline--fa fa-rocket fa-w-16 fa-2x" style="transform-origin: 0.4375em 0.5625em;">
+              <g transform="translate(256 256)" class="">
+                <g transform="translate(-32, 32)  scale(1, 1)  rotate(0 0 0)" class="">
+                  <path fill="currentColor" d="M505.12019,19.09375c-1.18945-5.53125-6.65819-11-12.207-12.1875C460.716,0,435.507,0,410.40747,0,307.17523,0,245.26909,55.20312,199.05238,128H94.83772c-16.34763.01562-35.55658,11.875-42.88664,26.48438L2.51562,253.29688A28.4,28.4,0,0,0,0,264a24.00867,24.00867,0,0,0,24.00582,24H127.81618l-22.47457,22.46875c-11.36521,11.36133-12.99607,32.25781,0,45.25L156.24582,406.625c11.15623,11.1875,32.15619,13.15625,45.27726,0l22.47457-22.46875V488a24.00867,24.00867,0,0,0,24.00581,24,28.55934,28.55934,0,0,0,10.707-2.51562l98.72834-49.39063c14.62888-7.29687,26.50776-26.5,26.50776-42.85937V312.79688c72.59753-46.3125,128.03493-108.40626,128.03493-211.09376C512.07526,76.5,512.07526,51.29688,505.12019,19.09375ZM384.04033,168A40,40,0,1,1,424.05,128,40.02322,40.02322,0,0,1,384.04033,168Z" transform="translate(-256 -256)" class=""></path>
+                </g>
+              </g>
+            </svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="v-portal" style="display: none;"></div>
+  </div>
+</div>
+`;
