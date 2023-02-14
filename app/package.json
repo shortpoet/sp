@@ -42,6 +42,7 @@
     "popper.js": "^1.16.1",
     "portal-vue": "^3.0.0",
     "postcss-preset-env": "^8.0.1",
+    "vite-plugin-require": "^1.1.10",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vuex": "^4.1.0"

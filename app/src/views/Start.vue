@@ -2,38 +2,19 @@
   <div class="main-wrapper" v-if="getResumeLoaded" id="resume-anchor">
     <StartNav />
     <div class="container-fluid p-0">
-      <StartAbout
-        :name="getResume.name"
-        :surname="getResume.surname"
-        :email="getResume.email"
-        :address="getResume.address"
-        :visas="getResume.visas"
-        :flags="getResume.flags"
-      />
-      <StartSocials 
-        :socials="getResume.socials"
-      />
-      <StartSkills
-        :skills="getResume.skills"
-      />
-      <StartAwards
-        :spokenLanguages="getResume.spokenLanguages"
-      />
-      <StartObjective
-        :aboutMe="getResume.aboutMe"
-      />
-      <StartExperience
-        :experiences="getResume.experiences"      
-      />
-      <StartEducation
-        :educations="getResume.educations"
-      />
-      <StartInterests
-        :interests="getResume.interests"
-      />
+      <StartAbout :name="getResume.name" :surname="getResume.surname" :email="getResume.email"
+        :address="getResume.address" :visas="getResume.visas" :flags="getResume.flags" />
+      <StartSocials :socials="getResume.socials" />
+      <StartSkills :skills="getResume.skills" />
+      <StartAwards :spokenLanguages="getResume.spokenLanguages" />
+      <StartObjective :aboutMe="getResume.aboutMe" />
+      <StartExperience :experiences="getResume.experiences" />
+      <StartEducation :educations="getResume.educations" />
+      <StartInterests :interests="getResume.interests" />
 
-      <portal-target class="start-target" name="pdf-button-float"/>
-      <StartButtonFloat :target="'pdf-button-float'" :href="'/pdf'" :isExpanded="rippleExpanded"  @ripple-open="toggleVisibility(true)" @ripple-close="toggleVisibility(false)" />      
+      <portal-target class="start-target" name="pdf-button-float" />
+      <StartButtonFloat :target="'pdf-button-float'" :href="'/pdf'" :isExpanded="rippleExpanded"
+        @ripple-open="toggleVisibility(true)" @ripple-close="toggleVisibility(false)" />
 
     </div>
 
@@ -67,7 +48,7 @@ export default {
     StartAwards,
     StartButtonFloat
   },
-  data () {
+  data() {
     return {
       rippleExpanded: false
     }
@@ -78,7 +59,7 @@ export default {
   methods: {
     ...mapActions(['loadEnv']),
     ...mapActions('resume', ['loadResume']),
-    toggleVisibility (args) {
+    toggleVisibility(args) {
       if (args) {
         this.rippleExpanded = !this.rippleExpanded
       } else {
@@ -86,13 +67,14 @@ export default {
       }
     },
   },
-  mounted () {
+  mounted() {
     const env = import.meta.envNODE_ENV
     this.loadEnv(env)
     this.$nextTick(() => {
       // Activate scrollspy to add active class to navbar items on scroll
-      this.$('body').scrollspy({
-        target: '#sideNav'
+      const ss = new this.bootstrap.ScrollSpy(document.body, {
+        target: '#sideNav',
+        // offset: 72
       })
       this.loadResume()
     })

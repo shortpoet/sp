@@ -8,22 +8,12 @@
     <div type="input" :class="classObject" @click="showModal">
       <font-awesome-layers class="button-float-icon-layer fa-lg">
         <font-awesome-icon class="button-float-icon-circle" size="2x" icon="circle" />
-        <font-awesome-icon
-          class="button-float-icon"
-          size="2x"
-          :transform="_icon.transform"
-          :icon="_icon.icon"
-        ></font-awesome-icon>
+        <font-awesome-icon class="button-float-icon" size="2x" :transform="_icon.transform"
+          :icon="_icon.icon"></font-awesome-icon>
       </font-awesome-layers>
     </div>
     <div class="modal-slot">
-      <PDFModal
-        v-show="isModalVisible"
-        @close="closeModal"
-        @to-pdf="savePDF"
-        @to-page="toPage"
-        @to-canvas="toCanvas"
-      >
+      <PDFModal v-show="isModalVisible" @close="closeModal" @to-pdf="savePDF" @to-page="toPage" @to-canvas="toCanvas">
         <!-- <template v-slot:header>
           <h1>Test Header</h1>
         </template>
@@ -40,8 +30,8 @@
 
 <script>
 import PDFModal from "@/components/Resume/PDF/PDFModal.vue";
-import { colorLog } from "@/utils/colorLog";
-import { log } from "@/utils/colorLog";
+// import { colorLog } from "@/utils/colorLog";
+// import { log } from "@/utils/colorLog";
 // log('blue', 'test')
 import jsPDF from "jspdf";
 // using fork for now to solve this issue
@@ -126,11 +116,11 @@ export default {
       var fontB = new FontFaceObserver("Saira Extra Condensed");
       // must return otherwise load order is not correct
       try {
-        return Promise.all([fontA.load(), fontB.load()]).then(function() {
+        return Promise.all([fontA.load(), fontB.load()]).then(function () {
           console.log("Family A & B have loaded");
         });
       } catch {
-      /* istanbul ignore next */
+        /* istanbul ignore next */
         err => console.log(err);
       }
     },
@@ -143,7 +133,7 @@ export default {
         });
         return canvas;
       } catch {
-      /* istanbul ignore next */
+        /* istanbul ignore next */
         err => console.log(err);
       }
     },
@@ -163,14 +153,14 @@ export default {
     async setCanvas(options, callback) {
       const vm = this;
       await vm.checkFonts();
-      colorLog("fonts have been checked", "violet");
+      // colorLog("fonts have been checked", "violet");
       setTimeout(async () => {
         try {
           const canvas = await vm.getCanvas(options);
           vm.canvas = canvas;
           callback();
         } catch (err) {
-        /* istanbul ignore next */
+          /* istanbul ignore next */
           console.log(err);
         }
       }, 250);
@@ -295,7 +285,7 @@ export default {
       const fileName = `Carlos_Soriano_${moment().format(
         "YYYY_MM_DD_HH_mm"
       )}.pdf`;
-      
+
       this.jspdf.save(fileName);
 
       vm.$emit("to-render-pdf", false);
@@ -371,9 +361,10 @@ export default {
       }
     }
   },
-  mounted() {}
+  mounted() { }
 };
 </script>
 
 <style lang="scss">
+
 </style>
