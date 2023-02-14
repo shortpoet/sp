@@ -13,9 +13,9 @@ module.exports = {
     ecmaVersion: "latest",
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "off" : "off",
-    // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-console": import.meta.envNODE_ENV === "production" ? "off" : "off",
+    // 'no-console': import.meta.envNODE_ENV === 'production' ? 'error' : 'off',
+    "no-debugger": import.meta.envNODE_ENV === "production" ? "error" : "off",
   },
   overrides: [
     {

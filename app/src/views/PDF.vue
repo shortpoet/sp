@@ -159,7 +159,7 @@ export default {
     }
   },
   mounted () {
-    const env = process.env.NODE_ENV
+    const env = import.meta.envNODE_ENV
     this.loadEnv(env)
     this.loadResume()
   }

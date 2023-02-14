@@ -6,9 +6,9 @@
 
 const routes = [
   {
-    path: '/blog',
-    name: 'Blog',
-    component: resolve => import(`@/views/Blog.vue`).then(resolve),
+    path: "/blog",
+    name: "Blog",
+    component: (resolve) => import(`@/views/Blog.vue`).then(resolve),
     children: [
       // {
       //   path: '/blog/learning-to-unit-test-en',
@@ -26,14 +26,13 @@ const routes = [
       //     language: 'spanish'
       //   }
       // }
-    ]
+    ],
   },
   {
-    path: '/blog/:title',
-    name: 'BlogArticle',
-    props: (route) => ({ title: route.query.q })
+    path: "/blog/:title",
+    name: "BlogArticle",
+    props: (route) => ({ title: route.query.q }),
   },
+];
 
-]
-
-export default routes
+export default routes;
