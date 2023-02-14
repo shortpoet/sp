@@ -3,6 +3,7 @@ export const routeMapper = function (paths) {
     return {
       name: path.name || path.view,
       path: path.path,
+      // component: (resolve) => import(`@/views/${path.view}.vue`).then(resolve),
       component: path.view
         ? (resolve) => import(`@/views/${path.view}.vue`).then(resolve)
         : (resolve) =>

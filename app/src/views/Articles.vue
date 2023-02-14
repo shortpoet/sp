@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import ArticleNav from '@/components/Articles/ArticleNav'
-import ArticleList from '@/components/Articles/ArticleList'
+import ArticleNav from '@/components/Articles/ArticleNav.vue'
+import ArticleList from '@/components/Articles/ArticleList.vue'
 
 export default {
   name: 'Article',

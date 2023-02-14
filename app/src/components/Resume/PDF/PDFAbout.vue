@@ -69,7 +69,7 @@ class="not-name"
 
 <script>
 // import PDFAction from '@/components/Utils/PDFAction'
-import PDFSocials from "@/components/Resume/PDF/PDFSocials";
+import PDFSocials from "@/components/Resume/PDF/PDFSocials.vue";
 
 export default {
 name: "PDFAbout",

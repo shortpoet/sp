@@ -80,16 +80,16 @@
 </template>
 
 <script>
-import PDFAbout from '@/components/Resume/PDF/PDFAbout'
-import PDFBorder from '@/components/Resume/PDF/PDFBorder'
-import PDFSkills from '@/components/Resume/PDF/PDFSkills'
-import PDFSkillsRender from '@/components/Resume/PDF/PDFSkillsRender'
-import PDFAwards from '@/components/Resume/PDF/PDFAwards'
-import PDFObjective from '@/components/Resume/PDF/PDFObjective'
-import PDFExperience from '@/components/Resume/PDF/PDFExperience'
-import PDFEducation from '@/components/Resume/PDF/PDFEducation'
-import PDFInterests from '@/components/Resume/PDF/PDFInterests'
-import PDFButtonFloat from '@/components/Resume/PDF/PDFButtonFloat'
+import PDFAbout from '@/components/Resume/PDF/PDFAbout.vue'
+import PDFBorder from '@/components/Resume/PDF/PDFBorder.vue'
+import PDFSkills from '@/components/Resume/PDF/PDFSkills.vue'
+import PDFSkillsRender from '@/components/Resume/PDF/PDFSkillsRender.vue'
+import PDFAwards from '@/components/Resume/PDF/PDFAwards.vue'
+import PDFObjective from '@/components/Resume/PDF/PDFObjective.vue'
+import PDFExperience from '@/components/Resume/PDF/PDFExperience.vue'
+import PDFEducation from '@/components/Resume/PDF/PDFEducation.vue'
+import PDFInterests from '@/components/Resume/PDF/PDFInterests.vue'
+import PDFButtonFloat from '@/components/Resume/PDF/PDFButtonFloat.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {

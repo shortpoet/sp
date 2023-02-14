@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import PDFModal from "@/components/Resume/PDF/PDFModal";
+import PDFModal from "@/components/Resume/PDF/PDFModal.vue";
 import { colorLog } from "@/utils/colorLog";
 import { log } from "@/utils/colorLog";
 // log('blue', 'test')

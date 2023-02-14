@@ -49,8 +49,8 @@
 </template>
 
 <script>
-import PDFDevIcon from '@/components/Resume/PDF/PDFDevIcon'
-import PDFBorder from '@/components/Resume/PDF/PDFBorder'
+import PDFDevIcon from '@/components/Resume/PDF/PDFDevIcon.vue'
+import PDFBorder from '@/components/Resume/PDF/PDFBorder.vue'
 import icons from '@/assets/icons.js'
 
 export default {

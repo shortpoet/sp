@@ -1,10 +1,8 @@
 import { createApp } from "vue";
 import Vuex from "vuex";
-import VueRouter from "vue-router";
 
 import App from "./App.vue";
-// import { router } from './router'
-import createRouterConfig from "./router/createRouterConfig";
+import router from "./router";
 import createStore from "./store/createStore";
 
 import jquery from "jquery";
@@ -12,7 +10,7 @@ import jquery from "jquery";
 import PortalVue from "portal-vue";
 
 // require("bootstrap");
-import "bootstrap";
+import * as bootstrap from "bootstrap";
 // require("jquery.easing");
 import "jquery.easing";
 
@@ -53,18 +51,16 @@ import {
 library.add(faCircle, faFilePdf, faSave, faTimes, faRocket);
 
 const storeConfig = createStore.createStore();
-const routerConfig = createRouterConfig.createRouterConfig();
 // console.log(storeConfig)
 const app = createApp(App);
 
 const store = new Vuex.Store(storeConfig);
-const router = VueRouter.createRouter(routerConfig);
 
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.component("font-awesome-layers", FontAwesomeLayers);
 
 app.config.devtools = false;
-app.prototype.$ = jquery;
+app.config.globalProperties.bootstrap = bootstrap;
 app.config.productionTip = false;
 
 app.use(store);

@@ -39,7 +39,7 @@ id="skills"
 
 <script>
 // import FlexList from '@/components/Utils/FlexList'
-import StartDevIcon from "@/components/Resume/Start/StartDevIcon";
+import StartDevIcon from "@/components/Resume/Start/StartDevIcon.vue";
 import icons from "@/assets/icons.js";
 
 export default {
