@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pdf.pdfButtonFloat pdf.pdfButtonFloat.snapshot should match snapshot 1`] = `<div class="v-portal" style="display: none;"></div>`;
