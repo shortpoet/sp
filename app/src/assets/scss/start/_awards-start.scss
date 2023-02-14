@@ -1,0 +1,20 @@
+
+.award-icon {
+  color: $yellow;
+}
+
+.native {
+  color: $forest-green;
+}
+
+.fluent {
+  color: lighten($forest-green, 15%)
+}
+
+.proficient {
+  color: lighten($forest-green, 30%)
+}
+
+.workingKnowledge {
+  color: lighten($forest-green, 45%)
+}

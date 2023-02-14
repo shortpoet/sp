@@ -1,0 +1,14 @@
+[
+    {
+        "name": "royal-purple",
+        "hex": "#562088",
+        "rgba": "rgba(86, 32, 136, 1)",
+        "hsla": "hsla(271, 62%, 33%, 1)"
+    },
+    {
+        "name": "soothing-orange",
+        "hex": "#b56036",
+        "rgba": "rgba(181, 96, 54, 1)",
+        "hsla": "hsla(20, 54%, 46%, 1)"
+    }
+]

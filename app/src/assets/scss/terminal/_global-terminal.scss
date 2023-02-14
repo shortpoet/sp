@@ -1,0 +1,86 @@
+$border-radius: .7rem;
+
+.terminal-container {
+
+  @include code-font;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+  background-color: $royal-purple;
+
+  .clickable-area {
+    cursor: pointer;
+  }
+  .ui-instruction {
+    color: $white;
+    margin: 1rem .25rem 0rem .25rem;
+  }
+
+}
+
+.ui-container {
+
+
+  margin: 1rem;
+  max-width: 21rem;
+  width: calc(100% - 2rem);
+  flex-direction: column;
+
+  // position: fixed;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  // background-color: rgba(0, 0, 0, 0.3);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // z-index: 1000;
+
+
+}
+
+.title-bar {
+  -webkit-border-top-left-radius: $border-radius;
+  -webkit-border-top-right-radius: $border-radius;
+  -moz-border-top-right-radius: $border-radius;
+  -moz-border-top-left-radius: $border-radius;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+
+  background: $black;
+  // box-shadow: 2px 2px 20px 1px;
+  color: $terminal-green;
+  // text-align: center;
+  padding: .5rem;
+
+}
+
+.code-container {
+ 
+  -webkit-border-bottom-left-radius: $border-radius;
+  -webkit-border-bottom-right-radius: $border-radius;
+  -moz-border-bottom-left-radius: $border-radius;
+  -moz-border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+
+  background: $black;
+  // box-shadow: 2px 2px 20px 1px;
+  color: $white;
+  /* overflow-x: auto; */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  display: block;
+  height: 15rem;
+  width: 21rem;
+  padding: 1rem;
+  p {
+    margin: 0rem;
+  }
+
+}

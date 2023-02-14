@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+}
+
+.ripple-closer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 0;
+}
+
+.ripple-container {
+  position: fixed;
+  bottom: -8em;
+  right: -8em;
+  height: 24em;
+  width: 24em;
+  // border-radius: 50%;
+
+  .ripple-mask {
+    position: absolute;
+    // background-color: $forest-green;
+    // setting color as hex makes it evaluate to rgb if no transparency is set
+    // otherwise rgba which is why just changing the background-color
+    // alters the way the component visibility is toggled by the different classes
+    // https://stackoverflow.com/questions/5770341/i-do-not-want-to-inherit-the-child-opacity-from-the-parent-in-css
+    border-radius: 50%;
+    transform: scale(1);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    -webkit-transition:
+      background-color .3s $ease-primary,
+      transform .3s $ease-primary,
+      opacity .3s $ease-primary,
+      width .3s $ease-primary,
+      height .3s $ease-primary,
+      ;
+    -moz-transition:
+      background-color .3s $ease-primary,
+      transform .3s $ease-primary,
+      opacity .3s $ease-primary,
+      width .3s $ease-primary,
+      height .3s $ease-primary,
+      ;
+    -o-transition:
+      background-color .3s $ease-primary,
+      transform .3s $ease-primary,
+      opacity .3s $ease-primary,
+      width .3s $ease-primary,
+      height .3s $ease-primary,
+      ;
+    transition:
+      background-color .3s $ease-primary,
+      transform .3s $ease-primary,
+      opacity .3s $ease-primary,
+      width .3s $ease-primary,
+      height .3s $ease-primary,
+      ;
+
+    &:before {
+      content: ' ';
+      // background-color: rgba(11, 102, 35, 1);
+      border-radius: 50%;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      transform: scale(0);
+    }
+
+    .ripple-content {
+      // display: flex;
+      // box-sizing: border-box;
+      // text-align: justify;
+      // border-radius: 50%;
+      // border: solid 1px transparent;
+      position: relative;
+      height: 50%;
+      width: 50%;
+      color: $white;
+      font-size: .75em;
+      top: 20%;
+      left: 10%;
+      // bottom: 30%;
+
+    }
+  }
+
+  .ripple-mask-show {
+    position: absolute;
+    // toggling 0 or 1 on the opacity for th eshow and hide classes' main and pseudo elements acheives different FX
+    // also depends on size
+    // and position of psuedo element can make button 'bounce' to another part
+    // or use changing colors of rings in a certain order for more ripple ?
+    background-color: rgba(11, 102, 35, .8);
+    transform: scale(1);
+    &:before {
+      content: ' ';
+      background-color: rgba(11, 102, 35, 0);
+      border-radius: 50%;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: scale(1);
+      transition: 'transform 0.3s cubic-bezier(0.42, 0, 0.58, 1),opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1),-webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1)',
+    }
+  }
+
+  .ripple-mask-hide {
+    background-color: rgba(110, 102, 35, 0);
+    position: absolute;
+    transform: scale(0);
+    width: 100%;
+    height: 100%;
+  &:before {
+      content: '';
+      background-color: rgba(11, 102, 35, 0);
+      border-radius: 50%;
+      position: absolute;
+      // setting bottom and right to 0  bec it seems that it is relative to parent
+      bottom: 0em;
+      right: 0em;
+      width: 100%;
+      height: 100%;
+      transform: scale(0);
+      transition: 'transform 0.3s cubic-bezier(0.42, 0, 0.58, 1),opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1),-webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1)';
+    }
+  }
+
+  .icon-halo {
+    width: 6em;
+    height: 6em;
+    z-index: 10000;
+    position: absolute;
+    bottom: 9em;
+    right: 9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 'transform, height, width, 0.3s cubic-bezier(0.42, 0, 0.58, 1),opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1),-webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1)';
+    transform: scale(1);
+    -webkit-transition:
+      // background-color $halo-time $ease-primary,
+      transform $halo-time $ease-primary,
+      // opacity $halo-time $ease-primary,
+      width $halo-time $ease-primary,
+      height $halo-time $ease-primary,
+      ;
+    -moz-transition:
+      // background-color $halo-time $ease-primary,
+      transform $halo-time $ease-primary,
+      // opacity $halo-time $ease-primary,
+      width $halo-time $ease-primary,
+      height $halo-time $ease-primary,
+      ;
+    -o-transition:
+      // background-color $halo-time $ease-primary,
+      transform $halo-time $ease-primary,
+      // opacity $halo-time $ease-primary,
+      width $halo-time $ease-primary,
+      height $halo-time $ease-primary,
+      ;
+    transition:
+      // background-color $halo-time $ease-primary,
+      transform $halo-time $ease-primary,
+      // opacity $halo-time $ease-primary,
+      width $halo-time $ease-primary,
+      height $halo-time $ease-primary,
+      ;
+    &:before {
+      content: '';
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 50%;
+      position: absolute;
+      // setting bottom and right to 0  bec it seems that it is relative to parent
+      bottom: 0em;
+      right: 0em;
+      width: 100%;
+      height: 100%;
+      transform: scale(1);
+      transition: 'transform 0.3s cubic-bezier(0.42, 0, 0.58, 1),opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1),-webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1)';
+    }
+
+    .icon-circle {
+      background-color: $forest-green;
+      opacity: .25;
+      position: absolute;
+      width: 3.5em;
+      height: 3.5em;
+      z-index: 1000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+      .button-float-icon {
+        color: $white;
+        z-index: 10000001;
+        cursor: pointer;
+      }
+    }
+  }
+  .icon-halo-show {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    .icon-circle {
+      opacity: 1;
+    }
+  }
+  .icon-halo-hide {
+    background-color: rgba(255, 255, 255, 0);
+    // height: 0em;
+    // width: 0em;
+    // -webkit-transition:
+    //   all $halo-time $ease-primary,
+    //   ;
+    // -moz-transition:
+    //   all $halo-time $ease-primary,
+    //   ;
+    // -o-transition:
+    //   all $halo-time $ease-primary,
+    //   ;
+    // transition:
+    //   all $halo-time $ease-primary,
+    //   ;
+    &:before {
+      content: '';
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 50%;
+      position: absolute;
+      // setting bottom and right to 0  bec it seems that it is relative to parent
+      bottom: 0em;
+      right: 0em;
+      width: 100%;
+      height: 100%;
+      transform: scale(0);
+      transition: 'transform 0.3s cubic-bezier(0.42, 0, 0.58, 1),opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1),-webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1)';
+    }
+  }
+}
+
+.mobile {
+  font-size: 1rem;
+  right: -9rem;
+  bottom: -9rem;
+}
