@@ -4,7 +4,7 @@
       <h4 style="font-family: 'Saira Extra Condensed';" class="heading heading-4 subheading mb-4 mb-md-3 ms-4">
         Programming Languages &amp; Tools
       </h4>
-      <div id="skill-grid-container" class="d-flex flex-column flex-md-row justify-content-between mt-2 mx-5 px-0">
+      <div id="skill-grid-container" class="d-flex flex-column flex-md-row justify-content-between mt-2 px-0">
         <div v-for="(type, i) in skills" :key="i" class="skill-grid">
           <div class="list-devicons devicon-row d-flex justify-content-around my-0">
             <PDFDevIcon v-for="(icon, i) in mapIcons(type.type)" :key="i" :source="icon.icon" :name="icon.name" />

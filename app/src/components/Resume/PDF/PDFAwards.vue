@@ -40,7 +40,7 @@ export default {
       return this.renderPDF ?
         'd-flex flex-row ms-2 justify-content-around'
         :
-        'd-flex flex-column ms-3'
+        'd-flex flex-column ms-1'
     },
     headingClass() {
       return this.renderPDF ?
