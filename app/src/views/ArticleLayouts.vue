@@ -33,8 +33,6 @@ export default {
     // selectedArticle: () => import('./../../components/Blog/Articles/')
     // correct
     selectedArticle: function () {
-      const english = () => import(`@/components/Articles/Content/learning-to-unit-test-en.md`)
-      const spanish = () => import(`@/components/Articles/Content/learning-to-unit-test-es.md`)
       return this.language === 'en' ? EnglishArticle : SpanishArticle
     },
     dropDown() { return this.language === `en` ? `Languages` : `Idiomas` },

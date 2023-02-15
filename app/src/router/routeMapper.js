@@ -5,17 +5,17 @@ export const routeMapper = function (paths) {
     return {
       name: path.name || path.view,
       path: path.path,
-      // component: resolve =>
-      //   import(`@/views/${path.view}.vue`).then(resolve => {
-      //     console.log(path);
-      //     console.log(path.view);
-      //     console.log(resolve);
-      //     return resolve;
-      //   }),
-      component: path.view
-        ? resolve => import(`@/views/${path.view}.vue`).then(resolve)
-        : resolve =>
-            import(`@/components/Articles/ArticleLayout.vue`).then(resolve),
+      component: resolve =>
+        import(`@/views/${path.view}.vue`).then(resolve => {
+          console.log(path);
+          console.log(path.view);
+          console.log(resolve);
+          return resolve;
+        }),
+      // component: path.view
+      //   ? resolve => import(`@/views/${path.view}.vue`).then(resolve)
+      //   : resolve =>
+      //       import(`@/components/Articles/ArticleLayout.vue`).then(resolve),
       // component: path.view
       //   ? resolve =>
       //       import(`@/views/${path.view}.vue`).then(resolve => {
