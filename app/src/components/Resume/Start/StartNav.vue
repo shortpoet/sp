@@ -37,11 +37,12 @@
 </template>
 
 <script>
+import pic from "@/assets/github_profile_pic.jpg";
 export default {
   name: "StartNav",
   data() {
     return {
-      pic: import("@/assets/github_profile_pic.jpg"),
+      pic: pic,
       isCollapse: false,
     };
   },

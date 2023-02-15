@@ -5,6 +5,15 @@
     "src/**/*",
     "src/**/*.vue"
   ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.js",
+    "src/**/*.spec.tsx",
+    "src/**/*.spec.jsx",
+    "src/_boilerplate/**/*",
+  ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

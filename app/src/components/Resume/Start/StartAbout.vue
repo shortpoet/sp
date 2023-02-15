@@ -20,7 +20,8 @@
         </div>
         <div class="d-flex flex-column">
           <!-- <span class="mx-2" style="color:#343a40">&#8226;</span>  -->
-          <span id="start-visas" class="not-name">Valid Work Visas: {{ visas }}</span>
+          <span id="start-visas" class="not-name">Citizenship: US & EU</span>
+          <!-- <span id="start-visas" class="not-name">Valid Work Visas: {{ visas }}</span> -->
         </div>
       </div>
     </div>
@@ -29,34 +30,34 @@
 
 <script>
 export default {
-    name: 'StartAbout',
-    components: {
+  name: 'StartAbout',
+  components: {
+  },
+  props: {
+    name: {
+      type: String
     },
-    props: {
-      name: {
-        type: String
-      },
-      surname: {
-        type: String
-      },
-      email: {
-        type: String
-      },
-      address: {
-        type: String
-      },
-      visas: {
-        type: String
-      },
-      flags: {
-        type: String
-      }
+    surname: {
+      type: String
     },
-    data () {
-      return {
-      }
+    email: {
+      type: String
     },
-    computed: {
+    address: {
+      type: String
+    },
+    visas: {
+      type: String
+    },
+    flags: {
+      type: String
     }
+  },
+  data() {
+    return {
+    }
+  },
+  computed: {
+  }
 }
 </script>

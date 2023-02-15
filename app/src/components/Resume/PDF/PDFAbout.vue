@@ -35,9 +35,11 @@
             <span id="pdf-flags" class="not-name">{{ flags.replace(/,/g, "") }}</span>
           </li>
           <li>
-            <span id="pdf-visas" style="font-family: 'Saira Extra Condensed'" class="not-name">Valid Work Visas: {{
+            <span id="pdf-visas" style="font-family: 'Saira Extra Condensed'" class="not-name">Citizenship: US &
+              EU</span>
+            <!-- <span id="pdf-visas" style="font-family: 'Saira Extra Condensed'" class="not-name">Valid Work Visas: {{
               visas
-            }}</span>
+            }}</span> -->
           </li>
         </ul>
       </div>
