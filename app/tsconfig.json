@@ -13,6 +13,7 @@
     "src/**/*.spec.tsx",
     "src/**/*.spec.jsx",
     "src/_boilerplate/**/*",
+    "src/__check/**/*",
   ],
   "compilerOptions": {
     "baseUrl": ".",
