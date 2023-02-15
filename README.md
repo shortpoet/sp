@@ -47,3 +47,10 @@ Upgrading /Users/Shared/source/repos/shortpoet/sp/app/package.json
  vue-template-compiler                      ^2.6.14  →  ^2.7.14
  vuex                                        ^3.6.2  →   ^4.1.0
 ```
+
+## deploy
+
+```bash
+aws_assume_role
+export CLOUDFLARE_API_TOKEN=$(pass Cloud/cloudflare/Terraform_Token)
+```
