@@ -21,7 +21,7 @@ module.exports = {
     "!src/main.js",
     "!src/router/**",
     "!**/node_modules/**",
-    "!src/___check/**",
+    "!src/__check/**",
   ],
   // https://github.com/vuejs/vue-cli/issues/1584
   moduleFileExtensions: ["js", "jsx", "json", "vue"],
