@@ -35,11 +35,9 @@
             <span id="pdf-flags" class="not-name">{{ flags.replace(/,/g, "") }}</span>
           </li>
           <li>
-            <span id="pdf-visas" style="font-family: 'Saira Extra Condensed'" class="not-name">Citizenship: US &
-              EU</span>
-            <!-- <span id="pdf-visas" style="font-family: 'Saira Extra Condensed'" class="not-name">Valid Work Visas: {{
-              visas
-            }}</span> -->
+            <span id="pdf-citizenship" style="font-family: 'Saira Extra Condensed'" class="not-name">Citizenship: {{
+              citizenship
+            }}</span>
           </li>
         </ul>
       </div>
@@ -75,7 +73,7 @@ export default {
     address: {
       type: String,
     },
-    visas: {
+    citizenship: {
       type: String,
     },
     flags: {
@@ -95,7 +93,8 @@ export default {
     };
   },
   computed: {},
-  mounted() { },
+  mounted() {
+  },
 };
 </script>
 <style>

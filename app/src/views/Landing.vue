@@ -1,46 +1,21 @@
 <template>
   <div class="main-wrapper" v-if="getResumeLoaded" id="resume-anchor">
-    <StartNav v-if="isResume"/>
+    <StartNav v-if="isResume" />
     <div class="container-fluid p-0">
-      <StartAbout
-        :name="getResume.name"
-        :surname="getResume.surname"
-        :email="getResume.email"
-        :address="getResume.address"
-        :visas="getResume.visas"
-        :flags="getResume.flags"
-      />
-      <StartSocials 
-        :socials="getResume.socials"
-      />
+      <StartAbout :name="getResume.name" :surname="getResume.surname" :email="getResume.email"
+        :address="getResume.address" :citizenship="getResume.citizenship" :flags="getResume.flags" />
+      <StartSocials :socials="getResume.socials" />
       <LandingNav v-if="!isResume" @show-resume="showResume" />
-      <StartSkills
-        :skills="getResume.skills"
-        v-if="isResume"        
-      />
-      <StartAwards
-        :spokenLanguages="getResume.spokenLanguages"
-        v-if="isResume"        
-      />
-      <StartObjective
-        :aboutMe="getResume.aboutMe"
-        v-if="isResume"        
-      />
-      <StartExperience
-        :experiences="getResume.experiences"      
-        v-if="isResume"        
-      />
-      <StartEducation
-        :educations="getResume.educations"
-        v-if="isResume"        
-      />
-      <StartInterests
-        :interests="getResume.interests"
-        v-if="isResume"        
-      />
+      <StartSkills :skills="getResume.skills" v-if="isResume" />
+      <StartAwards :spokenLanguages="getResume.spokenLanguages" v-if="isResume" />
+      <StartObjective :aboutMe="getResume.aboutMe" v-if="isResume" />
+      <StartExperience :experiences="getResume.experiences" v-if="isResume" />
+      <StartEducation :educations="getResume.educations" v-if="isResume" />
+      <StartInterests :interests="getResume.interests" v-if="isResume" />
 
-      <portal-target v-if="isResume" class="start-target" name="pdf-button-float"/>
-      <StartButtonFloat :target="'pdf-button-float'" :href="'/pdf'" :isExpanded="rippleExpanded"  @ripple-open="toggleVisibility(true)" @ripple-close="toggleVisibility(false)" />      
+      <portal-target v-if="isResume" class="start-target" name="pdf-button-float" />
+      <StartButtonFloat :target="'pdf-button-float'" :href="'/pdf'" :isExpanded="rippleExpanded"
+        @ripple-open="toggleVisibility(true)" @ripple-close="toggleVisibility(false)" />
 
     </div>
 
@@ -80,7 +55,7 @@ export default {
     StartAwards,
     StartButtonFloat
   },
-  data () {
+  data() {
     return {
       rippleExpanded: false,
       isResume: false
@@ -92,7 +67,7 @@ export default {
   methods: {
     ...mapActions(['loadEnv']),
     ...mapActions('resume', ['loadResume']),
-    toggleVisibility (args) {
+    toggleVisibility(args) {
       if (args) {
         this.rippleExpanded = !this.rippleExpanded
       } else {
@@ -103,7 +78,7 @@ export default {
       this.isResume = true
     }
   },
-  mounted () {
+  mounted() {
     const env = import.meta.envNODE_ENV
     this.loadEnv(env)
     this.$nextTick(() => {

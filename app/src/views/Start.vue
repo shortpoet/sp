@@ -3,7 +3,7 @@
     <StartNav />
     <div class="container-fluid p-0">
       <StartAbout :name="getResume.name" :surname="getResume.surname" :email="getResume.email"
-        :address="getResume.address" :visas="getResume.visas" :flags="getResume.flags" />
+        :address="getResume.address" :citizenship="getResume.citizenship" :flags="getResume.flags" />
       <StartSocials :socials="getResume.socials" />
       <StartSkills :skills="getResume.skills" />
       <StartAwards :spokenLanguages="getResume.spokenLanguages" />
@@ -77,6 +77,9 @@ export default {
         // offset: 72
       })
       this.loadResume()
+      // this never logs... why?
+      console.log('Start mounted')
+      console.log(this.getResume)
     })
   }
 

@@ -20,7 +20,7 @@
         </div>
         <div class="d-flex flex-column">
           <!-- <span class="mx-2" style="color:#343a40">&#8226;</span>  -->
-          <span id="start-visas" class="not-name">Valid Work Visas: {{ visas }}</span>
+          <span id="start-citizenship" class="not-name">Citizenship: {{ citizenship }}</span>
         </div>
       </div>
     </div>
@@ -29,34 +29,34 @@
 
 <script>
 export default {
-    name: 'LandingAbout',
-    components: {
+  name: 'LandingAbout',
+  components: {
+  },
+  props: {
+    name: {
+      type: String
     },
-    props: {
-      name: {
-        type: String
-      },
-      surname: {
-        type: String
-      },
-      email: {
-        type: String
-      },
-      address: {
-        type: String
-      },
-      visas: {
-        type: String
-      },
-      flags: {
-        type: String
-      }
+    surname: {
+      type: String
     },
-    data () {
-      return {
-      }
+    email: {
+      type: String
     },
-    computed: {
+    address: {
+      type: String
+    },
+    visas: {
+      type: String
+    },
+    flags: {
+      type: String
     }
+  },
+  data() {
+    return {
+    }
+  },
+  computed: {
+  }
 }
 </script>

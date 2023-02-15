@@ -1,44 +1,27 @@
 <template>
-  <div class="pdf-container" v-if="getResumeLoaded"  :style="styleObject">
+  <div class="pdf-container" v-if="getResumeLoaded" :style="styleObject">
     <div class="p-10" id="pdf-anchor">
-      <PDFAbout
-        :name="getResume.name"
-        :surname="getResume.surname"
-        :email="getResume.email"
-        :address="getResume.address"
-        :visas="getResume.visas"
-        :flags="getResume.flags"
-        :renderPDF="renderPDF"
-        :socials="getResume.socials"
-      />
-      <PDFBorder class="my-2" :size=".25"/>
-      
+      <PDFAbout :name="getResume.name" :surname="getResume.surname" :email="getResume.email"
+        :address="getResume.address" :citizenship="getResume.citizenship" :flags="getResume.flags"
+        :renderPDF="renderPDF" :socials="getResume.socials" />
+      <PDFBorder class="my-2" :size=".25" />
+
       <div class="skills-awards-container">
 
         <!-- this is regular -->
         <div v-if="!renderPDF" class="row">
           <div class="awards-col col-12 col-lg-2">
-            <PDFAwards
-              :spokenLanguages="getResume.spokenLanguages"
-              :renderPDF="renderPDF"
-            />
+            <PDFAwards :spokenLanguages="getResume.spokenLanguages" :renderPDF="renderPDF" />
           </div>
           <div class="skills-col col-12 col-lg-10">
-            <PDFSkills
-              :skills="getResume.skills"
-            />
+            <PDFSkills :skills="getResume.skills" />
           </div>
         </div>
-        
+
         <!-- this is RENDER -->
         <div v-else class="skills-awards-container">
-          <PDFAwards
-            :renderPDF="renderPDF"
-            :spokenLanguages="getResume.spokenLanguages"
-          />
-          <PDFSkillsRender
-            :skills="getResume.skills"
-          />
+          <PDFAwards :renderPDF="renderPDF" :spokenLanguages="getResume.spokenLanguages" />
+          <PDFSkillsRender :skills="getResume.skills" />
         </div>
 
       </div>
@@ -46,33 +29,22 @@
       <!-- objective rows -->
       <!-- ml-3 to match pic -->
       <div class="resume-section ml-3">
-        <PDFObjective
-          :renderPDF="renderPDF"
-          :aboutMe="getResume.aboutMe" 
-        />
+        <PDFObjective :renderPDF="renderPDF" :aboutMe="getResume.aboutMe" />
       </div>
 
-      <PDFExperience
-        :renderPDF="renderPDF"
-        :experiences="getResume.experiences"      
-      />
-      <PDFEducation
-        :renderPDF="renderPDF"
-        :educations="getResume.educations"
-      />
+      <PDFExperience :renderPDF="renderPDF" :experiences="getResume.experiences" />
+      <PDFEducation :renderPDF="renderPDF" :educations="getResume.educations" />
       <div id="interests-poem-container" class="row mb-5">
         <div id="interests-container" class="col-12">
-          <PDFInterests
-            :interests="getResume.interests"
-            :renderPDF="renderPDF"
-          />
+          <PDFInterests :interests="getResume.interests" :renderPDF="renderPDF" />
         </div>
       </div>
 
       <!-- for some reason adding this handler makes the function run on load -->
       <!-- <ButtonFloat :target="'save-button-float'" :icon="'save'" :handler="toPDF(target)"/> -->
       <portal-target class="pdf-target" name="save-button-float" />
-      <PDFButtonFloat :target="'save-button-float'" :icon="'save'" :pdf-target="'pdf-anchor'" @to-render-pdf="toRenderPDF" />
+      <PDFButtonFloat :target="'save-button-float'" :icon="'save'" :pdf-target="'pdf-anchor'"
+        @to-render-pdf="toRenderPDF" />
 
 
     </div>
@@ -95,7 +67,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'PDF',
   components: {
-    PDFAbout ,
+    PDFAbout,
     PDFBorder,
     PDFSkills,
     PDFSkillsRender,
@@ -106,7 +78,7 @@ export default {
     PDFInterests,
     PDFButtonFloat
   },
-  data () {
+  data() {
     return {
       target: 'pdf-anchor',
       renderPDF: false
@@ -114,51 +86,51 @@ export default {
   },
   computed: {
     ...mapGetters('resume', ['getResume', 'getResumeLoaded']),
-    styleObject () {
+    styleObject() {
       return this.renderPDF ?
-      {
-        fontFamily: 'Saira Extra Condensed, Open Sans',
-        // 310mm is maxing out one-page layout with tiny text
-        // width: '310mm',
-        width: '210mm',
-        height: '297mm',
-        // height: '842px',
-        // width: '595px',
-        /* to centre page on screen*/
-        marginLeft: 'auto',
-        marginRight: 'auto'
+        {
+          fontFamily: 'Saira Extra Condensed, Open Sans',
+          // 310mm is maxing out one-page layout with tiny text
+          // width: '310mm',
+          width: '210mm',
+          height: '297mm',
+          // height: '842px',
+          // width: '595px',
+          /* to centre page on screen*/
+          marginLeft: 'auto',
+          marginRight: 'auto'
 
-      }
-      :
-      {
-        fontFamily: 'Saira Extra Condensed, Open Sans',
-      }
+        }
+        :
+        {
+          fontFamily: 'Saira Extra Condensed, Open Sans',
+        }
     },
-    poemStyle () {
+    poemStyle() {
       return this.renderPDF ?
-      {
-        height: '10rem',
-        width: '10rem',
-      }
-      :
-      {
-        height: '16rem',
-        width: '16rem',
-      }
+        {
+          height: '10rem',
+          width: '10rem',
+        }
+        :
+        {
+          height: '16rem',
+          width: '16rem',
+        }
     },
-    skillComp () {
+    skillComp() {
       return this.renderPDF ? 'PDFSkillsRender' : 'PDFSkills'
     },
   },
   methods: {
     ...mapActions(['loadEnv']),
     ...mapActions('resume', ['loadResume']),
-    toRenderPDF (event) {
+    toRenderPDF(event) {
       // console.log('toRenderPDF from pDF')
       this.renderPDF = event
     }
   },
-  mounted () {
+  mounted() {
     const env = import.meta.envNODE_ENV
     this.loadEnv(env)
     this.loadResume()
@@ -167,7 +139,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i');
 @import './../assets/scss/pdf.scss';
@@ -184,5 +155,4 @@ export default {
 //   margin-left: auto;
 //   margin-right: auto;
 // }
-
 </style>

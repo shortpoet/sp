@@ -1,22 +1,22 @@
-import axios from "axios";
-import { hardResume } from "@/assets/resume.js";
+import axios from 'axios';
+import { hardResume } from '@/assets/resume.js';
 
 import {
   SET_RESUME_RAW,
   SET_RESUME,
-  SET_RESUME_LOADED,
-} from "@/store/mutation-types";
+  SET_RESUME_LOADED
+} from '@/store/mutation-types';
 
-import { endpoints } from "@/store/api-endpoints";
+import { endpoints } from '@/store/api-endpoints';
 
 export const state = {
   resume: null,
-  resumeLoaded: false,
+  resumeLoaded: false
 };
 
 export const getters = {
-  getResume: (state) => state.resume,
-  getResumeLoaded: (state) => state.resumeLoaded,
+  getResume: state => state.resume,
+  getResumeLoaded: state => state.resumeLoaded
 };
 
 export const mutations = {
@@ -26,7 +26,7 @@ export const mutations = {
     // hardcoded experience types for order - not ideal
     // either add order to db schema or some kind of switch logic
     // #TODO
-    const experienceTypes = ["software", "language", "hospitality"];
+    const experienceTypes = ['software', 'language', 'hospitality'];
     const resume = {
       aboutMe: data.aboutMe,
       address: data.address,
@@ -37,20 +37,18 @@ export const mutations = {
       name: data.name,
       surname: data.surname,
       title: data.title,
-      visas: data.visas,
-      educations: data.resumeEducations.map((re) => re.education),
-      jobs: data.resumeJobs.map((re) => re.job),
-      skills: data.resumeSkills.map((re) => re.skill),
-      socials: data.resumeSocials.map((re) => re.social),
-      spokenLanguages: data.resumeSpokenLanguages.map(
-        (re) => re.spokenLanguages
-      ),
-      experiences: [],
+      citizenship: data.citizenship,
+      educations: data.resumeEducations.map(re => re.education),
+      jobs: data.resumeJobs.map(re => re.job),
+      skills: data.resumeSkills.map(re => re.skill),
+      socials: data.resumeSocials.map(re => re.social),
+      spokenLanguages: data.resumeSpokenLanguages.map(re => re.spokenLanguages),
+      experiences: []
     };
-    experienceTypes.forEach((et) => {
+    experienceTypes.forEach(et => {
       resume.experiences.push({
         type: et,
-        jobs: resume.jobs.filter((j) => j.experienceType === et),
+        jobs: resume.jobs.filter(j => j.experienceType === et)
       });
     });
     // console.log(resume)
@@ -61,7 +59,7 @@ export const mutations = {
   },
   [SET_RESUME_LOADED](state, newState) {
     state.resumeLoaded = newState;
-  },
+  }
 };
 
 export const actions = {
@@ -77,19 +75,19 @@ export const actions = {
       // console.info('resume loaded')
     } catch (err) {
       console.error(err);
-      dispatch("loadHardResume");
+      dispatch('loadHardResume');
     }
   },
   async loadHardResume({ commit }) {
     commit(SET_RESUME, hardResume);
     const hasResume = !!hardResume.title;
     commit(SET_RESUME_LOADED, hasResume);
-  },
+  }
 };
 
 export default {
   state,
   getters,
   mutations,
-  actions,
+  actions
 };

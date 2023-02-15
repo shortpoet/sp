@@ -20,8 +20,7 @@
         </div>
         <div class="d-flex flex-column">
           <!-- <span class="mx-2" style="color:#343a40">&#8226;</span>  -->
-          <span id="start-visas" class="not-name">Citizenship: US & EU</span>
-          <!-- <span id="start-visas" class="not-name">Valid Work Visas: {{ visas }}</span> -->
+          <span id="start-citizenship" class="not-name">Citizenship: {{ citizenship }}</span>
         </div>
       </div>
     </div>
@@ -46,7 +45,7 @@ export default {
     address: {
       type: String
     },
-    visas: {
+    citizenship: {
       type: String
     },
     flags: {
@@ -58,6 +57,9 @@ export default {
     }
   },
   computed: {
-  }
+  },
+  mounted() {
+  },
+
 }
 </script>
