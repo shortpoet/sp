@@ -6,7 +6,7 @@
         <!-- <h4 class="pdf-subheading mt-2 mb-0">{{ type.type }} Experience</h4> -->
         <div v-for="(job, ji) in type.jobs" :key="ji">
           <div class="d-flex flex-column justify-content-between">
-            <div class="d-flex flex-row">
+            <div class="d-flex flex-row justify-content-between">
               <div class="mr-auto">
                 <h5 id="job-position" style="font-family: 'Saira Extra Condensed';" class="heading heading-5 mb-0">{{
                   job.position

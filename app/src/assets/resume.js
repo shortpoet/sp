@@ -157,6 +157,15 @@ export const hardResume = {
   spokenLanguages: [
     {
       id: 1,
+      type: 'native',
+      languages: 'English, Spanish, Tagalog',
+      translationInterpretationProfessional: true,
+      resumeSpokenLanguages: [],
+      dateCreated: '2020-04-27T16:20:00',
+      comments: null
+    },
+    {
+      id: 2,
       type: 'fluent',
       languages: 'Mandarin Chinese, French',
       translationInterpretationProfessional: false,
@@ -165,7 +174,7 @@ export const hardResume = {
       comments: null
     },
     {
-      id: 2,
+      id: 3,
       type: 'workingKnowledge',
       languages: 'German, Portuguese',
       translationInterpretationProfessional: false,
@@ -174,19 +183,10 @@ export const hardResume = {
       comments: null
     },
     {
-      id: 3,
+      id: 4,
       type: 'proficient',
       languages: 'Italian',
       translationInterpretationProfessional: false,
-      resumeSpokenLanguages: [],
-      dateCreated: '2020-04-27T16:20:00',
-      comments: null
-    },
-    {
-      id: 4,
-      type: 'native',
-      languages: 'English, Spanish, Tagalog',
-      translationInterpretationProfessional: true,
       resumeSpokenLanguages: [],
       dateCreated: '2020-04-27T16:20:00',
       comments: null
