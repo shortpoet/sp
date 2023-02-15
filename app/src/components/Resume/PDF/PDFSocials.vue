@@ -1,19 +1,17 @@
 <template>
   <section class="" id="pdf-socials">
-    <ul class="list-inline list-social-icons mb-0 mt-0 mr-lg-2">
-      <li
-        class="social-item"
-        v-for="(social, i) in socialsComputed"
-        :key="i"
-      >
+    <ul class="list-inline list-social-icons mb-0 mt-0 me-lg-2">
+      <li class="social-item" v-for="(social, i) in socialsComputed" :key="i">
         <a :href="social.url">
           <span :style="iconStyleObject" class="social-icon-layer fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <!-- <i :class="'fa fa-' + social.social + ' fa-stack-1x fa-inverse'"></i> -->
             <i :class="'social-icon ' + social.icon + ' fa-stack-1x fa-inverse'"></i>
           </span>
-          <span style="font-family: 'Open Sans'; font-size: .55rem" v-if="!social.social.includes('website')" :class="urlClass">{{social.url}}</span>
-          <span style="font-family: 'Open Sans'; font-size: .55rem" v-else :class="urlClass">https://shortpoet.com</span>
+          <span style="font-family: 'Open Sans'; font-size: .55rem" v-if="!social.social.includes('website')"
+            :class="urlClass">{{ social.url }}</span>
+          <span style="font-family: 'Open Sans'; font-size: .55rem" v-else
+            :class="urlClass">https://shortpoet.com</span>
         </a>
       </li>
     </ul>
@@ -26,15 +24,15 @@ export default {
   components: {
   },
   props: {
-  renderPDF: {
-    type: Boolean,
-    default: false
+    renderPDF: {
+      type: Boolean,
+      default: false
+    },
+    socials: {
+      type: Array
+    }
   },
-  socials: {
-    type: Array
-  }
-},
-  data () {
+  data() {
     return {
       socialsData: [
         {
@@ -67,30 +65,30 @@ export default {
     }
   },
   computed: {
-    urlClass () {
+    urlClass() {
       return this.renderPDF ?
-      'social-url d-inline'
-      :
-      'social-url d-none d-md-inline'
+        'social-url d-inline'
+        :
+        'social-url d-none d-md-inline'
     },
-    iconStyleObject () {
+    iconStyleObject() {
       return this.renderPDF ?
-      {
-        fontFamily: 'FontAwesome',
-        fontSize: '.65rem'
-      }
-      :
-      {
-        fontFamily: 'FontAwesome',
-        fontSize: '.85rem'
-      }
+        {
+          fontFamily: 'FontAwesome',
+          fontSize: '.65rem'
+        }
+        :
+        {
+          fontFamily: 'FontAwesome',
+          fontSize: '.85rem'
+        }
     },
     availableSocials() {
       let providerNames = this.socials.map(s => s.provider)
       return this.socialsData.filter(social => providerNames.includes(social.social))
-        // filter out null entries first if not including in that version
-        // can't use break in map reduce forEach but can filter first
-        // or could use simple for loop with iterator
+      // filter out null entries first if not including in that version
+      // can't use break in map reduce forEach but can filter first
+      // or could use simple for loop with iterator
     },
     socialsComputed() {
       return this.availableSocials

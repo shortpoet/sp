@@ -2,9 +2,9 @@
 
 exports[`PDFAbout.vue matches renderPDF snapshot 1`] = `
 <section id="about" class="resume-section">
-  <div id="basic-info" class="d-flex flex-row justify-content-between align-items-center mt-1 ml-3">
+  <div id="basic-info" class="d-flex flex-row justify-content-between align-items-center mt-1 ms-3">
     <div id="photo" class="d-flex flex-column align-items-center"><img src="" alt="profile pic" class="img-fluid img-profile rounded m-1 mb-2" style="height: 8rem; width: 7rem;"></div>
-    <div id="name-contact" class="d-flex flex-column mt-1 mt-md-2 ml-2">
+    <div id="name-contact" class="d-flex flex-column mt-1 mt-md-2 ms-2">
       <ul class="list-inline">
         <li>
           <h2 class="heading heading-2 mb-0" style="font-family: 'Saira Extra Condensed';">
@@ -21,9 +21,9 @@ sample address
         <li><span id="pdf-visas" class="not-name" style="font-family: 'Saira Extra Condensed';">Valid Work Visas: sample visas</span></li>
       </ul>
     </div>
-    <div id="socials" class="d-flex flex-column ml-auto mr-1 mr-md-3">
+    <div id="socials" class="d-flex flex-column ms-auto me-1 me-md-3">
       <section id="pdf-socials">
-        <ul class="list-inline list-social-icons mb-0 mt-0 mr-lg-2">
+        <ul class="list-inline list-social-icons mb-0 mt-0 me-lg-2">
           <li class="social-item"><a href="github"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .65rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-github fa-stack-1x fa-inverse"></i></span> <span class="social-url d-inline" style="font-family: 'Open Sans'; font-size: .55rem;">github</span></a></li>
           <li class="social-item"><a href="linkedin"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .65rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-linkedin fa-stack-1x fa-inverse"></i></span> <span class="social-url d-inline" style="font-family: 'Open Sans'; font-size: .55rem;">linkedin</span></a></li>
           <li class="social-item"><a href="instagram"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .65rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-instagram fa-stack-1x fa-inverse"></i></span> <span class="social-url d-inline" style="font-family: 'Open Sans'; font-size: .55rem;">instagram</span></a></li>
@@ -38,9 +38,9 @@ sample address
 
 exports[`PDFAbout.vue matches snapshot 1`] = `
 <section id="about" class="resume-section">
-  <div id="basic-info" class="d-flex flex-row justify-content-between align-items-center mt-1 ml-3">
+  <div id="basic-info" class="d-flex flex-row justify-content-between align-items-center mt-1 ms-3">
     <div id="photo" class="d-flex flex-column align-items-center"><img src="" alt="profile pic" class="img-fluid img-profile rounded m-1 mb-2" style="height: 8rem; width: 7rem;"></div>
-    <div id="name-contact" class="d-flex flex-column mt-1 mt-md-2 ml-2">
+    <div id="name-contact" class="d-flex flex-column mt-1 mt-md-2 ms-2">
       <ul class="list-inline">
         <li>
           <h2 class="heading heading-2 mb-0" style="font-family: 'Saira Extra Condensed';">
@@ -57,9 +57,9 @@ sample address
         <li><span id="pdf-visas" class="not-name" style="font-family: 'Saira Extra Condensed';">Valid Work Visas: sample visas</span></li>
       </ul>
     </div>
-    <div id="socials" class="d-flex flex-column ml-auto mr-1 mr-md-3">
+    <div id="socials" class="d-flex flex-column ms-auto me-1 me-md-3">
       <section id="pdf-socials">
-        <ul class="list-inline list-social-icons mb-0 mt-0 mr-lg-2">
+        <ul class="list-inline list-social-icons mb-0 mt-0 me-lg-2">
           <li class="social-item"><a href="github"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .85rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-github fa-stack-1x fa-inverse"></i></span> <span class="social-url d-none d-md-inline" style="font-family: 'Open Sans'; font-size: .55rem;">github</span></a></li>
           <li class="social-item"><a href="linkedin"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .85rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-linkedin fa-stack-1x fa-inverse"></i></span> <span class="social-url d-none d-md-inline" style="font-family: 'Open Sans'; font-size: .55rem;">linkedin</span></a></li>
           <li class="social-item"><a href="instagram"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .85rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-instagram fa-stack-1x fa-inverse"></i></span> <span class="social-url d-none d-md-inline" style="font-family: 'Open Sans'; font-size: .55rem;">instagram</span></a></li>

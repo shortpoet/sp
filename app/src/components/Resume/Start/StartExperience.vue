@@ -5,7 +5,7 @@
       <div class="resume-item d-flex flex-column mb-2" v-for="type in experiences" :key="type.type">
         <h2 class="heading heading-2 start-experience-type mb-3">{{ type.type }}</h2>
         <div class="resume-item d-flex flex-column flex-md-fill mb-3" v-for="(job, ji) in type.jobs" :key="ji">
-          <div class="resume-content mr-auto">
+          <div class="resume-content me-auto">
             <h3 class="heading heading-3 mb-0">{{ job.position }}</h3>
             <div class="start-company subheading mb-3">{{ job.company }}</div>
             <div v-for="(text, di) in job.description.split('\\n\\r')" :key="di">

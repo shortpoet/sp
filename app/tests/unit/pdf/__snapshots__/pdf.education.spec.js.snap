@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PDFEducation.vue matches education snapshot 1`] = `
-<section id="education" class="resume-section ml-3 mt-2 mb-3">
+<section id="education" class="resume-section ms-3 mt-2 mb-3">
   <div class="my-auto">
     <h4 class="heading heading-4 pdf-subheading" style="font-family: 'Saira Extra Condensed';">Education</h4>
     <div>
       <div class="resume-item d-flex flex-column justify-content-between">
         <div class="d-flex flex-row">
-          <div class="resume-content mr-5 mr-md-auto">
+          <div class="resume-content me-5 me-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-end mr-4">
+          <div class="resume-date text-md-end me-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -23,10 +23,10 @@ exports[`PDFEducation.vue matches education snapshot 1`] = `
     <div>
       <div class="resume-item d-flex flex-column justify-content-between">
         <div class="d-flex flex-row">
-          <div class="resume-content mr-5 mr-md-auto">
+          <div class="resume-content me-5 me-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-end mr-4">
+          <div class="resume-date text-md-end me-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -39,10 +39,10 @@ exports[`PDFEducation.vue matches education snapshot 1`] = `
     <div>
       <div class="resume-item d-flex flex-column justify-content-between">
         <div class="d-flex flex-row">
-          <div class="resume-content mr-5 mr-md-auto">
+          <div class="resume-content me-5 me-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-end mr-4">
+          <div class="resume-date text-md-end me-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -57,16 +57,16 @@ exports[`PDFEducation.vue matches education snapshot 1`] = `
 `;
 
 exports[`PDFEducation.vue matches education snapshot 2`] = `
-<section id="education" class="resume-section-render ml-3 mt-2 mb-3">
+<section id="education" class="resume-section-render ms-3 mt-2 mb-3">
   <div class="my-auto">
     <h4 class="heading heading-4 pdf-subheading" style="font-family: 'Saira Extra Condensed';">Education</h4>
     <div>
       <div class="resume-item d-flex flex-column justify-content-between">
         <div class="d-flex flex-row">
-          <div class="resume-content mr-5 mr-md-auto">
+          <div class="resume-content me-5 me-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-end mr-4">
+          <div class="resume-date text-md-end me-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -79,10 +79,10 @@ exports[`PDFEducation.vue matches education snapshot 2`] = `
     <div>
       <div class="resume-item d-flex flex-column justify-content-between">
         <div class="d-flex flex-row">
-          <div class="resume-content mr-5 mr-md-auto">
+          <div class="resume-content me-5 me-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-end mr-4">
+          <div class="resume-date text-md-end me-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -95,10 +95,10 @@ exports[`PDFEducation.vue matches education snapshot 2`] = `
     <div>
       <div class="resume-item d-flex flex-column justify-content-between">
         <div class="d-flex flex-row">
-          <div class="resume-content mr-5 mr-md-auto">
+          <div class="resume-content me-5 me-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-end mr-4">
+          <div class="resume-date text-md-end me-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>

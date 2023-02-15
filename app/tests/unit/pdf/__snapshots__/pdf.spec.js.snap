@@ -4,9 +4,9 @@ exports[`PDF.vue pdf.regular matches hard resume snapshot with renderPDF defualt
 <div class="pdf-container" style="font-family: Saira Extra Condensed, Open Sans;">
   <div id="pdf-anchor" class="p-10">
     <section id="about" class="resume-section">
-      <div id="basic-info" class="d-flex flex-row justify-content-between align-items-center mt-1 ml-3">
+      <div id="basic-info" class="d-flex flex-row justify-content-between align-items-center mt-1 ms-3">
         <div id="photo" class="d-flex flex-column align-items-center"><img src="" alt="profile pic" class="img-fluid img-profile rounded m-1 mb-2" style="height: 8rem; width: 7rem;"></div>
-        <div id="name-contact" class="d-flex flex-column mt-1 mt-md-2 ml-2">
+        <div id="name-contact" class="d-flex flex-column mt-1 mt-md-2 ms-2">
           <ul class="list-inline">
             <li>
               <h2 class="heading heading-2 mb-0" style="font-family: 'Saira Extra Condensed';">
@@ -23,9 +23,9 @@ St. Louis, MO (willing to relocate)
             <li><span id="pdf-visas" class="not-name" style="font-family: 'Saira Extra Condensed';">Valid Work Visas: USA, EU, UK</span></li>
           </ul>
         </div>
-        <div id="socials" class="d-flex flex-column ml-auto mr-1 mr-md-3">
+        <div id="socials" class="d-flex flex-column ms-auto me-1 me-md-3">
           <section id="pdf-socials">
-            <ul class="list-inline list-social-icons mb-0 mt-0 mr-lg-2">
+            <ul class="list-inline list-social-icons mb-0 mt-0 me-lg-2">
               <li class="social-item"><a href="https://github.com/shortpoet"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .85rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-github fa-stack-1x fa-inverse"></i></span> <span class="social-url d-none d-md-inline" style="font-family: 'Open Sans'; font-size: .55rem;">https://github.com/shortpoet</span></a></li>
               <li class="social-item"><a href="https://www.linkedin.com/in/carlos-soriano"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .85rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-linkedin fa-stack-1x fa-inverse"></i></span> <span class="social-url d-none d-md-inline" style="font-family: 'Open Sans'; font-size: .55rem;">https://www.linkedin.com/in/carlos-soriano</span></a></li>
               <li class="social-item"><a href="https://twitter.com/shortpoet3"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .85rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-twitter fa-stack-1x fa-inverse"></i></span> <span class="social-url d-none d-md-inline" style="font-family: 'Open Sans'; font-size: .55rem;">https://twitter.com/shortpoet3</span></a></li>
@@ -39,17 +39,17 @@ St. Louis, MO (willing to relocate)
     <div class="skills-awards-container">
       <div class="row">
         <div class="awards-col col-12 col-lg-2">
-          <section id="awards" class="resume-section ml-4 mt-2">
+          <section id="awards" class="resume-section ms-4 mt-2">
             <div class="my-auto">
-              <h4 class="heading heading-4 mb-4 ml-1" style="font-family: 'Saira Extra Condensed';">Natural Languages</h4>
-              <div class="d-flex flex-column ml-3"><span class="d-flex"><i class="fluent language-icon fa fa-flag mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">Mandarin Chinese, French (Fluent) </span></span><span class="d-flex"><i class="workingKnowledge language-icon fa fa-flag mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">German, Portuguese (Working Knowledge) </span></span><span class="d-flex"><i class="proficient language-icon fa fa-flag mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">Italian (Proficient) </span></span><span class="d-flex"><i class="native language-icon fa fa-flag mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">English, Spanish, Tagalog (Native) </span></span> <span class="language-type-render d-flex"><i class="award-icon fa fa-trophy mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">Certified Interpreter</span></span></div>
+              <h4 class="heading heading-4 mb-4 ms-1" style="font-family: 'Saira Extra Condensed';">Natural Languages</h4>
+              <div class="d-flex flex-column ms-3"><span class="d-flex"><i class="fluent language-icon fa fa-flag mb-auto me-2"></i> <span style="font-family: 'Open Sans';">Mandarin Chinese, French (Fluent) </span></span><span class="d-flex"><i class="workingKnowledge language-icon fa fa-flag mb-auto me-2"></i> <span style="font-family: 'Open Sans';">German, Portuguese (Working Knowledge) </span></span><span class="d-flex"><i class="proficient language-icon fa fa-flag mb-auto me-2"></i> <span style="font-family: 'Open Sans';">Italian (Proficient) </span></span><span class="d-flex"><i class="native language-icon fa fa-flag mb-auto me-2"></i> <span style="font-family: 'Open Sans';">English, Spanish, Tagalog (Native) </span></span> <span class="language-type-render d-flex"><i class="award-icon fa fa-trophy mb-auto me-2"></i> <span style="font-family: 'Open Sans';">Certified Interpreter</span></span></div>
             </div>
           </section>
         </div>
         <div class="skills-col col-12 col-lg-10">
-          <section id="skills" class="resume-section mt-2 ml-0">
+          <section id="skills" class="resume-section mt-2 ms-0">
             <div class="my-auto">
-              <h4 class="heading heading-4 subheading mb-4 mb-md-3 ml-4" style="font-family: 'Saira Extra Condensed';">
+              <h4 class="heading heading-4 subheading mb-4 mb-md-3 ms-4" style="font-family: 'Saira Extra Condensed';">
                 Programming Languages &amp; Tools
               </h4>
               <div id="skill-grid-container" class="d-flex flex-column flex-md-row justify-content-between mt-2 mx-5 px-0">
@@ -459,7 +459,7 @@ St. Louis, MO (willing to relocate)
         </div>
       </div>
     </div>
-    <div class="resume-section ml-3">
+    <div class="resume-section ms-3">
       <section id="pdf-objective" class="resume-section mb-3">
         <div id="objective" class="d-flex align-items-center">
           <h4 class="heading heading-4" style="font-family: 'Saira Extra Condensed';">
@@ -487,17 +487,17 @@ St. Louis, MO (willing to relocate)
         </div>
       </section>
     </div>
-    <section id="experience" class="resume-section ml-3 mt-2 mb-3">
+    <section id="experience" class="resume-section ms-3 mt-2 mb-3">
       <div class="my-auto">
         <h4 class="heading heading-4" style="font-family: 'Saira Extra Condensed';">Experience</h4>
         <div class="d-flex flex-column justify-content-between">
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Senior DevOps Engineer</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2021 (August) - Present</h6>
                 </div>
               </div>
@@ -524,10 +524,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Build Engineer &amp; DevOps Application Developer</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2021 (February) - 2021 (August)</h6>
                 </div>
               </div>
@@ -554,10 +554,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Software Engineer</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2020 (June) - 2020 (December)</h6>
                 </div>
               </div>
@@ -596,10 +596,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Software Engineer</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2019 - 2020 (April)</h6>
                 </div>
               </div>
@@ -631,10 +631,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Translator / Interpreter</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2011 - Present</h6>
                 </div>
               </div>
@@ -649,10 +649,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">QA Tester</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2011 - 2014</h6>
                 </div>
               </div>
@@ -667,10 +667,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Executive Assistant to the CEO</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2009 - 2010</h6>
                 </div>
               </div>
@@ -685,10 +685,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Sinologist (China expert)</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2003 - 2004</h6>
                 </div>
               </div>
@@ -705,10 +705,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Grill Chef de Partie</h5>
                 </div>
-                <div class="resume-date text-md-end mr-4">
+                <div class="resume-date text-md-end me-4">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2002 - 2018</h6>
                 </div>
               </div>
@@ -723,16 +723,16 @@ St. Louis, MO (willing to relocate)
         </div>
       </div>
     </section>
-    <section id="education" class="resume-section ml-3 mt-2 mb-3">
+    <section id="education" class="resume-section ms-3 mt-2 mb-3">
       <div class="my-auto">
         <h4 class="heading heading-4 pdf-subheading" style="font-family: 'Saira Extra Condensed';">Education</h4>
         <div>
           <div class="resume-item d-flex flex-column justify-content-between">
             <div class="d-flex flex-row">
-              <div class="resume-content mr-5 mr-md-auto">
+              <div class="resume-content me-5 me-md-auto">
                 <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">University of Pennsylvania</h5>
               </div>
-              <div class="resume-date text-md-end mr-4">
+              <div class="resume-date text-md-end me-4">
                 <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">Major in East Asian Languages and Cultures, Chinese Concentration, relevant coursework in linguistics and anthropology</h6>
               </div>
             </div>
@@ -745,10 +745,10 @@ St. Louis, MO (willing to relocate)
         <div>
           <div class="resume-item d-flex flex-column justify-content-between">
             <div class="d-flex flex-row">
-              <div class="resume-content mr-5 mr-md-auto">
+              <div class="resume-content me-5 me-md-auto">
                 <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">Washington University in St. Louis</h5>
               </div>
-              <div class="resume-date text-md-end mr-4">
+              <div class="resume-date text-md-end me-4">
                 <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">Python, Javascript, Tableau</h6>
               </div>
             </div>
@@ -761,10 +761,10 @@ St. Louis, MO (willing to relocate)
         <div>
           <div class="resume-item d-flex flex-column justify-content-between">
             <div class="d-flex flex-row">
-              <div class="resume-content mr-5 mr-md-auto">
+              <div class="resume-content me-5 me-md-auto">
                 <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">Thacher School</h5>
               </div>
-              <div class="resume-date text-md-end mr-4">
+              <div class="resume-date text-md-end me-4">
                 <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">Languages</h6>
               </div>
             </div>
@@ -778,7 +778,7 @@ St. Louis, MO (willing to relocate)
     </section>
     <div id="interests-poem-container" class="row mb-5">
       <div id="interests-container" class="col-12">
-        <section id="interests" class="resume-section mt-2 ml-3">
+        <section id="interests" class="resume-section mt-2 ms-3">
           <div class="my-auto">
             <h4 class="heading heading-4 mb-3" style="font-family: 'Saira Extra Condensed';">Interests</h4>
             <p class="mb-0" style="font-family: 'Open Sans';">Kneading bread, digging gardens, vermicomposting and cooking tasty meals. Expert at translations and accents. Yoga teacher training - YogaWorks 200hr. Adobe Creative dabbler. SCUBA certified.
@@ -803,7 +803,7 @@ St. Louis, MO (willing to relocate)
         <div class="custom-modal-backdrop" style="display: none;">
           <div role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription" class="custom-modal">
             <header id="modalTitle" class="custom-modal-header">
-              <h4 class="heading heading-4 mr-auto">Save to PDF</h4> <button type="button" aria-label="Close modal" class="btn-ex"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11">
+              <h4 class="heading heading-4 me-auto">Save to PDF</h4> <button type="button" aria-label="Close modal" class="btn-ex"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11">
                   <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" class=""></path>
                 </svg></button>
             </header>
@@ -843,9 +843,9 @@ exports[`PDF.vue pdf.renderPDF matches hard resume snapshot with renderPDF set t
 <div class="pdf-container" style="font-family: Saira Extra Condensed, Open Sans; width: 210mm; height: 297mm; margin-left: auto; margin-right: auto;">
   <div id="pdf-anchor" class="p-10">
     <section id="about" class="resume-section">
-      <div id="basic-info" class="d-flex flex-row justify-content-between align-items-center mt-1 ml-3">
+      <div id="basic-info" class="d-flex flex-row justify-content-between align-items-center mt-1 ms-3">
         <div id="photo" class="d-flex flex-column align-items-center"><img src="" alt="profile pic" class="img-fluid img-profile rounded m-1 mb-2" style="height: 8rem; width: 7rem;"></div>
-        <div id="name-contact" class="d-flex flex-column mt-1 mt-md-2 ml-2">
+        <div id="name-contact" class="d-flex flex-column mt-1 mt-md-2 ms-2">
           <ul class="list-inline">
             <li>
               <h2 class="heading heading-2 mb-0" style="font-family: 'Saira Extra Condensed';">
@@ -862,9 +862,9 @@ St. Louis, MO (willing to relocate)
             <li><span id="pdf-visas" class="not-name" style="font-family: 'Saira Extra Condensed';">Valid Work Visas: USA, EU, UK</span></li>
           </ul>
         </div>
-        <div id="socials" class="d-flex flex-column ml-auto mr-1 mr-md-3">
+        <div id="socials" class="d-flex flex-column ms-auto me-1 me-md-3">
           <section id="pdf-socials">
-            <ul class="list-inline list-social-icons mb-0 mt-0 mr-lg-2">
+            <ul class="list-inline list-social-icons mb-0 mt-0 me-lg-2">
               <li class="social-item"><a href="https://github.com/shortpoet"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .65rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-github fa-stack-1x fa-inverse"></i></span> <span class="social-url d-inline" style="font-family: 'Open Sans'; font-size: .55rem;">https://github.com/shortpoet</span></a></li>
               <li class="social-item"><a href="https://www.linkedin.com/in/carlos-soriano"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .65rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-linkedin fa-stack-1x fa-inverse"></i></span> <span class="social-url d-inline" style="font-family: 'Open Sans'; font-size: .55rem;">https://www.linkedin.com/in/carlos-soriano</span></a></li>
               <li class="social-item"><a href="https://twitter.com/shortpoet3"><span class="social-icon-layer fa-stack fa-lg" style="font-family: FontAwesome; font-size: .65rem;"><i class="fa fa-circle fa-stack-2x"></i> <i class="social-icon fa fa-twitter fa-stack-1x fa-inverse"></i></span> <span class="social-url d-inline" style="font-family: 'Open Sans'; font-size: .55rem;">https://twitter.com/shortpoet3</span></a></li>
@@ -877,18 +877,18 @@ St. Louis, MO (willing to relocate)
     <hr style="border-width: 0.0625rem; margin: 0.5rem;" class="my-2">
     <div class="skills-awards-container">
       <div class="skills-awards-container">
-        <section id="awards" class="resume-section-render ml-3 mx-2 mt-2">
+        <section id="awards" class="resume-section-render ms-3 mx-2 mt-2">
           <div class="my-auto">
             <h4 class="heading heading-4 mb-2" style="font-family: 'Saira Extra Condensed';">Natural Languages</h4>
-            <div class="d-flex flex-row ml-2 justify-content-around"><span class="language-type-render d-flex"><i class="fluent language-icon fa fa-flag mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">Mandarin Chinese, French (Fluent) </span></span><span class="language-type-render d-flex"><i class="workingKnowledge language-icon fa fa-flag mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">German, Portuguese (Working Knowledge) </span></span><span class="language-type-render d-flex"><i class="proficient language-icon fa fa-flag mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">Italian (Proficient) </span></span><span class="language-type-render d-flex"><i class="native language-icon fa fa-flag mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">English, Spanish, Tagalog (Native) </span></span> <span class="language-type-render d-flex"><i class="award-icon fa fa-trophy mb-auto mr-2"></i> <span style="font-family: 'Open Sans';">Certified Interpreter</span></span></div>
+            <div class="d-flex flex-row ms-2 justify-content-around"><span class="language-type-render d-flex"><i class="fluent language-icon fa fa-flag mb-auto me-2"></i> <span style="font-family: 'Open Sans';">Mandarin Chinese, French (Fluent) </span></span><span class="language-type-render d-flex"><i class="workingKnowledge language-icon fa fa-flag mb-auto me-2"></i> <span style="font-family: 'Open Sans';">German, Portuguese (Working Knowledge) </span></span><span class="language-type-render d-flex"><i class="proficient language-icon fa fa-flag mb-auto me-2"></i> <span style="font-family: 'Open Sans';">Italian (Proficient) </span></span><span class="language-type-render d-flex"><i class="native language-icon fa fa-flag mb-auto me-2"></i> <span style="font-family: 'Open Sans';">English, Spanish, Tagalog (Native) </span></span> <span class="language-type-render d-flex"><i class="award-icon fa fa-trophy mb-auto me-2"></i> <span style="font-family: 'Open Sans';">Certified Interpreter</span></span></div>
           </div>
         </section>
-        <section id="skills" class="resume-section mt-3 ml-3">
+        <section id="skills" class="resume-section mt-3 ms-3">
           <div class="my-auto">
-            <h4 class="heading heading-4 subheading mb-3 ml-0" style="font-family: 'Saira Extra Condensed';">
+            <h4 class="heading heading-4 subheading mb-3 ms-0" style="font-family: 'Saira Extra Condensed';">
               Programming Languages &amp; Tools
             </h4>
-            <div id="skill-grid-container" class="d-flex flex-column justify-content-between mt-4 mr-3">
+            <div id="skill-grid-container" class="d-flex flex-column justify-content-between mt-4 me-3">
               <div class="skill-grid-row-1 d-flex flex-row justify-content-between">
                 <div class="skill-grid-render">
                   <div class="list-devicons devicon-row d-flex justify-content-around">
@@ -1287,7 +1287,7 @@ St. Louis, MO (willing to relocate)
         </section>
       </div>
     </div>
-    <div class="resume-section ml-3">
+    <div class="resume-section ms-3">
       <section id="pdf-objective" class="resume-section-render mb-3">
         <div id="objective" class="d-flex align-items-center">
           <h4 class="heading heading-4" style="font-family: 'Saira Extra Condensed';">
@@ -1315,17 +1315,17 @@ St. Louis, MO (willing to relocate)
         </div>
       </section>
     </div>
-    <section id="experience" class="resume-section-render ml-3 mt-2 mb-3">
+    <section id="experience" class="resume-section-render ms-3 mt-2 mb-3">
       <div class="my-auto">
         <h4 class="heading heading-4" style="font-family: 'Saira Extra Condensed';">Experience</h4>
         <div class="d-flex flex-column justify-content-between">
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Senior DevOps Engineer</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2021 (August) - Present</h6>
                 </div>
               </div>
@@ -1352,10 +1352,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Build Engineer &amp; DevOps Application Developer</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2021 (February) - 2021 (August)</h6>
                 </div>
               </div>
@@ -1382,10 +1382,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Software Engineer</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2020 (June) - 2020 (December)</h6>
                 </div>
               </div>
@@ -1424,10 +1424,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Software Engineer</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2019 - 2020 (April)</h6>
                 </div>
               </div>
@@ -1459,10 +1459,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Translator / Interpreter</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2011 - Present</h6>
                 </div>
               </div>
@@ -1477,10 +1477,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">QA Tester</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2011 - 2014</h6>
                 </div>
               </div>
@@ -1495,10 +1495,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Executive Assistant to the CEO</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2009 - 2010</h6>
                 </div>
               </div>
@@ -1513,10 +1513,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Sinologist (China expert)</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2003 - 2004</h6>
                 </div>
               </div>
@@ -1533,10 +1533,10 @@ St. Louis, MO (willing to relocate)
           <div>
             <div class="d-flex flex-column justify-content-between">
               <div class="d-flex flex-row">
-                <div class="mr-auto">
+                <div class="me-auto">
                   <h5 id="job-position" class="heading heading-5 mb-0" style="font-family: 'Saira Extra Condensed';">Grill Chef de Partie</h5>
                 </div>
-                <div class="resume-date text-md-end mr-1">
+                <div class="resume-date text-md-end me-1">
                   <h6 class="heading heading-6 pdf-experience-dates text-primary" style="font-family: 'Saira Extra Condensed';">2002 - 2018</h6>
                 </div>
               </div>
@@ -1551,16 +1551,16 @@ St. Louis, MO (willing to relocate)
         </div>
       </div>
     </section>
-    <section id="education" class="resume-section-render ml-3 mt-2 mb-3">
+    <section id="education" class="resume-section-render ms-3 mt-2 mb-3">
       <div class="my-auto">
         <h4 class="heading heading-4 pdf-subheading" style="font-family: 'Saira Extra Condensed';">Education</h4>
         <div>
           <div class="resume-item d-flex flex-column justify-content-between">
             <div class="d-flex flex-row">
-              <div class="resume-content mr-5 mr-md-auto">
+              <div class="resume-content me-5 me-md-auto">
                 <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">University of Pennsylvania</h5>
               </div>
-              <div class="resume-date text-md-end mr-4">
+              <div class="resume-date text-md-end me-4">
                 <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">Major in East Asian Languages and Cultures, Chinese Concentration, relevant coursework in linguistics and anthropology</h6>
               </div>
             </div>
@@ -1573,10 +1573,10 @@ St. Louis, MO (willing to relocate)
         <div>
           <div class="resume-item d-flex flex-column justify-content-between">
             <div class="d-flex flex-row">
-              <div class="resume-content mr-5 mr-md-auto">
+              <div class="resume-content me-5 me-md-auto">
                 <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">Washington University in St. Louis</h5>
               </div>
-              <div class="resume-date text-md-end mr-4">
+              <div class="resume-date text-md-end me-4">
                 <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">Python, Javascript, Tableau</h6>
               </div>
             </div>
@@ -1589,10 +1589,10 @@ St. Louis, MO (willing to relocate)
         <div>
           <div class="resume-item d-flex flex-column justify-content-between">
             <div class="d-flex flex-row">
-              <div class="resume-content mr-5 mr-md-auto">
+              <div class="resume-content me-5 me-md-auto">
                 <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">Thacher School</h5>
               </div>
-              <div class="resume-date text-md-end mr-4">
+              <div class="resume-date text-md-end me-4">
                 <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">Languages</h6>
               </div>
             </div>
@@ -1606,7 +1606,7 @@ St. Louis, MO (willing to relocate)
     </section>
     <div id="interests-poem-container" class="row mb-5">
       <div id="interests-container" class="col-12">
-        <section id="interests" class="resume-section mt-2 ml-3" renderpdf="true">
+        <section id="interests" class="resume-section mt-2 ms-3" renderpdf="true">
           <div class="my-auto">
             <h4 class="heading heading-4 mb-3" style="font-family: 'Saira Extra Condensed';">Interests</h4>
             <p class="mb-0" style="font-family: 'Open Sans';">Kneading bread, digging gardens, vermicomposting and cooking tasty meals. Expert at translations and accents. Yoga teacher training - YogaWorks 200hr. Adobe Creative dabbler. SCUBA certified.
@@ -1631,7 +1631,7 @@ St. Louis, MO (willing to relocate)
         <div class="custom-modal-backdrop" style="display: none;">
           <div role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription" class="custom-modal">
             <header id="modalTitle" class="custom-modal-header">
-              <h4 class="heading heading-4 mr-auto">Save to PDF</h4> <button type="button" aria-label="Close modal" class="btn-ex"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11">
+              <h4 class="heading heading-4 me-auto">Save to PDF</h4> <button type="button" aria-label="Close modal" class="btn-ex"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11">
                   <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" class=""></path>
                 </svg></button>
             </header>
@@ -1663,7 +1663,7 @@ St. Louis, MO (willing to relocate)
         <div class="custom-modal-backdrop modal-fade-leave modal-fade-leave-active" style="display: none;">
           <div role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription" class="custom-modal">
             <header id="modalTitle" class="custom-modal-header">
-              <h4 class="heading heading-4 mr-auto">Save to PDF</h4> <button type="button" aria-label="Close modal" class="btn-ex"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11">
+              <h4 class="heading heading-4 me-auto">Save to PDF</h4> <button type="button" aria-label="Close modal" class="btn-ex"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11">
                   <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" class=""></path>
                 </svg></button>
             </header>
@@ -1695,7 +1695,7 @@ St. Louis, MO (willing to relocate)
         <div class="custom-modal-backdrop modal-fade-leave modal-fade-leave-active" style="display: none;">
           <div role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription" class="custom-modal">
             <header id="modalTitle" class="custom-modal-header">
-              <h4 class="heading heading-4 mr-auto">Save to PDF</h4> <button type="button" aria-label="Close modal" class="btn-ex"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11">
+              <h4 class="heading heading-4 me-auto">Save to PDF</h4> <button type="button" aria-label="Close modal" class="btn-ex"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="svg-inline--fa fa-times fa-w-11">
                   <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" class=""></path>
                 </svg></button>
             </header>

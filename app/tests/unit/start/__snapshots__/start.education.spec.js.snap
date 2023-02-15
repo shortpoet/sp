@@ -5,7 +5,7 @@ exports[`StartEducation.vue matches education snapshot 1`] = `
   <div class="my-auto">
     <h2 class="heading heading-2 mb-4">Education</h2>
     <div class="resume-item d-flex flex-column flex-md-row mb-4">
-      <div class="resume-content mr-auto">
+      <div class="resume-content me-auto">
         <h3 class="heading heading-3 mb-0">sample institution</h3>
         <div class="start-degree subheading mb-3">sample degree</div>
         <div class="start-education-details">sample details</div>
@@ -13,7 +13,7 @@ exports[`StartEducation.vue matches education snapshot 1`] = `
       <div class="resume-date text-md-end mt-1"><span class="text-primary">sample focus</span></div>
     </div>
     <div class="resume-item d-flex flex-column flex-md-row mb-4">
-      <div class="resume-content mr-auto">
+      <div class="resume-content me-auto">
         <h3 class="heading heading-3 mb-0">sample institution</h3>
         <div class="start-degree subheading mb-3">sample degree</div>
         <div class="start-education-details">sample details</div>
@@ -21,7 +21,7 @@ exports[`StartEducation.vue matches education snapshot 1`] = `
       <div class="resume-date text-md-end mt-1"><span class="text-primary">sample focus</span></div>
     </div>
     <div class="resume-item d-flex flex-column flex-md-row mb-4">
-      <div class="resume-content mr-auto">
+      <div class="resume-content me-auto">
         <h3 class="heading heading-3 mb-0">sample institution</h3>
         <div class="start-degree subheading mb-3">sample degree</div>
         <div class="start-education-details">sample details</div>

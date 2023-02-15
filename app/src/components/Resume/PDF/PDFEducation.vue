@@ -5,7 +5,7 @@
       <div v-for="(ed, i) in educations" :key="i">
         <div class="resume-item d-flex flex-column justify-content-between">
           <div class="d-flex flex-row">
-            <div class="resume-content mr-5 mr-md-auto">
+            <div class="resume-content me-5 me-md-auto">
               <h5 style="font-family: 'Saira Extra Condensed';" class="mb-0">{{ ed.institution }}</h5>
             </div>
           </div>
@@ -14,7 +14,7 @@
             <p style="font-family: 'Open Sans';" class="resume-content">{{ ed.details }}</p>
             <!-- <p>GPA: 3.23</p> -->
           </div>
-          <div class="resume-date text-md-start mr-4">
+          <div class="resume-date text-md-start me-4">
             <h6 style="font-family: 'Saira Extra Condensed';" class="pdf-education-focus text-primary">{{ ed.focus }}
             </h6>
           </div>
@@ -39,9 +39,9 @@ export default {
   computed: {
     sectionClass() {
       return this.renderPDF ?
-        'resume-section-render ml-3 mt-2 mb-3'
+        'resume-section-render ms-3 mt-2 mb-3'
         :
-        'resume-section ml-3 mt-2 mb-3'
+        'resume-section ms-3 mt-2 mb-3'
     }
   }
 }

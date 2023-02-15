@@ -196,7 +196,7 @@ export const hardResume = {
     {
       id: 11,
       type: 'Dotnet',
-      details: 'Framework 4.x, Core, Entity Framework, Razor, MVC',
+      details: 'Framework, Core, Entity Framework, Razor, MVC',
       resumeSkills: []
     },
     {

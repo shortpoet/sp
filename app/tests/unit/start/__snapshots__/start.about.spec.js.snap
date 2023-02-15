@@ -5,7 +5,7 @@ exports[`StartAbout.vue matches snapshot 1`] = `
   <div class="my-auto">
     <h1 class="heading heading-1 mb-0">sample name
       <span class="text-primary">sample surname</span></h1>
-    <div class="ml-2 d-inline-flex flex-column subheading">
+    <div class="ms-2 d-inline-flex flex-column subheading">
       <div class="d-inline-flex flex-column"><span id="start-flags" class="not-name">sample flags</span> <a href="mailto:sample email">sample email</a> <span id="start-address">sample address</span></div>
       <div class="d-flex flex-column"><span id="start-visas" class="not-name">Valid Work Visas: sample visas</span></div>
     </div>

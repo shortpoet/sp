@@ -1,7 +1,7 @@
 <template>
   <section class="resume-section" id="about">
     <!-- basic info row -->
-    <div class="d-flex flex-row justify-content-between align-items-center mt-1 ml-3" id="basic-info">
+    <div class="d-flex flex-row justify-content-between align-items-center mt-1 ms-3" id="basic-info">
 
       <!-- photo / info row -->
       <div class="d-flex flex-row align-items-center">
@@ -12,7 +12,7 @@
         </div>
 
         <!-- name contact column -->
-        <div class="d-flex flex-column mt-1 mt-md-2 ml-2" id="name-contact">
+        <div class="d-flex flex-column mt-1 mt-md-2 ms-2" id="name-contact">
           <ul class="list-inline">
             <li>
               <h2 style="font-family: 'Saira Extra Condensed'" class="heading heading-2 mb-0">
@@ -49,7 +49,7 @@
       <!-- socials row -->
       <div class="d-flex flex-row align-items-center">
         <!-- socials column -->
-        <div class="d-flex flex-column ml-auto mr-1 mr-md-3" id="socials">
+        <div class="d-flex flex-column ms-auto me-1 me-md-3" id="socials">
           <PDFSocials :renderPDF="renderPDF" :socials="socials" />
         </div>
 

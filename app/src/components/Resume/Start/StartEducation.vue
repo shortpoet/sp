@@ -3,7 +3,7 @@
     <div class="my-auto">
       <h2 class="heading heading-2 mb-4">Education</h2>
       <div class="resume-item d-flex flex-column flex-md-fill mb-4" v-for="(ed, i) in educations" :key="i">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h3 class="heading heading-3 mb-0">{{ ed.institution }}</h3>
           <div class="start-degree subheading mb-3">{{ ed.degree }}</div>
           <div class="start-education-details">{{ ed.details }}</div>

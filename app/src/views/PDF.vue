@@ -27,8 +27,8 @@
       </div>
 
       <!-- objective rows -->
-      <!-- ml-3 to match pic -->
-      <div class="resume-section ml-3">
+      <!-- ms-3 to match pic -->
+      <div class="resume-section ms-3">
         <PDFObjective :renderPDF="renderPDF" :aboutMe="getResume.aboutMe" />
       </div>
 

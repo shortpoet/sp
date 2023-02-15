@@ -223,7 +223,7 @@ export default {
       vm.setCanvas(options, vm.toPDF);
     },
     // https://stackoverflow.com/questions/24069124/how-to-save-a-image-in-multiple-pages-of-pdf-using-jspdf
-    // https://stackoverflow.com/questions/19272933/jspdf-multi-page-pdf-with-html-renderer/34934497#34934497
+    // https://stackoverflow.com/questions/19272933/jspdf-multi-page-pdf-with-htms-renderer/34934497#34934497
     // insterstingly this used to work even when pdf was not reassigned to paginated
     // eg
     // vm.paginate(target, canvas, pdf);

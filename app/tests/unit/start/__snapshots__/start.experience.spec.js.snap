@@ -7,7 +7,7 @@ exports[`StartExperience.vue matches experience snapshot 1`] = `
     <div class="resume-item d-flex flex-column mb-2">
       <h2 class="heading heading-2 start-experience-type mb-3">software</h2>
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h3 class="heading heading-3 mb-0">sample position</h3>
           <div class="start-company subheading mb-3">sample company</div>
           <div>
@@ -26,7 +26,7 @@ exports[`StartExperience.vue matches experience snapshot 1`] = `
     <div class="resume-item d-flex flex-column mb-2">
       <h2 class="heading heading-2 start-experience-type mb-3">language</h2>
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h3 class="heading heading-3 mb-0">sample position</h3>
           <div class="start-company subheading mb-3">sample company</div>
           <div>
@@ -45,7 +45,7 @@ exports[`StartExperience.vue matches experience snapshot 1`] = `
     <div class="resume-item d-flex flex-column mb-2">
       <h2 class="heading heading-2 start-experience-type mb-3">sales</h2>
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h3 class="heading heading-3 mb-0">sample position</h3>
           <div class="start-company subheading mb-3">sample company</div>
           <div>
@@ -64,7 +64,7 @@ exports[`StartExperience.vue matches experience snapshot 1`] = `
     <div class="resume-item d-flex flex-column mb-2">
       <h2 class="heading heading-2 start-experience-type mb-3">hospitality</h2>
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h3 class="heading heading-3 mb-0">sample position</h3>
           <div class="start-company subheading mb-3">sample company</div>
           <div>

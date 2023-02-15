@@ -7,7 +7,7 @@
         <div v-for="(job, ji) in type.jobs" :key="ji">
           <div class="d-flex flex-column justify-content-between">
             <div class="d-flex flex-row justify-content-between">
-              <div class="mr-auto">
+              <div class="me-auto">
                 <h5 id="job-position" style="font-family: 'Saira Extra Condensed';" class="heading heading-5 mb-0">{{
                   job.position
                 }}</h5>
@@ -48,15 +48,15 @@ export default {
   computed: {
     sectionClass() {
       return this.renderPDF ?
-        'resume-section-render ml-3 mt-2 mb-3'
+        'resume-section-render ms-3 mt-2 mb-3'
         :
-        'resume-section ml-3 mt-2 mb-3'
+        'resume-section ms-3 mt-2 mb-3'
     },
     textRightClass() {
       return this.renderPDF ?
-        'resume-date text-md-end mr-1'
+        'resume-date text-md-end me-1'
         :
-        'resume-date text-md-end mr-4'
+        'resume-date text-md-end me-4'
     }
   }
 }

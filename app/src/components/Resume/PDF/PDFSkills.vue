@@ -1,7 +1,7 @@
 <template>
-  <section class="resume-section mt-2 ml-0" id="skills">
+  <section class="resume-section mt-2 ms-0" id="skills">
     <div class="my-auto">
-      <h4 style="font-family: 'Saira Extra Condensed';" class="heading heading-4 subheading mb-4 mb-md-3 ml-4">
+      <h4 style="font-family: 'Saira Extra Condensed';" class="heading heading-4 subheading mb-4 mb-md-3 ms-4">
         Programming Languages &amp; Tools
       </h4>
       <div id="skill-grid-container" class="d-flex flex-column flex-md-row justify-content-between mt-2 mx-5 px-0">

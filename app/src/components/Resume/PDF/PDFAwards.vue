@@ -3,17 +3,13 @@
     <div class="my-auto">
       <h4 style="font-family: 'Saira Extra Condensed';" :class="headingClass">Natural Languages</h4>
       <div :class="gridClass">
-        <span
-          v-for="(lang, i) in spokenLanguages"
-          :key="i"
-          :class="typeClass"        
-        > 
-          <i :class="lang.type + ' language-icon fa fa-flag mb-auto mr-2'"></i>
+        <span v-for="(lang, i) in spokenLanguages" :key="i" :class="typeClass">
+          <i :class="lang.type + ' language-icon fa fa-flag mb-auto me-2'"></i>
           <span style="font-family: 'Open Sans';" class="">{{ `${lang.languages} (${recase(lang.type)})` }} </span>
         </span>
         <span class="language-type-render d-flex">
-          <i class="award-icon fa fa-trophy mb-auto mr-2"></i>
-          <span  style="font-family: 'Open Sans';">Certified Interpreter</span>          
+          <i class="award-icon fa fa-trophy mb-auto me-2"></i>
+          <span style="font-family: 'Open Sans';">Certified Interpreter</span>
         </span>
       </div>
     </div>
@@ -34,25 +30,25 @@ export default {
     }
   },
   computed: {
-    sectionClass () {
+    sectionClass() {
       return this.renderPDF ?
-        'resume-section-render ml-3 mx-2 mt-2'
+        'resume-section-render ms-3 mx-2 mt-2'
         :
-        'resume-section ml-4 mt-2'
+        'resume-section ms-4 mt-2'
     },
-    gridClass () {
+    gridClass() {
       return this.renderPDF ?
-        'd-flex flex-row ml-2 justify-content-around'
+        'd-flex flex-row ms-2 justify-content-around'
         :
-        'd-flex flex-column ml-3'
+        'd-flex flex-column ms-3'
     },
-    headingClass () {
+    headingClass() {
       return this.renderPDF ?
         'heading heading-4 mb-2'
         :
-        'heading heading-4 mb-4 ml-1'
+        'heading heading-4 mb-4 ms-1'
     },
-    typeClass () {
+    typeClass() {
       return this.renderPDF ?
         'language-type-render d-flex'
         :
@@ -64,7 +60,7 @@ export default {
       return _recase(input)
     }
   },
-  mounted () {
+  mounted() {
     // console.log(this)
   }
 }
