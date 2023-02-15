@@ -8,8 +8,9 @@
             <div class="resume-content mr-5 mr-md-auto">
               <h5 style="font-family: 'Saira Extra Condensed';" class="mb-0">{{ ed.institution }}</h5>
             </div>
-            <div class="resume-date text-md-right mr-4">
-              <h6 style="font-family: 'Saira Extra Condensed';" class="pdf-education-focus text-primary">{{ ed.focus }}</h6>
+            <div class="resume-date text-md-end mr-4">
+              <h6 style="font-family: 'Saira Extra Condensed';" class="pdf-education-focus text-primary">{{ ed.focus }}
+              </h6>
             </div>
           </div>
           <div class="d-flex flex-column">
@@ -36,7 +37,7 @@ export default {
     }
   },
   computed: {
-    sectionClass () {
+    sectionClass() {
       return this.renderPDF ?
         'resume-section-render ml-3 mt-2 mb-3'
         :

@@ -10,7 +10,7 @@ exports[`PDFEducation.vue matches education snapshot 1`] = `
           <div class="resume-content mr-5 mr-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-right mr-4">
+          <div class="resume-date text-md-end mr-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -26,7 +26,7 @@ exports[`PDFEducation.vue matches education snapshot 1`] = `
           <div class="resume-content mr-5 mr-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-right mr-4">
+          <div class="resume-date text-md-end mr-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -42,7 +42,7 @@ exports[`PDFEducation.vue matches education snapshot 1`] = `
           <div class="resume-content mr-5 mr-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-right mr-4">
+          <div class="resume-date text-md-end mr-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -66,7 +66,7 @@ exports[`PDFEducation.vue matches education snapshot 2`] = `
           <div class="resume-content mr-5 mr-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-right mr-4">
+          <div class="resume-date text-md-end mr-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -82,7 +82,7 @@ exports[`PDFEducation.vue matches education snapshot 2`] = `
           <div class="resume-content mr-5 mr-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-right mr-4">
+          <div class="resume-date text-md-end mr-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>
@@ -98,7 +98,7 @@ exports[`PDFEducation.vue matches education snapshot 2`] = `
           <div class="resume-content mr-5 mr-md-auto">
             <h5 class="mb-0" style="font-family: 'Saira Extra Condensed';">sample institution</h5>
           </div>
-          <div class="resume-date text-md-right mr-4">
+          <div class="resume-date text-md-end mr-4">
             <h6 class="pdf-education-focus text-primary" style="font-family: 'Saira Extra Condensed';">sample focus</h6>
           </div>
         </div>

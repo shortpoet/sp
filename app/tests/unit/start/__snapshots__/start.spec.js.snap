@@ -437,7 +437,7 @@ Docker
                 <p class="job-1-description-5"> </p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2021 (August) - Present</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2021 (August) - Present</span></div>
           </div>
           <div class="resume-item d-flex flex-column flex-md-row mb-3">
             <div class="resume-content mr-auto">
@@ -459,7 +459,7 @@ Docker
                 <p class="job-2-description-5"> </p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2021 (February) - 2021 (August)</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2021 (February) - 2021 (August)</span></div>
           </div>
           <div class="resume-item d-flex flex-column flex-md-row mb-3">
             <div class="resume-content mr-auto">
@@ -493,7 +493,7 @@ Docker
                 <p class="job-3-description-9"> </p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2020 (June) - 2020 (December)</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2020 (June) - 2020 (December)</span></div>
           </div>
           <div class="resume-item d-flex flex-column flex-md-row mb-3">
             <div class="resume-content mr-auto">
@@ -518,7 +518,7 @@ Docker
                 <p class="job-4-description-6"> • Ensured data integrity of daily loading from source systems mostly using c#/dotnet and sql scripts with python and R developing new ETL architecture for reusable data analytics pipeline.</p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2019 - 2020 (April)</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2019 - 2020 (April)</span></div>
           </div>
         </div>
         <div class="resume-item d-flex flex-column mb-2">
@@ -531,7 +531,7 @@ Docker
                 <p class="job-1-description-1">Medical, dental and media conferences, on-site medical and legal interpretation for depositions, insurance and immigration interviews, simultaneous interpretation of contract negotiations, guided tours, consecutive and simultaneous interpretation for training meetings, document translation of many types, including legal, medical, media localization, and various other language-related assignments, primarily in Spanish, Tagalog and French.</p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2011 - Present</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2011 - Present</span></div>
           </div>
           <div class="resume-item d-flex flex-column flex-md-row mb-3">
             <div class="resume-content mr-auto">
@@ -541,7 +541,7 @@ Docker
                 <p class="job-2-description-1">Translator, linguistic tester, translated texts for various media including video games, film, and legal, checked video games for linguistic bugs and translation errors, translation of .xml databases for in-game script</p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2011 - 2014</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2011 - 2014</span></div>
           </div>
           <div class="resume-item d-flex flex-column flex-md-row mb-3">
             <div class="resume-content mr-auto">
@@ -551,7 +551,7 @@ Docker
                 <p class="job-3-description-1">Managed daily operations in a bilingual office setting, purchased investment property, created investment portfolios, marketing and business plans.</p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2009 - 2010</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2009 - 2010</span></div>
           </div>
           <div class="resume-item d-flex flex-column flex-md-row mb-3">
             <div class="resume-content mr-auto">
@@ -561,7 +561,7 @@ Docker
                 <p class="job-4-description-1">Translator, interpreter, media sales, wrote articles and for advertorial project</p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2003 - 2004</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2003 - 2004</span></div>
           </div>
         </div>
         <div class="resume-item d-flex flex-column mb-2">
@@ -574,7 +574,7 @@ Docker
                 <p class="job-1-description-1">Expert chef and translator at world-class restaurants</p>
               </div>
             </div>
-            <div class="resume-date text-md-right mt-1"><span class="text-primary">2002 - 2018</span></div>
+            <div class="resume-date text-md-end mt-1"><span class="text-primary">2002 - 2018</span></div>
           </div>
         </div>
       </div>
@@ -588,7 +588,7 @@ Docker
             <div class="start-degree subheading mb-3">Bachelor of Arts and Sciences</div>
             <div class="start-education-details"></div>
           </div>
-          <div class="resume-date text-md-right mt-1"><span class="text-primary">Major in East Asian Languages and Cultures, Chinese Concentration, relevant coursework in linguistics and anthropology</span></div>
+          <div class="resume-date text-md-end mt-1"><span class="text-primary">Major in East Asian Languages and Cultures, Chinese Concentration, relevant coursework in linguistics and anthropology</span></div>
         </div>
         <div class="resume-item d-flex flex-column flex-md-row mb-4">
           <div class="resume-content mr-auto">
@@ -596,7 +596,7 @@ Docker
             <div class="start-degree subheading mb-3">Data Analytics Certificate</div>
             <div class="start-education-details"></div>
           </div>
-          <div class="resume-date text-md-right mt-1"><span class="text-primary">Python, Javascript, Tableau</span></div>
+          <div class="resume-date text-md-end mt-1"><span class="text-primary">Python, Javascript, Tableau</span></div>
         </div>
         <div class="resume-item d-flex flex-column flex-md-row mb-4">
           <div class="resume-content mr-auto">
@@ -604,7 +604,7 @@ Docker
             <div class="start-degree subheading mb-3">High School</div>
             <div class="start-education-details"></div>
           </div>
-          <div class="resume-date text-md-right mt-1"><span class="text-primary">Languages</span></div>
+          <div class="resume-date text-md-end mt-1"><span class="text-primary">Languages</span></div>
         </div>
       </div>
     </section>
