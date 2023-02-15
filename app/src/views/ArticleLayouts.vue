@@ -5,7 +5,7 @@
       <ul class="nav">
         <li class="nav-item dropdown">
           <router-link class="nav-link dropdown-toggle" data-toggle="dropdown" to="" role="button" aria-haspopup="true"
-            aria-expanded="false">{{ dropDown }}</router-link>
+            aria-expanded="false" data-bs-toggle="dropdown">{{ dropDown }}</router-link>
           <div class="dropdown-menu">
             <router-link class="dropdown-item" to="/articles/learning-to-unit-test-en">{{ englishLink }}</router-link>
             <router-link class="dropdown-item" to="/articles/learning-to-unit-test-es">{{ spanishLink }}</router-link>
@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import SpanishArticle from '@/components/Articles/Content/learning-to-unit-test-es.md'
+import EnglishArticle from '@/components/Articles/Content/learning-to-unit-test-en.md'
 export default {
   name: 'ArticleLayout',
   props: {
@@ -33,7 +35,7 @@ export default {
     selectedArticle: function () {
       const english = () => import(`@/components/Articles/Content/learning-to-unit-test-en.md`)
       const spanish = () => import(`@/components/Articles/Content/learning-to-unit-test-es.md`)
-      return this.language === 'en' ? english : spanish
+      return this.language === 'en' ? EnglishArticle : SpanishArticle
     },
     dropDown() { return this.language === `en` ? `Languages` : `Idiomas` },
     englishLink() { return this.language === `en` ? `English` : `Inglés` },

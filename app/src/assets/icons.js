@@ -1,3 +1,11 @@
+import azure from '@/assets/azure_devicon_forest_green.svg';
+import terraform from '@/assets/terraform_devicon_forest_green.svg';
+import powershell from '@/assets/powershell_devicon_forest_green.svg';
+import bash from '@/assets/bash_devicon_forest_green.svg';
+import vue from '@/assets/vue_devicon_forest_green.svg';
+import ts from '@/assets/ts_devicon_forest_green.svg';
+import d3 from '@/assets/d3_devicon_forest_green.svg';
+import tableau from '@/assets/tableau_logo.svg';
 export default {
   iconMap: [
     {
@@ -68,7 +76,7 @@ export default {
       displayName: 'Docker'
     },
     {
-      icon: require('@/assets/azure_devicon_forest_green.svg'),
+      icon: azure,
       name: 'azure',
       displayName: 'Azure'
     },
@@ -78,7 +86,7 @@ export default {
       displayName: 'AWS'
     },
     {
-      icon: require('@/assets/terraform_devicon_forest_green.svg'),
+      icon: terraform,
       name: 'terraform',
       displayName: 'Terraform'
     },
@@ -88,12 +96,12 @@ export default {
       displayName: 'Go'
     },
     {
-      icon: require('@/assets/powershell_devicon_forest_green.svg'),
+      icon: powershell,
       name: 'powershell',
       displayName: 'Powershell'
     },
     {
-      icon: require('@/assets/bash_devicon_forest_green.svg'),
+      icon: bash,
       name: 'bash',
       displayName: 'Bash'
     },
@@ -108,12 +116,12 @@ export default {
       displayName: 'Javascript'
     },
     {
-      icon: require('@/assets/vue_devicon_forest_green.svg'),
+      icon: vue,
       name: 'vue',
       displayName: 'VueJs'
     },
     {
-      icon: require('@/assets/ts_devicon_forest_green.svg'),
+      icon: ts,
       name: 'ts',
       displayName: 'Typescript'
     },
@@ -168,12 +176,12 @@ export default {
       displayName: 'SASS'
     },
     {
-      icon: require('@/assets/d3_devicon_forest_green.svg'),
+      icon: d3,
       name: 'd3',
       displayName: 'D3'
     },
     {
-      icon: require('@/assets/tableau_logo.svg'),
+      icon: tableau,
       name: 'tableau',
       displayName: 'Tableau'
     },

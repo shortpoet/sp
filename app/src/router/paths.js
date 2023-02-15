@@ -36,12 +36,14 @@ const paths = [
       {
         path: '/articles/learning-to-unit-test-en',
         name: 'learning-to-unit-test-en',
+        view: 'ArticleLayouts',
         props: {
           language: 'en'
         }
       },
       {
         path: '/articles/learning-to-unit-test-es',
+        view: 'ArticleLayouts',
         name: 'learning-to-unit-test-es',
         props: {
           language: 'es'
@@ -49,6 +51,6 @@ const paths = [
       }
     ]
   }
-]
+];
 
-export default paths
+export default paths;

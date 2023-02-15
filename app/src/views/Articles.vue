@@ -13,7 +13,7 @@ import ArticleNav from '@/components/Articles/ArticleNav.vue'
 import ArticleList from '@/components/Articles/ArticleList.vue'
 
 export default {
-  name: 'Article',
+  name: 'Articles',
   components: {
     ArticleNav,
     ArticleList
@@ -31,5 +31,4 @@ export default {
 
 <style lang="scss">
 @import './../assets/scss/articles.scss';
-
 </style>
