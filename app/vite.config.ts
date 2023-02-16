@@ -7,6 +7,9 @@ import Markdown from 'vite-plugin-md';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host: true
+  },
   css: {
     preprocessorOptions: {
       scss: {

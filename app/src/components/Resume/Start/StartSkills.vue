@@ -1,18 +1,18 @@
 <template>
-  <section class="resume-section pl-3 px-lg-5 mt-5 mb-4 mb-md-3 d-flex flex-column" id="skills">
+  <section class="resume-section ps-3 px-lg-5 mt-5 mb-4 mb-md-3 d-flex flex-column" id="skills">
     <div class="my-auto">
       <h2 class="heading heading-2 mb-4 mb-md-3">Skills</h2>
       <div class="subheading mb-3">Programming Languages &amp; Tools</div>
       <ul class="list-devicons list-inline list-icons">
         <!-- <FlexList 
-          v-slot:default="slotProps"
-          :items="icons"
-          :display-rows="3"
-        >
-          <li class="list-inline-item">
-            <StartDevIcon :source="slotProps.item.icon"/>
-          </li>
-        </FlexList> -->
+            v-slot:default="slotProps"
+            :items="icons"
+            :display-rows="3"
+          >
+            <li class="list-inline-item">
+              <StartDevIcon :source="slotProps.item.icon"/>
+            </li>
+          </FlexList> -->
         <li class="list-inline-item" v-for="(icon, i) in icons" :key="i">
           <StartDevIcon :source="icon.icon" :name="icon.name" />
         </li>
@@ -31,7 +31,7 @@
         </ul>
       </div>
     </div>
-  </section>
+</section>
 </template>
 
 <script>

@@ -1,11 +1,11 @@
 <template>
-  <!-- TODO set fontFamily only on icon not text - only req'd on pdf -->
-  <section class="resume-section pl-3 pl-lg-5 py-1 mt-3 d-flex d-column" id="start-socials">
+  <section class="resume-section ps-3 ps-lg-5 py-1 mt-3 d-flex d-column" id="start-socials">
+    <!-- TODO set fontFamily only on icon not text - only req'd on pdf -->
     <div class="my-auto">
       <ul class="list-inline list-social-icons mb-0 mt-0">
         <li :style="{ fontFamily: 'FontAwesome' }" class="social-item list-inline-item "
           v-for="(social, i) in socialsComputed" :key="i">
-          <a :href="social.url" style="padding: 1rem">
+          <a :href="social.url">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <!-- <i :class="'fa fa-' + social.social + ' fa-stack-1x fa-inverse'"></i> -->
@@ -15,7 +15,7 @@
         </li>
       </ul>
     </div>
-  </section>
+</section>
 </template>
 
 <script>

@@ -1,11 +1,17 @@
+<!-- TODO set fontFamily only on icon not text - only req'd on pdf -->
 <template>
-  <!-- TODO set fontFamily only on icon not text - only req'd on pdf -->
   <section class="resume-section p-3 px-lg-5 py-1 mt-3 d-flex d-column" id="start-socials">
     <div class="my-auto">
       <ul class="list-inline list-social-icons mb-0 mt-0">
         <li :style="{ fontFamily: 'FontAwesome' }" class="social-item list-inline-item "
           v-for="(social, i) in socialsComputed" :key="i">
-          <a :href="social.url">
+          <a :href="social.url" style="
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                padding: 2rem;
+                margin: -2rem;
+                ">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <!-- <i :class="'fa fa-' + social.social + ' fa-stack-1x fa-inverse'"></i> -->
@@ -15,7 +21,7 @@
         </li>
       </ul>
     </div>
-  </section>
+</section>
 </template>
 
 <script>
@@ -64,7 +70,7 @@ export default {
   computed: {
     availableSocials() {
       let providerNames = this.socials.map(s => s.provider)
-      return this.socialsData.filter(social => providerNames.includes(social.social))
+      return this.socialsData.filter(social => providerNames.includes(social.social)).reverse()
       // filter out null entries first if not including in that version
       // can't use break in map reduce forEach but can filter first
       // or could use simple for loop with iterator

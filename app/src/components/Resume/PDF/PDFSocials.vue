@@ -2,7 +2,7 @@
   <section class="" id="pdf-socials">
     <ul class="list-inline list-social-icons mb-0 mt-0 me-lg-2">
       <li class="social-item" v-for="(social, i) in socialsComputed" :key="i">
-        <a :href="social.url">
+        <a :href="social.url" style="padding: 0.25rem">
           <span :style="iconStyleObject" class="social-icon-layer fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <!-- <i :class="'fa fa-' + social.social + ' fa-stack-1x fa-inverse'"></i> -->
