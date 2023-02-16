@@ -54,3 +54,9 @@ Upgrading /Users/Shared/source/repos/shortpoet/sp/app/package.json
 aws_assume_role
 export CLOUDFLARE_API_TOKEN=$(pass Cloud/cloudflare/Terraform_Token)
 ```
+
+## cloudflare
+
+```bash
+terraform import cloudflare_zone.shortpoet d4e2...
+```
