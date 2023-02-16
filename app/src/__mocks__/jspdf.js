@@ -2,7 +2,7 @@
 // git renamed this file on a merge BUG OPPORTUNITY
 
 /* gotta watch out for how return values are nested
-previously 
+previously
 return {
   doc: {
     internal: ...

@@ -1,7 +1,7 @@
 <template>
   <portal :to="target">
-      <!-- 
-        * div containing all elements hidden at first 
+      <!--
+        * div containing all elements hidden at first
         * blur to close
         * has to be on root else have to click in the element where it's placed or use js to .blur()
         * https://forum.vuejs.org/t/how-to-implement-a-click-outside-event-like-vue-multiselect/24148

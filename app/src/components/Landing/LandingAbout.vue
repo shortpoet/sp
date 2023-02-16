@@ -1,6 +1,6 @@
 <template>
-  <!-- 
-    moving #about to higher up in dom so collapsed menu doesn't overlap on navigate 
+  <!--
+    moving #about to higher up in dom so collapsed menu doesn't overlap on navigate
     alas this didn't work
     TODO
   -->

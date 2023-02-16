@@ -28,7 +28,7 @@ describe('StartAwards.vue', () => {
   let iconClass
   let spanText
 
-  
+
   languageTypes.forEach(type => {
     it(`renders language icons that match spoken languages - ${type} - types/levels prop`, () => {
       // match first word and recase camel to capitalize and add space
@@ -36,11 +36,11 @@ describe('StartAwards.vue', () => {
       // match wordSSS .+ vs \w+ within parentheses
       spanText = wrapper.find(`i.${type} ~ span`).text().match(/\((.+)\)/)[1]
       expect(iconClass).toContain(spanText)
-    })  
+    })
   })
 
   it('matches snapshot', () => {
-    
+
     expect(wrapper.html()).toMatchSnapshot()
 
   })

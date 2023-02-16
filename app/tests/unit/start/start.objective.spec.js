@@ -25,7 +25,7 @@ describe('StartObjective.vue', () => {
 
   })
   it('matches objective snapshot', () => {
-    
+
     expect(wrapper.html()).toMatchSnapshot()
 
   })

@@ -8,14 +8,14 @@
   border: .25rem solid $forest-green;
   &:hover {
     background-color: $gray-400;
-    color: $forest-green;    
+    color: $forest-green;
     background-color: $royal-purple;
-    color: $white;    
+    color: $white;
     border: .25rem solid $royal-purple;
   }
 }
 // copied from bootstrap .button class
-// so that the global doesn't reload incorrectly on browser back 
+// so that the global doesn't reload incorrectly on browser back
 .bowton {
   text-align: center;
   vertical-align: middle;

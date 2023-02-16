@@ -12,7 +12,7 @@ describe('Resume Store Actions', () => {
   let state
   let mockError
   let response
-  
+
   const rootGetters = jest.fn()
   const commit = jest.fn()
   const dispatch = jest.fn()
@@ -46,7 +46,7 @@ describe('Resume Store Actions', () => {
     it('dispatches loadHardResume action in case of loadResume error', async () => {
 
       mockError = () => {throw Error('Mock Axios Error')}
-      // temporarily reassigning console.error to silence the logging of the 
+      // temporarily reassigning console.error to silence the logging of the
       // purposefully thrown error
       // https://til.hashrocket.com/posts/hrhejhqg2n-turn-off-console-error-messages-in-a-test
       const originalError = console.error
@@ -58,12 +58,12 @@ describe('Resume Store Actions', () => {
       expect(dispatch).toHaveBeenCalledWith('loadHardResume')
 
       console.error = originalError
-    })    
+    })
   })
 
   describe('loadHardResume', () => {
     it('loads hard coded resume from js file in assets in case of loadResume error', async () => {
-      
+
       await actions.loadHardResume({ commit })
 
       expect(commit).toHaveBeenCalledWith(SET_RESUME, hardResume)
@@ -75,4 +75,3 @@ describe('Resume Store Actions', () => {
     })
   })
 })
-

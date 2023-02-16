@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { log } from '@/utils/colorLog'
 export const factory = (
-  component, 
+  component,
   /* istanbul ignore next */
   options = {
     propsData: {},

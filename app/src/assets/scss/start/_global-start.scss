@@ -83,7 +83,7 @@
       color: $white;
     }
   }
-} 
+}
 
 // span.flex-list-row:nth-child(1) > span:nth-child(1) > li:nth-child(1)
 // .list-devicons flex-list-grid flex-list-row .d-flex span.flex-list-item li.list-inline-item
@@ -102,7 +102,7 @@
         .list-inline-item {
           // $:not(:last-child) was not working here for some reason
           margin-right: 1rem;
-        }      
+        }
       }
     }
   }

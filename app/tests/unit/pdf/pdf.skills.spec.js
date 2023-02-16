@@ -21,25 +21,25 @@ describe('PDFSkills.vue', () => {
   describe('element and class checks', () => {
 
     it('renders .pdf-skill-type div for each type of skill', () => {
-      
+
       expected += `pdf-skill-type`
       wrapper = createWrapper(component, mountOptions)
 
       expect(wrapper.find('.pdf-skill-type').attributes().class).toContain(expected)
-  
+
     })
 
     it('matches snapshot', () => {
 
       wrapper = createWrapper(component, mountOptions)
-  
+
       expect(wrapper.html()).toMatchSnapshot()
-  
+
     })
 
   })
 
-  
+
   // icons.forEach(icon => {
   //   // describe('icons')
   // })

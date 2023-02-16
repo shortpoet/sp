@@ -77,17 +77,17 @@ describe('start.startButtonFloat', () => {
       }),
       dispatch: jest.fn()
     }
-    
-    resumeStoreOptions = { 
-      getters: { getResumeLoaded: jest.fn(() => true), getResume: jest.fn(() => hardResume) }, 
-      mutations: { 'SET_RESUME_RAW': jest.fn() } 
+
+    resumeStoreOptions = {
+      getters: { getResumeLoaded: jest.fn(() => true), getResume: jest.fn(() => hardResume) },
+      mutations: { 'SET_RESUME_RAW': jest.fn() }
     }
 
     // wrapper = createWrapper(component, mountOptions, resumeStoreOptions)
 
   })
 
-  
+
 
   describe('element and class checks', () => {
 
@@ -107,9 +107,9 @@ describe('start.startButtonFloat', () => {
     it('matches snapshot', () => {
 
       // wrapper = createWrapper(component, mountOptions)
-  
+
       // expect(wrapper.html()).toMatchSnapshot()
-  
+
     })
 
   })
@@ -125,15 +125,15 @@ describe('start.startButtonFloat', () => {
       let _mountOptions = { propsData, mocks, computed, stubs, ignoredElements, methods}
 
       _mountOptions.attachToDocument = true
-  
+
       let _wrapper = createWrapper(component, _mountOptions, resumeStoreOptions)
-                      
+
       expect(mountedSpy).toHaveBeenCalled()
 
       expect(methods.addEvents).toHaveBeenCalled()
-      
+
       _wrapper.destroy()
-      
+
     })
 
     it('calls removeEvents when destroyed', () => {
@@ -144,15 +144,15 @@ describe('start.startButtonFloat', () => {
       let _mountOptions = { propsData, mocks, computed, stubs, ignoredElements, methods }
 
       _mountOptions.attachToDocument = true
-  
+
       let _wrapper = createWrapper(component, _mountOptions, resumeStoreOptions)
-              
+
       _wrapper.destroy()
       expect(destroyedSpy).toHaveBeenCalled()
       expect(methods.removeEvents).toHaveBeenCalled()
-      
+
     })
 
   })
-  
+
 })

@@ -16,7 +16,7 @@ describe('PDFBorder.vue', () => {
   let wrapper
 
   let color
-  let styleObject 
+  let styleObject
   let expected
 
   beforeEach(() => {
@@ -43,7 +43,7 @@ describe('PDFBorder.vue', () => {
 
   })
   it('renders hr with correctly calculated style without color', () => {
-    
+
     expect(wrapper.find('hr').attributes().style).toMatch(expected)
 
   })

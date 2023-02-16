@@ -82,9 +82,9 @@ Well since I'm actually gonna post this, the hope is to inspire fellow knowledge
 
 Right, down to business. So, what are unit tests and why do I love them?
 
-1) You write code that does a thing. 
+1) You write code that does a thing.
 
-2) You write other code that does another thing. 
+2) You write other code that does another thing.
 
 3) You keep doing this until there are so many things, often depending on each other, that eventually a new thing breaks everything.
 
@@ -106,9 +106,9 @@ That file extension is a great opportunity to practice what is known as [TDD](ht
 
 So in conclusion, learn to cook an egg properly, love your unit tests, and in the process find your [voice](https://www.shortpoet.com/articles).
 
---- 
+---
 
-Originally published at: 
+Originally published at:
 https://www.shortpoet.com/articles/learning-to-unit-test-en
 
 ---

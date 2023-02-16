@@ -31,7 +31,7 @@ describe('StartInterests.vue', () => {
 
   })
   it('matches snapshot', () => {
-    
+
     expect(wrapper.html()).toMatchSnapshot()
 
   })

@@ -23,7 +23,7 @@ describe('PDF.vue', () => {
   const events =  ['click', 'touchstart', 'touchcancel', 'touchmove', 'touchend']
 
   let methods = {}
-  
+
   let resumeStoreOptions
   const getResumeLoaded = true
 
@@ -38,9 +38,9 @@ describe('PDF.vue', () => {
     library.add(
       faCircle, faFilePdf, faSave, faTimes, faRocket
     )
-      
-    propsData = { 
-      // name: 'test name' 
+
+    propsData = {
+      // name: 'test name'
     }
 
     computed = {
@@ -56,9 +56,9 @@ describe('PDF.vue', () => {
       dispatch: jest.fn()
     }
 
-    resumeStoreOptions = { 
-      getters: { getResumeLoaded: jest.fn(() => getResumeLoaded), getResume: jest.fn(() => hardResume) }, 
-      mutations: { 'SET_RESUME_RAW': jest.fn() } 
+    resumeStoreOptions = {
+      getters: { getResumeLoaded: jest.fn(() => getResumeLoaded), getResume: jest.fn(() => hardResume) },
+      mutations: { 'SET_RESUME_RAW': jest.fn() }
     }
 
     mountOptions = { propsData, mocks, computed, stubs }
@@ -76,7 +76,7 @@ describe('PDF.vue', () => {
 
       // method 1
       wrapper.find(PDFButtonFloat).vm.$emit('to-render-pdf', true)
-      
+
       // method 2
       // doesn't seem to chain down this way
       // wrapper.find('.btn-page').trigger('click')
@@ -85,16 +85,16 @@ describe('PDF.vue', () => {
       expect(wrapper.vm.renderPDF).toBeTruthy()
     })
   })
-  
+
   describe('pdf.regular', () => {
     it('matches hard resume snapshot with renderPDF defualting to false', () => {
 
       wrapper = createWrapper(component, mountOptions, resumeStoreOptions)
 
       expect(wrapper.vm.renderPDF).toBe(false)
-  
+
       expect(wrapper.html()).toMatchSnapshot()
-  
+
     })
     it('correctly renders styleObject', () => {
 
@@ -125,11 +125,11 @@ describe('PDF.vue', () => {
     }
     // resume store options were undefined unless explicitly redefined here
     // have to verify if this is the case in other tests
-    resumeStoreOptions = { 
-      getters: { getResumeLoaded: jest.fn(() => getResumeLoaded), getResume: jest.fn(() => hardResume) }, 
-      mutations: { 'SET_RESUME_RAW': jest.fn() } 
+    resumeStoreOptions = {
+      getters: { getResumeLoaded: jest.fn(() => getResumeLoaded), getResume: jest.fn(() => hardResume) },
+      mutations: { 'SET_RESUME_RAW': jest.fn() }
     }
-    
+
     // same thing happened with fontawesome hmmm
     // it's like beforeEach wasn't working right
     library.add(
@@ -146,11 +146,11 @@ describe('PDF.vue', () => {
     let _wrapper = createWrapper(component, _mountOptions, resumeStoreOptions)
 
     it('matches hard resume snapshot with renderPDF set to true', () => {
- 
+
       expect(_wrapper.vm.renderPDF).toBe(true)
-  
+
       expect(_wrapper.html()).toMatchSnapshot()
-      
+
     })
     it('correctly renders styleObject', () => {
 

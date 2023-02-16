@@ -11,7 +11,7 @@ describe('PDFInterests.vue', () => {
   let prop
   let selector
   let mockProp = true
-  
+
   beforeEach(() => {
     jest.resetModules()
     jest.clearAllMocks()

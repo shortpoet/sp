@@ -9,5 +9,3 @@ export const SET_URL_PREFIX = 'SET_URL_PREFIX'
 export const SET_RESUME_LOADED = 'SET_RESUME_LOADED'
 export const SET_RESUME = 'SET_RESUME'
 export const SET_RESUME_RAW = 'SET_RESUME_RAW'
-
-

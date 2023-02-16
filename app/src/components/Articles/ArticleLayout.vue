@@ -40,7 +40,7 @@ export default {
     spanishLink() { return this.language === `en` ? `Spanish` : `Español` }
   },
   mounted() {
-    // possible future option 
+    // possible future option
     // https://stackoverflow.com/questions/50053556/dynamic-imported-vue-component-failed-to-resolve
     // https://stackoverflow.com/questions/53630683/webpack-dependency-management-and-vue-js-async-component-loading
   }

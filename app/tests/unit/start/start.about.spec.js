@@ -18,7 +18,7 @@ describe('StartAbout.vue', () => {
     {prop: 'visas', selector: '#start-visas'},
   ]
   let mockProp = true
-  
+
   const props = propDicts.map(d => d.prop)
   const wrapper = createWrapper(component, propsMocker(props))
 

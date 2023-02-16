@@ -36,5 +36,3 @@ describe('test.utils.textMatcher', () => {
   })
 
 })
-
-

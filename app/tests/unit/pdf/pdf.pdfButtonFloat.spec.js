@@ -314,7 +314,7 @@ describe("pdf.pdfButtonFloat", () => {
     const canvas = { width: 888, height: 888 };
 
     const doc = new jspdf("p", "mm", "a4");
-    
+
     const canvases = [ { width: 555, height: 888 }, { width: 888, height: 888 }, { width: 888, height: 555 } ]
 
     beforeEach(() => {
@@ -355,32 +355,32 @@ describe("pdf.pdfButtonFloat", () => {
 
     canvases.forEach(canvas => {
       it(`should add image with correct dimensions w: ${canvas.width} & h: ${canvas.height}`, async () => {
-        
+
         // must have fresh data object here so loaded SUT matches expected
         const data = () => {
           return {
             canvas: canvas,
           };
         };
-  
+
         mountOptions = {
           propsData: propsData,
           data: data,
           stubs: stubs,
         };
-  
+
         wrapper = createWrapper(component, mountOptions, resumeStoreOptions);
-  
+
         wrapper.setMethods({ getDataURL: getDataURL });
           await wrapper.vm.toPDF();
-  
+
         const addImageSpy = jest
           .spyOn(wrapper.vm.jspdf, "addImage")
           .mockImplementation(() => jest.fn());
-  
+
         const marginX = 0; //(pageWidth - canvasWidth) / 2;
         const marginY = 0; //(pageHeight - canvasHeight) / 2;
-  
+
         const pageWidth = doc.internal.pageSize.getWidth();
         const pageHeight = doc.internal.pageSize.getHeight();
         const widthRatio = pageWidth / canvas.width;
@@ -388,9 +388,9 @@ describe("pdf.pdfButtonFloat", () => {
         const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
         const canvasWidth = canvas.width * ratio;
         const canvasHeight = canvas.height * ratio;
-  
+
         const image = getDataURL();
-    
+
         expect(addImageSpy).toHaveBeenCalledWith(
           image,
           "JPEG",
@@ -474,11 +474,11 @@ describe("pdf.pdfButtonFloat", () => {
 
     beforeEach(() => {
       // need before each else the stubs don't get reset (props among other things)
-  
+
       // need to mock canvas because this function expects it
       // to already be set by setcanvas which calls this as callback
       const canvas = { width: 888, height: 888 };
-    
+
       const data = () => {
         return {
           canvas: canvas,
@@ -508,11 +508,11 @@ describe("pdf.pdfButtonFloat", () => {
 
     it("jspdf null on load and should create new jspdf and set it to data property", async () => {
       // added new addPage method to mock
-      
+
       wrapper = createWrapper(component, mountOptions, resumeStoreOptions);
 
       wrapper.setMethods({ getDataURL: getDataURL });
-  
+
       expect(wrapper.vm.jspdf).toBeNull();
 
       await wrapper.vm.paginate();
@@ -523,13 +523,13 @@ describe("pdf.pdfButtonFloat", () => {
     });
 
     it("should add image with correct dimensions and divides up the page into chunks that fit an a4 then switches back to regular layout", async () => {
-      
+
       wrapper = createWrapper(component, mountOptions, resumeStoreOptions);
 
       wrapper.setMethods({ getDataURL: getDataURL });
-  
+
       const canvas = { width: 888, height: 888 };
-    
+
       await wrapper.vm.paginate();
 
       log('green', wrapper.vm.jspdf)
@@ -567,11 +567,11 @@ describe("pdf.pdfButtonFloat", () => {
     });
 
     it("should save pdf with correct filename", async () => {
-      
+
       wrapper = createWrapper(component, mountOptions, resumeStoreOptions);
 
       wrapper.setMethods({ getDataURL: getDataURL });
-        
+
       await wrapper.vm.paginate();
 
       log('green', wrapper.vm.jspdf)

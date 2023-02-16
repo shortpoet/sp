@@ -12,7 +12,7 @@
           v-for="(text, i) in aboutMe.split('\\n\\r')"
           :key="i"
           class="aboutme-paragraph mb-2 mb-md-1"
-          style="font-family: 'Open Sans';"  
+          style="font-family: 'Open Sans';"
         >
         <!-- if text contains markup -->
         <p v-if="!text.match(/\<.+\/\>|\<\/.+\>/g)">

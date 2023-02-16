@@ -6,7 +6,7 @@
   bottom: 3rem;
   // using percect here seemed to be a problem for the css compiler regex i think
   opacity: .5;
-  font-size: 1.5rem;  
+  font-size: 1.5rem;
   .button-float-icon-circle {
     color: $gray-500;
   }
@@ -23,7 +23,7 @@
   z-index: 1000;
   right: -348.4px;
   bottom: -327.2px;
-  // must be set to visible inititally so we have access to div on load then we set to hidden immediately 
+  // must be set to visible inititally so we have access to div on load then we set to hidden immediately
   // on load with data property in component
   visibility: visible;
   transition: visibility 0.3s cubic-bezier(0.42, 0, 0.58, 1);
@@ -137,7 +137,7 @@
   padding: 56px;
   position: fixed;
   left: 0;
-  color: #fff; 
+  color: #fff;
 }
 
 .mobile {

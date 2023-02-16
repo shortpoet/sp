@@ -27,7 +27,7 @@ describe('Start.vue', () => {
   const events =  ['click', 'touchstart', 'touchcancel', 'touchmove', 'touchend']
 
   let methods = {}
-  
+
   let resumeStoreOptions
   let ignoredElements
 
@@ -36,9 +36,9 @@ describe('Start.vue', () => {
   let emmitted
 
   const mockEvents = [
-    { target: {tagName: 'path',}, expected: false}, 
-    { target: {tagName: 'div',}, expected: true}, 
-    { target: {tagName: 'span',}, expected: true}, 
+    { target: {tagName: 'path',}, expected: false},
+    { target: {tagName: 'div',}, expected: true},
+    { target: {tagName: 'span',}, expected: true},
   ]
 
   // https://medium.com/@DavideRama/testing-global-event-listener-within-a-react-component-b9d661e59953
@@ -70,9 +70,9 @@ describe('Start.vue', () => {
       FontAwesomeIcon,
       FontAwesomeLayers
     }
-  
-    propsData = { 
-      // name: 'test name' 
+
+    propsData = {
+      // name: 'test name'
     }
 
     computed = {
@@ -93,9 +93,9 @@ describe('Start.vue', () => {
 
     const getResumeLoaded = true
 
-    resumeStoreOptions = { 
-      getters: { getResumeLoaded: jest.fn(() => getResumeLoaded), getResume: jest.fn(() => hardResume) }, 
-      mutations: { 'SET_RESUME_RAW': jest.fn() } 
+    resumeStoreOptions = {
+      getters: { getResumeLoaded: jest.fn(() => getResumeLoaded), getResume: jest.fn(() => hardResume) },
+      mutations: { 'SET_RESUME_RAW': jest.fn() }
     }
 
     ignoredElements = [
@@ -119,8 +119,8 @@ describe('Start.vue', () => {
 
   // TODO somehow test for latest resume
   // perhaps that's a backend test
-  // would like to match hardresume file to 
-  // chosen 'latest' version 
+  // would like to match hardresume file to
+  // chosen 'latest' version
 
   describe('StartButtonFloat.vue', () => {
 
@@ -134,27 +134,27 @@ describe('Start.vue', () => {
       expect(wrapper.vm.rippleExpanded).toBe(true)
       expect(emmitted).toMatchObject( {'ripple-open': [ [] ]} )
       expect(wrapper.find('.button-float-icon').attributes().class).toContain('pdf')
-  
+
     })
 
     it('toggles rippleExpanded to false when StartButtonFloat method close() is called and emits ripple-close and sets icon to rocket', async () => {
-      
+
       wrapper.setData({ rippleExpanded: true })
       await Vue.nextTick()
       wrapper.find(StartButtonFloat).vm.close()
       emmitted = wrapper.find(StartButtonFloat).emitted()
       await Vue.nextTick()
-      
+
       expect(wrapper.vm.rippleExpanded).toBe(false)
       expect(emmitted).toMatchObject( {'ripple-close': [ [] ]} )
       expect(wrapper.find('.button-float-icon').attributes().class).toContain('rocket')
-  
+
     })
-    
+
     mockEvents.forEach(event => {
-      
+
       it('emits ripple close when event target is not path aka not the icon', async () => {
-        
+
         wrapper.setData({ rippleExpanded: true })
         await Vue.nextTick()
         wrapper.find(StartButtonFloat).vm.handleClickOutside(event)
@@ -164,15 +164,15 @@ describe('Start.vue', () => {
           expect(wrapper.vm.rippleExpanded).toBe(false)
           expect(emmitted).toMatchObject( {'ripple-close': [ [] ]} )
           expect(wrapper.find('.button-float-icon').attributes().class).toContain('rocket')
-        } 
+        }
       })
-      
+
     })
 
     describe('startbuttonfloat.document.eventlisteners', () => {
 
       it('adds events to the dom after one second wait', async () => {
-                
+
         // option 1
         // https://stackoverflow.com/questions/54648402/how-to-mock-eventlistener-when-set-in-componentdidmount
         jest.spyOn(document, 'addEventListener').mockImplementation(() => jest.fn())
@@ -192,12 +192,12 @@ describe('Start.vue', () => {
             rippleExpanded: true
           }
         }
-        
+
         // let _mountOptions = { propsData, mocks, computed, stubs, ignoredElements, methods, data }
         let _mountOptions = { propsData, mocks, computed, stubs, ignoredElements }
 
         _mountOptions.attachToDocument = true
-    
+
         let _wrapper = createWrapper(component, _mountOptions, resumeStoreOptions)
 
         // _wrapper.setData({ rippleExpanded: true })
@@ -209,7 +209,7 @@ describe('Start.vue', () => {
         // let event = 'touchstart'
 
         // https://stackoverflow.com/questions/55738445/how-to-trigger-a-window-event-during-unit-testing-using-vue-test-utils
-        // custom event 
+        // custom event
         //  // https://stackoverflow.com/questions/52265387/vue-test-utils-window-scroll
         // document.dispatchEvent(new Event(event))
 
@@ -231,15 +231,15 @@ describe('Start.vue', () => {
       })
 
       it('removes events from the dom when wrapper is destroyed', async () => {
-        
+
         let removeEventListener =  jest.spyOn(document, 'removeEventListener').mockImplementation(() => jest.fn());
-            
+
         let _mountOptions = { propsData, mocks, computed, stubs, ignoredElements }
-  
+
         _mountOptions.attachToDocument = true
-    
+
         let _wrapper = createWrapper(component, _mountOptions, resumeStoreOptions)
-        
+
         _wrapper.destroy()
         let handleClickOutside = () => {}
         handleClickOutside =  handleClickOutside.bind(document)
@@ -256,22 +256,22 @@ describe('Start.vue', () => {
 
         // console.log(removeEventListener.mock.calls)
         // console.log(calls)
-        // saw SO answer that said sometimes an array can contain a random object at 
+        // saw SO answer that said sometimes an array can contain a random object at
         // index -1 so
         // const arr = [1, 2]
         // arr[-1] = 'foo'
-        // expect(arr).not.toEqual([1, 2]) 
+        // expect(arr).not.toEqual([1, 2])
         // console.log(Object.keys(removeEventListener.mock.calls))
         // console.log(Object.keys(calls))
 
-        // this test fails on 
+        // this test fails on
         // Received: serializes to the same string
         // when using toEqual or event toMatchObject or arrayContaining
         // https://github.com/facebook/jest/issues/8475
 
         // expect(removeEventListener.mock.calls).toEqual(expect.arrayContaining(calls))
         // expect(removeEventListener.mock.calls).toEqual(calls)
-    
+
         let mockCallNames = removeEventListener.mock.calls.map(mc => mc[0])
         expect(mockCallNames).toEqual(events)
       })

@@ -1,8 +1,8 @@
 <template>
   <portal :to="target">
-    <!-- 
+    <!--
       * previously had this selector to unify the components - split after styling diverged
-      * v-if="href" 
+      * v-if="href"
       * v-if="pdfTarget"
     </div>-->
     <div type="input" :class="classObject" @click="showModal">

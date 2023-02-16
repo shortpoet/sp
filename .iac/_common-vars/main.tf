@@ -1,3 +1,7 @@
+terraform {
+  required_version = ">= 0.13.5"
+}
+
 locals {
   zone_name       = "marshmallowmeat.com"
   site_domain     = "shortpoet.com"

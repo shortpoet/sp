@@ -1,8 +1,8 @@
 
 
 // // this is incomplete
-// // maybe try and develop using TDD  
-  
+// // maybe try and develop using TDD
+
 // export const nestedPropsMocker = (props) => {
 
 //   console.log(props)

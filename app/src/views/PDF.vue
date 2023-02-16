@@ -144,7 +144,7 @@ export default {
 @import './../assets/scss/pdf.scss';
 
 // page {
-//   size: A4 
+//   size: A4
 // }
 
 // // A4 page dimensions supposedly

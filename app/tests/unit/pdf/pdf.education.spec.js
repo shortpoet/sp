@@ -9,10 +9,10 @@ describe('PDFEducation.vue', () => {
   // const props = Object.keys(component.props)
   const props = {
     educations: ['institution', 'degree', 'details', 'focus', '3']
-  }  
+  }
 
   const propsObject = propsMocker(props)
-  
+
   let wrapper = createWrapper(component, propsObject)
 
   let prop
@@ -59,7 +59,7 @@ describe('PDFEducation.vue', () => {
 
   })
   it('matches education snapshot', () => {
-    
+
     let _propsObject = cloneDeep(propsObject)
     _propsObject.propsData.renderPDF = false
 
@@ -69,7 +69,7 @@ describe('PDFEducation.vue', () => {
 
   })
   it('matches education snapshot', () => {
-    
+
     let _propsObject = cloneDeep(propsObject)
     _propsObject.propsData.renderPDF = true
 

@@ -8,10 +8,10 @@ describe('StartEducation.vue', () => {
   // const props = Object.keys(component.props)
   const props = {
     educations: ['institution', 'degree', 'details', 'focus', '3']
-  }  
+  }
 
   const propsObject = propsMocker(props)
-  
+
   const wrapper = createWrapper(component, propsMocker(props))
 
   let prop
@@ -58,7 +58,7 @@ describe('StartEducation.vue', () => {
 
   })
   it('matches education snapshot', () => {
-    
+
     expect(wrapper.html()).toMatchSnapshot()
 
   })

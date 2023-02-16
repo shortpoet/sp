@@ -130,7 +130,7 @@ const paginate3 = (target, canvas, pdf) => {
   var imgData = canvas.toDataURL('image/png');
 
   /*
-  Here are the numbers (paper width and height) that I found to work. 
+  Here are the numbers (paper width and height) that I found to work.
   It still creates a little overlap part between the pages, but good enough for me.
   if you can find an official number from jsPDF, use them.
   */

@@ -83,8 +83,8 @@ describe('StartExperience.vue', () => {
       e.jobs.map(j => {
         j.description = `description part 1\\n\\rdescription part 2\\n\\rdescription part 3`
       })
-    })    
-    
+    })
+
     selector = 'p'
     wrapper = createWrapper(component, _propsObject)
 
@@ -104,7 +104,7 @@ describe('StartExperience.vue', () => {
 
   })
   it('matches experience snapshot', () => {
-    
+
     // same wrapper object from previous tests adds the split descriptions
     // bec a new wrapper was not instantiated
     expect(wrapper.html()).toMatchSnapshot()

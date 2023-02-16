@@ -9,7 +9,7 @@ import propsMocker from './test.utils.propsMocker'
 import propFinder from './test.utils.propFinder'
 import propsFinder from './test.utils.propsFinder'
 
-// made this to try and isolate the doMatch logic for testing but still 
+// made this to try and isolate the doMatch logic for testing but still
 // throws cannot call text() on empty wrapper
 const funcs = {
   propMocker: propMocker,
@@ -21,7 +21,7 @@ export const textMatcher = (component, props, prop, selector, mock = true, isSha
   const doMatch = (funcName) => {
     const func = funcs[`${funcName}`]
     expect(wrapper.find(`${selector}`).text()).toMatch(func(`${prop}`).propsData[`${prop}`])
-  }  
+  }
   /* istanbul ignore next */
   if (mock) {
     wrapper = createWrapper(component, propsMocker(props))

@@ -19,7 +19,7 @@ const createMocks = (custom = {  state: {}, getters: {}, mutations: {}, actions:
   const mockActions = Object.assign({}, actions, custom.actions)
   const mockModules = Object.assign({}, modules, custom.modules)
 
-  return  {  
+  return  {
     state: mockState,
     getters: mockGetters,
     mutations: mockMutations,

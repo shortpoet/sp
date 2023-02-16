@@ -39,13 +39,13 @@ export const createWrapper  = (
     // log('red', store)
     // log('blue', store._mutations['resume/SET_RESUME_RAW'][0]())
     // console.log(options)
-    return isShallow ? 
+    return isShallow ?
     factoryShallow(component, {
       localVue,
       store,
       // router,
       ...options
-    }) : 
+    }) :
     factory(component, {
       localVue,
       store,

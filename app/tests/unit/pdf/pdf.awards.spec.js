@@ -13,8 +13,8 @@ describe('StartAwards.vue', () => {
   let selector
   let mockProp = false
   // using real props to test icon class names and nested // computed values
-  // by transforming it to the shape the component expects, it renders the values in 
-  // snapshot. 
+  // by transforming it to the shape the component expects, it renders the values in
+  // snapshot.
   const propsObject = propsFinder(props)
   const {propsData} = propsObject
   // console.log(propsObject)
@@ -45,7 +45,7 @@ describe('StartAwards.vue', () => {
       // match wordSSS .+ vs \w+ within parentheses
       spanText = wrapper.find(`i.${type} ~ span`).text().match(/\((.+)\)/)[1]
       expect(iconClass).toContain(spanText)
-    })  
+    })
   })
 
   it('matches snapshot', () => {

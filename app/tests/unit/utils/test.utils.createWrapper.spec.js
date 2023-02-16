@@ -36,11 +36,11 @@ describe('test.utils.createWrapper', () => {
     provide: {}
   }
 
-  let resumeStoreOptions = { 
-    state: {}, 
-    getters: {}, 
-    mutations: {}, 
-    actions: {} 
+  let resumeStoreOptions = {
+    state: {},
+    getters: {},
+    mutations: {},
+    actions: {}
   }
 
   let isShallow
@@ -111,5 +111,3 @@ describe('test.utils.createWrapper', () => {
   })
 
 })
-
-

@@ -69,14 +69,14 @@ describe('Resume Store Mutations', () => {
           // commenting here since no sales category for now
           // this test is likely in need of review and refactor
           // #TODO
-          // {type: 'sales', jobs: [{company: 'test job', experienceType: 'sales'}]}, 
+          // {type: 'sales', jobs: [{company: 'test job', experienceType: 'sales'}]},
           {type: 'hospitality', jobs: [{company: 'test job', experienceType: 'hospitality'}]}
         ]
       }
-      
+
       SET_RESUME_RAW(state, data)
       expect(state.resume).toEqual(newResume)
-    })    
+    })
   })
   describe('SET_RESUME', () => {
     it('sets state resume to newResume', () => {
@@ -87,12 +87,12 @@ describe('Resume Store Mutations', () => {
       }
       SET_RESUME(state, newResume)
       expect(state.resume).toEqual(newResume)
-    })    
+    })
   })
   describe('SET_RESUME_LOADED', () => {
     it('sets resume loaded state after resume is loaded', () => {
       SET_RESUME_LOADED(state, true)
       expect(state.resumeLoaded).toBe(true)
-    })    
+    })
   })
 })

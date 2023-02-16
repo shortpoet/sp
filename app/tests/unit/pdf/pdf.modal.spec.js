@@ -31,21 +31,21 @@ describe('PDFModal.vue', () => {
   describe('event emissions', () => {
 
     it('emits close when close button is clicked', () => {
-      
+
       const wrapper = createWrapper(component, mountOptions)
       wrapper.find('.btn-close').trigger('click')
       expect(wrapper.emitted()).toMatchObject( {'close': [ [], [] ]} )
 
     })
     it('emits to-pdf and close as a follow up from toPDF in PDFButtonFloat when toPDF button is clicked', () => {
-      
+
       const wrapper = createWrapper(component, mountOptions)
       wrapper.find('.btn-save').trigger('click')
       expect(wrapper.emitted()).toMatchObject( { 'to-pdf': [ [] ], 'close': [ [] ] } )
 
     })
     it('emits to-page and close as a follow up from toPage in PDFButtonFloat when toPage button is clicked', () => {
-      
+
       const wrapper = createWrapper(component, mountOptions)
       wrapper.find('.btn-page').trigger('click')
       expect(wrapper.emitted()).toMatchObject( { 'to-page': [ [] ], 'close': [ [] ] } )
@@ -55,9 +55,9 @@ describe('PDFModal.vue', () => {
     it('matches snapshot', () => {
 
       wrapper = createWrapper(component, mountOptions)
-  
+
       expect(wrapper.html()).toMatchSnapshot()
-  
+
     })
 
   })

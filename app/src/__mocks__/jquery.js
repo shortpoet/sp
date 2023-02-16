@@ -15,5 +15,3 @@ $.fn.collapse = jest.fn((...params) => {
   console.log(params)
   return this
 })
-
-

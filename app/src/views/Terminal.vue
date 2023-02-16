@@ -33,7 +33,7 @@ import { mapActions } from 'vuex';
 export default {
   name: 'Landing',
   components: {
-    
+
   },
   methods: {
     ...mapActions(['loadEnv']),

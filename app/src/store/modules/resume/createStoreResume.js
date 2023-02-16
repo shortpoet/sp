@@ -1,7 +1,7 @@
 import { state, getters, mutations, actions } from './StoreResume'
 
 export const createStoreResume = () => {
-  return  {  
+  return  {
     namespaced: true,
     state: state,
     getters: getters,
@@ -16,7 +16,7 @@ export const createStoreResumeMocks = (custom = { getters: {}, mutations: {}, ac
   const mockGetters = Object.assign({}, getters, custom.getters);
   const mockMutations = Object.assign({}, mutations, custom.mutations);
   const mockActions = Object.assign({}, actions, custom.actions);
-  return  {  
+  return  {
     namespaced: true,
     state: mockState,
     getters: mockGetters,

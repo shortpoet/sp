@@ -80,7 +80,7 @@ Bueno, ya que voy a publicar esto, la esperanza es inspirar a otros nodos de con
 
 Bien, vayamos al grano. Entonces, ¿qué son los tests unitarios y por qué me encantan?
 
-1) Escribes un código que hace una cosa. 
+1) Escribes un código que hace una cosa.
 
 2) Escribes otro código que hace otra cosa.
 
@@ -102,9 +102,9 @@ Esa extensión de archivo es una gran oportunidad para practicar lo que se conoc
 
 Así que en conclusión, aprende a cocinar un huevo correctamente, ama tus pruebas de unidad, y en el proceso encuentra tu [voz](https://www.shortpoet.com/articles).
 
---- 
+---
 
-Publicado orignalmente en: 
+Publicado orignalmente en:
 https://www.shortpoet.com/articles/learning-to-unit-test-es
 
 ---

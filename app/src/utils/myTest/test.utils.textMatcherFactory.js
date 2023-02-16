@@ -9,7 +9,7 @@ export const textMatcherFactory = (component, propDicts) => {
   propDicts.forEach(dict => {
     it(`renders interests ${dict.selector} that matches ${dict.prop} prop`, () => {
       textMatcher(component, props, dict.prop, dict.selector)
-    })  
+    })
   })
 }
 

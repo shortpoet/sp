@@ -30,7 +30,7 @@ describe('PDFObjective.vue', () => {
 
   })
   it('matches objective snapshot', () => {
-    
+
     expect(wrapper.html()).toMatchSnapshot()
 
   })

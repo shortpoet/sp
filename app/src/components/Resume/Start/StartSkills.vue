@@ -4,7 +4,7 @@
       <h2 class="heading heading-2 mb-4 mb-md-3">Skills</h2>
       <div class="subheading mb-3">Programming Languages &amp; Tools</div>
       <ul class="list-devicons list-inline list-icons">
-        <!-- <FlexList 
+        <!-- <FlexList
             v-slot:default="slotProps"
             :items="icons"
             :display-rows="3"

@@ -36,6 +36,3 @@ describe('test.utils.factoryShallow', () => {
 
   })
 })
-
-
-

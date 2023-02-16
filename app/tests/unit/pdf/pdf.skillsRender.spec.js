@@ -10,7 +10,7 @@ describe('PDFSkillsRender.vue', () => {
 
   let wrapper
   let mountOptions = propsFinder(['skills'])
-  // this was throwing error because 'document' object not available 
+  // this was throwing error because 'document' object not available
   // unless explicitly calling this
   mountOptions.attachToDocument = true
   let expected
@@ -39,21 +39,21 @@ describe('PDFSkillsRender.vue', () => {
       wrapper = createWrapper(component, mountOptions)
 
       mountOptions.propsData.skills.forEach((s, i) => {
-        
+
         let type = typeFilter(s.type)
 
         expect(wrapper.find(`.pdf-skill-type-${i + 1}`).text()).toMatch(type)
 
       })
-      
+
     })
 
     it('matches snapshot', () => {
 
       wrapper = createWrapper(component, mountOptions)
-  
+
       expect(wrapper.html()).toMatchSnapshot()
-  
+
     })
 
   })

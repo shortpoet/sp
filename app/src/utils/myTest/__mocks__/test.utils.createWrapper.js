@@ -19,7 +19,7 @@ createWrapper.find = find
 createWrapper.expect = expect
 createWrapper.doMatch = doMatch
 
-// using default creates a 'default' object in the mock implementations that 
+// using default creates a 'default' object in the mock implementations that
 // throws an error
 // doesn't use the mocked propsFinder, instead using default
 // still need to learn more about how this works

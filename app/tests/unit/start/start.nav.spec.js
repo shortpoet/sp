@@ -50,7 +50,7 @@ describe('StartNav.vue', () => {
   let mocks
 
   let methods = {}
-  
+
   let resumeStoreOptions
   let ignoredElements
 
@@ -71,7 +71,7 @@ describe('StartNav.vue', () => {
     //     removeEventListener: jest.fn(),
     //     dispatchEvent: jest.fn(),
     //   })),
-    // });    
+    // });
 
     // https://github.com/testing-library/react-testing-library/issues/353#issuecomment-510074776
     window.resizeTo = function resizeTo(width, height) {
@@ -86,8 +86,8 @@ describe('StartNav.vue', () => {
     jest.resetModules()
     jest.clearAllMocks()
 
-    propsData = { 
-      // name: 'test name' 
+    propsData = {
+      // name: 'test name'
     }
 
     computed = {
@@ -108,7 +108,7 @@ describe('StartNav.vue', () => {
       // collapse: jest.fn()
     }
 
-    resumeStoreOptions = { 
+    resumeStoreOptions = {
     }
 
     ignoredElements = [
@@ -124,21 +124,21 @@ describe('StartNav.vue', () => {
   })
   describe("start.nav.mediaQueries", () => {
 
-  
+
 
     // https://stackoverflow.com/questions/57167525/how-to-set-media-queries-with-jest
     testWidths.forEach(tw => {
 
       mediaQueries.forEach(mq => {
-  
-  
+
+
         window.matchMedia = media => ({
           addListener: () => {},
           removeListener: () => {},
           // matches: media === '(min-width: 545px)',
           matches: media === mediaQueries[2],
         });
-  
+
         // window.matchMedia = jest.fn().mockImplementation(query => {
         //   return {
         //     matches: query === '(min-width: 240px) and (max-width: 767px)' ? false:true ,
@@ -148,7 +148,7 @@ describe('StartNav.vue', () => {
         //     removeListener: jest.fn(),
         //   };
         // });
-        it(`doesn't display pic at media query below 992px ${mq}`, async () => {      
+        it(`doesn't display pic at media query below 992px ${mq}`, async () => {
           // window.matchMedia = jest.fn(() => {
           //   return {
           //     matches: true,
@@ -186,7 +186,7 @@ describe('StartNav.vue', () => {
       // const collapse = jest.fn()
       const _wrapper = mount(StartNav)
       // _wrapper.setMethods({collapse: collapse})
-  
+
       // expect(wrapper).toMatchSnapshot()
       console.log(wrapper.vm.isCollapse)
       const button = wrapper.find('.nav-item')
@@ -194,16 +194,16 @@ describe('StartNav.vue', () => {
       // console.log(wrapper.vm.isCollapse)
       expect(wrapper.vm.isCollapse).toBe(true)
       // expect(collapse).toHaveBeenCalled()
-  
+
     })
-  
+
     it('closes responsive menu when a link is clicked', async () => {
 
       // // window.resizeTo(400, 600)
       // // window.resizeTo(1200, 800)
-      
+
       // let toggler = wrapper.find('.navbar-toggler')
-      
+
       // // expect(toggler.isVisible()).toBe(true)
 
       // // expect(wrapper.find('p')).toBe(false)
@@ -218,10 +218,10 @@ describe('StartNav.vue', () => {
       // // console.log(el)
       // // console.log($.fn)
       // // console.log($.fn.collapse)
-      
+
       // // wrapper.find('a.js-scroll-trigger[href*="#"]:not([href="#"])').trigger('click')
       // // const collapseSpy = jest.spyOn(el, 'collapse').mockImplementation(() => jest.fn())
-      
+
       // // console.log($)
       // // console.log(Object.keys($))
       // // console.log($['fn'])
@@ -229,7 +229,7 @@ describe('StartNav.vue', () => {
       // // const collapseSpy = jest.spyOn(component.methods, 'collapse').mockImplementation(() => jest.fn())
       // const collapse = jest.fn()
       // wrapper.setMethods({collapse: collapse})
-      
+
       // // el.click()
       // const p = wrapper.find('p')
       // console.log(p)
