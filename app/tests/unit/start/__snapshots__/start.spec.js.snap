@@ -25,7 +25,7 @@ exports[`Start.vue start.snapshots matches snapshot 1`] = `
         </div>
       </div>
     </section>
-    <section id="start-socials" class="resume-section pl-3 pl-lg-5 py-1 mt-3 d-flex d-column">
+    <section id="start-socials" class="resume-section ps-3 ps-lg-5 py-1 mt-3 d-flex d-column">
       <div class="my-auto">
         <ul class="list-inline list-social-icons mb-0 mt-0">
           <li class="social-item list-inline-item " style="font-family: FontAwesome;"><a href="https://github.com/shortpoet"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li>
@@ -35,7 +35,7 @@ exports[`Start.vue start.snapshots matches snapshot 1`] = `
         </ul>
       </div>
     </section>
-    <section id="skills" class="resume-section pl-3 px-lg-5 mt-5 mb-4 mb-md-3 d-flex flex-column">
+    <section id="skills" class="resume-section ps-3 px-lg-5 mt-5 mb-4 mb-md-3 d-flex flex-column">
       <div class="my-auto">
         <h2 class="heading heading-2 mb-4 mb-md-3">Skills</h2>
         <div class="subheading mb-3">Programming Languages &amp; Tools</div>
