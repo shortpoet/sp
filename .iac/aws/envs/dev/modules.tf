@@ -7,6 +7,6 @@ module "s3_dev" {
 module "cloudflare_dev" {
   source               = "../../modules/cloudflare"
   zone_name            = local.zone_name
-  cname_name           = local.site_domain_dev
+  cname_name           = local.subdomain_dev
   cname_value_endpoint = module.s3_dev.website_endpoint
 }

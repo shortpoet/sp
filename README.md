@@ -61,6 +61,17 @@ export CLOUDFLARE_API_TOKEN=$(pass Cloud/cloudflare/Terraform_Token)
 terraform import cloudflare_zone.shortpoet d4e2...
 ```
 
+```bash
+get_cloudflare_record_id() {
+  zone_id='b1e5e903a5851f66620b714393780b9e'
+  zones=$(curl -X GET "https://api.cloudflare.com/client/v4/zones/$(pass Cloud/cloudflare/zone_id)/dns_records" \
+    -H "Content-Type:application/json" \
+    -H "Authorization: Bearer $(pass Cloud/cloudflare/Terraform_Token)")
+  echo $zones | jq -r '.result[] | select(.name == "dev.shortpoet.com") | .id'
+  echo $zones | jq -r '.result[] | select(.name == "shortpoet.com") | .id'
+}
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
