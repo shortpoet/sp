@@ -21,7 +21,7 @@
         </li>
       </ul>
     </div>
-</section>
+  </section>
 </template>
 
 <script>
@@ -70,7 +70,7 @@ export default {
   computed: {
     availableSocials() {
       let providerNames = this.socials.map(s => s.provider)
-      return this.socialsData.filter(social => providerNames.includes(social.social)).reverse()
+      return this.socialsData.filter(social => providerNames.includes(social.social))
       // filter out null entries first if not including in that version
       // can't use break in map reduce forEach but can filter first
       // or could use simple for loop with iterator
