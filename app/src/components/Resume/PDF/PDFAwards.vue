@@ -32,13 +32,13 @@ export default {
   computed: {
     sectionClass() {
       return this.renderPDF ?
-        'resume-section-render ms-3 mx-2 mt-2'
+        'resume-section-render me-2 mt-2'
         :
         'resume-section ms-4 mt-2'
     },
     gridClass() {
       return this.renderPDF ?
-        'd-flex flex-row ms-2 justify-content-around'
+        'd-flex flex-row justify-content-around'
         :
         'd-flex flex-column ms-1'
     },

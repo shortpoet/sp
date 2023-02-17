@@ -48,7 +48,7 @@ export default {
   computed: {
     sectionClass() {
       return this.renderPDF ?
-        'resume-section-render ms-3 mt-2 mb-3'
+        'resume-section-render mt-2 mb-3'
         :
         'resume-section ms-3 mt-2 mb-3'
     },

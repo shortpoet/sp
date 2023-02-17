@@ -19,7 +19,7 @@
         </div>
 
         <!-- this is RENDER -->
-        <div v-else class="skills-awards-container">
+        <div v-else class="skills-awards-subcontainer-render">
           <PDFAwards :renderPDF="renderPDF" :spokenLanguages="getResume.spokenLanguages" />
           <PDFSkillsRender :skills="getResume.skills" />
         </div>
@@ -27,8 +27,7 @@
       </div>
 
       <!-- objective rows -->
-      <!-- ms-3 to match pic -->
-      <div class="resume-section ms-3">
+      <div class="row">
         <PDFObjective :renderPDF="renderPDF" :aboutMe="getResume.aboutMe" />
       </div>
 

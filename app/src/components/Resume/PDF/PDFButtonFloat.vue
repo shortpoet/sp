@@ -25,7 +25,7 @@
                 </template>-->
       </PDFModal>
     </div>
-</portal>
+  </portal>
 </template>
 
 <script>
@@ -111,6 +111,17 @@ export default {
         document.body.appendChild(canvas);
       });
     },
+    removeAllMarginPadding() {
+      const vm = this;
+      const target = document.getElementById(vm.pdfTarget);
+      const elements = target.querySelectorAll(".resume-section, .resume-section-render");
+      console.log(elements);
+      elements.forEach(element => {
+        element.style.margin = "0";
+        element.style.padding = "0";
+        element.className = "resume-section";
+      });
+    },
     async checkFonts() {
       var fontA = new FontFaceObserver("Open Sans");
       var fontB = new FontFaceObserver("Saira Extra Condensed");
@@ -152,6 +163,7 @@ export default {
     // https://stackoverflow.com/questions/19626680/is-settimeout-a-good-solution-to-do-async-functions-with-javascript
     async setCanvas(options, callback) {
       const vm = this;
+      // vm.removeAllMarginPadding();
       await vm.checkFonts();
       // colorLog("fonts have been checked", "violet");
       setTimeout(async () => {
@@ -275,9 +287,10 @@ export default {
         "YYYY_MM_DD_HH_mm"
       )}.pdf`;
 
+      // comment to test with no generation
       this.jspdf.save(fileName);
-
       vm.$emit("to-render-pdf", false);
+
       return this.jspdf;
     },
     /* istanbul ignore next */
@@ -350,8 +363,12 @@ export default {
       }
     }
   },
-  mounted() { }
+  mounted() {
+    // this.removeAllMarginPadding();
+  }
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

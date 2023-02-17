@@ -26,6 +26,7 @@ export const mutations = {
     // hardcoded experience types for order - not ideal
     // either add order to db schema or some kind of switch logic
     // #TODO
+    console.log('SET_RESUME_RAW');
     const experienceTypes = ['software', 'language', 'hospitality'];
     const resume = {
       aboutMe: data.aboutMe,
@@ -40,7 +41,7 @@ export const mutations = {
       citizenship: data.citizenship,
       educations: data.resumeEducations.map(re => re.education),
       jobs: data.resumeJobs.map(re => re.job),
-      skills: data.resumeSkills.map(re => re.skill),
+      skills: data.resumeSkills.map(re => re.skill).reverse(),
       socials: data.resumeSocials.map(re => re.social),
       spokenLanguages: data.resumeSpokenLanguages.map(re => re.spokenLanguages),
       experiences: []
@@ -79,6 +80,7 @@ export const actions = {
     }
   },
   async loadHardResume({ commit }) {
+    hardResume.skills = hardResume.skills.reverse();
     commit(SET_RESUME, hardResume);
     const hasResume = !!hardResume.title;
     commit(SET_RESUME_LOADED, hasResume);

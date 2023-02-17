@@ -1,8 +1,8 @@
 <template>
-  <section class="resume-section mt-2 ms-3" id="interests">
+  <section :class="sectionClass" id="interests">
     <div class="my-auto">
       <h4 style="font-family: 'Saira Extra Condensed';" class="heading heading-4 mb-3">Interests</h4>
-      <p style="font-family: 'Open Sans';" class="mb-0">{{ interests }}</p>
+      <p style="font-family: 'Open Sans';">{{ interests }}</p>
     </div>
   </section>
 </template>
@@ -12,6 +12,18 @@ export default {
   props: {
     interests: {
       type: String
+    },
+    renderPDF: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    sectionClass() {
+      return this.renderPDF ?
+        'resume-section-render mt-2 mb-3'
+        :
+        'resume-section ms-3 mt-2 mb-3'
     }
   }
 }

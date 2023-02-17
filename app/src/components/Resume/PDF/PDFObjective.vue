@@ -8,17 +8,13 @@
 
     <div class="d-flex align-items-center" id="objective">
       <div class="resume-item d-flex flex-column justify-content-between">
-        <div
-          v-for="(text, i) in aboutMe.split('\\n\\r')"
-          :key="i"
-          class="aboutme-paragraph mb-2 mb-md-1"
-          style="font-family: 'Open Sans';"
-        >
-        <!-- if text contains markup -->
-        <p v-if="!text.match(/\<.+\/\>|\<\/.+\>/g)">
-          {{ text }}
-        </p>
-        <p v-else v-html="text"></p>
+        <div v-for="(text, i) in aboutMe.split('\\n\\r')" :key="i" class="aboutme-paragraph mb-2 mb-md-1"
+          style="font-family: 'Open Sans';">
+          <!-- if text contains markup -->
+          <p v-if="!text.match(/\<.+\/\>|\<\/.+\>/g)">
+            {{ text }}
+          </p>
+          <p v-else v-html="text"></p>
         </div>
       </div>
     </div>
@@ -39,17 +35,17 @@ export default {
       default: false
     }
   },
-  data () {
+  data() {
     return {
       pdfUrl: window.location.protocol + '//' + window.location.host + '/pdf',
     }
   },
   computed: {
-    sectionClass () {
+    sectionClass() {
       return this.renderPDF ?
         'resume-section-render mb-3'
         :
-        'resume-section mb-3'
+        'resume-section mb-3 ms-1'
     }
   }
 }

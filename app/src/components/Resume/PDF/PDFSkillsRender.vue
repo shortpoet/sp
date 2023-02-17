@@ -1,10 +1,10 @@
 <template>
-  <section class="resume-section mt-3 ms-3" id="skills">
+  <section class="resume-section mt-3" id="skills">
     <div class="my-auto">
       <h4 style="font-family: 'Saira Extra Condensed';" class="heading heading-4 subheading mb-3 ms-0">
         Programming Languages &amp; Tools
       </h4>
-      <div id="skill-grid-container" class="d-flex flex-column justify-content-between mt-4 me-3">
+      <div id="skill-grid-container" class="d-flex flex-column justify-content-between">
         <div class="skill-grid-row-1 d-flex flex-row justify-content-between">
           <div v-for="(type, it) in skills" :key="it" class="skill-grid-render">
             <div class="list-devicons devicon-row d-flex justify-content-around">

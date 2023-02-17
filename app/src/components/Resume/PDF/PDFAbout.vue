@@ -1,7 +1,7 @@
 <template>
-  <section class="resume-section" id="about">
+  <section :class="sectionClass" id="about">
     <!-- basic info row -->
-    <div class="d-flex flex-row justify-content-between align-items-center mt-1 ms-3" id="basic-info">
+    <div class="d-flex flex-row justify-content-between align-items-center" id="basic-info">
 
       <!-- photo / info row -->
       <div class="d-flex flex-row align-items-center">
@@ -101,7 +101,14 @@ export default {
       pic: pic,
     };
   },
-  computed: {},
+  computed: {
+    sectionClass() {
+      return this.renderPDF
+        ? "resume-section-render mt-1"
+        : "resume-section mt-1 ms-3";
+    },
+  },
+
   mounted() {
   },
 };

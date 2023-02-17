@@ -46,7 +46,7 @@ a {
 .awards-col,
 .skills-awards-container,
 .skills-col {
-  // padding: 0rem !important;
+  padding: 0rem !important;
 }
 
 
@@ -235,6 +235,11 @@ span.skill {
 .skill-type-render {
   color: $primary;
   font-size: .70rem;
+}
+
+.skill-grid-row-1 {
+  padding: -0.1rem !important;
+  margin: -0.1rem !important;
 }
 
 .skill {
