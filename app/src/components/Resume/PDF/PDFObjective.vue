@@ -45,7 +45,7 @@ export default {
       return this.renderPDF ?
         'resume-section-render mb-3'
         :
-        'resume-section mb-3 ms-1'
+        'resume-section mb-3 ms-3'
     }
   }
 }

@@ -39,7 +39,7 @@ import jsPDF from "jspdf";
 // https://github.com/niklasvh/html2canvas/issues/1868#issuecomment-599217709
 import html2canvas from "@trainiac/html2canvas";
 // import html2canvas from 'html2canvas'
-import * as FontFaceObserver from "fontfaceobserver";
+import FontFaceObserver from "fontfaceobserver";
 import moment from "moment";
 
 // https://stackoverflow.com/questions/38975138/is-using-async-in-settimeout-valid
