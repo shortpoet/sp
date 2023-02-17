@@ -106,6 +106,18 @@ export const hardResume = {
       comments: 'simplify and fix dates'
     },
     {
+      id: 22,
+      experienceType: 'software',
+      position: 'Senior DevOps Engineer',
+      company: 'Benchmark Analytics',
+      description:
+        ' • Increased revenue by launching a new product line on time by orchestrating the full stack, including database, backend, frontend, and infrastructure code using risk management data modeling solution. \\n\\r • Achieved auditor compliance, AWS well-architected review status, and improved scalability and availability through cross-functional team coordination. \\n\\r • Reduced infrastructure costs by 30% through automated and manual analysis and refactoring of aged and drifted cloud infrastructure. \\n\\r • Maintained 99.9% uptime by managing and tuning disparately initialized infrastructure in accordance with SLA. \\n\\r • Improved team productivity by mentoring junior team members and conducting technical training sessions. \\n\\r • Efficiently modularized existing infrastructure to gain the confidence of stakeholders to take over DevOps for the ETL, data analytics and ML research teams while maintaining backward compatibility and SLA. \\n\\r • Enabled rapid expansion of product needs and efficient onboarding of new development teams through architecting fresh deployment patterns and implementing several API gateways. \\n\\r • Implemented security best practices, including alerting lambdas and IAM roles, and automated secret rotation in several runtime systems. \\n\\r • Created a transit gateway to connect several VPCs used for data isolation and enabling AWS workspaces and VPN to access systems across various networks to meet stringent compliance requirements imposed by working with AWS GovCloud. \\n\\r • Led analysis necessary for overcoming the lack of knowledge transfer opportunities amidst a patchwork of largely undocumented and drifted infrastructure. \\n\\r • Created a mock microservice using Java to closely model and test changes to infrastructure. \\n\\r • Maintained pace of development for existing product backlog by creating new microservices modeled after existing ones using existing patterns. \\n\\r • Increased efficiency and quality by leveraging AI-powered tooling such as Github Copilot and ChatGPT \\n\\r',
+      startDate: '2022 (February)',
+      endDate: '2023 (February)',
+      dateCreated: '2023-02-16',
+      comments: 'add Benchmark'
+    },
+    {
       id: 23,
       experienceType: 'software',
       position: 'Senior DevOps Engineer',
@@ -295,6 +307,18 @@ export const hardResume = {
   experiences: [
     {
       jobs: [
+        {
+          id: 22,
+          experienceType: 'software',
+          position: 'Senior DevOps Engineer',
+          company: 'Benchmark Analytics',
+          description:
+            ' • Increased revenue by launching a new product line on time by orchestrating the full stack, including database, backend, frontend, and infrastructure code using risk management data modeling solution. \\n\\r • Achieved auditor compliance, AWS well-architected review status, and improved scalability and availability through cross-functional team coordination. \\n\\r • Reduced infrastructure costs by 30% through automated and manual analysis and refactoring of aged and drifted cloud infrastructure. \\n\\r • Maintained 99.9% uptime by managing and tuning disparately initialized infrastructure in accordance with SLA. \\n\\r • Improved team productivity by mentoring junior team members and conducting technical training sessions. \\n\\r • Efficiently modularized existing infrastructure to gain the confidence of stakeholders to take over DevOps for the ETL, data analytics and ML research teams while maintaining backward compatibility and SLA. \\n\\r • Enabled rapid expansion of product needs and efficient onboarding of new development teams through architecting fresh deployment patterns and implementing several API gateways. \\n\\r • Implemented security best practices, including alerting lambdas and IAM roles, and automated secret rotation in several runtime systems. \\n\\r • Created a transit gateway to connect several VPCs used for data isolation and enabling AWS workspaces and VPN to access systems across various networks to meet stringent compliance requirements imposed by working with AWS GovCloud. \\n\\r • Led analysis necessary for overcoming the lack of knowledge transfer opportunities amidst a patchwork of largely undocumented and drifted infrastructure. \\n\\r • Created a mock microservice using Java to closely model and test changes to infrastructure. \\n\\r • Maintained pace of development for existing product backlog by creating new microservices modeled after existing ones using existing patterns. \\n\\r • Increased efficiency and quality by leveraging AI-powered tooling such as Github Copilot and ChatGPT. \\n\\r',
+          startDate: '2022 (February)',
+          endDate: '2023 (February)',
+          dateCreated: '2023-02-16',
+          comments: 'add Benchmark'
+        },
         {
           id: 23,
           experienceType: 'software',
