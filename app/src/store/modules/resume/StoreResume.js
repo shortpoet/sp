@@ -64,19 +64,22 @@ export const mutations = {
 
 export const actions = {
   async loadResume({ commit, rootGetters, dispatch }) {
-    try {
-      const resPoint = endpoints.resume.RESUME_FETCH_LATEST_API;
-      const url = rootGetters.getUrlPrefix + resPoint;
-      const response = await axios.get(url);
-      // console.log(response.data)
-      commit(SET_RESUME_RAW, response.data);
-      const hasResume = !!response.data;
-      commit(SET_RESUME_LOADED, hasResume);
-      // console.info('resume loaded')
-    } catch (err) {
-      console.error(err);
-      dispatch('loadHardResume');
-    }
+    // bypass API
+    dispatch('loadHardResume');
+    // API
+    // try {
+    //   const resPoint = endpoints.resume.RESUME_FETCH_LATEST_API;
+    //   const url = rootGetters.getUrlPrefix + resPoint;
+    //   const response = await axios.get(url);
+    //   // console.log(response.data)
+    //   commit(SET_RESUME_RAW, response.data);
+    //   const hasResume = !!response.data;
+    //   commit(SET_RESUME_LOADED, hasResume);
+    //   // console.info('resume loaded')
+    // } catch (err) {
+    //   console.error(err);
+    //   dispatch('loadHardResume');
+    // }
   },
   async loadHardResume({ commit }) {
     hardResume.skills = hardResume.skills.reverse();

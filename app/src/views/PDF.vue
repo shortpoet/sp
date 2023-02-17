@@ -41,7 +41,7 @@
 
       <!-- for some reason adding this handler makes the function run on load -->
       <!-- <ButtonFloat :target="'save-button-float'" :icon="'save'" :handler="toPDF(target)"/> -->
-      <portal-target class="pdf-target" name="save-button-float" />
+      <portal-target name="save-button-float" />
       <PDFButtonFloat :target="'save-button-float'" :icon="'save'" :pdf-target="'pdf-anchor'"
         @to-render-pdf="toRenderPDF" />
 

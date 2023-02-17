@@ -12,8 +12,7 @@
       <StartExperience :experiences="getResume.experiences" v-if="isResume" />
       <StartEducation :educations="getResume.educations" v-if="isResume" />
       <StartInterests :interests="getResume.interests" v-if="isResume" />
-
-      <portal-target v-if="isResume" class="start-target" name="pdf-button-float" />
+      <portal-target v-if="isResume" name="pdf-button-float" />
       <StartButtonFloat :target="'pdf-button-float'" :href="'/pdf'" :isExpanded="rippleExpanded"
         @ripple-open="toggleVisibility(true)" @ripple-close="toggleVisibility(false)" />
 
