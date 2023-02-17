@@ -1,10 +1,10 @@
 <template>
   <portal :to="target">
     <!--
-      * previously had this selector to unify the components - split after styling diverged
-      * v-if="href"
-      * v-if="pdfTarget"
-    </div>-->
+              * previously had this selector to unify the components - split after styling diverged
+              * v-if="href"
+              * v-if="pdfTarget"
+            </div>-->
     <div type="input" :class="classObject" @click="showModal">
       <font-awesome-layers class="button-float-icon-layer fa-lg">
         <font-awesome-icon class="button-float-icon-circle" size="2x" icon="circle" />
@@ -15,17 +15,17 @@
     <div class="modal-slot">
       <PDFModal v-show="isModalVisible" @close="closeModal" @to-pdf="savePDF" @to-page="toPage" @to-canvas="toCanvas">
         <!-- <template v-slot:header>
-          <h1>Test Header</h1>
-        </template>
-        <template v-slot:body>
-          <h1>Test Body</h1>
-        </template>
-        <template v-slot:footer>
-          <h1>Test Footer</h1>
-        </template>-->
+                  <h1>Test Header</h1>
+                </template>
+                <template v-slot:body>
+                  <h1>Test Body</h1>
+                </template>
+                <template v-slot:footer>
+                  <h1>Test Footer</h1>
+                </template>-->
       </PDFModal>
     </div>
-  </portal>
+</portal>
 </template>
 
 <script>
@@ -253,35 +253,24 @@ export default {
       const pageHeight = 842;
       let imgHeight = (canvas.height * imgWidth) / canvas.width;
       let heightLeft = imgHeight;
-      this.jspdf.addImage(
-        imgData,
-        "JPEG",
-        marginX,
-        marginY,
-        imgWidth,
-        imgHeight,
-        null,
-        "SLOW"
-      );
 
-      heightLeft -= pageHeight;
-      let secondHalf = heightLeft - imgHeight;
+      while (heightLeft >= 0) {
+        this.jspdf.addImage(
+          imgData,
+          "JPEG",
+          marginX,
+          heightLeft - imgHeight + marginY,
+          imgWidth,
+          imgHeight,
+          null,
+          "SLOW"
+        );
+        heightLeft -= pageHeight;
+        if (heightLeft > 0) {
+          this.jspdf.addPage();
+        }
+      }
 
-      // colorLog(`secondHalf: ${secondHalf}`, "violet");
-
-      this.jspdf.addPage();
-      // TODO
-      // add multiple page logic
-      this.jspdf.addImage(
-        imgData,
-        "PNG",
-        0,
-        secondHalf,
-        imgWidth,
-        imgHeight,
-        null,
-        "SLOW"
-      );
       const fileName = `Carlos_Soriano_${moment().format(
         "YYYY_MM_DD_HH_mm"
       )}.pdf`;
@@ -365,6 +354,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
