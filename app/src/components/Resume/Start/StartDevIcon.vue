@@ -3,7 +3,7 @@
     <i v-if="!isImage" :class="source"></i>
     <img v-else :class="imgClass" :src="source" />
     <span v-if="showName" :class="devicon - name">{{ name }}</span>
-  </div>
+</div>
 </template>
 
 <script>
@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     isImage() {
-      return typeof this.source !== "string";
+      return this.source.match(/svg|jpg|png|jpeg/g) !== null;
     },
     imgClass() {
       let imgClass = `vue-${this.name}`;
