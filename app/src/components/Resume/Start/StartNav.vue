@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     collapse() {
-      console.log("collapse is called");
+      // console.log("collapse is called");
       // Closes responsive menu when a scroll trigger link is clicked
       // moving this here to be able to test
       // added local boolean that creates coverage

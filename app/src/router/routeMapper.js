@@ -1,15 +1,15 @@
 export const routeMapper = function (paths) {
-  console.log('routeMapper');
-  console.log(paths);
+  // console.log('routeMapper');
+  // console.log(paths);
   const out = paths.map(path => {
     return {
       name: path.name || path.view,
       path: path.path,
       component: resolve =>
         import(`@/views/${path.view}.vue`).then(resolve => {
-          console.log(path);
-          console.log(path.view);
-          console.log(resolve);
+          // console.log(path);
+          // console.log(path.view);
+          // console.log(resolve);
           return resolve;
         }),
       // component: path.view
@@ -44,7 +44,7 @@ export const routeMapper = function (paths) {
   });
   // catch-all route
   // .concat([{path: '*', redirect: '/resume'}])
-  console.log(out);
+  // console.log(out);
   return out;
 };
 export const mockRouteMapper = function (paths) {

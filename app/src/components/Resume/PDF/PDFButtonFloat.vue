@@ -115,7 +115,7 @@ export default {
       const vm = this;
       const target = document.getElementById(vm.pdfTarget);
       const elements = target.querySelectorAll(".resume-section, .resume-section-render");
-      console.log(elements);
+      // console.log(elements);
       elements.forEach(element => {
         element.style.margin = "0";
         element.style.padding = "0";

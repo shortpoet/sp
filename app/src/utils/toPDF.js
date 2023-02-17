@@ -190,7 +190,7 @@ toCanvas = () => {
     // useCORS: true,
     allowTaint: true
   }).then(canvas => {
-    console.log(canvas);
+    // console.log(canvas);
     // var _canvas = document.createElement('canvas');
     document.body.appendChild(canvas);
   });
@@ -218,8 +218,8 @@ toPage = () => {
         allowTaint: true
       }).then(function (canvas) {
         var pdf = new jsPDF('p', 'pt', 'a4');
-        console.log(target.clientHeight);
-        console.log(canvas, pdf);
+        // console.log(target.clientHeight);
+        // console.log(canvas, pdf);
         // https://stackoverflow.com/questions/24069124/how-to-save-a-image-in-multiple-pages-of-pdf-using-jspdf
         // https://stackoverflow.com/questions/19272933/jspdf-multi-page-pdf-with-htms-renderer/34934497#34934497
 
@@ -241,7 +241,7 @@ toPDF = () => {
   Promise.all([fontA.load(), fontB.load()]).then(function () {
     console.log('Family A & B have loaded');
     setTimeout(() => {
-      console.log(vm.target);
+      // console.log(vm.target);
       html2canvas(document.getElementById(vm.pdfTarget), {
         // setting width and height cuts it off at the "one page mark"
         // width: 810,

@@ -26,7 +26,6 @@ export const mutations = {
     // hardcoded experience types for order - not ideal
     // either add order to db schema or some kind of switch logic
     // #TODO
-    console.log('SET_RESUME_RAW');
     const experienceTypes = ['software', 'language', 'hospitality'];
     const resume = {
       aboutMe: data.aboutMe,

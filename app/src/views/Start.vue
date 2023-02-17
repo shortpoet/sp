@@ -78,8 +78,8 @@ export default {
       })
       this.loadResume()
       // this never logs... why?
-      console.log('Start mounted')
-      console.log(this.getResume)
+      // console.log('Start mounted')
+      // console.log(this.getResume)
     })
   }
 
