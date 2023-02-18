@@ -42,7 +42,7 @@ provider_credentials_check
 
 echo "Deploying to $provider/$env"
 
-cd "$repo_root/.iac/$provider/envs/$env"
+cd "$repo_root/.iac/$provider/envs/$env/infra"
 terraform init
 terraform apply
 site_domain=$(terraform output -raw site_domain)
