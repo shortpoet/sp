@@ -20,7 +20,7 @@ module "s3_object_uat" {
 
   acl              = "public-read"
   cache_control    = "max-age=31536000, immutable"
-  base_folder_path = "${path.module}/../../../../../shortpoet_site"
+  base_folder_path = "${path.module}/../../../../../app/dist"
   force_destroy    = true
 
   tags = module.common_vars.tags
