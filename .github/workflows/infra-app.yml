@@ -1,0 +1,78 @@
+---
+name: App Infra
+
+on:
+  pull_request:
+    branches:
+      - main
+      - uat
+      - develop
+    paths:
+      - '.iac/infra_app/**'
+      - '.github/workflows/infra-app.yml'
+      - 'shortpoet_site/**'
+      - 'tic_tac_toe/**'
+  push:
+    branches:
+      - main
+      - uat
+      - develop
+    paths:
+      - '.iac/infra_app/**'
+      - '.github/workflows/infra-app.yml'
+      - 'shortpoet_site/**'
+      - 'tic_tac_toe/**'
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+  release:
+    types:
+      - published
+    paths:
+      - '.iac/infra_app/**'
+      - '.github/workflows/infra-app.yml'
+      - 'shortpoet_site/**'
+      - 'tic_tac_toe/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  paths-filter:
+    if:
+      (
+        (startsWith(github.ref, 'refs/pull') &&
+        endsWith(github.ref, '/merge') &&
+        github.head_ref == 'uat' &&
+        github.base_ref == 'main' &&
+        github.event_name == 'pull_request')
+      ) ||
+      (github.event_name == 'push' &&
+        (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
+      ) ||
+      github.event_name == 'release'
+    outputs:
+      infra_app: ${{ steps.filter.outputs.infra_app }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            infra_app:
+              - '.iac/infra_app/aws/**'
+              - '.github/workflows/infra-app.yml'
+
+  deploy:
+    uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@main
+    secrets: inherit
+    needs: paths-filter
+    # can't seem to use if release here because of needs
+    if: |
+      needs.paths-filter.outputs.infra_app == 'true' ||
+      github.event_name == 'release'
+    with:
+      base_path: .iac/infra_app/aws
+      infra_type: App
+      provider: aws

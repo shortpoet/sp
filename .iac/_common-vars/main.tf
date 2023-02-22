@@ -1,11 +1,13 @@
 terraform {
-  required_version = ">= 0.13.5"
+  required_version = ">= 1.3.0"
 }
-
 locals {
+
   zone_name       = "shortpoet.com"
   site_domain     = "shortpoet.com"
+  subdomain_uat   = "uat"
   subdomain_dev   = "dev"
+  site_domain_uat = "${local.subdomain_uat}.${local.site_domain}"
   site_domain_dev = "${local.subdomain_dev}.${local.site_domain}"
 
   tags = {
@@ -14,10 +16,19 @@ locals {
     CloudFlare      = "true"
     CloudFlare_Zone = local.zone_name
   }
+
 }
 
 output "site_domain" {
   value = local.site_domain
+}
+
+output "site_domain_uat" {
+  value = local.site_domain_uat
+}
+
+output "subdomain_uat" {
+  value = local.subdomain_uat
 }
 
 output "subdomain_dev" {
