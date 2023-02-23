@@ -6,13 +6,7 @@ env:
   IAC_DIR: .iac/infra_app
   BUILD_DIR: build
   BUILD_ARTIFACT: build
-  UAT_RUN: (
-        (startsWith(github.ref, 'refs/pull') &&
-        endsWith(github.ref, '/merge') &&
-        github.head_ref == 'uat' &&
-        github.base_ref == 'main' &&
-        github.event_name == 'pull_request')
-      )
+
 on:
   pull_request:
     branches:
@@ -57,7 +51,13 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
   paths-filter:
     if:
-      ${{ env.UAT_RUN }} ||
+      (
+        (startsWith(github.ref, 'refs/pull') &&
+        endsWith(github.ref, '/merge') &&
+        github.head_ref == 'uat' &&
+        github.base_ref == 'main' &&
+        github.event_name == 'pull_request')
+      ) ||
       (github.event_name == 'push' &&
         (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
       ) ||
@@ -84,6 +84,8 @@ jobs:
       github.event_name == 'release'
     # env:
     #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    outputs:
+      build-artifact-uuid: ${{ steps.build-artifact-uuid.outputs.BUILD_ARTIFACT_UUID }}
     steps:
       - uses: actions/checkout@v3
 
@@ -130,9 +132,30 @@ jobs:
         working-directory: app
         run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist
 
-      # - name: Set build artifact UUID
-      #   id: build-artifact-uuid
-      #   run:
+      - name: Set build artifact UUID
+        if: |
+          (github.event_name == 'push' &&
+          (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
+          ) ||
+          github.event_name == 'release'
+        id: build-artifact-uuid
+        env:
+          BUILD_ARTIFACT_UUID: build-${{ github.sha }}-${{ github.ref_name }}
+        run: |
+          echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
+
+      - name: Set build artifact UUID - UAT
+        if: |
+            (startsWith(github.ref, 'refs/pull') &&
+            endsWith(github.ref, '/merge') &&
+            github.head_ref == 'uat' &&
+            github.base_ref == 'main' &&
+            github.event_name == 'pull_request')
+        id: build-artifact-uuid
+        env:
+          BUILD_ARTIFACT_UUID: build-${{ github.sha }}-${{ github.head_ref }}
+        run: |
+          echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
 
       - name: Upload build
         id: upload-build
@@ -143,7 +166,7 @@ jobs:
           github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
-          name: build-${{ github.sha }}-${{ github.ref_name }}
+          name: ${{ steps.build-artifact-uuid.outputs.BUILD_ARTIFACT_UUID }}
           path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
 
       - name: Upload build - UAT
@@ -156,7 +179,7 @@ jobs:
             github.event_name == 'pull_request')
         uses: actions/upload-artifact@v2
         with:
-          name: build-${{ github.sha }}-${{ github.head_ref }}
+          name: ${{ steps.build-artifact-uuid.outputs.BUILD_ARTIFACT_UUID }}
           path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
 
   deploy:
@@ -173,3 +196,4 @@ jobs:
       provider: aws
       build_path: "app/build"
       build_artifact: "build"
+      build_artifact_uuid: ${{ needs.build-node.outputs.build-artifact-uuid }}
