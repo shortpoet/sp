@@ -85,7 +85,7 @@ jobs:
         working-directory: app
         run: |
           rm package-lock.json
-          npm ci
+          npm i
 
       - name: Build
         working-directory: app
