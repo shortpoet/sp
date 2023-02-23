@@ -69,24 +69,29 @@ jobs:
       needs.paths-filter.outputs.infra_app == 'true' ||
       github.event_name == 'release'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
+
       - name: Install dependencies
-        working-directory: App
+        working-directory: app
         run: npm ci
+
       - name: Build
-        working-directory: App
+        working-directory: app
         run: npm run build
+
       - name: Compress build
-        working-directory: App
+        working-directory: app
         run: zip -r build.zip build
+
       - name: Upload build
         uses: actions/upload-artifact@v2
         with:
           name: build-${{ github.sha }}-${{ github.ref_name }}
-          path: App/build.zip
+          path: app/build.zip
 
   deploy:
     uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@main
@@ -100,4 +105,4 @@ jobs:
       base_path: .iac/infra_app/aws
       infra_type: App
       provider: aws
-      build_path: App/build
+      build_path: app/build
