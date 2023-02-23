@@ -83,6 +83,7 @@ jobs:
       - name: Install dependencies
         env:
           GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
+          NODE_ENV: production
         working-directory: app
         run: |
           npm ci
