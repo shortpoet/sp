@@ -8,7 +8,7 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
-    "build-ci": "cross-env NODE_ENV=production vite build --config vite.config.ts",
+    "build-ci": "vite build --config vite.config.ts",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
