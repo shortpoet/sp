@@ -1,6 +1,6 @@
 {
   // "extends": "./node_modules/@vue/tsconfig/tsconfig.web.json",
-  "extends": "@vue/tsconfig/tsconfig.json",
+  "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
     "../env.d.ts",
     "src/**/*",
