@@ -76,7 +76,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: '19'
+          node-version: '19.7.0'
           # registry-url: 'https://registry.npmjs.org'
           # registry-url: 'https://npm.pkg.github.com'
 
@@ -98,7 +98,7 @@ jobs:
         working-directory: app
         run: |
           rm package-lock.json
-          npm ci
+          npm i
           # pnpm install --frozen-lockfile
 
       - name: Build
