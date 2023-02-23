@@ -81,7 +81,7 @@ jobs:
           # registry-url: 'https://npm.pkg.github.com'
 
       - name: Install pnpm
-        run: npm install --global pnpm
+        run: npm install --global pnpm vite
 
       - name: Cache .pnpm-store
         uses: actions/cache@v2
