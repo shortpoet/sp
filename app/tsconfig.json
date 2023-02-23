@@ -35,9 +35,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "types": [
-      "vite/client",
-      "vite-plugin-vue-layouts/client",
-      "vite-plugin-pages/client"
+      "node",
+      // "jest"
     ],
     "allowJs": true
   },
