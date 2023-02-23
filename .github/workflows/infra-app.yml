@@ -33,7 +33,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  packages: read
+  # packages: read
 
 jobs:
   paths-filter:
@@ -77,20 +77,23 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '19'
-          registry-url: 'https://registry.npmjs.org'
+          # registry-url: 'https://registry.npmjs.org'
           # registry-url: 'https://npm.pkg.github.com'
 
       - name: Install dependencies
         env:
-          GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
           NODE_ENV: production
         working-directory: app
         run: |
-          npm ci
+          yarn install --frozen-lockfile
 
       - name: Build
         working-directory: app
-        run: npm run build-only
+        env:
+          NODE_ENV: production
+        run: |
+          yarn build
 
       - name: Compress build
         working-directory: app
