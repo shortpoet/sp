@@ -167,7 +167,7 @@ jobs:
           path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
 
       - name: Upload build - UAT
-        id: upload-build
+        id: upload-build-uat
         if: |
             (startsWith(github.ref, 'refs/pull') &&
             endsWith(github.ref, '/merge') &&
