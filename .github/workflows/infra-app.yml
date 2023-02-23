@@ -13,27 +13,27 @@ on:
       - uat
       - develop
     paths:
-      - "${{ env.IAC_DIR }}/**"
+      - ".iac/infra_app/**"
       - '.github/workflows/infra-app.yml'
-      - "${{ env.APP_DIR }}/**"
+      - "app/**"
   push:
     branches:
       - main
       - uat
       - develop
     paths:
-      - "${{ env.IAC_DIR }}/**"
+      - ".iac/infra_app/**"
       - '.github/workflows/infra-app.yml'
-      - "${{ env.APP_DIR }}/**"
+      - "app/**"
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
   release:
     types:
       - published
     paths:
-      - "${{ env.IAC_DIR }}/**"
+      - ".iac/infra_app/**"
       - '.github/workflows/infra-app.yml'
-      - "${{ env.APP_DIR }}/**"
+      - "app/**"
 
 permissions:
   contents: read
