@@ -80,16 +80,16 @@ jobs:
           # registry-url: 'https://registry.npmjs.org'
           # registry-url: 'https://npm.pkg.github.com'
 
-      - name: Install pnpm
-        run: npm install --global pnpm vite
+      # - name: Install pnpm
+      #   run: npm install --global pnpm vite
 
-      - name: Cache .pnpm-store
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
+      # - name: Cache .pnpm-store
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.pnpm-store
+      #     key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-pnpm-
         
       - name: Install dependencies
         env:
@@ -97,14 +97,17 @@ jobs:
           NODE_ENV: production
         working-directory: app
         run: |
-          pnpm install --frozen-lockfile
+          rm package-lock.json
+          npm ci
+          # pnpm install --frozen-lockfile
 
       - name: Build
         working-directory: app
         env:
           NODE_ENV: production
         run: |
-          pnpm build-ci
+          npm build-ci
+          # pnpm build-ci
 
       - name: Compress build
         working-directory: app
