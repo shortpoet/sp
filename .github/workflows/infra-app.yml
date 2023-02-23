@@ -131,6 +131,11 @@ jobs:
         run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist
 
       - name: Upload build
+        if: |
+          (github.event_name == 'push' &&
+          (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
+          ) ||
+          github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: build-${{ github.sha }}-${{ github.ref_name }}
