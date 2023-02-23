@@ -95,7 +95,8 @@ resource "aws_s3_bucket_cors_configuration" "example" {
 resource "aws_s3_bucket_acl" "site" {
   bucket = aws_s3_bucket.site.id
 
-  acl = "public-read"
+  acl = "private"
+  # acl = "public-read"
 }
 
 resource "aws_s3_bucket_policy" "site" {
