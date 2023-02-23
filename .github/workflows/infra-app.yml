@@ -33,6 +33,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  packages: read
 
 jobs:
   paths-filter:
