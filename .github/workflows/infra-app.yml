@@ -127,7 +127,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-${{ github.sha }}-${{ github.ref_name }}
-          path: "${{ env.APP_DIR }}/{{ env.BUILD_DIR }}.zip"
+          path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
 
   deploy:
     uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@main
