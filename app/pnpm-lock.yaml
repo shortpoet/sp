@@ -51,7 +51,7 @@ specifiers:
   sass: ^1.58.1
   sass-loader: ^13.2.0
   typescript: ~4.7.4
-  vite: latest
+  vite: ^4.1.4
   vite-plugin-md: ^0.22.5
   vite-plugin-require: ^1.1.10
   vue: ^3.2.47
@@ -1964,7 +1964,7 @@ packages:
     resolution: {integrity: sha512-TLtRc/mxI74ahP3s+fJpIi+lBFAhuJuVjiQhmyi/xEwJ2pDepuWMRXT6UfJOA1cGkZ5/XGa9NFw/SQR6M5jfoQ==}
     engines: {node: '>=14.0'}
     dependencies:
-      inferred-types: 0.37.6
+      inferred-types: 0.37.6_jsdom@21.1.0+sass@1.58.3
       js-yaml: 4.1.0
       kind-of: 6.0.3
       section-matter: 1.0.0
@@ -2291,7 +2291,7 @@ packages:
     dependencies:
       bumpp: 8.2.1
       callsites: 4.0.0
-      inferred-types: 0.37.6
+      inferred-types: 0.37.6_jsdom@21.1.0+sass@1.58.3
       vitest: 0.25.8_jsdom@21.1.0+sass@1.58.3
     transitivePeerDependencies:
       - '@edge-runtime/vm'
@@ -3879,12 +3879,6 @@ packages:
   /imurmurhash/0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
-
-  /inferred-types/0.37.6:
-    resolution: {integrity: sha512-CfL5g1wR5rVwX2K5S6wSL+h9eODScum/LBwlhGRrcBIvfYppvUQM0aeRJ1BZS+QE38kGzd3v+U526+nQR7ZUkg==}
-    dependencies:
-      brilliant-errors: 0.7.3_jsdom@21.1.0+sass@1.58.3
-    dev: true
 
   /inferred-types/0.37.6_jsdom@21.1.0+sass@1.58.3:
     resolution: {integrity: sha512-CfL5g1wR5rVwX2K5S6wSL+h9eODScum/LBwlhGRrcBIvfYppvUQM0aeRJ1BZS+QE38kGzd3v+U526+nQR7ZUkg==}

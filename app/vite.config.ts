@@ -1,6 +1,5 @@
 import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite';
 import Vue from '@vitejs/plugin-vue';
 // import vitePluginRequire from 'vite-plugin-require';
 import Markdown from 'vite-plugin-md';
@@ -8,7 +7,8 @@ import Markdown from 'vite-plugin-md';
 import path from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+/** @type {import('vite').UserConfig} */
+export default {
   server: {
     host: true
   },
@@ -39,4 +39,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL(path.resolve('src'), import.meta.url))
     }
   }
-});
+};
