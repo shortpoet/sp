@@ -76,7 +76,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: '19.7.0'
+          node-version: latest
           # registry-url: 'https://registry.npmjs.org'
           # registry-url: 'https://npm.pkg.github.com'
 
@@ -106,7 +106,7 @@ jobs:
         env:
           NODE_ENV: production
         run: |
-          npm build-ci
+          npm run build-ci
           # pnpm build-ci
 
       - name: Compress build
