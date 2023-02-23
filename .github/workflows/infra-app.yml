@@ -5,6 +5,7 @@ env:
   APP_DIR: app
   IAC_DIR: .iac/infra_app
   BUILD_DIR: build
+  BUILD_ARTIFACT: build
 
 on:
   pull_request:
@@ -120,7 +121,7 @@ jobs:
 
       - name: Compress build
         working-directory: app
-        run: zip -r build.zip dist
+        run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist
 
       - name: Upload build
         uses: actions/upload-artifact@v2
