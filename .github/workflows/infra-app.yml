@@ -145,7 +145,7 @@ jobs:
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
           elif [ "$IS_MAIN" = true ]; then
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
-          elif [ "$IS_UAT" = true ]; then
+          elif [ "$IS_UAT" = 'true && true && true && true && true' ]; then
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID_UAT}" >> $GITHUB_OUTPUT
           fi
 
