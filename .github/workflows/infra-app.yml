@@ -6,7 +6,6 @@ env:
   IAC_DIR: .iac/infra_app
   BUILD_DIR: build
   BUILD_ARTIFACT: build
-  BUILD_ARTIFACT_UUID: build-${{ github.sha }}-${{ github.ref_name }}
 
 on:
   pull_request:
@@ -124,25 +123,22 @@ jobs:
         working-directory: app
         run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist
 
-      - name: Reset build artifact unique id - UAT
-        id: build-artifact-id
-        if:
-          (
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-${{ github.sha }}-${{ github.ref_name }}
+          path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
+
+      - name: Upload build - UAT
+        if: |
             (startsWith(github.ref, 'refs/pull') &&
             endsWith(github.ref, '/merge') &&
             github.head_ref == 'uat' &&
             github.base_ref == 'main' &&
             github.event_name == 'pull_request')
-          )
-        env:
-          BUILD_ARTIFACT_UUID: build-${{ github.sha }}-${{ github.head_ref }}
-        run: |
-          echo "${BUILD_ARTIFACT_UUID}" >> $GITHUB_ENV
-
-      - name: Upload build
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.BUILD_ARTIFACT_UUID }}
+          name: build-${{ github.sha }}-${{ github.head_ref }}
           path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
 
   deploy:
