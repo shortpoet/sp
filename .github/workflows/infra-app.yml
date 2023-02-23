@@ -69,6 +69,8 @@ jobs:
     if: |
       needs.paths-filter.outputs.infra_app == 'true' ||
       github.event_name == 'release'
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
 
