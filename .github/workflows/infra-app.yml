@@ -107,6 +107,9 @@ jobs:
         env:
           NODE_ENV: production
         run: |
+          pwd
+          ls -la
+          ls -la node_modules
           npm run build-ci
           # pnpm build-ci
 
