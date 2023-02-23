@@ -76,7 +76,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '19'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
@@ -84,8 +84,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
         working-directory: app
         run: |
-          rm package-lock.json
-          npm i
+          npm ci
 
       - name: Build
         working-directory: app
