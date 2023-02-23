@@ -80,7 +80,7 @@ jobs:
 
       - name: Install dependencies
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
         working-directory: app
         run: npm ci
 
