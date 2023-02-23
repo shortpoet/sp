@@ -1,5 +1,6 @@
 {
-  "extends": "./node_modules/@vue/tsconfig/tsconfig.web.json",
+  // "extends": "./node_modules/@vue/tsconfig/tsconfig.web.json",
+  "extends": "@vue/tsconfig/tsconfig.json",
   "include": [
     "../env.d.ts",
     "src/**/*",
@@ -31,7 +32,7 @@
     "esModuleInterop": true,
     "strict": true,
     "strictNullChecks": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "types": [
