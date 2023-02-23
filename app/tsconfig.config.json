@@ -5,7 +5,7 @@
     "vitest.config.*",
     "cypress.config.*",
     "playwright.config.*",
-    "../vite.config.ts"
+    "vite.config.ts"
   ],
   "compilerOptions": {
     "composite": true,

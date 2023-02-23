@@ -1,6 +1,12 @@
 ---
 name: App Infra
 
+env:
+  APP_DIR: app
+  IAC_DIR: .iac/infra_app
+  BUILD_DIR: build
+  BUILD_ARTIFACT: build
+
 on:
   pull_request:
     branches:
@@ -8,34 +14,32 @@ on:
       - uat
       - develop
     paths:
-      - '.iac/infra_app/**'
+      - ".iac/infra_app/**"
       - '.github/workflows/infra-app.yml'
-      - 'shortpoet_site/**'
-      - 'tic_tac_toe/**'
+      - "app/**"
   push:
     branches:
       - main
       - uat
       - develop
     paths:
-      - '.iac/infra_app/**'
+      - ".iac/infra_app/**"
       - '.github/workflows/infra-app.yml'
-      - 'shortpoet_site/**'
-      - 'tic_tac_toe/**'
+      - "app/**"
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
   release:
     types:
       - published
     paths:
-      - '.iac/infra_app/**'
+      - ".iac/infra_app/**"
       - '.github/workflows/infra-app.yml'
-      - 'shortpoet_site/**'
-      - 'tic_tac_toe/**'
+      - "app/**"
 
 permissions:
   contents: read
   pull-requests: write
+  # packages: read
 
 jobs:
   paths-filter:
@@ -55,24 +59,87 @@ jobs:
       infra_app: ${{ steps.filter.outputs.infra_app }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: dorny/paths-filter@v2
         id: filter
         with:
           filters: |
             infra_app:
-              - '.iac/infra_app/aws/**'
+              - "${{ env.IAC_DIR }}/aws/**"
               - '.github/workflows/infra-app.yml'
+              - "${{ env.APP_DIR }}/**"
+
+  build-node:
+    runs-on: ubuntu-latest
+    needs: paths-filter
+    if: |
+      needs.paths-filter.outputs.infra_app == 'true' ||
+      github.event_name == 'release'
+    # env:
+    #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          # registry-url: 'https://registry.npmjs.org'
+          # registry-url: 'https://npm.pkg.github.com'
+
+      # - name: Install pnpm
+      #   run: npm install --global pnpm vite
+
+      # - name: Cache .pnpm-store
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.pnpm-store
+      #     key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-pnpm-
+
+      - name: Install dependencies
+        env:
+          # GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
+          NODE_ENV: production
+        working-directory: app
+        run: |
+          npm install --global vite
+          rm package-lock.json
+          npm i
+          # pnpm install --frozen-lockfile
+
+      - name: Build
+        working-directory: app
+        env:
+          NODE_ENV: production
+        run: |
+          pwd
+          ls -la
+          ls -la node_modules
+          npm run build-ci
+          # pnpm build-ci
+
+      - name: Compress build
+        working-directory: app
+        run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist
+
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-${{ github.sha }}-${{ github.ref_name }}
+          path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
 
   deploy:
     uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@main
     secrets: inherit
-    needs: paths-filter
+    needs: [paths-filter, build-node]
     # can't seem to use if release here because of needs
     if: |
       needs.paths-filter.outputs.infra_app == 'true' ||
       github.event_name == 'release'
     with:
-      base_path: .iac/infra_app/aws
+      base_path: ".iac/infra_app/aws"
       infra_type: App
       provider: aws
+      build_path: "app/build"
+      build_artifact: "build"
