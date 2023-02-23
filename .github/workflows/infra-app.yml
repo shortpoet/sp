@@ -89,7 +89,7 @@ jobs:
 
       - name: Build
         working-directory: app
-        run: npm run build
+        run: npm run build-only
 
       - name: Compress build
         working-directory: app
