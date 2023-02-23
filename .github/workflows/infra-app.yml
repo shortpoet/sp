@@ -79,6 +79,8 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         working-directory: app
         run: npm ci
 
