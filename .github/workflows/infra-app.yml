@@ -6,7 +6,13 @@ env:
   IAC_DIR: .iac/infra_app
   BUILD_DIR: build
   BUILD_ARTIFACT: build
-
+  UAT_RUN: (
+        (startsWith(github.ref, 'refs/pull') &&
+        endsWith(github.ref, '/merge') &&
+        github.head_ref == 'uat' &&
+        github.base_ref == 'main' &&
+        github.event_name == 'pull_request')
+      )
 on:
   pull_request:
     branches:
@@ -51,13 +57,7 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
   paths-filter:
     if:
-      (
-        (startsWith(github.ref, 'refs/pull') &&
-        endsWith(github.ref, '/merge') &&
-        github.head_ref == 'uat' &&
-        github.base_ref == 'main' &&
-        github.event_name == 'pull_request')
-      ) ||
+      ${{ env.UAT_RUN }} ||
       (github.event_name == 'push' &&
         (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
       ) ||
@@ -130,7 +130,12 @@ jobs:
         working-directory: app
         run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist
 
+      # - name: Set build artifact UUID
+      #   id: build-artifact-uuid
+      #   run:
+
       - name: Upload build
+        id: upload-build
         if: |
           (github.event_name == 'push' &&
           (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
@@ -142,6 +147,7 @@ jobs:
           path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
 
       - name: Upload build - UAT
+        id: upload-build
         if: |
             (startsWith(github.ref, 'refs/pull') &&
             endsWith(github.ref, '/merge') &&
