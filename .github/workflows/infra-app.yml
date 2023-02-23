@@ -10,8 +10,7 @@ on:
     paths:
       - '.iac/infra_app/**'
       - '.github/workflows/infra-app.yml'
-      - 'shortpoet_site/**'
-      - 'tic_tac_toe/**'
+      - 'app/**'
   push:
     branches:
       - main
@@ -20,8 +19,7 @@ on:
     paths:
       - '.iac/infra_app/**'
       - '.github/workflows/infra-app.yml'
-      - 'shortpoet_site/**'
-      - 'tic_tac_toe/**'
+      - 'app/**'
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
   release:
@@ -30,8 +28,7 @@ on:
     paths:
       - '.iac/infra_app/**'
       - '.github/workflows/infra-app.yml'
-      - 'shortpoet_site/**'
-      - 'tic_tac_toe/**'
+      - 'app/**'
 
 permissions:
   contents: read
@@ -63,6 +60,33 @@ jobs:
             infra_app:
               - '.iac/infra_app/aws/**'
               - '.github/workflows/infra-app.yml'
+              - 'app/**'
+
+  build-npm:
+    runs-on: ubuntu-latest
+    needs: paths-filter
+    if: |
+      needs.paths-filter.outputs.infra_app == 'true' ||
+      github.event_name == 'release'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        working-directory: App
+        run: npm ci
+      - name: Build
+        working-directory: App
+        run: npm run build
+      - name: Compress build
+        working-directory: App
+        run: zip -r build.zip build
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-${{ github.sha }}-${{ github.ref_name }}
+          path: App/build.zip
 
   deploy:
     uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@main
@@ -76,3 +100,4 @@ jobs:
       base_path: .iac/infra_app/aws
       infra_type: App
       provider: aws
+      build_path: App/build
