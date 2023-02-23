@@ -141,21 +141,18 @@ jobs:
         id: build-artifact-uuid
         env:
           BUILD_ARTIFACT_UUID: build-${{ github.sha }}-${{ github.ref_name }}
+          BUILD_ARTIFACT_UUID_UAT: build-${{ github.sha }}-${{ github.head_ref }}
+          IS_DEV: ${{ github.ref == 'refs/heads/develop' }}
+          IS_MAIN: ${{ github.ref == 'refs/heads/main' }}
+          IS_UAT: ${{ github.head_ref == 'uat' }} && ${{ github.base_ref == 'main' }} && ${{ github.event_name == 'pull_request' }} && startsWith(github.ref, 'refs/pull') && endsWith(github.ref, '/merge')
         run: |
-          echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
-
-      - name: Set build artifact UUID - UAT
-        if: |
-            (startsWith(github.ref, 'refs/pull') &&
-            endsWith(github.ref, '/merge') &&
-            github.head_ref == 'uat' &&
-            github.base_ref == 'main' &&
-            github.event_name == 'pull_request')
-        id: build-artifact-uuid
-        env:
-          BUILD_ARTIFACT_UUID: build-${{ github.sha }}-${{ github.head_ref }}
-        run: |
-          echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
+          if [ "$IS_DEV" = true ]; then
+            echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
+          elif [ "$IS_MAIN" = true ]; then
+            echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
+          elif [ "$IS_UAT" = true ]; then
+            echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID_UAT}" >> $GITHUB_OUTPUT
+          fi
 
       - name: Upload build
         id: upload-build
