@@ -97,6 +97,7 @@ jobs:
           NODE_ENV: production
         working-directory: app
         run: |
+          npm install --global vite
           rm package-lock.json
           npm i
           # pnpm install --frozen-lockfile
