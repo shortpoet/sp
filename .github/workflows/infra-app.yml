@@ -77,9 +77,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '19'
-          # registry-url: 'https://registry.npmjs.org'
-          registry-url: 'https://npm.pkg.github.com'
-
+          registry-url: 'https://registry.npmjs.org'
+          # registry-url: 'https://npm.pkg.github.com'
 
       - name: Install dependencies
         env:
