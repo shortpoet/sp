@@ -80,21 +80,31 @@ jobs:
           # registry-url: 'https://registry.npmjs.org'
           # registry-url: 'https://npm.pkg.github.com'
 
+      - name: Install pnpm
+        run: npm install --global pnpm
+
+      - name: Cache .pnpm-store
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+        
       - name: Install dependencies
         env:
           # GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
           NODE_ENV: production
         working-directory: app
         run: |
-          yarn install --frozen-lockfile
+          pnpm install --frozen-lockfile
 
       - name: Build
         working-directory: app
         env:
           NODE_ENV: production
         run: |
-          yarn global add vite
-          yarn build-only
+          pnpm build-only
 
       - name: Compress build
         working-directory: app
