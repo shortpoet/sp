@@ -92,7 +92,7 @@ jobs:
 
       - name: Compress build
         working-directory: app
-        run: zip -r build.zip build
+        run: zip -r build.zip dist
 
       - name: Upload build
         uses: actions/upload-artifact@v2
