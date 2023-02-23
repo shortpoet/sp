@@ -137,7 +137,8 @@ jobs:
       needs.paths-filter.outputs.infra_app == 'true' ||
       github.event_name == 'release'
     with:
-      base_path: "${{ env.IAC_DIR }}/aws"
+      base_path: ".iac/infra_app/aws"
       infra_type: App
       provider: aws
-      build_path: "${{ env.APP_DIR }}/{{ env.BUILD_DIR }}"
+      build_path: "app/build"
+      build_artifact: "build"
