@@ -83,7 +83,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
         working-directory: app
-        run: npm ci
+        run: |
+          rm package-lock.json
+          npm ci
 
       - name: Build
         working-directory: app
