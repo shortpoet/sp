@@ -92,10 +92,46 @@ resource "aws_s3_bucket_cors_configuration" "example" {
   }
 }
 
+data "aws_canonical_user_id" "current" {}
+
 resource "aws_s3_bucket_acl" "site" {
   bucket = aws_s3_bucket.site.id
 
-  acl = "public-read"
+  # acl = "private"
+  # acl = "public-read"
+
+  access_control_policy {
+    # grant {
+    #   grantee {
+    #     type = "Group"
+    #     uri  = "http://acs.amazonaws.com/groups/global/AllUsers"
+    #   }
+    #   permission = "READ"
+    # }
+
+    grant {
+      grantee {
+        id   = data.aws_canonical_user_id.current.id
+        type = "CanonicalUser"
+      }
+      permission = "FULL_CONTROL"
+    }
+
+    # grant {
+    #   grantee {
+    #     type = "Group"
+    #     uri  = "http://acs.amazonaws.com/groups/s3/LogDelivery"
+    #   }
+    #   permission = "READ_ACP"
+    # }
+
+    owner {
+      id = data.aws_canonical_user_id.current.id
+    }
+  }
+
+
+
 }
 
 resource "aws_s3_bucket_policy" "site" {
@@ -110,7 +146,6 @@ resource "aws_s3_bucket_policy" "site" {
         Principal = "*"
         Action    = "s3:GetObject"
         Resource = [
-          aws_s3_bucket.site.arn,
           "${aws_s3_bucket.site.arn}/*",
         ],
         # Condition = {
@@ -122,7 +157,7 @@ resource "aws_s3_bucket_policy" "site" {
         #   }
         # }
         Condition = {
-          StringEquals = {
+          IpAddress = {
             "aws:SourceIp" = local.cloudflare_ips
           }
         }
