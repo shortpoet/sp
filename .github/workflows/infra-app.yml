@@ -130,7 +130,7 @@ jobs:
 
       - name: Compress build
         working-directory: app
-        run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist
+        run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist/*
 
       - name: Set build artifact UUID
         id: build-artifact-uuid
