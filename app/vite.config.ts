@@ -19,6 +19,18 @@ export default defineConfig({
       }
     }
   },
+  build: {
+    outDir: 'build'
+    // assetsDir: 'assets',
+    // sourcemap: true,
+    // rollupOptions: {
+    //   output: {
+    //     manualChunks: {
+    //       vue: ['vue']
+    //     }
+    //   }
+    // }
+  },
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/] // <--

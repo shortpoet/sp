@@ -39,7 +39,6 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  # packages: read
 
 jobs:
   dump-context:
@@ -82,8 +81,6 @@ jobs:
     if: |
       needs.paths-filter.outputs.infra_app == 'true' ||
       github.event_name == 'release'
-    # env:
-    #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     outputs:
       build-artifact-uuid: ${{ steps.build-artifact-uuid.outputs.BUILD_ARTIFACT_UUID }}
     steps:
@@ -92,45 +89,28 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: latest
-          # registry-url: 'https://registry.npmjs.org'
-          # registry-url: 'https://npm.pkg.github.com'
-
-      # - name: Install pnpm
-      #   run: npm install --global pnpm vite
-
-      # - name: Cache .pnpm-store
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: ~/.pnpm-store
-      #     key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-pnpm-
 
       - name: Install dependencies
         env:
-          # GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
           NODE_ENV: production
         working-directory: app
         run: |
           npm install --global vite
           rm package-lock.json
           npm i
-          # pnpm install --frozen-lockfile
 
       - name: Build
         working-directory: app
         env:
           NODE_ENV: production
         run: |
-          pwd
-          ls -la
-          ls -la node_modules
           npm run build-ci
-          # pnpm build-ci
 
       - name: Compress build
         working-directory: app
-        run: zip -r ${{ env.BUILD_ARTIFACT }}.zip dist
+        run: |
+          cd ${{ env.BUILD_DIR }}
+          zip -r ${{ env.BUILD_ARTIFACT }}.zip ./*
 
       - name: Set build artifact UUID
         id: build-artifact-uuid
@@ -159,7 +139,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.build-artifact-uuid.outputs.BUILD_ARTIFACT_UUID }}
-          path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
+          path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}/${{ env.BUILD_ARTIFACT }}.zip"
 
       - name: Upload build - UAT
         id: upload-build-uat
@@ -172,7 +152,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.build-artifact-uuid.outputs.BUILD_ARTIFACT_UUID }}
-          path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}.zip"
+          path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}/${{ env.BUILD_ARTIFACT }}.zip"
 
   deploy:
     uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@main
