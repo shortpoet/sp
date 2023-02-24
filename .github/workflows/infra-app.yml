@@ -52,8 +52,7 @@ jobs:
       ) ||
       (github.event_name == 'push' &&
         (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
-      ) ||
-      github.event_name == 'release'
+      )
     outputs:
       infra_app: ${{ steps.filter.outputs.infra_app }}
     runs-on: ubuntu-latest
@@ -119,7 +118,7 @@ jobs:
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
           elif [ "$IS_MAIN" = true ]; then
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
-          elif [ "$IS_RELEASE" = true ]; then
+          elif [ "$IS_RELEASE" = 'true && true' ]; then
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
           elif [ "$IS_UAT" = 'true && true && true && true && true' ]; then
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID_UAT}" >> $GITHUB_OUTPUT
