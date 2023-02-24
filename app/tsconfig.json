@@ -9,6 +9,7 @@
   "exclude": [
     "node_modules",
     "dist",
+    "build",
     "src/**/*.spec.ts",
     "src/**/*.spec.js",
     "src/**/*.spec.tsx",
