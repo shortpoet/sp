@@ -36,9 +36,25 @@ resource "aws_s3_bucket" "site" {
   tags = local.tags
 }
 
+resource "aws_s3_bucket_website_configuration" "redirect" {
+  count  = var.redirect_all_requests_to != null ? 1 : 0
+  bucket = aws_s3_bucket.site.id
+
+  redirect_all_requests_to {
+    host_name = var.redirect_all_requests_to
+  }
+}
+
+
 resource "aws_s3_bucket_website_configuration" "site" {
   bucket = aws_s3_bucket.site.id
 
+  dynamic "redirect_all_requests_to" {
+    for_each = var.redirect_all_requests_to != null ? [var.redirect_all_requests_to] : []
+    content {
+      host_name = redirect_all_requests_to.value
+    }
+  }
 
   index_document {
     suffix = "index.html"
@@ -164,13 +180,4 @@ resource "aws_s3_bucket_policy" "site" {
       },
     ]
   })
-}
-
-resource "aws_s3_bucket_website_configuration" "redirect" {
-  count  = var.redirect_all_requests_to != null ? 1 : 0
-  bucket = aws_s3_bucket.site.id
-
-  redirect_all_requests_to {
-    host_name = var.redirect_all_requests_to
-  }
 }
