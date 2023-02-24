@@ -41,13 +41,6 @@ permissions:
   pull-requests: write
 
 jobs:
-  dump-context:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
   paths-filter:
     if:
       (
@@ -118,12 +111,12 @@ jobs:
           BUILD_ARTIFACT_UUID: build-${{ github.sha }}-${{ github.ref_name }}
           BUILD_ARTIFACT_UUID_UAT: build-${{ github.sha }}-${{ github.head_ref }}
           IS_DEV: ${{ github.ref == 'refs/heads/develop' }}
-          IS_MAIN: ${{ github.ref == 'refs/heads/main' }}
+          IS_PROD: ${{ github.event_name == 'release' }} && ${{ startsWith(github.ref, 'refs/tags/v') }}
           IS_UAT: ${{ github.head_ref == 'uat' }} && ${{ github.base_ref == 'main' }} && ${{ github.event_name == 'pull_request' }} && ${{ startsWith(github.ref, 'refs/pull') }} && ${{ endsWith(github.ref, '/merge') }}
         run: |
           if [ "$IS_DEV" = true ]; then
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
-          elif [ "$IS_MAIN" = true ]; then
+          elif [ "$IS_PROD" = 'true && true' ]; then
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
           elif [ "$IS_UAT" = 'true && true && true && true && true' ]; then
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID_UAT}" >> $GITHUB_OUTPUT
