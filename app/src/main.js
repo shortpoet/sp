@@ -8,6 +8,7 @@ import createStore from './store/createStore';
 import jquery from 'jquery';
 
 import PortalVue from 'portal-vue';
+import { createMetaManager } from 'vue-meta';
 
 // require("bootstrap");
 import * as bootstrap from 'bootstrap';
@@ -67,6 +68,7 @@ app.config.productionTip = false;
 app.use(store);
 app.use(router);
 app.use(PortalVue);
+app.use(createMetaManager());
 app.mount('#app');
 
 // new Vue({
