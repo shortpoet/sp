@@ -102,7 +102,7 @@ export default {
         },
         {
           property: 'og:url',
-          content: url.value,
+          content: url,
         },
         {
           property: 'og:description',
