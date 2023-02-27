@@ -1,9 +1,9 @@
 <template>
   <div class="pdf-container" v-if="getResumeLoaded" :style="styleObject">
     <div class="p-10" id="pdf-anchor">
-      <PDFAbout :name="getResume.name" :surname="getResume.surname" :email="getResume.email"
-        :address="getResume.address" :citizenship="getResume.citizenship" :flags="getResume.flags"
-        :renderPDF="renderPDF" :socials="getResume.socials" />
+      <PDFAbout :name="getResume.name" :surname="getResume.surname" :email="getResume.email" :address="getResume.address"
+        :citizenship="getResume.citizenship" :flags="getResume.flags" :renderPDF="renderPDF"
+        :socials="getResume.socials" />
       <PDFBorder class="my-2" :size=".25" />
 
       <div class="skills-awards-container">
@@ -51,32 +51,10 @@
 </template>
 
 <script>
-import PDFAbout from '@/components/Resume/PDF/PDFAbout.vue'
-import PDFBorder from '@/components/Resume/PDF/PDFBorder.vue'
-import PDFSkills from '@/components/Resume/PDF/PDFSkills.vue'
-import PDFSkillsRender from '@/components/Resume/PDF/PDFSkillsRender.vue'
-import PDFAwards from '@/components/Resume/PDF/PDFAwards.vue'
-import PDFObjective from '@/components/Resume/PDF/PDFObjective.vue'
-import PDFExperience from '@/components/Resume/PDF/PDFExperience.vue'
-import PDFEducation from '@/components/Resume/PDF/PDFEducation.vue'
-import PDFInterests from '@/components/Resume/PDF/PDFInterests.vue'
-import PDFButtonFloat from '@/components/Resume/PDF/PDFButtonFloat.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'PDF',
-  components: {
-    PDFAbout,
-    PDFBorder,
-    PDFSkills,
-    PDFSkillsRender,
-    PDFAwards,
-    PDFObjective,
-    PDFExperience,
-    PDFEducation,
-    PDFInterests,
-    PDFButtonFloat
-  },
   data() {
     return {
       target: 'pdf-anchor',
