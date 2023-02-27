@@ -3,11 +3,13 @@ import Vuex from 'vuex';
 
 import App from './App.vue';
 import router from './router';
-import createStore from './store/createStore';
+import createStore from './stores/createStore';
 
 import jquery from 'jquery';
 
 import PortalVue from 'portal-vue';
+
+import { createHead } from '@vueuse/head';
 
 // require("bootstrap");
 import * as bootstrap from 'bootstrap';
@@ -56,6 +58,7 @@ const app = createApp(App);
 
 const store = new Vuex.Store(storeConfig);
 
+app.use(createHead());
 app.component('font-awesome-icon', FontAwesomeIcon);
 app.component('font-awesome-layers', FontAwesomeLayers);
 

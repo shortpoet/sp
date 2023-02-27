@@ -1,4 +1,12 @@
 <template>
+  <Head>
+    <!-- <html lang="en" dir="ltr" class="mod" style="background-color: ghostwhite;" /> -->
+    <!-- <component is="style">
+      h1 {
+      color: seagreen;
+      }
+    </component> -->
+  </Head>
   <div id="app">
     <router-view />
   </div>
@@ -6,29 +14,35 @@
 
 <style lang="scss"></style>
 
-<script setup lang="ts">
-// https://github.com/vueuse/head
-// you can use this to manipulate the document head in any components,
-// they will be rendered correctly in the html results with vite-ssg
-useHead({
-  title: 'Vitesse',
-  meta: [
-    { name: 'description', content: 'Opinionated Vite Starter Template' },
-    {
-      name: 'theme-color',
-      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
-    },
-  ],
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
-    },
-    {
-      rel: 'canonical',
-      href: computed(() => window.location.href),
-    }
-  ],
-})
+<script>
+import { Head } from '@vueuse/head'
+export default {
+  name: 'App',
+  components: {
+    Head,
+  },
+  setup() {
+    useHead({
+      title: 'Vitesse',
+      meta: [
+        { name: 'description', content: 'Opinionated Vite Starter Template' },
+        {
+          name: 'theme-color',
+          content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
+        },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
+        },
+        {
+          rel: 'canonical',
+          href: computed(() => window.location.href),
+        }
+      ],
+    })
+  },
+}
 </script>

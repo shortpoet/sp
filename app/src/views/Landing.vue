@@ -22,17 +22,29 @@
 </template>
 
 <script>
-import StartNav from '@/components/Resume/Start/StartNav.vue'
-import LandingNav from '@/components/Landing/LandingNav.vue'
-import StartAbout from '@/components/Resume/Start/StartAbout.vue'
-import StartSocials from '@/components/Resume/Start/StartSocials.vue'
-import StartSkills from '@/components/Resume/Start/StartSkills.vue'
-import StartObjective from '@/components/Resume/Start/StartObjective.vue'
-import StartExperience from '@/components/Resume/Start/StartExperience.vue'
-import StartEducation from '@/components/Resume/Start/StartEducation.vue'
-import StartInterests from '@/components/Resume/Start/StartInterests.vue'
-import StartAwards from '@/components/Resume/Start/StartAwards.vue'
-import StartButtonFloat from '@/components/Resume/Start/StartButtonFloat.vue'
+
+useHead({
+  title: 'Vitesse',
+  meta: [
+    { name: 'description', content: 'Opinionated Vite Starter Template' },
+    {
+      name: 'theme-color',
+      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
+    },
+  ],
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
+    },
+    {
+      rel: 'canonical',
+      href: computed(() => window.location.href),
+    }
+  ],
+})
+
 import { mapGetters, mapActions } from 'vuex'
 // require("bootstrap");
 import "bootstrap";
@@ -41,19 +53,6 @@ import "jquery.easing";
 
 export default {
   name: 'Start',
-  components: {
-    StartNav,
-    LandingNav,
-    StartAbout,
-    StartSocials,
-    StartSkills,
-    StartObjective,
-    StartExperience,
-    StartEducation,
-    StartInterests,
-    StartAwards,
-    StartButtonFloat
-  },
   data() {
     return {
       rippleExpanded: false,
