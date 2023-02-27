@@ -1,3 +1,4 @@
+
 resource "cloudflare_record" "cname" {
   zone_id = data.cloudflare_zones.domain.zones[0].id
   name    = var.cname_name
