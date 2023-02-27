@@ -25,12 +25,14 @@ export default {
     const title = 'Carlos Soriano'
     const author = 'Carlos Soriano'
     const description = `
+      #### DYNAMIC ####
       Carlos Soriano's Resume and Blog. Through living, studying and, working internationally, I have developed an expertise
       in language and culture. Considering where spoken languages intersect with data got me interested in programming.
       Software engineering is translating business requirements into solutions.
       I apply my advanced tech skills to analyses that consider where culture and computation converge. This, combined with my fluency
       for the most widely spoken languages, allows me to engineer unique solutions to diverse problems.
-      I am eager to collaborate with highly motivated and experienced teams whose constant curiosity is tempered by a drive to produce excellent work.`
+      I am eager to collaborate with highly motivated and experienced teams whose constant curiosity is tempered by a drive to produce excellent work.
+      #### DYNAMIC ####`
     const keywords = `
       Software Engineer, Full Stack, Web Developer, Front End, Back End, Full Stack, Full-Stack, Full Stack Developer, Full-Stack Developer, 
       Full Stack Web Developer, Full-Stack Web Developer, Full Stack Web Developer, Full-Stack Web Developer, Full Stack Software Engineer, Full-Stack Software Engineer, 
