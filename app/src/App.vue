@@ -23,6 +23,7 @@ export default {
   },
   setup() {
     const title = 'Carlos Soriano'
+    const author = 'Carlos Soriano'
     const description = `
       Carlos Soriano's Resume and Blog. Through living, studying and, working internationally, I have developed an expertise
       in language and culture. Considering where spoken languages intersect with data got me interested in programming.
@@ -35,8 +36,19 @@ export default {
       Full Stack Web Developer, Full-Stack Web Developer, Full Stack Web Developer, Full-Stack Web Developer, Full Stack Software Engineer, Full-Stack Software Engineer, 
       Full Stack Software Engineer, Full-Stack Software Engineer, Full Stack Software Developer, Full-Stack Software Developer, DevOps, DevOps Engineer, DevOps Developer, 
       Carlos Soriano, Carlos, Soriano, shortpoet`
+    const imageAlt = `A screenshot of the landing page for Carlos Soriano's Resume and Blog.`
+    const imageType = 'image/png'
+    const twitterHandle = '@shortpoet8'
 
-    const url = computed(() => window.location.href)
+    const url = window.location.href
+    const host = window.location.host
+    const protocol = window.location.protocol
+    // does not account fro public suffix list
+    // https://github.com/lupomontero/psl
+    const subdomain = window.location.hostname.split('.')[0]
+    const useDevImage = subdomain === 'dev' || subdomain === 'localhost'
+    const image = computed(() => useDevImage ? `${protocol}//${host}/public/github_profile_pic.png` : `${protocol}//${host}/public/shortpoet_open_graph.png`)
+
     useHead({
       title: title,
       link: [
@@ -65,7 +77,7 @@ export default {
         },
         {
           name: 'author',
-          content: 'Carlos Soriano',
+          content: author,
         },
         {
           name: 'robots',
@@ -90,7 +102,7 @@ export default {
         },
         {
           property: 'og:url',
-          content: url,
+          content: url.value,
         },
         {
           property: 'og:description',
@@ -98,11 +110,11 @@ export default {
         },
         {
           property: 'og:image',
-          content: 'https://shortpoet.com/public/shortpoet_open_graph.png',
+          content: image.value,
         },
         {
           property: 'og:image:alt',
-          content: `A screenshot of the landing page for Carlos Soriano's Resume and Blog.`,
+          content: imageAlt,
         },
         {
           property: 'og:locale',
@@ -110,7 +122,7 @@ export default {
         },
         {
           property: 'og:site_name',
-          content: 'Carlos Soriano',
+          content: title,
         },
         {
           property: 'og:image:width',
@@ -122,7 +134,7 @@ export default {
         },
         {
           property: 'og:image:type',
-          content: 'image/png',
+          content: imageType,
         },
         {
           property: 'og:updated_time',
@@ -139,11 +151,11 @@ export default {
         },
         {
           name: 'twitter:site',
-          content: '@shortpoet8',
+          content: twitterHandle,
         },
         {
           name: 'twitter:creator',
-          content: '@shortpoet8',
+          content: twitterHandle,
         },
         {
           name: 'twitter:title',
@@ -155,11 +167,11 @@ export default {
         },
         {
           name: 'twitter:image',
-          content: 'https://shortpoet.com/public/shortpoet_open_graph.png',
+          content: image.value,
         },
         {
           name: 'twitter:image:alt',
-          content: `A screenshot of the landing page for Carlos Soriano's Resume and Blog.`,
+          content: imageAlt,
         },
         {
           name: 'twitter:image:width',
@@ -171,7 +183,7 @@ export default {
         },
         {
           name: 'twitter:image:type',
-          content: 'image/png',
+          content: imageType,
         },
       ],
     })
