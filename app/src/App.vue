@@ -22,25 +22,157 @@ export default {
     Head,
   },
   setup() {
+    const title = 'Carlos Soriano'
+    const description = `
+      Carlos Soriano's Resume and Blog. Through living, studying and, working internationally, I have developed an expertise
+      in language and culture. Considering where spoken languages intersect with data got me interested in programming.
+      Software engineering is translating business requirements into solutions.
+      I apply my advanced tech skills to analyses that consider where culture and computation converge. This, combined with my fluency
+      for the most widely spoken languages, allows me to engineer unique solutions to diverse problems.
+      I am eager to collaborate with highly motivated and experienced teams whose constant curiosity is tempered by a drive to produce excellent work.`
+    const keywords = `
+      Software Engineer, Full Stack, Web Developer, Front End, Back End, Full Stack, Full-Stack, Full Stack Developer, Full-Stack Developer, 
+      Full Stack Web Developer, Full-Stack Web Developer, Full Stack Web Developer, Full-Stack Web Developer, Full Stack Software Engineer, Full-Stack Software Engineer, 
+      Full Stack Software Engineer, Full-Stack Software Engineer, Full Stack Software Developer, Full-Stack Software Developer, DevOps, DevOps Engineer, DevOps Developer, 
+      Carlos Soriano, Carlos, Soriano, shortpoet`
+
+    const url = computed(() => window.location.href)
     useHead({
-      title: 'Vitesse',
-      meta: [
-        { name: 'description', content: 'Opinionated Vite Starter Template' },
-        {
-          name: 'theme-color',
-          content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
-        },
-      ],
+      title: title,
       link: [
         {
           rel: 'icon',
           type: 'image/svg+xml',
-          href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
+          // href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
+          href: '/favicon.ico',
         },
         {
           rel: 'canonical',
-          href: computed(() => window.location.href),
+          href: url,
         }
+      ],
+      meta: [
+        {
+          name: 'description', content: description
+        },
+        {
+          name: 'theme-color',
+          content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
+        },
+        {
+          name: 'keywords',
+          content: keywords
+        },
+        {
+          name: 'author',
+          content: 'Carlos Soriano',
+        },
+        {
+          name: 'robots',
+          content: 'index, follow',
+        },
+        {
+          name: 'googlebot',
+          content: 'index, follow',
+        },
+        {
+          name: 'google',
+          content: 'nositelinkssearchbox',
+        },
+
+        {
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          property: 'og:title',
+          content: title,
+        },
+        {
+          property: 'og:url',
+          content: url,
+        },
+        {
+          property: 'og:description',
+          content: description,
+        },
+        {
+          property: 'og:image',
+          content: 'https://shortpoet.com/public/shortpoet_open_graph.png',
+        },
+        {
+          property: 'og:image:alt',
+          content: `A screenshot of the landing page for Carlos Soriano's Resume and Blog.`,
+        },
+        {
+          property: 'og:locale',
+          content: 'en_US',
+        },
+        {
+          property: 'og:site_name',
+          content: 'Carlos Soriano',
+        },
+        {
+          property: 'og:image:width',
+          content: '1200',
+        },
+        {
+          property: 'og:image:height',
+          content: '630',
+        },
+        {
+          property: 'og:image:type',
+          content: 'image/png',
+        },
+        {
+          property: 'og:updated_time',
+          content: new Date().toISOString(),
+        },
+        {
+          property: 'og:see_also',
+          content: 'https://www.linkedin.com/in/carlos-soriano/',
+        },
+
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:site',
+          content: '@shortpoet8',
+        },
+        {
+          name: 'twitter:creator',
+          content: '@shortpoet8',
+        },
+        {
+          name: 'twitter:title',
+          content: title,
+        },
+        {
+          name: 'twitter:description',
+          content: description,
+        },
+        {
+          name: 'twitter:image',
+          content: 'https://shortpoet.com/public/shortpoet_open_graph.png',
+        },
+        {
+          name: 'twitter:image:alt',
+          content: `A screenshot of the landing page for Carlos Soriano's Resume and Blog.`,
+        },
+        {
+          name: 'twitter:image:width',
+          content: '1200',
+        },
+        {
+          name: 'twitter:image:height',
+          content: '630',
+        },
+        {
+          name: 'twitter:image:type',
+          content: 'image/png',
+        },
       ],
     })
   },
