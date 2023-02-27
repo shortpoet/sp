@@ -85,22 +85,21 @@ jobs:
 
       - name: Install dependencies
         env:
-          NODE_ENV: production
-        working-directory: app
+          NODE_ENV: development
+        working-directory: ${{ env.APP_DIR }}
         run: |
-          npm install --global vite
-          rm package-lock.json
-          npm i
+          npm install --global vite pnpm
+          pnpm i
 
       - name: Build
-        working-directory: app
+        working-directory: ${{ env.APP_DIR }}
         env:
           NODE_ENV: production
         run: |
-          npm run build-ci
+          pnpm run build-ci
 
       - name: Compress build
-        working-directory: app
+        working-directory: ${{ env.APP_DIR }}
         run: |
           cd ${{ env.BUILD_DIR }}
           zip -r ${{ env.BUILD_ARTIFACT }}.zip ./*
@@ -127,7 +126,7 @@ jobs:
 
       - name: Upload build
         id: upload-build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.build-artifact-uuid.outputs.BUILD_ARTIFACT_UUID }}
           path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}/${{ env.BUILD_ARTIFACT }}.zip"

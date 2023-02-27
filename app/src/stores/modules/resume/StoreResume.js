@@ -5,9 +5,9 @@ import {
   SET_RESUME_RAW,
   SET_RESUME,
   SET_RESUME_LOADED
-} from '@/store/mutation-types';
+} from '@/stores/mutation-types';
 
-import { endpoints } from '@/store/api-endpoints';
+import { endpoints } from '@/stores/api-endpoints';
 
 export const state = {
   resume: null,

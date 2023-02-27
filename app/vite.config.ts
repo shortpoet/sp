@@ -1,15 +1,20 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import Vue from '@vitejs/plugin-vue';
-// import vitePluginRequire from 'vite-plugin-require';
+
+import Components from 'unplugin-vue-components/vite';
+import AutoImport from 'unplugin-auto-import/vite';
 import Markdown from 'vite-plugin-md';
+import Shiki from 'markdown-it-shiki';
+import LinkAttributes from 'markdown-it-link-attributes';
+import Inspector from 'vite-plugin-vue-inspector';
 
 import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
+    // so not just localhost
     host: true
   },
   css: {
@@ -31,11 +36,35 @@ export default defineConfig({
     //   }
     // }
   },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL(path.resolve('src'), import.meta.url))
+      // '@': path.resolve(__dirname, './src')
+    }
+  },
+
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/] // <--
     }),
-    Markdown()
+
+    // https://github.com/antfu/unplugin-auto-import
+    AutoImport({
+      imports: ['vue', 'vue-router', '@vueuse/head', '@vueuse/core'],
+      dts: 'src/auto-imports.d.ts',
+      dirs: ['src/composables', 'src/stores'],
+      vueTemplate: true
+    }),
+
+    // https://github.com/antfu/unplugin-vue-components
+    Components({
+      // allow auto load markdown components under `./src/components/`
+      extensions: ['vue', 'md'],
+      // allow auto import and register components used in markdown
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      dts: 'src/components.d.ts'
+    }),
+
     // vitePluginRequire({
     //   // @fileRegex RegExp
     //   // optional：default file processing rules are as follows
@@ -45,11 +74,33 @@ export default defineConfig({
     //   // importMetaUrl see https://vitejs.cn/guide/assets.html#new-url-url-import-meta-url
     //   // translateType: "importMetaUrl" | "import";
     // })
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL(path.resolve('src'), import.meta.url))
-      // '@': path.resolve(__dirname, './src')
-    }
-  }
+
+    // https://github.com/antfu/vite-plugin-vue-markdown
+    // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
+    Markdown({
+      wrapperClasses: 'prose prose-sm m-auto text-left',
+      headEnabled: true,
+      markdownItSetup(md) {
+        // https://prismjs.com/
+        md.use(Shiki, {
+          theme: {
+            light: 'vitesse-light',
+            dark: 'vitesse-dark'
+          }
+        });
+        md.use(LinkAttributes, {
+          matcher: (link: string) => /^https?:\/\//.test(link),
+          attrs: {
+            target: '_blank',
+            rel: 'noopener'
+          }
+        });
+      }
+    }),
+
+    // https://github.com/webfansplz/vite-plugin-vue-inspector
+    Inspector({
+      toggleButtonVisibility: 'never'
+    })
+  ]
 });
