@@ -76,6 +76,7 @@ jobs:
       github.event_name == 'release'
     outputs:
       build-artifact-uuid: ${{ steps.set-env.outputs.BUILD_ARTIFACT_UUID }}
+      is-main: ${{ steps.set-env.outputs.IS_MAIN }}
     steps:
       - uses: actions/checkout@v3
 
@@ -93,7 +94,7 @@ jobs:
             echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
             echo "ENV=development" >> $GITHUB_ENV
           elif [ "$IS_MAIN" = true ]; then
-            echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID_UAT}" >> $GITHUB_OUTPUT
+            echo "BUILD_ARTIFACT_UUID=${BUILD_ARTIFACT_UUID}" >> $GITHUB_OUTPUT
             echo "ENV=uat" >> $GITHUB_ENV
             echo "IS_MAIN=true" >> $GITHUB_OUTPUT
           elif [ "$IS_RELEASE" = 'true && true' ]; then
