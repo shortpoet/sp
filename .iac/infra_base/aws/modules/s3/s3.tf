@@ -37,12 +37,14 @@ resource "aws_s3_bucket_website_configuration" "redirect" {
 resource "aws_s3_bucket_website_configuration" "site" {
   bucket = aws_s3_bucket.site.id
 
-  dynamic "redirect_all_requests_to" {
-    for_each = var.redirect_all_requests_to != null ? [var.redirect_all_requests_to] : []
-    content {
-      host_name = redirect_all_requests_to.value
-    }
-  }
+  # conflicts with error document?
+  # https://github.com/shortpoet/sp/actions/runs/4296611474/jobs/7488548411
+  # dynamic "redirect_all_requests_to" {
+  #   for_each = var.redirect_all_requests_to != null ? [var.redirect_all_requests_to] : []
+  #   content {
+  #     host_name = redirect_all_requests_to.value
+  #   }
+  # }
 
   index_document {
     suffix = "index.html"
