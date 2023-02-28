@@ -6,7 +6,7 @@
       </h4>
       <div id="skill-grid-container" class="d-flex flex-column flex-md-row justify-content-between mt-2 px-0">
         <div v-for="(type, i) in skills" :key="i" class="skill-grid">
-          <div class="list-devicons devicon-row d-flex justify-content-around my-0">
+          <div class="list-devicons-pdf d-flex justify-content-around my-0">
             <PDFDevIcon v-for="(icon, i) in mapIcons(type.type)" :key="i" :source="icon.icon" :name="icon.name" />
           </div>
           <div class="skill-type d-flex flex-row align-items-center justify-content-around my-2 my-md-0">
