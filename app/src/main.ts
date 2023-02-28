@@ -1,15 +1,17 @@
-import { createApp } from 'vue';
+import { ViteSSG } from 'vite-ssg';
 import Vuex from 'vuex';
+// import Preview from 'vite-plugin-vue-component-preview/client';
 
 import App from './App.vue';
-import router from './router';
+// import router from './router';
 import createStore from './stores/createStore';
+import type { UserModule } from './types';
 
 import jquery from 'jquery';
 
 import PortalVue from 'portal-vue';
 
-import { createHead } from '@vueuse/head';
+// import { createHead } from '@vueuse/head';
 
 // require("bootstrap");
 import * as bootstrap from 'bootstrap';
@@ -39,6 +41,7 @@ import {
   FontAwesomeIcon,
   FontAwesomeLayers
 } from '@fortawesome/vue-fontawesome';
+import createRouterConfig from './router/createRouterConfig';
 // import { dom } from '@fortawesome/fontawesome-svg-core'
 
 // dom.watch()
@@ -54,23 +57,53 @@ library.add(faCircle, faFilePdf, faSave, faTimes, faRocket);
 
 const storeConfig = createStore.createStore();
 // console.log(storeConfig)
-const app = createApp(App);
-
 const store = new Vuex.Store(storeConfig);
 
-app.use(createHead());
-app.component('font-awesome-icon', FontAwesomeIcon);
-app.component('font-awesome-layers', FontAwesomeLayers);
+export const createApp = ViteSSG(
+  App,
+  createRouterConfig.createRouterConfig(),
+  ctx => {
+    // install all modules under `modules/`
+    Object.values(
+      import.meta.glob<{ install: UserModule }>('./modules/*.ts', {
+        eager: true
+      })
+    ).forEach(i => i.install?.(ctx));
+    const { app, router, routes, isClient, initialState } = ctx;
+    console.log('Initialising app...');
+    if (import.meta.env.MODE !== 'prod') {
+      console.log('ctx', ctx);
+      console.log('app', app);
+      console.log('router', router);
+      console.log('routes', routes);
+      console.log('isClient', isClient);
+      console.log('initialState', initialState);
+    }
+    ctx.app
+      .component('font-awesome-icon', FontAwesomeIcon)
+      .component('font-awesome-layers', FontAwesomeLayers)
+      // .use(Preview)
+      .use(store)
+      .use(PortalVue);
+    // .use(createHead())
+    ctx.app.config.globalProperties.bootstrap = bootstrap;
+    ctx.app.config.globalProperties.jquery = jquery;
+  }
+);
 
-app.config.devtools = false;
-app.config.globalProperties.bootstrap = bootstrap;
-app.config.globalProperties.jquery = jquery;
-app.config.productionTip = false;
+// const app = createApp(App);
 
-app.use(store);
-app.use(router);
-app.use(PortalVue);
-app.mount('#app');
+// app.use(createHead());
+// app.component('font-awesome-icon', FontAwesomeIcon);
+// app.component('font-awesome-layers', FontAwesomeLayers);
+
+// app.config.globalProperties.bootstrap = bootstrap;
+// app.config.globalProperties.jquery = jquery;
+
+// app.use(store);
+// app.use(router);
+// app.use(PortalVue);
+// app.mount('#app');
 
 // new Vue({
 //   router,
