@@ -9,15 +9,8 @@
 </template>
 
 <script>
-import ArticleNav from '@/components/Articles/ArticleNav.vue'
-import ArticleList from '@/components/Articles/ArticleList.vue'
-
 export default {
   name: 'Articles',
-  components: {
-    ArticleNav,
-    ArticleList
-  },
   computed: {
     articleRoot() {
       return this.$route.path === '/articles'

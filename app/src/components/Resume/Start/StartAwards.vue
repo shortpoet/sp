@@ -3,10 +3,7 @@
     <div class="my-auto">
       <h2 class="heading heading-2 mb-4 mb-md-3">Natural Languages</h2>
       <ul class="fa-ul mb-0">
-        <li
-          v-for="(lang, i) in spokenLanguages"
-          :key="i"
-        >
+        <li v-for="(lang, i) in spokenLanguages" :key="i">
           <i :class="lang.type + ' language-icon fa fa-flag fa-li'"></i>
           <span class="mb-5">{{ `${lang.languages} (${recase(lang.type)})` }} </span>
         </li>
@@ -36,6 +33,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

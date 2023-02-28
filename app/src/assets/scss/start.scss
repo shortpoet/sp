@@ -1,12 +1,14 @@
 @import "variables.scss";
 
 // Bootstrap SCSS
-@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+// @import "../../../node_modules/bootstrap/scss/bootstrap";
 
-@import "mixins-start.scss";
+@import "mixins-font.scss";
 @import "./start/landing-start.scss";
 @import "./start/button-float.scss";
 @import "./start/nav-start.scss";
 @import "./start/awards-start.scss";
-@import "./start/section-start.scss";
+// @import "./start/section-about.scss";
+@import "global.scss";
 @import "./start/global-start.scss";

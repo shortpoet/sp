@@ -1,7 +1,7 @@
 <template>
   <section :class="sectionClass" id="pdf-objective">
     <div class="d-flex align-items-center" id="objective">
-      <h4 style="font-family: 'Saira Extra Condensed';" class="heading heading-4">
+      <h4 style="font-family: 'Saira Extra Condensed';" class="heading-pdf heading-4">
         Objective
       </h4>
     </div>

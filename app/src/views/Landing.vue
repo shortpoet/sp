@@ -22,34 +22,11 @@
 </template>
 
 <script>
-
-useHead({
-  title: 'Vitesse',
-  meta: [
-    { name: 'description', content: 'Opinionated Vite Starter Template' },
-    {
-      name: 'theme-color',
-      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
-    },
-  ],
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: computed(() => preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'),
-    },
-    {
-      rel: 'canonical',
-      href: computed(() => window.location.href),
-    }
-  ],
-})
-
 import { mapGetters, mapActions } from 'vuex'
 // require("bootstrap");
-import "bootstrap";
+// import "bootstrap";
 // require("jquery.easing");
-import "jquery.easing";
+// import "jquery.easing";
 
 export default {
   name: 'Start',
@@ -81,10 +58,13 @@ export default {
     this.loadEnv(env)
     this.$nextTick(() => {
       // Activate scrollspy to add active class to navbar items on scroll
-      const ss = new this.bootstrap.ScrollSpy(document.body, {
-        target: '#sideNav',
-        // offset: 72
-      })
+      // console.log(this)
+      if (this.isClient) {
+        const ss = new this.bootstrap.ScrollSpy(document.body, {
+          target: '#sideNav',
+          // offset: 72
+        })
+      }
       this.loadResume()
     })
   }

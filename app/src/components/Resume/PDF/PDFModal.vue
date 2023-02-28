@@ -26,7 +26,7 @@ export default {
       <div class="custom-modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
         <header class="custom-modal-header" id="modalTitle">
           <slot name="header">
-            <h4 class="heading heading-4 me-auto">Save to PDF</h4>
+            <h4 class="heading-pdf heading-4 me-auto">Save to PDF</h4>
             <button type="button" class="btn-ex" @click="close" aria-label="Close modal">
               <font-awesome-icon icon="times" />
             </button>
@@ -60,7 +60,7 @@ export default {
                 </button>
               </div>
               <div>
-                <button type="button" class="btn-close" @click="close" aria-label="Close modal">
+                <button type="button" class="btn-return" @click="close" aria-label="Close modal">
                   Home Page
                 </button>
               </div>
@@ -71,6 +71,4 @@ export default {
     </div>
   </transition>
 </template>
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

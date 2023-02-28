@@ -23,32 +23,10 @@
 </template>
 
 <script>
-import StartNav from '@/components/Resume/Start/StartNav.vue'
-import StartAbout from '@/components/Resume/Start/StartAbout.vue'
-import StartSocials from '@/components/Resume/Start/StartSocials.vue'
-import StartSkills from '@/components/Resume/Start/StartSkills.vue'
-import StartObjective from '@/components/Resume/Start/StartObjective.vue'
-import StartExperience from '@/components/Resume/Start/StartExperience.vue'
-import StartEducation from '@/components/Resume/Start/StartEducation.vue'
-import StartInterests from '@/components/Resume/Start/StartInterests.vue'
-import StartAwards from '@/components/Resume/Start/StartAwards.vue'
-import StartButtonFloat from '@/components/Resume/Start/StartButtonFloat.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'Start',
-  components: {
-    StartNav,
-    StartAbout,
-    StartSocials,
-    StartSkills,
-    StartObjective,
-    StartExperience,
-    StartEducation,
-    StartInterests,
-    StartAwards,
-    StartButtonFloat
-  },
   data() {
     return {
       rippleExpanded: false
@@ -73,10 +51,10 @@ export default {
     this.loadEnv(env)
     this.$nextTick(() => {
       // Activate scrollspy to add active class to navbar items on scroll
-      const ss = new this.bootstrap.ScrollSpy(document.body, {
-        target: '#sideNav',
-        // offset: 72
-      })
+      // const ss = new this.bootstrap.ScrollSpy(document.body, {
+      //   target: '#sideNav',
+      //   // offset: 72
+      // })
       this.loadResume()
       // this never logs... why?
       // console.log('Start mounted')

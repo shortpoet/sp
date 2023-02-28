@@ -1,13 +1,19 @@
-import { fileURLToPath, URL } from 'node:url';
-import { defineConfig } from 'vite';
-import Vue from '@vitejs/plugin-vue';
+/// <reference types="vitest" />
+/// <reference types="vite-ssg" />
 
+import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from 'node:url';
+import Vue from '@vitejs/plugin-vue';
+// import preview from 'vite-plugin-vue-component-preview';
 import Components from 'unplugin-vue-components/vite';
 import AutoImport from 'unplugin-auto-import/vite';
+import Pages from 'vite-plugin-pages';
 import Markdown from 'vite-plugin-md';
 import Shiki from 'markdown-it-shiki';
 import LinkAttributes from 'markdown-it-link-attributes';
+import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 import Inspector from 'vite-plugin-vue-inspector';
+import generateSitemap from 'vite-ssg-sitemap';
 
 import path from 'path';
 
@@ -48,9 +54,22 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/] // <--
     }),
 
+    // preview(),
+
+    // https://github.com/hannoeru/vite-plugin-pages
+    Pages({
+      extensions: ['vue', 'md']
+    }),
+
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: ['vue', 'vue-router', '@vueuse/head', '@vueuse/core'],
+      imports: [
+        'vue',
+        'vue-router',
+        'vue-i18n',
+        '@vueuse/head',
+        '@vueuse/core'
+      ],
       dts: 'src/auto-imports.d.ts',
       dirs: ['src/composables', 'src/stores'],
       vueTemplate: true
@@ -98,9 +117,42 @@ export default defineConfig({
       }
     }),
 
+    // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
+    VueI18n({
+      runtimeOnly: true,
+      compositionOnly: true,
+      fullInstall: true,
+      include: [path.resolve(__dirname, 'locales/**')]
+    }),
+
     // https://github.com/webfansplz/vite-plugin-vue-inspector
     Inspector({
       toggleButtonVisibility: 'never'
     })
-  ]
+  ],
+
+  // https://github.com/vitest-dev/vitest
+  test: {
+    include: ['test/**/*.test.ts'],
+    environment: 'jsdom',
+    deps: {
+      inline: ['@vue', '@vueuse', 'vue-demi']
+    }
+  },
+
+  // https://github.com/antfu/vite-ssg
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+    onFinished() {
+      generateSitemap({
+        outDir: 'build'
+      });
+    }
+  },
+
+  ssr: {
+    // TODO: workaround until they support native ESM
+    noExternal: ['workbox-window', /vue-i18n/]
+  }
 });

@@ -12,8 +12,6 @@
   </div>
 </template>
 
-<style lang="scss"></style>
-
 <script>
 import { Head } from '@vueuse/head'
 export default {
@@ -23,20 +21,43 @@ export default {
   },
   setup() {
     const title = 'Carlos Soriano'
-    const description = `
+    const author = 'Carlos Soriano'
+    const description = `#
       Carlos Soriano's Resume and Blog. Through living, studying and, working internationally, I have developed an expertise
       in language and culture. Considering where spoken languages intersect with data got me interested in programming.
       Software engineering is translating business requirements into solutions.
       I apply my advanced tech skills to analyses that consider where culture and computation converge. This, combined with my fluency
       for the most widely spoken languages, allows me to engineer unique solutions to diverse problems.
-      I am eager to collaborate with highly motivated and experienced teams whose constant curiosity is tempered by a drive to produce excellent work.`
-    const keywords = `
-      Software Engineer, Full Stack, Web Developer, Front End, Back End, Full Stack, Full-Stack, Full Stack Developer, Full-Stack Developer, 
-      Full Stack Web Developer, Full-Stack Web Developer, Full Stack Web Developer, Full-Stack Web Developer, Full Stack Software Engineer, Full-Stack Software Engineer, 
-      Full Stack Software Engineer, Full-Stack Software Engineer, Full Stack Software Developer, Full-Stack Software Developer, DevOps, DevOps Engineer, DevOps Developer, 
-      Carlos Soriano, Carlos, Soriano, shortpoet`
+      I am eager to collaborate with highly motivated and experienced teams whose constant curiosity is tempered by a drive to produce excellent work.
+      #`
+    const keywords = `#
+      Software Engineer, Full Stack, Web Developer, Front End, Back End, Full Stack, Full-Stack, Full Stack Developer, Full-Stack Developer,
+      Full Stack Web Developer, Full-Stack Web Developer, Full Stack Web Developer, Full-Stack Web Developer, Full Stack Software Engineer,
+      Full-Stack Software Engineer, Full Stack Software Engineer, Full-Stack Software Engineer, Full Stack Software Developer,
+      Full-Stack Software Developer, DevOps, DevOps Engineer, DevOps Developer,
+      Carlos Soriano, Carlos, Soriano, shortpoet
+      #`
+    const imageAlt = `A screenshot of the landing page for Carlos Soriano's Resume and Blog.`
+    const imageType = 'image/png'
+    const twitterHandle = '@shortpoet8'
 
-    const url = computed(() => window.location.href)
+    let url, image
+    if (typeof window !== 'undefined' && window.location !== undefined) {
+      url = window.location.href
+      const host = window.location.host
+      const protocol = window.location.protocol
+      // does not account fro public suffix list
+      // https://github.com/lupomontero/psl
+      const subdomain = window.location.hostname.split('.')[0]
+      const useDevImage = subdomain === 'dev' || subdomain === 'localhost'
+      image = computed(() => useDevImage ? `${protocol}//${host}/public/github_profile_pic.png` : `${protocol}//${host}/public/shortpoet_open_graph.png`)
+    } else {
+      const baseUrl = import.meta.env.VITE_APP_URL
+      const url = `https://${baseUrl}`
+      const useDevImage = import.meta.env.MODE === 'development'
+      image = computed(() => useDevImage ? `${url}/public/github_profile_pic.png` : `${url}/public/shortpoet_open_graph.png`)
+    }
+
     useHead({
       title: title,
       link: [
@@ -49,7 +70,37 @@ export default {
         {
           rel: 'canonical',
           href: url,
-        }
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com',
+        },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap',
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: '"https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"',
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap',
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css',
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
+        //   integrity: 'sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC',
+        //   crossorigin: 'anonymous',
+        // }
       ],
       meta: [
         {
@@ -65,7 +116,7 @@ export default {
         },
         {
           name: 'author',
-          content: 'Carlos Soriano',
+          content: author,
         },
         {
           name: 'robots',
@@ -98,11 +149,11 @@ export default {
         },
         {
           property: 'og:image',
-          content: 'https://shortpoet.com/public/shortpoet_open_graph.png',
+          content: image.value,
         },
         {
           property: 'og:image:alt',
-          content: `A screenshot of the landing page for Carlos Soriano's Resume and Blog.`,
+          content: imageAlt,
         },
         {
           property: 'og:locale',
@@ -110,7 +161,7 @@ export default {
         },
         {
           property: 'og:site_name',
-          content: 'Carlos Soriano',
+          content: title,
         },
         {
           property: 'og:image:width',
@@ -122,7 +173,7 @@ export default {
         },
         {
           property: 'og:image:type',
-          content: 'image/png',
+          content: imageType,
         },
         {
           property: 'og:updated_time',
@@ -139,11 +190,11 @@ export default {
         },
         {
           name: 'twitter:site',
-          content: '@shortpoet8',
+          content: twitterHandle,
         },
         {
           name: 'twitter:creator',
-          content: '@shortpoet8',
+          content: twitterHandle,
         },
         {
           name: 'twitter:title',
@@ -155,11 +206,11 @@ export default {
         },
         {
           name: 'twitter:image',
-          content: 'https://shortpoet.com/public/shortpoet_open_graph.png',
+          content: image.value,
         },
         {
           name: 'twitter:image:alt',
-          content: `A screenshot of the landing page for Carlos Soriano's Resume and Blog.`,
+          content: imageAlt,
         },
         {
           name: 'twitter:image:width',
@@ -171,7 +222,7 @@ export default {
         },
         {
           name: 'twitter:image:type',
-          content: 'image/png',
+          content: imageType,
         },
       ],
     })

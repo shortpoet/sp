@@ -17,6 +17,13 @@
     "src/_boilerplate/**/*",
     "src/__check/**/*",
   ],
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue-macros/volar/define-model",
+      "@vue-macros/volar/define-slots",
+      "vite-plugin-vue-component-preview/tooling"
+    ]
+  },
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "build",
@@ -32,6 +39,7 @@
       "DOM"
     ],
     "esModuleInterop": true,
+    "jsx": "preserve",
     "strict": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
@@ -40,6 +48,7 @@
     "noUnusedLocals": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "remove",
     "types": [
       "node",
       "vitest",
@@ -49,7 +58,9 @@
       "vite-plugin-vue-component-preview/client",
       "vite-plugin-vue-layouts/client",
       "vite-plugin-pwa/client",
-      "unplugin-vue-macros/macros-global"
+      "unplugin-vue-macros/macros-global",
+      "jquery",
+      "bootstrap",
     ],
   },
   "references": [

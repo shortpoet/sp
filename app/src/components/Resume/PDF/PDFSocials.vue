@@ -1,7 +1,7 @@
 <template>
   <section class="" id="pdf-socials">
     <ul class="list-inline list-social-icons mb-0 mt-0 me-lg-2">
-      <li class="social-item" v-for="(social, i) in socialsComputed" :key="i">
+      <li class="social-item-pdf" v-for="(social, i) in socialsComputed" :key="i">
         <a :href="social.url" style="padding: 0.25rem">
           <span :style="iconStyleObject" class="social-icon-layer fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
@@ -10,8 +10,7 @@
           </span>
           <span style="font-family: 'Open Sans'; font-size: .55rem" v-if="!social.social.includes('website')"
             :class="urlClass">{{ social.url }}</span>
-          <span style="font-family: 'Open Sans'; font-size: .55rem" v-else
-            :class="urlClass">https://shortpoet.com</span>
+          <span style="font-family: 'Open Sans'; font-size: .55rem" v-else :class="urlClass">https://shortpoet.com</span>
         </a>
       </li>
     </ul>
