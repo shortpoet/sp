@@ -10,3 +10,8 @@ declare module '*.md' {
   const Component: ComponentOptions;
   export default Component;
 }
+
+declare module 'jquery.easing' {
+  const easing: any;
+  export default easing;
+}

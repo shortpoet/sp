@@ -24,17 +24,13 @@ library.add(faCircle, faFilePdf, faSave, faTimes, faRocket);
 import createRouterConfig from './router/createRouterConfig';
 import createStore from './stores/createStore';
 
-// import * as bootstrap from 'bootstrap';
-// import 'jquery.easing';
-// import 'bootstrap/dist/css/bootstrap.css';
-
 const storeConfig = createStore.createStore();
 const store = new Vuex.Store(storeConfig);
 
 export const createApp = ViteSSG(
   App,
   createRouterConfig.createRouterConfig(),
-  ctx => {
+  async ctx => {
     // install all modules under `modules/`
     Object.values(
       import.meta.glob<{ install: UserModule }>('./modules/*.ts', {
@@ -58,12 +54,19 @@ export const createApp = ViteSSG(
       .use(store)
       .use(PortalVue);
     // .use(createHead())
+    if (ctx.isClient) {
+      await import('bootstrap/dist/css/bootstrap.css');
+      const bootstrap = await import('bootstrap');
+      await import('jquery.easing');
+      ctx.app.config.globalProperties.bootstrap = bootstrap;
+      ctx.app.config.globalProperties.isClient = true;
+    }
     // import.meta.env.SSR
     //   ? null
     //   : import(
     //       'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'
     //     ).then(bootstrap => {
-    //       ctx.app.config.globalProperties.bootstrap = bootstrap;
+    //
     //     });
     ctx.app.config.globalProperties.jquery = jquery;
   }
