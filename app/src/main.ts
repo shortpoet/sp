@@ -86,9 +86,13 @@ export const createApp = ViteSSG(
       .use(store)
       .use(PortalVue);
     // .use(createHead())
-    ctx.app.config.globalProperties.bootstrap = import.meta.env.SSR
-      ? null
-      : require('bootstrap');
+    // import.meta.env.SSR
+    //   ? null
+    //   : import(
+    //       'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'
+    //     ).then(bootstrap => {
+    //       ctx.app.config.globalProperties.bootstrap = bootstrap;
+    //     });
     ctx.app.config.globalProperties.jquery = jquery;
   }
 );

@@ -58,10 +58,11 @@ export default {
     this.loadEnv(env)
     this.$nextTick(() => {
       // Activate scrollspy to add active class to navbar items on scroll
-      const ss = new this.bootstrap.ScrollSpy(document.body, {
-        target: '#sideNav',
-        // offset: 72
-      })
+      // console.log(this)
+      // const ss = new this.bootstrap.ScrollSpy(document.body, {
+      //   target: '#sideNav',
+      //   // offset: 72
+      // })
       this.loadResume()
     })
   }
