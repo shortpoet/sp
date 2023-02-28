@@ -1,35 +1,13 @@
 import { ViteSSG } from 'vite-ssg';
 import Vuex from 'vuex';
 // import Preview from 'vite-plugin-vue-component-preview/client';
-
 import App from './App.vue';
-// import router from './router';
-import createStore from './stores/createStore';
 import type { UserModule } from './types';
-
-import jquery from 'jquery';
-
 import PortalVue from 'portal-vue';
-
-// import { createHead } from '@vueuse/head';
-
-// require("bootstrap");
-// import * as bootstrap from 'bootstrap';
-// require("jquery.easing");
-// import 'jquery.easing';
-
-// require("bootstrap/dist/css/bootstrap.css");
-// import 'bootstrap/dist/css/bootstrap.css';
-
-// require("devicons/css/devicons.css");
+import jquery from 'jquery';
 import 'devicons/css/devicons.css';
-// require("font-awesome/css/font-awesome.css");
 import 'font-awesome/css/font-awesome.css';
-
-// Font Awesome Vue
 import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faLinkedin, faGithub, faTwitter, faInstagram, faCss3, faJs, faVuejs, faHtml5, faBootstrap, faNodeJs, faLinux, faSass, faNpm, faFontAwesomeFlag } from '@fortawesome/free-brands-svg-icons'
-// import { faTrophy, faCheck, faFlag, faCircle, faFilePdf, faSave, faGlobe, faTimes} from '@fortawesome/free-solid-svg-icons'
 import {
   faCircle,
   faFilePdf,
@@ -41,22 +19,16 @@ import {
   FontAwesomeIcon,
   FontAwesomeLayers
 } from '@fortawesome/vue-fontawesome';
-import createRouterConfig from './router/createRouterConfig';
-// import { dom } from '@fortawesome/fontawesome-svg-core'
-
-// dom.watch()
-
-// library.add(
-//   faLinkedin, faGithub, faTwitter, faInstagram, faCss3, faJs, faVuejs,
-//   faHtml5, faBootstrap, faNodeJs, faLinux, faSass, faNpm,
-//   faTrophy, faCheck, faFlag, faFontAwesomeFlag,
-//   faCircle, faFilePdf, faSave, faGlobe, faTimes
-//   )
-
 library.add(faCircle, faFilePdf, faSave, faTimes, faRocket);
 
+import createRouterConfig from './router/createRouterConfig';
+import createStore from './stores/createStore';
+
+// import * as bootstrap from 'bootstrap';
+// import 'jquery.easing';
+// import 'bootstrap/dist/css/bootstrap.css';
+
 const storeConfig = createStore.createStore();
-// console.log(storeConfig)
 const store = new Vuex.Store(storeConfig);
 
 export const createApp = ViteSSG(
@@ -96,23 +68,3 @@ export const createApp = ViteSSG(
     ctx.app.config.globalProperties.jquery = jquery;
   }
 );
-
-// const app = createApp(App);
-
-// app.use(createHead());
-// app.component('font-awesome-icon', FontAwesomeIcon);
-// app.component('font-awesome-layers', FontAwesomeLayers);
-
-// app.config.globalProperties.bootstrap = bootstrap;
-// app.config.globalProperties.jquery = jquery;
-
-// app.use(store);
-// app.use(router);
-// app.use(PortalVue);
-// app.mount('#app');
-
-// new Vue({
-//   router,
-//   store,
-//   render: (h) => h(App),
-// }).$mount("#app");
