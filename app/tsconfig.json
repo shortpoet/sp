@@ -39,6 +39,7 @@
       "DOM"
     ],
     "esModuleInterop": true,
+    "jsx": "preserve",
     "strict": true,
     "strictNullChecks": true,
     "moduleResolution": "node",

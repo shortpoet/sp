@@ -1,5 +1,8 @@
-import { fileURLToPath, URL } from 'node:url';
+/// <reference types="vitest" />
+/// <reference types="vite-ssg" />
+
 import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from 'node:url';
 import Vue from '@vitejs/plugin-vue';
 // import preview from 'vite-plugin-vue-component-preview';
 import Components from 'unplugin-vue-components/vite';
@@ -10,6 +13,7 @@ import Shiki from 'markdown-it-shiki';
 import LinkAttributes from 'markdown-it-link-attributes';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 import Inspector from 'vite-plugin-vue-inspector';
+import generateSitemap from 'vite-ssg-sitemap';
 
 import path from 'path';
 
@@ -125,5 +129,30 @@ export default defineConfig({
     Inspector({
       toggleButtonVisibility: 'never'
     })
-  ]
+  ],
+
+  // https://github.com/vitest-dev/vitest
+  test: {
+    include: ['test/**/*.test.ts'],
+    environment: 'jsdom',
+    deps: {
+      inline: ['@vue', '@vueuse', 'vue-demi']
+    }
+  },
+
+  // https://github.com/antfu/vite-ssg
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+    onFinished() {
+      generateSitemap({
+        outDir: 'build'
+      });
+    }
+  },
+
+  ssr: {
+    // TODO: workaround until they support native ESM
+    noExternal: ['workbox-window', /vue-i18n/]
+  }
 });

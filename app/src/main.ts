@@ -14,12 +14,12 @@ import PortalVue from 'portal-vue';
 // import { createHead } from '@vueuse/head';
 
 // require("bootstrap");
-import * as bootstrap from 'bootstrap';
+// import * as bootstrap from 'bootstrap';
 // require("jquery.easing");
-import 'jquery.easing';
+// import 'jquery.easing';
 
 // require("bootstrap/dist/css/bootstrap.css");
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 // require("devicons/css/devicons.css");
 import 'devicons/css/devicons.css';
@@ -69,16 +69,16 @@ export const createApp = ViteSSG(
         eager: true
       })
     ).forEach(i => i.install?.(ctx));
-    const { app, router, routes, isClient, initialState } = ctx;
+    // const { app, router, routes, isClient, initialState } = ctx;
     console.log('Initialising app...');
-    if (import.meta.env.MODE !== 'prod') {
-      console.log('ctx', ctx);
-      console.log('app', app);
-      console.log('router', router);
-      console.log('routes', routes);
-      console.log('isClient', isClient);
-      console.log('initialState', initialState);
-    }
+    // if (import.meta.env.MODE !== 'prod') {
+    //   console.log('ctx', ctx);
+    //   console.log('app', app);
+    //   console.log('router', router);
+    //   console.log('routes', routes);
+    //   console.log('isClient', isClient);
+    //   console.log('initialState', initialState);
+    // }
     ctx.app
       .component('font-awesome-icon', FontAwesomeIcon)
       .component('font-awesome-layers', FontAwesomeLayers)
@@ -86,7 +86,9 @@ export const createApp = ViteSSG(
       .use(store)
       .use(PortalVue);
     // .use(createHead())
-    ctx.app.config.globalProperties.bootstrap = bootstrap;
+    ctx.app.config.globalProperties.bootstrap = import.meta.env.SSR
+      ? null
+      : require('bootstrap');
     ctx.app.config.globalProperties.jquery = jquery;
   }
 );

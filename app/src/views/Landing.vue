@@ -24,9 +24,9 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 // require("bootstrap");
-import "bootstrap";
+// import "bootstrap";
 // require("jquery.easing");
-import "jquery.easing";
+// import "jquery.easing";
 
 export default {
   name: 'Start',
