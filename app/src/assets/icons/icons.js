@@ -1,11 +1,11 @@
-import azure from '@/assets/azure_devicon_forest_green.svg';
-import terraform from '@/assets/terraform_devicon_forest_green.svg';
-import powershell from '@/assets/powershell_devicon_forest_green.svg';
-import bash from '@/assets/bash_devicon_forest_green.svg';
-import vue from '@/assets/vue_devicon_forest_green.svg';
-import ts from '@/assets/ts_devicon_forest_green.svg';
-import d3 from '@/assets/d3_devicon_forest_green.svg';
-import tableau from '@/assets/tableau_logo.svg';
+import azure from '@/assets/icons/azure_devicon_forest_green.svg';
+import terraform from '@/assets/icons/terraform_devicon_forest_green.svg';
+import powershell from '@/assets/icons/powershell_devicon_forest_green.svg';
+import bash from '@/assets/icons/bash_devicon_forest_green.svg';
+import vue from '@/assets/icons/vue_devicon_forest_green.svg';
+import ts from '@/assets/icons/ts_devicon_forest_green.svg';
+import d3 from '@/assets/icons/d3_devicon_forest_green.svg';
+import tableau from '@/assets/icons/tableau_logo.svg';
 export default {
   iconMap: [
     {

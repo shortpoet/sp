@@ -40,7 +40,7 @@
 <script>
 import PDFDevIcon from '@/components/Resume/PDF/PDFDevIcon.vue'
 import PDFBorder from '@/components/Resume/PDF/PDFBorder.vue'
-import icons from '@/assets/icons.js'
+import icons from '@/assets/icons/icons.js'
 
 export default {
   name: 'PDFSkillsRender',

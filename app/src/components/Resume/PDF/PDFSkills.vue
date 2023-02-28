@@ -16,8 +16,7 @@
           </div>
           <PDFBorder class="d-none d-md-block my-3 my-md-2" :size=".25" />
           <div class="skill-list-container d-flex flex-column mb-4 mb-md-2">
-            <div v-for="(skill, i) in listSkills(type.details)" :key="i"
-              class="skill-list d-flex flex-column mx-2 mb-2">
+            <div v-for="(skill, i) in listSkills(type.details)" :key="i" class="skill-list d-flex flex-column mx-2 mb-2">
               <div class="skill-pill-container d-flex justify-content-around">
                 <!-- adding extra spans to create grid -->
                 <span></span>
@@ -28,8 +27,7 @@
               </div>
             </div>
           </div>
-          <PDFBorder v-if="i !== (skills.length - 1)" class="d-md-none d-block my-3 my-md-2" :marginX="25"
-            :size=".25" />
+          <PDFBorder v-if="i !== (skills.length - 1)" class="d-md-none d-block my-3 my-md-2" :marginX="25" :size=".25" />
         </div>
       </div>
     </div>
@@ -39,7 +37,7 @@
 <script>
 import PDFDevIcon from '@/components/Resume/PDF/PDFDevIcon.vue'
 import PDFBorder from '@/components/Resume/PDF/PDFBorder.vue'
-import icons from '@/assets/icons.js'
+import icons from '@/assets/icons/icons.js'
 
 export default {
   name: 'PDFSkills',

@@ -31,13 +31,13 @@
         </ul>
       </div>
     </div>
-</section>
+  </section>
 </template>
 
 <script>
 // import FlexList from '@/components/Utils/FlexList'
 import StartDevIcon from "@/components/Resume/Start/StartDevIcon.vue";
-import icons from "@/assets/icons.js";
+import icons from "@/assets/icons/icons.js";
 
 export default {
   name: "StartSkills",
