@@ -3,7 +3,7 @@
     <i v-if="!isImage" :class="source"></i>
     <img v-else :class="imgClass" :src="source" />
     <span v-if="showName" :class="devicon - name">{{ name }}</span>
-</div>
+  </div>
 </template>
 
 <script>
@@ -34,31 +34,31 @@ export default {
       let imgClass = "";
       switch (this.name) {
         case "vue":
-          imgClass = "vue-devicon";
+          imgClass = "vue-devicon-pdf";
           break;
         case "ts":
-          imgClass = "ts-devicon";
+          imgClass = "ts-devicon-pdf";
           break;
         case "tableau":
-          imgClass = "tableau-devicon";
+          imgClass = "tableau-devicon-pdf";
           break;
         case "d3":
-          imgClass = "d3-devicon";
+          imgClass = "d3-devicon-pdf";
           break;
         case "azure":
-          imgClass = "azure-devicon";
+          imgClass = "azure-devicon-pdf";
           break;
         case "bash":
-          imgClass = "bash-devicon";
+          imgClass = "bash-devicon-pdf";
           break;
         case "terraform":
-          imgClass = "terraform-devicon";
+          imgClass = "terraform-devicon-pdf";
           break;
         case "powershell":
-          imgClass = "powershell-devicon";
+          imgClass = "powershell-devicon-pdf";
           break;
         case "aws":
-          imgClass = "aws-devicon";
+          imgClass = "aws-devicon-pdf";
           break;
       }
       return imgClass;

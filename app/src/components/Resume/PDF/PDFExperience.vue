@@ -8,19 +8,19 @@
           <div class="d-flex flex-column justify-content-between">
             <div class="d-flex flex-row justify-content-between">
               <div class="me-auto">
-                <h5 id="job-position" style="font-family: 'Saira Extra Condensed';" class="heading heading-5 mb-0">{{
+                <h5 id="job-position" style="font-family: 'Saira Extra Condensed';" class="heading-pdf heading-5 mb-0">{{
                   job.position
                 }}</h5>
               </div>
               <div :class="textRightClass">
                 <h6 style="font-family: 'Saira Extra Condensed';"
-                  class="heading heading-6 pdf-experience-dates text-primary">{{ job.startDate }} - {{ job.endDate }}
+                  class="heading-pdf heading-6 pdf-experience-dates text-primary">{{ job.startDate }} - {{ job.endDate }}
                 </h6>
               </div>
             </div>
             <div class="d-flex flex-column">
-              <h6 style="font-family: 'Saira Extra Condensed';" class="heading heading-6 pdf-company">{{ job.company }}
-              </h6>
+              <h6 style="font-family: 'Saira Extra Condensed';" class="heading-pdf heading-6 pdf-company">{{ job.company
+              }}</h6>
               <div v-for="(text, di) in job.description.split('\\n\\r')" :key="di" class="mb-2">
                 <p style="font-family: 'Open Sans';" v-html="text"
                   :class="'job-' + (ji + 1) + '-description-' + (di + 1)"></p>

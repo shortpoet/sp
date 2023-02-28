@@ -1,16 +1,16 @@
 // import VueCookies from 'vue-cookies'
 
-import createStoreResume from "@/store/modules/resume/createStoreResume";
+import createStoreResume from '@/stores/modules/resume/createStoreResume';
 
-import { SET_ENV, SET_URL_PREFIX } from "@/store/mutation-types";
+import { SET_ENV, SET_URL_PREFIX } from '@/stores/mutation-types';
 
-import {} from "@/store/api-endpoints";
+import {} from '@/stores/api-endpoints';
 
 export const state = {
   environment: null,
   urlPrefix: null,
   BACKEND_PREFIX_PROD: import.meta.envVUE_APP_BACKEND_PREFIX_PROD,
-  BACKEND_PREFIX_DEV: import.meta.envVUE_APP_BACKEND_PREFIX_LOCAL,
+  BACKEND_PREFIX_DEV: import.meta.envVUE_APP_BACKEND_PREFIX_LOCAL
 };
 
 // export const rootGetters = {
@@ -20,7 +20,7 @@ export const getters = {
   },
   getEnv(state) {
     return state.environment;
-  },
+  }
 };
 
 export const mutations = {
@@ -28,25 +28,25 @@ export const mutations = {
     state.environment = newEnv;
   },
   [SET_URL_PREFIX](state) {
-    if (state.environment === "production") {
+    if (state.environment === 'production') {
       state.urlPrefix = state.BACKEND_PREFIX_PROD;
-    } else if (state.environment === "development") {
+    } else if (state.environment === 'development') {
       state.urlPrefix = state.BACKEND_PREFIX_DEV;
     } else {
-      state.urlPrefix = "";
+      state.urlPrefix = '';
     }
-  },
+  }
 };
 
 export const actions = {
   loadEnv({ commit }, env) {
-    commit("SET_ENV", env);
-    commit("SET_URL_PREFIX");
-  },
+    commit('SET_ENV', env);
+    commit('SET_URL_PREFIX');
+  }
 };
 
 export const modules = {
-  resume: createStoreResume.createStoreResume(),
+  resume: createStoreResume.createStoreResume()
 };
 
 export default {
@@ -54,5 +54,5 @@ export default {
   getters,
   actions,
   mutations,
-  modules,
+  modules
 };

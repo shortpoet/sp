@@ -19,23 +19,11 @@ a {
 }
 
 
-.heading {
+.heading-pdf {
   font-family: 'Saira Extra Condensed';
   @include heading-font;
   font-weight: 700;
   text-transform: uppercase;
-  color: $gray-800;
-}
-
-.heading-4 {
-  font-size: 1rem;
-  color: $primary;
-}
-.heading-5 {
-  font-size: .85rem;
-}
-.heading-6 {
-  font-size: .65rem;
 }
 
 // ###
@@ -48,8 +36,6 @@ a {
 .skills-col {
   padding: 0rem !important;
 }
-
-
 
 .pdf-action {
   cursor: pointer;
@@ -76,16 +62,24 @@ a {
   background-color: $gray-900;
 }
 
-.resume-section p {
-  font-size: .60rem;
-  margin: 0rem 3.5rem 0rem .5rem;
-  padding: 0rem 0rem 0rem 0rem;
-}
 .resume-section-render p {
   font-size: .60rem;
   margin: 0rem .5rem 0rem .5rem;
   padding: 0rem 0rem 0rem 0rem;
 }
+
+.resume-section p {
+  font-size: .60rem;
+}
+
+// .subheading {
+//   text-transform: uppercase;
+//   font-weight: 500;
+//   @include heading-font;
+//   font-size: 1.35rem;
+//   // font-size: 1.5rem;
+// }
+
 
 a:hover {
   color: $primary;
@@ -96,7 +90,8 @@ a:hover {
   margin-left: .25rem;
 }
 
-.social-item {
+.social-item-pdf {
+  font-size: 0.55rem;
   // css fa vs import fa have different sizes hence the margin not needed
   // margin-bottom: 1rem;
   .social-icon-layer {
@@ -118,57 +113,57 @@ a:hover {
   }
 }
 
-.devicon-name {
+.devicon-name-pdf {
   margin: .15rem 0rem 0rem 0rem;
   font-size: .5rem;
   color: black;
 }
-.list-devicons {
+.list-devicons-pdf {
   color: $forest-green;
   font-size: 1.5rem;
 }
 
-.d3-devicon {
+.d3-devicon-pdf {
   height: 1.25rem;
   width: 1.25rem;
   margin-bottom: .45rem;
 }
-.tableau-devicon {
+.tableau-devicon-pdf {
   height: 1.25rem;
   width: 1.25rem;
   margin-bottom: .45rem;
 }
-.terraform-devicon {
-  height: 1.25rem;
-  width: 1.25rem;
-  margin-bottom: .45rem;
-}
-
-.bash-devicon {
+.terraform-devicon-pdf {
   height: 1.25rem;
   width: 1.25rem;
   margin-bottom: .45rem;
 }
 
-.powershell-devicon {
+.bash-devicon-pdf {
   height: 1.25rem;
   width: 1.25rem;
   margin-bottom: .45rem;
 }
 
-.bash-devicon {
+.powershell-devicon-pdf {
   height: 1.25rem;
   width: 1.25rem;
   margin-bottom: .45rem;
 }
 
-.azure-devicon {
+.bash-devicon-pdf {
   height: 1.25rem;
   width: 1.25rem;
   margin-bottom: .45rem;
 }
 
-.vue-devicon {
+.azure-devicon-pdf {
+  height: 1.25rem;
+  width: 1.25rem;
+  margin-bottom: .45rem;
+}
+
+.vue-devicon-pdf {
   /* height: 48px;
   width: 48px;
   line-height: 1;
@@ -180,7 +175,7 @@ a:hover {
   // padding: .25rem;
   // margin-bottom: .8rem;
 }
-.ts-devicon {
+.ts-devicon-pdf {
   /* height: 48px;
   width: 48px;
   line-height: 1;

@@ -15,7 +15,7 @@
         <div class="d-flex flex-column mt-1 mt-md-2 ms-2" id="name-contact">
           <ul class="list-inline">
             <li>
-              <h2 style="font-family: 'Saira Extra Condensed'" class="heading heading-2 mb-0">
+              <h2 style="font-family: 'Saira Extra Condensed'" class="heading-pdf mb-0">
                 {{ name }}
                 <span id="pdf-surname" style="font-family: 'Saira Extra Condensed'" class="text-primary">{{
                   surname
@@ -113,8 +113,4 @@ export default {
   },
 };
 </script>
-<style>
-.social-item {
-  font-size: 0.55rem;
-}
-</style>
+<style></style>

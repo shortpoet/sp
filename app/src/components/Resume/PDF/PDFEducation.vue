@@ -1,7 +1,7 @@
 <template>
   <section :class="sectionClass" id="education">
     <div class="my-auto">
-      <h4 style="font-family: 'Saira Extra Condensed';" class="heading heading-4 pdf-subheading">Education</h4>
+      <h4 style="font-family: 'Saira Extra Condensed';" class="heading-pdf heading-4 pdf-subheading">Education</h4>
       <div v-for="(ed, i) in educations" :key="i">
         <div class="resume-item d-flex flex-column justify-content-between">
           <div class="d-flex flex-row">
@@ -10,7 +10,8 @@
             </div>
           </div>
           <div class="d-flex flex-column">
-            <h6 style="font-family: 'Saira Extra Condensed';" class="heading heading-6 pdf-degree">{{ ed.degree }}</h6>
+            <h6 style="font-family: 'Saira Extra Condensed';" class="heading-pdf heading-6 pdf-degree">{{ ed.degree }}
+            </h6>
             <p style="font-family: 'Open Sans';" class="resume-content">{{ ed.details }}</p>
             <!-- <p>GPA: 3.23</p> -->
           </div>
