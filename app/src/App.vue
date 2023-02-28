@@ -42,7 +42,7 @@ export default {
     const twitterHandle = '@shortpoet8'
 
     let url, image
-    if (!import.meta.env.SSR) {
+    if (typeof window !== 'undefined' && window.location !== undefined) {
       url = window.location.href
       const host = window.location.host
       const protocol = window.location.protocol
@@ -52,7 +52,7 @@ export default {
       const useDevImage = subdomain === 'dev' || subdomain === 'localhost'
       image = computed(() => useDevImage ? `${protocol}//${host}/public/github_profile_pic.png` : `${protocol}//${host}/public/shortpoet_open_graph.png`)
     } else {
-      const baseUrl = import.meta.env.VITE_URL
+      const baseUrl = import.meta.env.VITE_APP_URL
       const url = `https://${baseUrl}`
       const useDevImage = import.meta.env.MODE === 'development'
       image = computed(() => useDevImage ? `${url}/public/github_profile_pic.png` : `${url}/public/shortpoet_open_graph.png`)
