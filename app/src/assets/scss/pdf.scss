@@ -4,8 +4,9 @@
 // @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
-@import "mixins-start.scss";
+@import "mixins-font.scss";
 @import "./pdf/button-float.scss";
 @import "modal.scss";
+@import "global.scss";
 // @import "./pdf/awards-pdf.scss";
 @import "./pdf/global-pdf.scss";

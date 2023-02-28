@@ -1,7 +1,7 @@
 <template>
   <section :class="sectionClass" id="interests">
     <div class="my-auto">
-      <h4 style="font-family: 'Saira Extra Condensed';" class="heading heading-4 mb-3">Interests</h4>
+      <h4 style="font-family: 'Saira Extra Condensed';" class="heading-pdf heading-4 mb-3">Interests</h4>
       <p style="font-family: 'Open Sans';">{{ interests }}</p>
     </div>
   </section>
