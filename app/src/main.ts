@@ -61,13 +61,6 @@ export const createApp = ViteSSG(
       ctx.app.config.globalProperties.bootstrap = bootstrap;
       ctx.app.config.globalProperties.isClient = true;
     }
-    // import.meta.env.SSR
-    //   ? null
-    //   : import(
-    //       'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'
-    //     ).then(bootstrap => {
-    //
-    //     });
     ctx.app.config.globalProperties.jquery = jquery;
   }
 );

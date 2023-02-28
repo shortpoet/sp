@@ -83,18 +83,6 @@ export default {
           fontFamily: 'Saira Extra Condensed, Open Sans',
         }
     },
-    poemStyle() {
-      return this.renderPDF ?
-        {
-          height: '10rem',
-          width: '10rem',
-        }
-        :
-        {
-          height: '16rem',
-          width: '16rem',
-        }
-    },
     skillComp() {
       return this.renderPDF ? 'PDFSkillsRender' : 'PDFSkills'
     },

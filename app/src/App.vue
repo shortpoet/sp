@@ -12,8 +12,6 @@
   </div>
 </template>
 
-<style lang="scss"></style>
-
 <script>
 import { Head } from '@vueuse/head'
 export default {
@@ -35,7 +33,7 @@ export default {
     const keywords = `#
       Software Engineer, Full Stack, Web Developer, Front End, Back End, Full Stack, Full-Stack, Full Stack Developer, Full-Stack Developer,
       Full Stack Web Developer, Full-Stack Web Developer, Full Stack Web Developer, Full-Stack Web Developer, Full Stack Software Engineer,
-      Full-Stack Software Engineer, Full Stack Software Engineer, Full-Stack Software Engineer, Full Stack Software Developer, 
+      Full-Stack Software Engineer, Full Stack Software Engineer, Full-Stack Software Engineer, Full Stack Software Developer,
       Full-Stack Software Developer, DevOps, DevOps Engineer, DevOps Developer,
       Carlos Soriano, Carlos, Soriano, shortpoet
       #`
@@ -93,16 +91,16 @@ export default {
         //   rel: 'stylesheet',
         //   href: 'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap',
         // },
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css',
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
-          integrity: 'sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC',
-          crossorigin: 'anonymous',
-        }
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css',
+        // },
+        // {
+        //   rel: 'stylesheet',
+        //   href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css',
+        //   integrity: 'sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC',
+        //   crossorigin: 'anonymous',
+        // }
       ],
       meta: [
         {
