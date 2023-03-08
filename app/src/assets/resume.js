@@ -3,11 +3,11 @@
 
 export const hardResume = {
   id: 0,
-  title: 'Carlos Resume 2020 12 08',
+  title: 'Carlos Resume 2023 03 08',
   name: 'CARLOS',
   surname: 'SORIANO',
   address: 'Atlanta, GA',
-  email: 'soriano.carlitos@gmail.com',
+  email: 'carlos@shortpoet.com',
   citizenship: 'USA & EU',
   flags: '🇪🇸, 🇵🇭, 🇺🇸, 🇨🇳, 🇫🇷, 🇮🇹, 🇩🇪, 🇧🇷',
   brief: '',
@@ -207,44 +207,32 @@ export const hardResume = {
   skills: [
     {
       id: 11,
-      type: 'Dotnet',
+      type: '.Net',
       details: 'Framework, Core, Entity Framework, Razor, MVC',
       resumeSkills: []
     },
     {
       id: 12,
       type: 'Javascript',
-      details: 'Vue, Typescript, Leafly, Plotly, c3',
+      details: 'Typescript, Vue, Node, React',
       resumeSkills: []
     },
     {
       id: 13,
-      type: 'Python',
-      details: 'Pandas, Matplotlib, Flask, Selenium, Sklearn',
+      type: 'Analytics',
+      details: 'Python, D3, Pandas, Matplotlib, Tableau',
       resumeSkills: []
     },
     {
       id: 14,
-      type: 'Relational Db',
-      details: 'msSQL, mySQL, Entity Framework, SQLAlchemy',
-      resumeSkills: []
-    },
-    {
-      id: 15,
-      type: 'Document Db',
-      details: 'mongoDB, Pymongo',
+      type: 'Database',
+      details: 'msSQL, PostgreSQL, mongoDB',
       resumeSkills: []
     },
     {
       id: 16,
       type: 'Markdown',
       details: 'HTML, CSS, YAML, MD, SCSS',
-      resumeSkills: []
-    },
-    {
-      id: 17,
-      type: 'Data Visualization',
-      details: 'D3, Tableau',
       resumeSkills: []
     },
     {
@@ -258,7 +246,7 @@ export const hardResume = {
       id: 20,
       type: 'DevOps',
       details:
-        'Docker, Azure DevOps CI/CD Build & Release Pipelines, AWS, Azure Resource Manager, Yeoman Templates, Terraform, Terratest, Go, Powershell, Bash',
+        'Docker, AWS, Gitlab, Terraform, Azure DevOps CI/CD, Azure Resource Manager, Go, Powershell, Bash',
       resumeSkills: []
     }
   ],

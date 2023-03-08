@@ -17,7 +17,7 @@ export default {
       icons: ['docker', 'azure', 'aws', 'terraform', 'go', 'powershell', 'bash']
     },
     {
-      skill: 'Dotnet',
+      skill: '.Net',
       icons: ['dotnet']
     },
     {
@@ -25,24 +25,16 @@ export default {
       icons: ['js', 'vue', 'ts']
     },
     {
-      skill: 'Python',
-      icons: ['python']
-    },
-    {
-      skill: 'Relational Db',
-      icons: ['mssql', 'mysql', 'sqllite']
-    },
-    {
-      skill: 'Document Db',
-      icons: ['mongo']
+      skill: 'Database',
+      icons: ['mssql', 'mongo', 'postgresql']
     },
     {
       skill: 'Markdown',
       icons: ['html', 'css', 'bootstrap', 'sass']
     },
     {
-      skill: 'Data Visualization',
-      icons: ['d3', 'tableau']
+      skill: 'Analytics',
+      icons: ['d3', 'tableau', 'python']
     },
     {
       skill: 'Miscellaneous',
@@ -96,6 +88,11 @@ export default {
       displayName: 'Go'
     },
     {
+      icon: 'devicons devicons-postgresql',
+      name: 'postgresql',
+      displayName: 'PostgreSQL'
+    },
+    {
       icon: powershell,
       name: 'powershell',
       displayName: 'Powershell'
@@ -140,16 +137,16 @@ export default {
       name: 'mssql',
       displayName: 'Micorsoft SQL Server'
     },
-    {
-      icon: 'devicons devicons-sqllite',
-      name: 'sqllite',
-      displayName: 'SQLlite'
-    },
-    {
-      icon: 'devicons devicons-mysql',
-      name: 'mysql',
-      displayName: 'mySQL'
-    },
+    // {
+    //   icon: 'devicons devicons-sqllite',
+    //   name: 'sqllite',
+    //   displayName: 'SQLlite'
+    // },
+    // {
+    //   icon: 'devicons devicons-mysql',
+    //   name: 'mysql',
+    //   displayName: 'mySQL'
+    // },
     {
       icon: 'devicons devicons-mongodb',
       name: 'mongo',

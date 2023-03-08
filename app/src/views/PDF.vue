@@ -1,6 +1,6 @@
 <template>
-  <div class="pdf-container" v-if="getResumeLoaded" :style="styleObject">
-    <div class="p-10" id="pdf-anchor">
+  <div class="pdf-container" v-if="getResumeLoaded" :style="styleObject" id="pdf-anchor">
+    <div class="p-10">
       <PDFAbout :name="getResume.name" :surname="getResume.surname" :email="getResume.email" :address="getResume.address"
         :citizenship="getResume.citizenship" :flags="getResume.flags" :renderPDF="renderPDF"
         :socials="getResume.socials" />
@@ -64,6 +64,7 @@ export default {
   computed: {
     ...mapGetters('resume', ['getResume', 'getResumeLoaded']),
     styleObject() {
+      // this doesn't seem to be applied to what actually gets rendered, just the intermediate step?
       return this.renderPDF ?
         {
           fontFamily: 'Saira Extra Condensed, Open Sans',
@@ -71,12 +72,12 @@ export default {
           // width: '310mm',
           width: '210mm',
           height: '297mm',
+          // A4 dimensions
           // height: '842px',
           // width: '595px',
           /* to centre page on screen*/
           marginLeft: 'auto',
-          marginRight: 'auto'
-
+          marginRight: 'auto',
         }
         :
         {
@@ -107,17 +108,4 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i');
 @import './../assets/scss/pdf.scss';
-
-// page {
-//   size: A4
-// }
-
-// // A4 page dimensions supposedly
-// #pdf-anchor {
-//   height: 842px;
-//   width: 595px;
-//   /* to centre page on screen*/
-//   margin-left: auto;
-//   margin-right: auto;
-// }
 </style>
