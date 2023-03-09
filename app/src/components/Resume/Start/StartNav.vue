@@ -7,7 +7,7 @@
         <img class="img-fluid img-profile mx-auto mb-2" :src="pic" alt="profile pic" />
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,6 +53,10 @@ export default {
       // moving this here to be able to test
       // added local boolean that creates coverage
       // also makes it so the
+      console.log("collapse is called");
+      console.log(this)
+      console.log(this.jquery)
+      console.log(this.jquery(".navbar-collapse"))
       this.jquery(".navbar-collapse").collapse("hide");
       this.isCollapse = true;
     },

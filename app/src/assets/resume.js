@@ -3,11 +3,11 @@
 
 export const hardResume = {
   id: 0,
-  title: 'Carlos Resume 2020 12 08',
+  title: 'Carlos Resume 2023 03 08',
   name: 'CARLOS',
   surname: 'SORIANO',
   address: 'Atlanta, GA',
-  email: 'soriano.carlitos@gmail.com',
+  email: 'carlos@shortpoet.com',
   citizenship: 'USA & EU',
   flags: '🇪🇸, 🇵🇭, 🇺🇸, 🇨🇳, 🇫🇷, 🇮🇹, 🇩🇪, 🇧🇷',
   brief: '',
@@ -46,65 +46,6 @@ export const hardResume = {
     }
   ],
   jobs: [
-    {
-      id: 16,
-      experienceType: 'language',
-      position: 'Translator / Interpreter',
-      company: 'Interpretation Agencies (many)',
-      description:
-        'Medical, dental and media conferences, on-site medical and legal interpretation for depositions, insurance and immigration interviews, simultaneous interpretation of contract negotiations, guided tours, consecutive and simultaneous interpretation for training meetings, document translation of many types, including legal, medical, media localization, and various other language-related assignments, primarily in Spanish, Tagalog and French.',
-      startDate: '2011',
-      endDate: 'Present',
-      dateCreated: '2020-06-04T12:33:37.877',
-      comments: 'change company to more clearly reflect many'
-    },
-    {
-      id: 17,
-      experienceType: 'language',
-      position: 'QA Tester',
-      company: 'GTL Media- Los Angeles, CA',
-      description:
-        'Translator, linguistic tester, translated texts for various media including video games, film, and legal, checked video games for linguistic bugs and translation errors, translation of .xml databases for in-game script',
-      startDate: '2011',
-      endDate: '2014',
-      dateCreated: '2020-06-04T12:33:37.877',
-      comments: null
-    },
-    {
-      id: 18,
-      experienceType: 'language',
-      position: 'Executive Assistant to the CEO',
-      company: 'EZI- Manila, Philippines',
-      description:
-        'Managed daily operations in a bilingual office setting, purchased investment property, created investment portfolios, marketing and business plans.',
-      startDate: '2009',
-      endDate: '2010',
-      dateCreated: '2020-06-04T12:33:37.877',
-      comments: 'simplify description'
-    },
-    {
-      id: 19,
-      experienceType: 'language',
-      position: 'Sinologist (China expert)',
-      company: 'World Eye Reports- Shanghai, China',
-      description:
-        'Translator, interpreter, media sales, wrote articles and for advertorial project',
-      startDate: '2003',
-      endDate: '2004',
-      dateCreated: '2020-06-04T12:33:37.877',
-      comments: 'explain Sinologist; fix dates'
-    },
-    {
-      id: 20,
-      experienceType: 'hospitality',
-      position: 'Grill Chef de Partie',
-      company: 'Many, including Post Haus Restaurant - St. Moritz, Switzerland',
-      description: 'Expert chef and translator at world-class restaurants',
-      startDate: '2002',
-      endDate: '2018',
-      dateCreated: '2020-06-04T12:33:37.877',
-      comments: 'simplify and fix dates'
-    },
     {
       id: 22,
       experienceType: 'software',
@@ -207,44 +148,32 @@ export const hardResume = {
   skills: [
     {
       id: 11,
-      type: 'Dotnet',
+      type: '.Net',
       details: 'Framework, Core, Entity Framework, Razor, MVC',
       resumeSkills: []
     },
     {
       id: 12,
       type: 'Javascript',
-      details: 'Vue, Typescript, Leafly, Plotly, c3',
+      details: 'Typescript, Vue, Node, React',
       resumeSkills: []
     },
     {
       id: 13,
-      type: 'Python',
-      details: 'Pandas, Matplotlib, Flask, Selenium, Sklearn',
+      type: 'Analytics',
+      details: 'Python, D3, Pandas, Matplotlib, Tableau',
       resumeSkills: []
     },
     {
       id: 14,
-      type: 'Relational Db',
-      details: 'msSQL, mySQL, Entity Framework, SQLAlchemy',
-      resumeSkills: []
-    },
-    {
-      id: 15,
-      type: 'Document Db',
-      details: 'mongoDB, Pymongo',
+      type: 'Database',
+      details: 'msSQL, PostgreSQL, mongoDB',
       resumeSkills: []
     },
     {
       id: 16,
       type: 'Markdown',
       details: 'HTML, CSS, YAML, MD, SCSS',
-      resumeSkills: []
-    },
-    {
-      id: 17,
-      type: 'Data Visualization',
-      details: 'D3, Tableau',
       resumeSkills: []
     },
     {
@@ -258,7 +187,7 @@ export const hardResume = {
       id: 20,
       type: 'DevOps',
       details:
-        'Docker, Azure DevOps CI/CD Build & Release Pipelines, AWS, Azure Resource Manager, Yeoman Templates, Terraform, Terratest, Go, Powershell, Bash',
+        'Docker, AWS, Gitlab, Terraform, Azure DevOps CI/CD, Azure Resource Manager, Go, Powershell, Bash',
       resumeSkills: []
     }
   ],
@@ -369,76 +298,6 @@ export const hardResume = {
         }
       ],
       type: 'software'
-    },
-    {
-      jobs: [
-        {
-          id: 16,
-          experienceType: 'language',
-          position: 'Translator / Interpreter',
-          company: 'Interpretation Agencies (many)',
-          description:
-            'Medical, dental and media conferences, on-site medical and legal interpretation for depositions, insurance and immigration interviews, simultaneous interpretation of contract negotiations, guided tours, consecutive and simultaneous interpretation for training meetings, document translation of many types, including legal, medical, media localization, and various other language-related assignments, primarily in Spanish, Tagalog and French.',
-          startDate: '2011',
-          endDate: 'Present',
-          dateCreated: '2020-06-04T12:33:37.877',
-          comments: 'change company to more clearly reflect many'
-        },
-        {
-          id: 17,
-          experienceType: 'language',
-          position: 'QA Tester',
-          company: 'GTL Media- Los Angeles, CA',
-          description:
-            'Translator, linguistic tester, translated texts for various media including video games, film, and legal, checked video games for linguistic bugs and translation errors, translation of .xml databases for in-game script',
-          startDate: '2011',
-          endDate: '2014',
-          dateCreated: '2020-06-04T12:33:37.877',
-          comments: null
-        },
-        {
-          id: 18,
-          experienceType: 'language',
-          position: 'Executive Assistant to the CEO',
-          company: 'EZI- Manila, Philippines',
-          description:
-            'Managed daily operations in a bilingual office setting, purchased investment property, created investment portfolios, marketing and business plans.',
-          startDate: '2009',
-          endDate: '2010',
-          dateCreated: '2020-06-04T12:33:37.877',
-          comments: 'simplify description'
-        },
-        {
-          id: 19,
-          experienceType: 'language',
-          position: 'Sinologist (China expert)',
-          company: 'World Eye Reports- Shanghai, China',
-          description:
-            'Translator, interpreter, media sales, wrote articles and for advertorial project',
-          startDate: '2003',
-          endDate: '2004',
-          dateCreated: '2020-06-04T12:33:37.877',
-          comments: 'explain Sinologist; fix dates'
-        }
-      ],
-      type: 'language'
-    },
-    {
-      jobs: [
-        {
-          id: 20,
-          experienceType: 'hospitality',
-          position: 'Grill Chef de Partie',
-          company:
-            'Many, including Post Haus Restaurant - St. Moritz, Switzerland',
-          description: 'Expert chef and translator at world-class restaurants',
-          startDate: '2002',
-          endDate: '2018',
-          dateCreated: '2020-06-04T12:33:37.877',
-          comments: 'simplify and fix dates'
-        }
-      ],
-      type: 'hospitality'
     }
   ],
   dateCreated: '2021-09-29T22:26:52.1479864',

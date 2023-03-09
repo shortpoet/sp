@@ -73,8 +73,14 @@
   border: 1px solid $primary;
   border-radius: .25rem;
   font-family: 'Saira Extra Condensed';
-  width: auto;
-  height: auto;
+  &:hover {
+    color: white;
+    background: $primary;
+    border: 1px solid $primary;
+    text-decoration: none;
+  }
+  // width: auto;
+  // height: auto;
 }
 .btn-page {
   color: white;

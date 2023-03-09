@@ -60,8 +60,10 @@ export default {
                 </button>
               </div>
               <div>
-                <button type="button" class="btn-return" @click="close" aria-label="Close modal">
-                  Home Page
+                <button type="button" class="btn-return">
+                  <a class="btn-return" href="/" aria-label="Close modal">
+                    Home Page
+                  </a>
                 </button>
               </div>
             </div>

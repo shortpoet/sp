@@ -3,13 +3,13 @@ const createMockRouterConfig = (
   custom = { routes: [], scrollBehavior: () => {} }
 ) => {
   return {
-    mode: "history",
-    base: import.meta.envBASE_URL,
+    mode: 'history',
+    base: import.meta.env.BASE_URL,
     routes: custom.routes,
-    scrollBehavior: custom.scrollBehavior,
+    scrollBehavior: custom.scrollBehavior
   };
 };
 
 export default {
-  createMockRouterConfig,
+  createMockRouterConfig
 };

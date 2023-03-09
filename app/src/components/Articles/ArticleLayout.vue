@@ -4,7 +4,7 @@
     <nav class="nav">
       <ul class="nav">
         <li class="nav-item dropdown">
-          <router-link class="nav-link dropdown-toggle" data-toggle="dropdown" to="" role="button" aria-haspopup="true"
+          <router-link class="nav-link dropdown-toggle" data-bs-toggle="dropdown" to="" role="button" aria-haspopup="true"
             aria-expanded="false">{{ dropDown }}</router-link>
           <div class="dropdown-menu">
             <router-link class="dropdown-item" to="/articles/learning-to-unit-test-en">{{ englishLink }}</router-link>
@@ -17,7 +17,6 @@
       <component :is="selectedArticle" />
     </div>
   </div>
-
 </template>
 
 <script>
@@ -47,6 +46,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
