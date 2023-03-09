@@ -9,8 +9,8 @@ import {} from '@/stores/api-endpoints';
 export const state = {
   environment: null,
   urlPrefix: null,
-  BACKEND_PREFIX_PROD: import.meta.envVUE_APP_BACKEND_PREFIX_PROD,
-  BACKEND_PREFIX_DEV: import.meta.envVUE_APP_BACKEND_PREFIX_LOCAL
+  BACKEND_PREFIX_PROD: import.meta.env.VUE_APP_BACKEND_PREFIX_PROD,
+  BACKEND_PREFIX_DEV: import.meta.env.VUE_APP_BACKEND_PREFIX_LOCAL
 };
 
 // export const rootGetters = {

@@ -71,7 +71,8 @@ export default {
           // 310mm is maxing out one-page layout with tiny text
           // width: '310mm',
           width: '210mm',
-          height: '297mm',
+          // setting height restricts it to one page
+          // height: '297mm',
           // A4 dimensions
           // height: '842px',
           // width: '595px',
@@ -97,7 +98,7 @@ export default {
     }
   },
   mounted() {
-    const env = import.meta.envNODE_ENV
+    const env = import.meta.env.NODE_ENV
     this.loadEnv(env)
     this.loadResume()
   }
