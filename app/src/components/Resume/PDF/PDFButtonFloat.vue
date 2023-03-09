@@ -116,6 +116,7 @@ export default {
       const target = document.getElementById(vm.pdfTarget);
       const elements = target.querySelectorAll(".resume-section, .resume-section-render");
       // console.log(elements);
+      // not sure this does anything...
       elements.forEach(element => {
         element.style.margin = "0";
         element.style.padding = "0";
@@ -283,7 +284,7 @@ export default {
         }
       }
 
-      const fileName = `Carlos_Soriano_${moment().format(
+      const fileName = `__Carlos_Soriano_${moment().format(
         "YYYY_MM_DD_HH_mm"
       )}.pdf`;
 

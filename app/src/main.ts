@@ -58,9 +58,9 @@ export const createApp = ViteSSG(
       await import('bootstrap/dist/css/bootstrap.css');
       const bootstrap = await import('bootstrap');
       await import('jquery.easing');
+      ctx.app.config.globalProperties.jquery = jquery;
       ctx.app.config.globalProperties.bootstrap = bootstrap;
       ctx.app.config.globalProperties.isClient = true;
     }
-    ctx.app.config.globalProperties.jquery = jquery;
   }
 );

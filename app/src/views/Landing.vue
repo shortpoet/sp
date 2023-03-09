@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    const env = import.meta.envNODE_ENV
+    const env = import.meta.env.NODE_ENV
     this.loadEnv(env)
     this.$nextTick(() => {
       // Activate scrollspy to add active class to navbar items on scroll
