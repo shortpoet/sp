@@ -35,20 +35,20 @@ echo "*****Git removing remote origin****"
 git remote rm origin
 echo "*****Git remote add****"
 git remote add --mirror=fetch origin "$dest_url"
+git config --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
+git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
+git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
 echo "*****Git fetch origin****"
 git fetch $sourceURL
 echo "*****Git push to Azure Repos****"
 echo "bg4: $B64_PAT"
-git config --get-all http.https://shortpoet@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet.extraheader
-git config --get-all http.extraheader
-git config --get-regexp .*extraheader
-git config --get-all http.proxy
-git config --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
-git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
-git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
+# git config --get-all http.https://shortpoet@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet.extraheader
+# git config --get-all http.extraheader
+# git config --get-regexp .*extraheader
+# git config --get-all http.proxy
 # git config remote.origin.mirror true
-
 git config http.version HTTP/1.1
+
 # git -c http.extraHeader="Authorization: Basic ${B64_PAT}" push origin --all -f
 # git -c http.extraHeader="Authorization: Basic ${B64_PAT}" push origin --mirror
 # git -c http.extraHeader="Authorization: ${CPAT}" push origin --mirror
