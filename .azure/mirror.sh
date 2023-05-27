@@ -23,7 +23,7 @@ echo Starting the synchronization process
 echo "****Git clone****"
 echo "****Source Repo: $source_repo****"
 echo "****Destination Repo: $dest_url****"
-sourceURL="https://github.com/shortpoet/$(source_repo)"
+sourceURL="https://github.com/shortpoet/$source_repo"
 mkdir -p "$BUILD_SOURCESDIRECTORY/copyrepo"
 cd "$BUILD_SOURCESDIRECTORY/copyrepo" || exit
 echo "cloning into $source_repo from $sourceURL"
