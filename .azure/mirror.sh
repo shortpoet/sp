@@ -46,12 +46,15 @@ git config --get-all http.proxy
 git config --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
 git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
 git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
-git config remote.origin.mirror true
+# git config remote.origin.mirror true
 
 git config http.version HTTP/1.1
 # git -c http.extraHeader="Authorization: Basic ${B64_PAT}" push origin --all -f
 # git -c http.extraHeader="Authorization: Basic ${B64_PAT}" push origin --mirror
 # git -c http.extraHeader="Authorization: ${CPAT}" push origin --mirror
+echo "fetching from $dest_url"
 git fetch --all
+echo "pulling from $dest_url"
 git pull origin main
+echo "pushing to $dest_url"
 git push origin --all -f
