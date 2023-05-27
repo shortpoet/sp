@@ -2,7 +2,7 @@
 # https://www.edwardthomson.com/blog/mirroring_git_repositories.html
 # https://developercommunity.visualstudio.com/t/support-non-rsa-keys-for-ssh-authentication/365980
 
-set -eufo pipefail
+# set -eufo pipefail
 
 # if [ "$#" -ne 2 ]; then
 #     echo "usage: $0 source_repo_url target_repo_url" >&2
@@ -12,11 +12,11 @@ set -eufo pipefail
 source_repo="sp"
 B64_PAT=$(echo ":$CPAT" | base64)
 # dest_url="https://$B64_PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
-# dest_url="https://$PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
+dest_url="https://$PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 # dest_url="https://shortpoet:$PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 # dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 # dest_url="https://shortpoet:$CPAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
-dest_url="https://shortpoet:$B64_PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
+# dest_url="https://shortpoet:$B64_PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 echo Add other tasks to build, test, and deploy your project.
 echo See https://aka.ms/yaml
 echo Starting the synchronization process
