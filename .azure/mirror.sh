@@ -35,9 +35,9 @@ echo "*****Git removing remote origin****"
 git remote rm origin
 echo "*****Git remote add****"
 git remote add --mirror=fetch origin "$dest_url"
-git config --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
-git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
-git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
+# git config --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
+# git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
+# git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
 echo "*****Git fetch origin****"
 git fetch $sourceURL
 echo "*****Git push to Azure Repos****"
