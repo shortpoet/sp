@@ -24,7 +24,7 @@ git config --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
 git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
 git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
 git clone --mirror "$sourceURL"
-cd "$BUILD_SOURCESDIRECTORY/copyrepo/$source_repo.git" || exit
+# cd "$BUILD_SOURCESDIRECTORY/copyrepo/$source_repo.git" || exit
 echo "*****Git removing remote origin****"
 git remote rm origin
 echo "*****Git remote add****"
