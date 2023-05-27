@@ -5,6 +5,7 @@ resources:
 
 trigger:
 - main
+- develop
 
 pool:
   vmImage: ubuntu-latest
@@ -13,7 +14,7 @@ variables:
   - name: source_repo
     value: "sp"
   - name: dest_url
-    value: "https://dev.azure.com/shortpoet/_git/Shortpoet"    
+    value: "https://dev.azure.com/shortpoet/_git/Shortpoet"
 
 
 steps:
@@ -24,7 +25,8 @@ steps:
 
 - script: |
     source_repo="sp"
-    dest_url="https://shortpoet:$CPAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
+    # dest_url="https://shortpoet:$CPAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
+    dest_url="https://$PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
     echo Starting the synchronization process
     echo "****Git clone****"
     echo "****Source Repo: $source_repo****"
