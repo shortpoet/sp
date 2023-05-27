@@ -20,8 +20,11 @@ variables:
 steps:
 - checkout: self
   persistCredentials: true
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: |
+    pwd
+    ls -la
+  displayName: 'Debug'
+  workingDirectory: "$(System.DefaultWorkingDirectory)"
 - task: Bash@3
   inputs:
     targetType: 'filePath'
