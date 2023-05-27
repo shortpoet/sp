@@ -10,7 +10,6 @@ set -eufo pipefail
 # fi
 
 source_repo="sp"
-sourceURL="https://github.com/shortpoet/$source_repo"
 B64_PAT=$(echo ":$CPAT" | base64)
 # dest_url="https://$B64_PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 # dest_url="https://shortpoet:$B64_PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
@@ -18,35 +17,41 @@ B64_PAT=$(echo ":$CPAT" | base64)
 # dest_url="https://shortpoet:$PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 # dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 dest_url="https://shortpoet:$CPAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
-
-
-
-# SOURCE_URL="$1"
-# TARGET_URL="$2"
-SOURCE_URL="$source_repo"
-TARGET_URL="$sourceURL"
-WORKDIR="$(mktemp -d)"
-
-echo "Cloning from ${SOURCE_URL} into ${WORKDIR}..."
-
-git init --bare "${WORKDIR}"
-cd "${WORKDIR}"
-
-git config remote.origin.url "${SOURCE_URL}"
+echo Add other tasks to build, test, and deploy your project.
+echo See https://aka.ms/yaml
+echo Starting the synchronization process
+echo "****Git clone****"
+echo "****Source Repo: $source_repo****"
+echo "****Destination Repo: $dest_url****"
+sourceURL="https://github.com/shortpoet/$(source_repo)"
+mkdir -p "$BUILD_SOURCESDIRECTORY/copyrepo"
+cd "$BUILD_SOURCESDIRECTORY/copyrepo" || exit
+echo "cloning into $source_repo from $sourceURL"
+git clone "$sourceURL"
+# pwd
+# ls -laR
+cd "$BUILD_SOURCESDIRECTORY/copyrepo/$source_repo/" || exit
+echo "*****Git removing remote origin****"
+git remote rm origin
+echo "*****Git remote add****"
+git remote add --mirror=fetch origin "$dest_url"
+echo "*****Git fetch origin****"
+git fetch $sourceURL
+echo "*****Git push to Azure Repos****"
+echo "bg4: $B64_PAT"
+git config --get-all http.https://shortpoet@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet.extraheader
+git config --get-all http.extraheader
+git config --get-regexp .*extraheader
+git config --get-all http.proxy
 git config --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
 git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
 git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
 git config remote.origin.mirror true
+
+git config http.version HTTP/1.1
+# git -c http.extraHeader="Authorization: Basic ${B64_PAT}" push origin --all -f
+# git -c http.extraHeader="Authorization: Basic ${B64_PAT}" push origin --mirror
+# git -c http.extraHeader="Authorization: ${CPAT}" push origin --mirror
 git fetch --all
-
-echo ""
-echo "Cloned to ${WORKDIR}; pushing to ${TARGET_URL}"
-
-git push --mirror "${TARGET_URL}"
-
-echo ""
-echo "Cleaning up temporary directory ${WORKDIR}..."
-
-rm -rf "${WORKDIR}"
-
-echo "Done."
+git pull origin main
+git push origin --all -f
