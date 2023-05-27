@@ -43,6 +43,9 @@ steps:
     git remote add azure "$dest_url"
     echo "*****Git fetch origin****"
     git fetch --all
+    pwd
+    ls -la
+    ls -la ..
     git merge azure/main
     # git push --mirror origin
     git push --mirror azure
