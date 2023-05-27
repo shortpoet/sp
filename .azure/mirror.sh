@@ -30,7 +30,8 @@ git remote rm origin
 echo "*****Git remote add****"
 git remote add azure "$dest_url"
 echo "*****Git fetch origin****"
-git fetch --all
+# git fetch --all
 # git merge azure/main
 # git push --mirror origin
+echo "*****Git push to azure****"
 git push --mirror azure
