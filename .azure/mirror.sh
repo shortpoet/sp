@@ -11,8 +11,8 @@
 
 source_repo="sp"
 B64_PAT=$(echo ":$CPAT" | base64)
-# dest_url="https://$B64_PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
-dest_url="https://$PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
+dest_url="https://$B64_PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
+# dest_url="https://$PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 # dest_url="https://shortpoet:$PAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 # dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
 # dest_url="https://shortpoet:$CPAT@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet"
