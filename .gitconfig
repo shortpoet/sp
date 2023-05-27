@@ -5,12 +5,12 @@
     symlinks = false
     ignorecase = true
     hideDotFiles = dotGitOnly
-[remote "mathnet"]
+[remote "sp"]
     url = git@github.com:shortpoet/sp.git
     fetch = +refs/heads/*:refs/heads/*
     fetch = +refs/tags/*:refs/tags/*
     mirror = true
 [remote "mirrors"]
-    url = https://shortpoet@dev.azure.com/shortpoet/Shortpoet/_git/Shortpoet
+    url = git@ssh.dev.azure.com:v3/shortpoet/Shortpoet/Shortpoet
     mirror = true
     skipDefaultUpdate = true
