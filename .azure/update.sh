@@ -38,6 +38,9 @@ git_wrap_error "git config --global --add remote.upstream.mirror true"
 cat .git/config
 echo "***** Git fetch upstream ****"
 read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
+echo "**** Branches: ${branches[*]} ****"
+echo "${branches[@]}"
+
 for branch in "${branches[@]}"; do
   echo "**** Pulling $branch ****"
   git_wrap_error "git pull upstream $branch --prune"
