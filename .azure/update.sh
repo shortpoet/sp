@@ -29,6 +29,7 @@ if [[ $b64_auth == true ]]; then
   # somehow this was adding an extra / to the url
   # git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
 else
+  echo "**** Destination url: $dest_url ****"
   dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
   echo "**** Destination url: $dest_url ****"
 
