@@ -17,7 +17,7 @@ echo "**** Destination Repo: $dest_repo ****"
 git_wrap_error() {
   cmd="$1"
   temp=$(mktemp)
-  output=$($cmd 2> "$temp")
+  output=$($cmd 2>&1 | tee "$temp")
   if [[ $? -ne 0 ]]; then
     echo "**** Error: $1 ****"
     exit 1
