@@ -5,7 +5,7 @@ dest_repo="Shortpoet"
 # dest_url="https://shortpoet:$CPAT@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
 # dest_url="https://$PAT:PAT@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
 # dest_url="https://:$PAT@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
-dest_url="https://dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
+dest_url="https://$PAT@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
 echo Starting the synchronization process
 echo "****Source Repo: $source_repo****"
 echo "****Destination Repo: $dest_url****"
