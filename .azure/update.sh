@@ -90,4 +90,4 @@ read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads
 echo "***** Git push to Azure Repos ****"
 # git_wrap_error "git push origin --mirror"
 git_wrap_error "git remote update"
-git_wrap_error "git push --mirror origin"
+git_wrap_error "git push --mirror"
