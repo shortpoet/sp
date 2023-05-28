@@ -28,7 +28,8 @@ steps:
   displayName: 'Debug'
   workingDirectory: "$(System.DefaultWorkingDirectory)"
 - task: Bash@3
-  name: 'Update Mirror'
+  name: UpdateMirror
+  displayName: 'Update Mirror'
   inputs:
     targetType: 'filePath'
     filePath: "$(System.DefaultWorkingDirectory)/.azure/update.sh"
