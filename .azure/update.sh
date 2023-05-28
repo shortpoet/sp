@@ -55,6 +55,7 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/heads/*:r
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'"
 git_wrap_error "git config --global --add remote.upstream.mirror true"
+cat config
 echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream --prune"
 read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
