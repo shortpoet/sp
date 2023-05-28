@@ -34,7 +34,7 @@ fi
 cd "$dest_repo.git" || exit
 
 echo "***** Git remote add ****"
-git remote add upstream "$sourceURL"
+git remote add --mirror=fetch upstream "$sourceURL"
 echo "**** Setting git config ****"
 git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'
 git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'
