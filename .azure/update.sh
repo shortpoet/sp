@@ -57,6 +57,7 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:r
 git_wrap_error "git config --global --add remote.upstream.mirror true"
 echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream"
+git_wrap_error "git pull upstream"
 
 
 # echo "***** Git remote add ****"
