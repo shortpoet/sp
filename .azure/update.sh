@@ -56,7 +56,7 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:re
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'"
 git_wrap_error "git config --global --add remote.upstream.mirror true"
 echo "***** Git fetch upstream ****"
-git_wrap_error "git fetch upstream"
+git_wrap_error "git fetch upstream --prune"
 declare -a branches
 branches=("$(git for-each-ref --format='%(refname)' refs/heads/)")
 cd ..
@@ -70,7 +70,7 @@ git for-each-ref --format='%(refname)' refs/heads/
 git_wrap_error "git config --global --add  pull.rebase true"
 for branch in "${branches[@]}"; do
   echo "**** Pulling $branch ****"
-  git_wrap_error "git pull origin $branch"
+  git_wrap_error "git rebase origin/$branch"
 done
 
 # for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
