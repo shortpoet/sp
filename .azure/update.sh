@@ -60,9 +60,11 @@ echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream --prune"
 read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
 # cd ..
-echo "***** Git pull ****"
-git_wrap_error "git config --global --add  pull.rebase true"
-echo "${branches[@]}"
+
+# echo "***** Git pull ****"
+# git_wrap_error "git config --global --add  pull.rebase true"
+# echo "${branches[@]}"
+
 # git merge-tree --write-tree "${branches[@]}"
 # git merge-tree --write-tree "$(git merge-base origin/main upstream/main)" upstream/main origin/main
 # for branch in "${branches[@]}"; do
