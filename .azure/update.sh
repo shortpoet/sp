@@ -8,13 +8,13 @@ dest_repo="sp"
 # dest_url="https://$PAT@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
 # dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
 sourceURL="https://github.com/shortpoet/$source_repo"
-# git config --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
-# git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
-# git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
 
 b64_auth=false
-echo "***** Git clone Azure ****"
 echo Starting the synchronization process
+echo "**** Setting git config ****"
+git config --global --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
+git config --global --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
+git config --global --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
 echo "**** Source Repo: $sourceURL ****"
 echo "**** Destination Repo: $dest_repo ****"
 if [[ $b64_auth == true ]]; then
