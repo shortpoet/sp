@@ -29,18 +29,17 @@ else
   dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
   echo "**** Destination url: $dest_url ****"
 
-  git remote prune 
   git clone --bare "$dest_url"
 fi
 cd "$dest_repo.git" || exit
 
-echo "**** Setting git config ****"
-git config --global --add remote.origin.fetch '+refs/heads/*:refs/heads/*'
-git config --global --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
-git config --global --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
-
 echo "***** Git remote add ****"
-git remote add --mirror=fetch upstream "$sourceURL"
+git remote add upstream "$sourceURL"
+echo "**** Setting git config ****"
+git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'
+git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'
+git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'
+git config --global --add remote.upstream.mirror true
 echo "***** Git fetch upstream ****"
 git fetch upstream
 echo "***** Git push to Azure Repos ****"
