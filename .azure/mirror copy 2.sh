@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # https://www.edwardthomson.com/blog/mirroring_git_repositories.html
 # https://developercommunity.visualstudio.com/t/support-non-rsa-keys-for-ssh-authentication/365980
 
