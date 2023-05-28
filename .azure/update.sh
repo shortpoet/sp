@@ -19,15 +19,16 @@ echo "**** Source Repo: $sourceURL ****"
 echo "**** Destination Repo: $dest_repo ****"
 if [[ $b64_auth ]]; then
   dest_url="https://dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
-  echo "**** Destination Repo: $dest_url ****"
+  echo "**** Destination url: $dest_url ****"
 
   B64_PAT=$(echo ":$SYSTEM_ACCESSTOKEN" | base64)
   echo "bg4: $B64_PAT"
   git config --global http.version HTTP/1.1
-  git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
+  git -c http.extraheader="AUTHORIZATION: Bearer $SYSTEM_ACCESSTOKEN" clone --bare "$dest_url"
+  # git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
 else
   dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
-  echo "**** Destination Repo: $dest_url ****"
+  echo "**** Destination url: $dest_url ****"
 
   git clone --bare "$dest_url"
 fi
