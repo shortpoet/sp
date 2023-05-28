@@ -39,7 +39,7 @@ cat .git/config
 echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream --prune"
 git branch -a
-read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
+read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' remotes/upstream/ | tr '\n' ' ')"
 echo "**** Branches: ${branches[*]} ****"
 echo "${branches[@]}"
 
