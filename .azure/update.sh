@@ -63,7 +63,6 @@ git_wrap_error "git fetch upstream"
 # git fetch upstream --tags
 
 pwd
-ls -laR ../
 cat ../.git/config
 cat ../.azure/test.sh
 
