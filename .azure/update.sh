@@ -33,14 +33,20 @@ else
 fi
 cd "$dest_repo.git" || exit
 
+# echo "***** Git remote add ****"
+# git remote add upstream "$sourceURL"
+# echo "**** Setting git config ****"
+# git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'
+# git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'
+# git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'
+# git config --global --add remote.upstream.mirror true
+# echo "***** Git fetch upstream ****"
+# git fetch upstream
+
 echo "***** Git remote add ****"
 git remote add --mirror=fetch upstream "$sourceURL"
-echo "**** Setting git config ****"
-git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'
-git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'
-git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'
-git config --global --add remote.upstream.mirror true
 echo "***** Git fetch upstream ****"
-git fetch upstream
+git fetch upstream --tags
+
 echo "***** Git push to Azure Repos ****"
 git push origin --all
