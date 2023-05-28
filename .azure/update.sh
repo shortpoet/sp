@@ -22,7 +22,7 @@ git_wrap_error() {
     echo "**** Error: $1 ****"
     exit 1
   else
-    echo "$output"
+    cat "$temp" -n1
   fi
 }
 
@@ -49,10 +49,10 @@ cd "$dest_repo.git" || exit
 echo "***** Git remote add ****"
 git_wrap_error "git remote add upstream $sourceURL"
 echo "**** Setting git config ****"
-git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'
-git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'
-git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'
-git config --global --add remote.upstream.mirror true
+git_wrap_error "git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'"
+git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'"
+git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'"
+git_wrap_error "git config --global --add remote.upstream.mirror true"
 echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream"
 
