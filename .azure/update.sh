@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source_repo="sp"
-dest_repo="Shortpoet"
+dest_repo="sp"
 # dest_url="https://shortpoet:$CPAT@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
 # dest_url="https://$PAT:PAT@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
 # dest_url="https://:$PAT@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
