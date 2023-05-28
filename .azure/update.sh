@@ -13,6 +13,19 @@ b64_auth=false
 echo Starting the synchronization process
 echo "**** Source Repo: $sourceURL ****"
 echo "**** Destination Repo: $dest_repo ****"
+
+git_wrap_error() {
+  cmd="$1"
+  temp=$(mktemp)
+  output=$($cmd 2> "$temp")
+  if [[ $? -ne 0 ]]; then
+    echo "**** Error: $1 ****"
+    exit 1
+  else
+    echo "$output"
+  fi
+}
+
 if [[ $b64_auth == true ]]; then
   dest_url="https://dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
   echo "**** Destination url: $dest_url ****"
@@ -21,7 +34,7 @@ if [[ $b64_auth == true ]]; then
   echo "bg4: $B64_PAT"
   git config --global http.version HTTP/1.1
   git config --global http.extraheader "AUTHORIZATION: Basic $B64_PAT"
-  git clone --bare "$dest_url"
+  git_wrap_error "git clone --bare $dest_url"
   # somehow this was adding an extra / to the url
   # git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
 else
@@ -29,19 +42,19 @@ else
   dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
   echo "**** Destination url: $dest_url ****"
 
-  git clone --bare "$dest_url" --progress
+  git_wrap_error "git clone --bare $dest_url"
 fi
 cd "$dest_repo.git" || exit
 
 echo "***** Git remote add ****"
-git remote add upstream "$sourceURL"
+git_wrap_error "git remote add upstream $sourceURL"
 echo "**** Setting git config ****"
 git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'
 git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'
 git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'
 git config --global --add remote.upstream.mirror true
 echo "***** Git fetch upstream ****"
-git fetch upstream --tags --verbose
+git_wrap_error "git fetch upstream"
 
 # echo "***** Git remote add ****"
 # git remote add --mirror=fetch upstream "$sourceURL"
@@ -49,4 +62,4 @@ git fetch upstream --tags --verbose
 # git fetch upstream --tags
 
 echo "***** Git push to Azure Repos ****"
-git push origin --all --verbose
+git_wrap_error "git push origin --all --verbose"
