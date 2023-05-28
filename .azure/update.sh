@@ -59,7 +59,7 @@ echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream"
 cd ..
 echo "***** Git pull ****"
-git_wrap_error "git pull upstream"
+git_wrap_error "git pull"
 
 
 # echo "***** Git remote add ****"
