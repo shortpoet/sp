@@ -36,7 +36,7 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:re
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'"
 git_wrap_error "git config --global --add remote.upstream.mirror true"
 cat .git/config
-echo "***** Git fetch upstream ****"
-git_wrap_error "git remote update upstream --prune"
+# echo "***** Git fetch upstream ****"
+# git_wrap_error "git remote update upstream --prune"
 echo "***** Git push to origin ****"
 git_wrap_error "git push origin --mirror"
