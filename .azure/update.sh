@@ -87,4 +87,4 @@ git merge-tree --write-tree "${branches[@]}"
 
 
 echo "***** Git push to Azure Repos ****"
-git_wrap_error "git push origin --all"
+git_wrap_error "git push origin --mirror"
