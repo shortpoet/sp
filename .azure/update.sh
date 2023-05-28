@@ -24,7 +24,9 @@ if [[ $b64_auth ]]; then
   B64_PAT=$(echo ":$SYSTEM_ACCESSTOKEN" | base64)
   echo "bg4: $B64_PAT"
   git config --global http.version HTTP/1.1
-  git -c http.extraheader="AUTHORIZATION: Bearer $SYSTEM_ACCESSTOKEN" clone --bare "$dest_url"
+  git config --global http.extraheader "AUTHORIZATION: Basic $B64_PAT"
+  git -c clone --bare "$dest_url"
+  # somehow this was adding an extra / to the url
   # git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
 else
   dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
