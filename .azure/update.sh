@@ -62,4 +62,4 @@ git_wrap_error "git fetch upstream"
 # git fetch upstream --tags
 
 echo "***** Git push to Azure Repos ****"
-git_wrap_error "git push origin --all --verbose"
+git_wrap_error "git push origin --all"

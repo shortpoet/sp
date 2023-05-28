@@ -39,4 +39,4 @@ steps:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
     PAT: $(PAT)
     CPAT: $(CPAT)
-    GIT_TRACE: 1
+    GIT_TRACE: 0
