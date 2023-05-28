@@ -61,6 +61,14 @@ cd ..
 echo "***** Git pull ****"
 git_wrap_error "git pull"
 
+for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
+  git pull origin "$branch"
+done
+
+# for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
+#   git log --oneline "$branch" ^origin/main
+# done
+
 
 # echo "***** Git remote add ****"
 # git remote add --mirror=fetch upstream "$sourceURL"
