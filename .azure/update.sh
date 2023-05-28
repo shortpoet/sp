@@ -39,4 +39,4 @@ cat config
 echo "***** Git fetch upstream ****"
 git_wrap_error "git remote update upstream --prune"
 echo "***** Git push to origin ****"
-git_wrap_error "git push origin --mirror"
+git_wrap_error "git push origin --mirror --prune"
