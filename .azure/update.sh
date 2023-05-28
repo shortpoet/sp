@@ -17,8 +17,8 @@ echo "**** Destination Repo: $dest_repo ****"
 git_wrap_error() {
   cmd="$1"
   temp=$(mktemp)
-  $cmd > "$temp"
-  # $cmd > "$temp" 2>&1
+  # $cmd > "$temp"
+  $cmd > "$temp" 2>&1
   if [[ $? -ne 0 ]]; then
     echo "**** Error: $1 ****"
     exit 1
@@ -35,7 +35,7 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/heads/*:r
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'"
 git_wrap_error "git config --global --add remote.upstream.mirror true"
-cat config
+cat .git/config
 echo "***** Git fetch upstream ****"
 git_wrap_error "git remote update upstream --prune"
 echo "***** Git push to origin ****"
