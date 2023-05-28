@@ -17,7 +17,7 @@ echo "***** Git clone Azure ****"
 echo Starting the synchronization process
 echo "**** Source Repo: $sourceURL ****"
 echo "**** Destination Repo: $dest_repo ****"
-if [[ $b64_auth ]]; then
+if [[ $b64_auth == true ]]; then
   dest_url="https://dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
   echo "**** Destination url: $dest_url ****"
 
@@ -25,7 +25,7 @@ if [[ $b64_auth ]]; then
   echo "bg4: $B64_PAT"
   git config --global http.version HTTP/1.1
   git config --global http.extraheader "AUTHORIZATION: Basic $B64_PAT"
-  git -c clone --bare "$dest_url"
+  git clone --bare "$dest_url"
   # somehow this was adding an extra / to the url
   # git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
 else
