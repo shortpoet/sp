@@ -34,6 +34,7 @@ echo "**** Setting git config ****"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'"
+git_wrap_error "git config --global --add remote.upstream.mirror true"
 cat .git/config
 echo "***** Git fetch upstream ****"
 git_wrap_error "git pull upstream --prune"
