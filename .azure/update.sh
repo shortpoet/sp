@@ -28,10 +28,8 @@ git_wrap_error() {
   fi
 }
 
-
-
-echo "***** Git remote add ****"
-git_wrap_error "git remote add upstream $sourceURL"
+# echo "***** Git remote add ****"
+# git_wrap_error "git remote add upstream $sourceURL"
 echo "**** Setting git config ****"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'"
