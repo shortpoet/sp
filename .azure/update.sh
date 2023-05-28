@@ -57,20 +57,14 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:r
 git_wrap_error "git config --global --add remote.upstream.mirror true"
 echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream --prune"
-declare -a branches
-branches=("$(git for-each-ref --format='%(refname:short)' refs/heads/)")
+read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
 cd ..
 echo "***** Git pull ****"
 
-git for-each-ref --format='%(refname:short)' refs/heads/ 
-# git for-each-ref --format='%(refname)' refs/heads/ | while read -r branch; do
-#   echo "**** Pulling $branch ****"
-#   git_wrap_error "git pull upstream $branch"
-# done
-git_wrap_error "git config --global --add  pull.ff-only true"
+git_wrap_error "git config --global --add  pull.rebase true"
 for branch in "${branches[@]}"; do
   echo "**** Pulling $branch ****"
-  git_wrap_error "git pull origin $branch"
+  git_wrap_error "git pull upstream $branch"
 done
 
 # for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
