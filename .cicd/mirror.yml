@@ -3,9 +3,11 @@ resources:
     - webhook: github          ### Webhook alias
       connection: github    ### Incoming webhook service connection
 
-trigger:
-- main
-- develop
+# trigger:
+# - main
+# - develop
+
+trigger: none
 
 pool:
   vmImage: ubuntu-latest
@@ -25,16 +27,24 @@ steps:
     ls -la
   displayName: 'Debug'
   workingDirectory: "$(System.DefaultWorkingDirectory)"
-- task: Bash@3
+- task: AzureCLI@2
+  name: 'AzureCLI'
   inputs:
-    targetType: 'filePath'
-    filePath: "$(System.DefaultWorkingDirectory)/.azure/mirror.sh"
-    failOnStderr: true
-    workingDirectory: "$(System.DefaultWorkingDirectory)"
-  env:
-    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-    PAT: $(PAT)
-    CPAT: $(CPAT)
+    azureSubscription: 'Azure DevOps'
+    scriptType: bash
+    scriptLocation: 'scriptPath' 
+    scriptPath: "$(System.DefaultWorkingDirectory)/.azure/import.sh" 
+# - task: Bash@3
+#   name: 'Bash'
+#   inputs:
+#     targetType: 'filePath'
+#     filePath: "$(System.DefaultWorkingDirectory)/.azure/mirror.sh"
+#     failOnStderr: true
+#     workingDirectory: "$(System.DefaultWorkingDirectory)"
+#   env:
+#     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+#     PAT: $(PAT)
+#     CPAT: $(CPAT)
 
 # - script: |
 #     source_repo="sp"
