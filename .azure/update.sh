@@ -64,7 +64,7 @@ echo "***** Git pull ****"
 git_wrap_error "git config --global core.bare false"
 git_wrap_error "git config --global --add  pull.rebase true"
 echo "${branches[@]}"
-git merge-tree --write-tree "${branches[@]}"
+# git merge-tree --write-tree "${branches[@]}"
 # git merge-tree --write-tree "$(git merge-base origin/main upstream/main)" upstream/main origin/main
 # for branch in "${branches[@]}"; do
 #   echo "**** Pulling $branch ****"
