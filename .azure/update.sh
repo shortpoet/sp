@@ -56,7 +56,7 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:re
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'"
 git_wrap_error "git config --global --add remote.upstream.mirror true"
 echo "***** Git fetch upstream ****"
-git_wrap_error "git fetch upstream --porcelain"
+git_wrap_error "git fetch upstream"
 declare -a branches
 branches=("$(git for-each-ref --format='%(refname)' refs/heads/)")
 cd ..
