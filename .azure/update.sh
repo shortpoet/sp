@@ -15,10 +15,10 @@ sourceURL="https://github.com/shortpoet/$source_repo"
 b64_auth=true
 echo "***** Git clone Azure ****"
 echo Starting the synchronization process
-echo "****Source Repo: $source_repo****"
+echo "**** Source Repo: $source_repo ****"
 if [[ $b64_auth ]]; then
   dest_url="https://dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
-  echo "****Destination Repo: $dest_url****"p
+  echo "**** Destination Repo: $dest_url ****"
 
   B64_PAT=$(echo ":$SYSTEM_ACCESSTOKEN" | base64)
   echo "bg4: $B64_PAT"
@@ -26,7 +26,7 @@ if [[ $b64_auth ]]; then
   git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
 else
   dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
-  echo "****Destination Repo: $dest_url****"p
+  echo "**** Destination Repo: $dest_url ****"
 
   git clone --bare "$dest_url"
 fi
