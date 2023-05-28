@@ -12,7 +12,7 @@ sourceURL="https://github.com/shortpoet/$source_repo"
 # git config --add remote.origin.fetch '+refs/tags/*:refs/tags/*'
 # git config --add remote.origin.fetch '+refs/notes/*:refs/notes/*'
 
-b64_auth=true
+b64_auth=false
 echo "***** Git clone Azure ****"
 echo Starting the synchronization process
 echo "**** Source Repo: $sourceURL ****"
