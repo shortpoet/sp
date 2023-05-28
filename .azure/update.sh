@@ -36,7 +36,8 @@ if [[ $b64_auth == true ]]; then
   echo "bg4: $B64_PAT"
   git config --global http.version HTTP/1.1
   git config --global http.extraheader "AUTHORIZATION: Basic $B64_PAT"
-  git_wrap_error "git clone --mirror $dest_url"
+  git_wrap_error "git clone --bare $dest_url"
+  # git_wrap_error "git clone --mirror $dest_url"
   # somehow this was adding an extra / to the url
   # git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
 else
@@ -90,4 +91,5 @@ read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads
 echo "***** Git push to Azure Repos ****"
 # git_wrap_error "git push origin --mirror"
 git_wrap_error "git remote update"
-git_wrap_error "git push --mirror"
+# git_wrap_error "git push --mirror"
+git_wrap_error "git push --all"
