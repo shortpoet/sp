@@ -67,7 +67,7 @@ git for-each-ref --format='%(refname:short)' refs/heads/
 #   echo "**** Pulling $branch ****"
 #   git_wrap_error "git pull upstream $branch"
 # done
-git_wrap_error "git config --global --add  pull.merge true"
+git_wrap_error "git config --global --add  pull.ff-only true"
 for branch in "${branches[@]}"; do
   echo "**** Pulling $branch ****"
   git_wrap_error "git pull origin $branch"
