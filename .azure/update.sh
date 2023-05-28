@@ -17,8 +17,8 @@ echo "**** Destination Repo: $dest_repo ****"
 git_wrap_error() {
   cmd="$1"
   temp=$(mktemp)
-  $cmd > "$temp"
-  # $cmd > "$temp" 2>&1
+  # $cmd > "$temp"
+  $cmd > "$temp" 2>&1
   if [[ $? -ne 0 ]]; then
     echo "**** Error: $1 ****"
     exit 1
@@ -37,6 +37,7 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:r
 git_wrap_error "git config --global --add remote.upstream.mirror true"
 cat .git/config
 echo "***** Git fetch upstream ****"
+git_wrap_error "git fetch upstream --prune"
 read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
 echo "**** Branches: ${branches[*]} ****"
 echo "${branches[@]}"
