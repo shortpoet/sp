@@ -63,7 +63,7 @@ git_wrap_error "git fetch upstream"
 # git fetch upstream --tags
 
 pwd
-ls -laR .
+ls -laR ../
 
 
 echo "***** Git push to Azure Repos ****"
