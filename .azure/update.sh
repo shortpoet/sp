@@ -15,7 +15,8 @@ sourceURL="https://github.com/shortpoet/$source_repo"
 b64_auth=true
 echo "***** Git clone Azure ****"
 echo Starting the synchronization process
-echo "**** Source Repo: $source_repo ****"
+echo "**** Source Repo: $sourceURL ****"
+echo "**** Destination Repo: $dest_repo ****"
 if [[ $b64_auth ]]; then
   dest_url="https://dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
   echo "**** Destination Repo: $dest_url ****"
