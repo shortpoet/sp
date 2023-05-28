@@ -22,11 +22,11 @@ variables:
 steps:
 - checkout: self
   persistCredentials: true
-- script: |
-    pwd
-    ls -la
-  displayName: 'Debug'
-  workingDirectory: "$(System.DefaultWorkingDirectory)"
+# - script: |
+#     pwd
+#     ls -la
+#   displayName: 'Debug'
+#   workingDirectory: "$(System.DefaultWorkingDirectory)"
 - task: Bash@3
   name: UpdateMirror
   displayName: 'Update Mirror'

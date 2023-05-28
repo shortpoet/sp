@@ -59,11 +59,11 @@ echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream"
 cd ..
 echo "***** Git pull ****"
-git_wrap_error "git pull"
+
 
 for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
   echo "**** Pulling $branch ****"
-  git pull origin "$branch"
+  git_wrap_error "git pull origin $branch"
 done
 
 # for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
