@@ -22,7 +22,7 @@ git_wrap_error() {
     echo "**** Error: $1 ****"
     exit 1
   else
-    cat "$temp" -n1
+    sed -n 1p "$temp"
   fi
 }
 
