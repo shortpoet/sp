@@ -37,8 +37,12 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:r
 git_wrap_error "git config --global --add remote.upstream.mirror true"
 cat .git/config
 echo "***** Git fetch upstream ****"
-git_wrap_error "git pull upstream --prune --mirror"
+read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
+for branch in "${branches[@]}"; do
+  echo "**** Pulling $branch ****"
+  git_wrap_error "git pull upstream $branch --prune"
+  echo "***** Git push to origin ****"
+  git_wrap_error "git push"
+done
 # echo "***** Git remote update upstream ****"
 # git_wrap_error "git remote update upstream --prune"
-echo "***** Git push to origin ****"
-git_wrap_error "git push"
