@@ -12,7 +12,8 @@ echo "****Source Repo: $source_repo****"
 echo "****Destination Repo: $dest_url****"
 sourceURL="https://github.com/shortpoet/$source_repo"
 
-git -c http.extraheader="AUTHORIZATION: bearer $PAT" clone --bare "$dest_url"
+# git -c http.extraheader="AUTHORIZATION: bearer $PAT" clone --bare "$dest_url"
+git clone --bare "$dest_url"
 cd "$dest_repo.git" || exit
 git remote add --mirror=fetch upstream "$sourceURL"
 git fetch upstream --tags
