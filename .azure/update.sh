@@ -29,7 +29,7 @@ else
   dest_url="https://$SYSTEM_ACCESSTOKEN@dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
   echo "**** Destination url: $dest_url ****"
 
-  git clone --bare "$dest_url"
+  git clone --bare "$dest_url" --progress
 fi
 cd "$dest_repo.git" || exit
 
