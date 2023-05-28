@@ -64,7 +64,7 @@ echo "***** Git pull ****"
 git_wrap_error "git config --global --add  pull.rebase true"
 for branch in "${branches[@]}"; do
   echo "**** Pulling $branch ****"
-  git_wrap_error "git pull $branch"
+  git_wrap_error "git rebase origin $branch"
 done
 
 # for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
