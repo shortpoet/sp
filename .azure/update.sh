@@ -41,7 +41,7 @@ git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'
 git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'
 git config --global --add remote.upstream.mirror true
 echo "***** Git fetch upstream ****"
-git fetch upstream --tags
+git fetch upstream --tags --verbose
 
 # echo "***** Git remote add ****"
 # git remote add --mirror=fetch upstream "$sourceURL"
@@ -49,4 +49,4 @@ git fetch upstream --tags
 # git fetch upstream --tags
 
 echo "***** Git push to Azure Repos ****"
-git push origin --all
+git push origin --all --verbose
