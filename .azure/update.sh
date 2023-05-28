@@ -45,7 +45,7 @@ echo "${branches[@]}"
 
 for branch in "${branches[@]}"; do
   echo "**** Pulling $branch ****"
-  git_wrap_error "git pull $branch --prune"
+  git_wrap_error "git pull upstream $branch --prune"
   echo "***** Git push to origin ****"
   git_wrap_error "git push"
 done
