@@ -63,10 +63,12 @@ read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads
 echo "***** Git pull ****"
 git_wrap_error "git config --global core.bare false"
 git_wrap_error "git config --global --add  pull.rebase true"
-for branch in "${branches[@]}"; do
-  echo "**** Pulling $branch ****"
-  git_wrap_error "git rebase origin $branch"
-done
+git merge-tree --write-tree "${branches[@]}"
+# git merge-tree --write-tree "$(git merge-base origin/main upstream/main)" upstream/main origin/main
+# for branch in "${branches[@]}"; do
+#   echo "**** Pulling $branch ****"
+#   git_wrap_error "git rebase origin $branch"
+# done
 
 # for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
 #   git log --oneline "$branch" ^origin/main
