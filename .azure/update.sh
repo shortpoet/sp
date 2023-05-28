@@ -64,6 +64,8 @@ git_wrap_error "git fetch upstream"
 
 pwd
 ls -laR ../
+cat ../.git/config
+cat ../.azure/test.sh
 
 
 echo "***** Git push to Azure Repos ****"
