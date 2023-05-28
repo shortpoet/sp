@@ -10,7 +10,7 @@ echo "****Destination Repo: $dest_url****"
 sourceURL="https://github.com/shortpoet/$source_repo"
 
 git clone --bare "$dest_url"
-cd "$dest_repo" || exit
+cd "$dest_repo.git" || exit
 git remote add --mirror=fetch upstream "$sourceURL"
 git fetch upstream --tags
 git push origin --all
