@@ -60,6 +60,11 @@ git_wrap_error "git fetch upstream"
 cd ..
 echo "***** Git pull ****"
 
+git for-each-ref --format='%(refname)' refs/heads/ 
+# git for-each-ref --format='%(refname)' refs/heads/ | while read -r branch; do
+#   echo "**** Pulling $branch ****"
+#   git_wrap_error "git pull upstream $branch"
+# done
 
 for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
   echo "**** Pulling $branch ****"
@@ -76,9 +81,9 @@ done
 # echo "***** Git fetch upstream ****"
 # git fetch upstream --tags
 
-pwd
-cat ../.git/config
-cat ../.azure/test.sh
+# pwd
+# cat ../.git/config
+# cat ../.azure/test.sh
 
 
 echo "***** Git push to Azure Repos ****"
