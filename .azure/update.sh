@@ -57,6 +57,8 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:r
 git_wrap_error "git config --global --add remote.upstream.mirror true"
 echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream --porcelain"
+declare -a branches
+branches=("$(git for-each-ref --format='%(refname)' refs/heads/)")
 cd ..
 echo "***** Git pull ****"
 
@@ -66,7 +68,7 @@ git for-each-ref --format='%(refname)' refs/heads/
 #   git_wrap_error "git pull upstream $branch"
 # done
 
-for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
+for branch in "${branches[@]}"; do
   echo "**** Pulling $branch ****"
   git_wrap_error "git pull origin $branch"
 done
