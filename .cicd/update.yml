@@ -5,6 +5,9 @@ parameters:
   - name: use_osx
     type: boolean
     default: false
+  - name: 'ubuntu-latest'
+    type: string
+    default: 'ubuntu-latest'
 
 resources:
   webhooks:
@@ -17,15 +20,19 @@ resources:
 
 trigger: none
 
-${{ if eq(parameters['use_osx'], 'true') }}: 
-  pool:
-    vmImage: ubuntu-latest
+# pool:
+#   vmImage: ubuntu-latest
+#   name: osx.pro
+#   demands:
+#     - agent.name -equals pro
+
+pool:
+  ${{ if eq(parameters.use_osx, 'true') }}:
     name: osx.pro
-    demands:
-      - agent.name -equals pro
-${{ else }}:
-  pool:
-    vmImage: ubuntu-latest
+  ${{ if eq(parameters.agentPool, '') }}:
+    vmImage: ${{ parameters.vmImage }}
+
+
 
 variables:
   - name: source_repo
