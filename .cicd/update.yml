@@ -19,7 +19,7 @@ variables:
       value: osx.pro
   - ${{ if eq(parameters.use_osx, false) }}:
     - name: pool_name
-      value: Default
+      value: Azure Pipelines
 
 resources:
   webhooks:
