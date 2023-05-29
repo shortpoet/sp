@@ -1,0 +1,45 @@
+resources:
+  webhooks:
+    - webhook: github          ### Webhook alias
+      connection: github    ### Incoming webhook service connection
+
+# trigger:
+# - main
+# - develop
+
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+  name: osx.pro
+  demands:
+    - agent.name -equals pro
+variables:
+  - name: source_repo
+    value: "sp"
+  # - name: dest_url
+  #   value: "https://dev.azure.com/shortpoet/_git/Shortpoet"
+
+
+steps:
+- checkout: self
+  persistCredentials: true
+  clean: true
+# - script: |
+#     pwd
+#     ls -la
+#   displayName: 'Debug'
+#   workingDirectory: "$(System.DefaultWorkingDirectory)"
+- task: Bash@3
+  name: UpdateMirror
+  displayName: 'Update Mirror'
+  inputs:
+    targetType: 'filePath'
+    filePath: "$(System.DefaultWorkingDirectory)/.azure/update.sh"
+    failOnStderr: true
+    workingDirectory: "$(System.DefaultWorkingDirectory)"
+  env:
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+    PAT: $(PAT)
+    CPAT: $(CPAT)
+    GIT_TRACE: 0
