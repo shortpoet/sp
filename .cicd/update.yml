@@ -9,6 +9,18 @@ parameters:
     type: string
     default: 'ubuntu-latest'
 
+variables:
+  - name: source_repo
+    value: ${{ parameters.source_repo }}
+  # - name: dest_url
+  #   value: "https://dev.azure.com/shortpoet/_git/Shortpoet"
+  - ${{ if eq(parameters.use_osx, true) }}:
+    - name: pool_name
+      value: osx.pro
+  - ${{ if eq(parameters.use_osx, false) }}:
+    - name: pool_name
+      value: Default
+
 resources:
   webhooks:
     - webhook: github          ### Webhook alias
@@ -20,26 +32,17 @@ resources:
 
 trigger: none
 
-# pool:
-#   vmImage: ubuntu-latest
-#   name: osx.pro
+pool:
+  vmImage: ubuntu-latest
+  name: $(pool_name)
 #   demands:
 #     - agent.name -equals pro
 
-pool:
-  ${{ if eq(parameters.use_osx, 'true') }}:
-    name: osx.pro
-  ${{ if eq(parameters.agentPool, '') }}:
-    vmImage: ${{ parameters.vmImage }}
-
-
-
-variables:
-  - name: source_repo
-    value: ${{ parameters.source_repo }}
-  # - name: dest_url
-  #   value: "https://dev.azure.com/shortpoet/_git/Shortpoet"
-
+# pool:
+#   ${{ if eq(parameters.use_osx, 'true') }}:
+#     name: osx.pro
+#   ${{ if eq(parameters.agentPool, '') }}:
+#     vmImage: ${{ parameters.vmImage }}
 
 steps:
 - checkout: self
