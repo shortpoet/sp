@@ -29,7 +29,13 @@ git_wrap_error() {
 }
 
 echo "***** Git remote add ****"
-git_wrap_error "git remote add upstream $sourceURL"
+has_upstream=$(git_wrap_error "git remote -v"| grep -c upstream)
+if [[ $has_upstream -eq 0 ]]; then
+  echo "**** Adding upstream ****"
+  git_wrap_error "git remote add upstream $sourceURL"
+else
+  echo "**** Upstream already exists ****"
+fi
 echo "**** Setting git config ****"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/heads/*:refs/heads/*'"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'"

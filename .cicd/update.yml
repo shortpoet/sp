@@ -5,7 +5,7 @@ parameters:
   - name: use_osx
     type: boolean
     default: false
-  - name: 'ubuntu-latest'
+  - name: 'vmImage'
     type: string
     default: 'ubuntu-latest'
 
