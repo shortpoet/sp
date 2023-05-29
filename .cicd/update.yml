@@ -24,6 +24,7 @@ variables:
 steps:
 - checkout: self
   persistCredentials: true
+  clean: true
 # - script: |
 #     pwd
 #     ls -la
