@@ -1,10 +1,12 @@
 [core]
-    repositoryformatversion = 0
-    filemode = false
-    bare = false
-    symlinks = false
-    ignorecase = true
-    hideDotFiles = dotGitOnly
+	repositoryformatversion = 0
+  filemode = false
+  bare = false
+  symlinks = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+  hideDotFiles = dotGitOnly
 [remote "origin"]
 	url = git@github.com:shortpoet/sp.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
@@ -18,9 +20,18 @@
     url = git@ssh.dev.azure.com:v3/shortpoet/Shortpoet/sp
     mirror = true
     skipDefaultUpdate = true
-[branch "azdo"]
-	remote = sp
-	merge = refs/heads/develop
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
 [branch "develop"]
 	remote = origin
 	merge = refs/heads/develop
+[branch "uat"]
+	remote = origin
+	merge = refs/heads/uat
+[branch "feature-upgrades"]
+	remote = origin
+	merge = refs/heads/feature-upgrades
+[branch "FREEZE-pre-ssg"]
+	remote = origin
+	merge = refs/heads/FREEZE-pre-ssg
