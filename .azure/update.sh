@@ -48,7 +48,7 @@ for branch in "${branches[@]}"; do
   git_wrap_error "git checkout $branch"
   git_wrap_error "git pull upstream $branch --prune"
   echo "***** Git push to origin ****"
-  git_wrap_error "git push"
+  git_wrap_error "git push origin $branch"
 done
 # echo "***** Git remote update upstream ****"
 # git_wrap_error "git remote update upstream --prune"
