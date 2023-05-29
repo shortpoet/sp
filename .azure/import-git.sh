@@ -17,7 +17,6 @@ echo "**** Destination Repo: $dest_repo ****"
 git_wrap_error() {
   cmd="$1"
   temp=$(mktemp)
-  # $cmd > "$temp"
   $cmd > "$temp" 2>&1
   if [[ $? -ne 0 ]]; then
     echo "**** Error: $1 ****"
@@ -28,8 +27,6 @@ git_wrap_error() {
   fi
 }
 
-
-
 if [[ $b64_auth == true ]]; then
   dest_url="https://dev.azure.com/shortpoet/Shortpoet/_git/$dest_repo"
   echo "**** Destination url: $dest_url ****"
@@ -39,7 +36,6 @@ if [[ $b64_auth == true ]]; then
   git config --global http.version HTTP/1.1
   git config --global http.extraheader "AUTHORIZATION: Basic $B64_PAT"
   git_wrap_error "git clone --bare $dest_url"
-  # git_wrap_error "git clone --mirror $dest_url"
   # somehow this was adding an extra / to the url
   # git -c http.extraheader="AUTHORIZATION: Basic $B64_PAT" clone --bare "$dest_url"
 else
@@ -48,7 +44,6 @@ else
   echo "**** Destination url: $dest_url ****"
 
   git_wrap_error "git clone --bare $dest_url"
-  # git_wrap_error "git clone --mirror $dest_url"
 fi
 cd "$dest_repo.git" || exit
 
@@ -59,10 +54,24 @@ git_wrap_error "git config --global --add remote.upstream.fetch '+refs/heads/*:r
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/tags/*:refs/tags/*'"
 git_wrap_error "git config --global --add remote.upstream.fetch '+refs/notes/*:refs/notes/*'"
 git_wrap_error "git config --global --add remote.upstream.mirror true"
-cat config
 echo "***** Git fetch upstream ****"
-git_wrap_error "git fetch upstream --prune"
-read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
+git_wrap_error "git fetch upstream"
+
+# echo "***** Git remote add ****"
+# git remote add --mirror=fetch upstream "$sourceURL"
+# echo "***** Git fetch upstream ****"
+# git fetch upstream --tags
+
+pwd
+cat ../.git/config
+cat ../.azure/test.sh
+
+
+echo "***** Git push to Azure Repos ****"
+git_wrap_error "git push origin --all"
+
+
+# read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads/ | tr '\n' ' ')"
 # cd ..
 
 # echo "***** Git pull ****"
@@ -89,10 +98,3 @@ read -ra branches <<< "$(git for-each-ref --format='%(refname:short)' refs/heads
 # pwd
 # cat ../.git/config
 # cat ../.azure/test.sh
-
-
-echo "***** Git push to Azure Repos ****"
-# git_wrap_error "git push origin --mirror"
-git_wrap_error "git remote update"
-# git_wrap_error "git push --mirror"
-git_wrap_error "git push --all"

@@ -38,11 +38,8 @@ git_wrap_error "git config --global --add remote.upstream.mirror true"
 cat .git/config
 echo "***** Git fetch upstream ****"
 git_wrap_error "git fetch upstream --prune"
-# git branch -a
 read -ra branches <<< "$(git for-each-ref --format='%(refname:lstrip=3)' refs/remotes/upstream | tr '\n' ' ')"
 echo "**** Branches: ${branches[*]} ****"
-echo "${branches[@]}"
-
 for branch in "${branches[@]}"; do
   rm -fr ".git/rebase-merge"
   echo "**** Pulling $branch ****"
@@ -51,5 +48,3 @@ for branch in "${branches[@]}"; do
   echo "***** Git push to origin ****"
   git_wrap_error "git push origin $branch"
 done
-# echo "***** Git remote update upstream ****"
-# git_wrap_error "git remote update upstream --prune"
