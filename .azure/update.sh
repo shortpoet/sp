@@ -44,6 +44,7 @@ echo "**** Branches: ${branches[*]} ****"
 echo "${branches[@]}"
 
 for branch in "${branches[@]}"; do
+  rm -fr ".git/rebase-merge"
   echo "**** Pulling $branch ****"
   git_wrap_error "git checkout $branch"
   git_wrap_error "git pull upstream $branch --prune"
