@@ -1,10 +1,13 @@
 [core]
     repositoryformatversion = 0
     filemode = false
-    bare = true
+    bare = false
     symlinks = false
     ignorecase = true
     hideDotFiles = dotGitOnly
+[remote "origin"]
+	url = git@github.com:shortpoet/sp.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
 [remote "sp"]
     url = git@github.com:shortpoet/sp.git
     fetch = +refs/heads/*:refs/heads/*
@@ -12,5 +15,12 @@
     mirror = true
 [remote "mirrors"]
     url = git@ssh.dev.azure.com:v3/shortpoet/Shortpoet/Shortpoet
+    url = git@ssh.dev.azure.com:v3/shortpoet/Shortpoet/sp
     mirror = true
     skipDefaultUpdate = true
+[branch "azdo"]
+	remote = sp
+	merge = refs/heads/develop
+[branch "develop"]
+	remote = origin
+	merge = refs/heads/develop

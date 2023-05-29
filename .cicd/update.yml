@@ -1,3 +1,11 @@
+parameters:
+  - name: source_repo
+    type: string
+    default: "sp"
+  - name: use_osx
+    type: boolean
+    default: false
+
 resources:
   webhooks:
     - webhook: github          ### Webhook alias
@@ -11,12 +19,13 @@ trigger: none
 
 pool:
   vmImage: ubuntu-latest
-  name: osx.pro
-  demands:
-    - agent.name -equals pro
+  ${{ if eq(parameters['use_osx'], 'true') }}: 
+    name: osx.pro
+    demands:
+      - agent.name -equals pro
 variables:
   - name: source_repo
-    value: "sp"
+    value: ${{ parameters.source_repo }}
   # - name: dest_url
   #   value: "https://dev.azure.com/shortpoet/_git/Shortpoet"
 
