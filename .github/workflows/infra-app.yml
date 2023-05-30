@@ -113,6 +113,7 @@ jobs:
         working-directory: app
         run: |
           npm install --global vite pnpm
+          pnpm --version
           pnpm i
 
       - name: Build
