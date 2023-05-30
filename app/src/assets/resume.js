@@ -249,6 +249,18 @@ export const hardResume = {
     {
       jobs: [
         {
+          id: 21,
+          experienceType: 'software',
+          position: 'Senior DevOps Engineer',
+          company: 'Motion Recruitment Partners LLC',
+          description:
+            ' • Contractor at Lazlo 326 - https://www.linkedin.com/company/lazlo326/.',
+          startDate: '2023 (April)',
+          endDate: 'Present',
+          dateCreated: '2023-05-30',
+          comments: 'add Motion Recruitment Partners'
+        },
+        {
           id: 22,
           experienceType: 'software',
           position: 'Senior DevOps Engineer',
