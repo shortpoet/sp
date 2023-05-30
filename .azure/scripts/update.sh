@@ -24,7 +24,7 @@ git_wrap_error() {
     exit 1
   else
     cat "$temp"
-    sed -n 1p "$temp"
+    sed -n 8p "$temp"
   fi
 }
 
