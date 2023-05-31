@@ -152,3 +152,4 @@ jobs:
       build_path: "app/build"
       build_artifact: "build"
       build_artifact_uuid: ${{ needs.build-node.outputs.build-artifact-uuid }}
+      module_org: shortpoet-cloud
