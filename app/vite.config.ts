@@ -35,19 +35,19 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'build',
+    outDir: 'build'
     // assetsDir: 'assets',
     // sourcemap: true,
-    rollupOptions: {
-      output: {
-        // manualChunks: {
-        //   vue: ['vue']
-        // }
-        entryFileNames: `assets/[name]-${commitHash}.js`,
-        chunkFileNames: `assets/[name]-${commitHash}.js`,
-        assetFileNames: `assets/[name]-${commitHash}.[ext]`
-      }
-    }
+    // rollupOptions: {
+    //   output: {
+    //     // manualChunks: {
+    //     //   vue: ['vue']
+    //     // }
+    //     // entryFileNames: `assets/[name]-${commitHash}.js`,
+    //     // chunkFileNames: `assets/[name]-${commitHash}.js`,
+    //     // assetFileNames: `assets/[name]-${commitHash}.[ext]`
+    //   }
+    // }
   },
   resolve: {
     alias: {
