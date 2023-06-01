@@ -78,7 +78,7 @@ export const hardResume = {
       description:
         ' • As senior devops engineer for a greenfield project, owns the infrastructure design and implementation for a customer-facing web app. Uses Azure Resource Manager and Azure Devops to manage CI/CD pipelines and storage, network, security, virtual machines, kubernetes clusters, among other services for front and back end deployments.\\n\\r • Built infrastructure as code using custom Terraform modules for repeatable and immutable deployments. Ensured processes are well-tested through unit tests written in Go. Wrote extensive documentation to achieve permanence of the solution stack and educate others in the company.\\n\\r • Developed tools for the team to use to streamline application development and save time by automating repetitive tasks including Powershell modules, template generators, docker containers, and other scripting solutions.\\n\\r • Additional technologies used: Terraform, Terratest, Go, Docker, Powershell, Bash, Azure Cloud, Agile/SAFe.\\n\\r ',
       startDate: '2021 (August)',
-      endDate: 'Present',
+      endDate: '2022 (February)',
       dateCreated: '2021-09-29T22:26:52.67',
       comments: 'add Facilisgroup'
     },
@@ -280,7 +280,7 @@ export const hardResume = {
           description:
             ' • As senior devops engineer for a greenfield project, owns the infrastructure design and implementation for a customer-facing web app. Uses Azure Resource Manager and Azure Devops to manage CI/CD pipelines and storage, network, security, virtual machines, kubernetes clusters, among other services for front and back end deployments.\\n\\r • Built infrastructure as code using custom Terraform modules for repeatable and immutable deployments. Ensured processes are well-tested through unit tests written in Go. Wrote extensive documentation to achieve permanence of the solution stack and educate others in the company.\\n\\r • Developed tools for the team to use to streamline application development and save time by automating repetitive tasks including Powershell modules, template generators, docker containers, and other scripting solutions.\\n\\r • Additional technologies used: Terraform, Terratest, Go, Docker, Powershell, Bash, Azure Cloud, Agile/SAFe.\\n\\r ',
           startDate: '2021 (August)',
-          endDate: 'Present',
+          endDate: '2022 (February)',
           dateCreated: '2021-09-29T22:26:52.67',
           comments: 'add Facilisgroup'
         },
