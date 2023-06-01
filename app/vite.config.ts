@@ -16,9 +16,13 @@ import Inspector from 'vite-plugin-vue-inspector';
 import generateSitemap from 'vite-ssg-sitemap';
 
 import path from 'path';
+import * as child from 'child_process';
+
+const commitHash = child.execSync('git rev-parse --short HEAD').toString();
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: { 'import.meta.env.VITE_APP_VERSION': JSON.stringify(commitHash) },
   server: {
     // so not just localhost
     host: true
@@ -36,9 +40,12 @@ export default defineConfig({
     // sourcemap: true,
     // rollupOptions: {
     //   output: {
-    //     manualChunks: {
-    //       vue: ['vue']
-    //     }
+    //     // manualChunks: {
+    //     //   vue: ['vue']
+    //     // }
+    //     // entryFileNames: `assets/[name]-${commitHash}.js`,
+    //     // chunkFileNames: `assets/[name]-${commitHash}.js`,
+    //     // assetFileNames: `assets/[name]-${commitHash}.[ext]`
     //   }
     // }
   },
