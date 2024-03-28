@@ -10,11 +10,11 @@
 [remote "origin"]
 	url = git@github.com:shortpoet/sp.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[remote "sp"]
-    url = git@github.com:shortpoet/sp.git
-    fetch = +refs/heads/*:refs/heads/*
-    fetch = +refs/tags/*:refs/tags/*
-    mirror = true
+# [remote "sp"]
+#     url = git@github.com:shortpoet/sp.git
+#     fetch = +refs/heads/*:refs/heads/*
+#     fetch = +refs/tags/*:refs/tags/*
+#     mirror = true
 [remote "mirrors"]
     url = git@ssh.dev.azure.com:v3/shortpoet/Shortpoet/Shortpoet
     url = git@ssh.dev.azure.com:v3/shortpoet/Shortpoet/sp
