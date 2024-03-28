@@ -52,11 +52,11 @@ export const hardResume = {
       position: 'Senior DevOps Engineer',
       company: 'Motion Recruitment Partners LLC',
       description:
-        ' • Contractor at Lazlo 326 - https://www.linkedin.com/company/lazlo326/.',
+        ' • Contractor at Lazlo 326 - https://www.linkedin.com/company/lazlo326/ - a gaming startup. \\n\\r • Designed an automated pipeline utilizing dynamic stored procedures to generate views for analytical processing of transactional data taken from CosmosDB to Synapse SQL Warehouse, speeding up initial processing. \\n\\r • Assisted with Synapse queries and data transformation within Azure Databricks using Python, structuring into dimension/fact tables. \\n\\r • Integrated Power BI with Databricks for streamlined embedded and direct reporting. \\n\\r • Orchestrated DevOps Pipelines to automate DACPAC SQL deployments, OBO token generation, RBAC/IAM enforcement within a secure network, and running scheduled parametrized Databricks workflows - leveraging preview features outside the scope of the terraform provider when needed. \\n\\r • Refactored codebase for alignment with industry best practices, improving maintainability and functionality. \\n\\r • Orchestrated DevOps Pipelines to automate DACPAC SQL deployments, OBO token generation, RBAC/IAM enforcement within a secure network, and running scheduled parametrized Databricks workflows - leveraging preview features outside the scope of the terraform provider when needed. \\n\\r • Refactored codebase for alignment with industry best practices, improving maintainability and functionality. \\n\\r • Provided expertise in maintaining and enhancing Terraform modules, bolstering infrastructure deployment. \\n\\r • Standardized and innovated using advanced Azure DevOps YAML scripting for better CI/CD pipeline management. \\n\\r • Implemented robust Powershell scripting for build and release validations, credential and certificate management, and infrastructure management, reducing errors and improving build success rates, standardizing scripting practices, ensuring uniformity and increasing automation efficiency. \\n\\r • Initiated a new product pipeline focused on partner integration, simplifying shared infrastructure management and accelerating partner onboarding and collaboration. \\n\\r • Configured RBAC in Terraform, managing roles, service principals, and securing permissions at various levels, reinforcing security policies and compliance standards.',
       startDate: '2023 (April)',
       endDate: 'Present',
       dateCreated: '2023-05-30',
-      comments: 'add Motion Recruitment Partners'
+      comments: 'add Motion Recruitment Partners; add Lazlo details'
     },
     {
       id: 22,
@@ -254,11 +254,11 @@ export const hardResume = {
           position: 'Senior DevOps Engineer',
           company: 'Motion Recruitment Partners LLC',
           description:
-            ' • Contractor at Lazlo 326 - https://www.linkedin.com/company/lazlo326/.',
+            ' • Contractor at Lazlo 326 - https://www.linkedin.com/company/lazlo326/ - a gaming startup. \\n\\r • Designed an automated pipeline utilizing dynamic stored procedures to generate views for analytical processing of transactional data taken from CosmosDB to Synapse SQL Warehouse, speeding up initial processing. \\n\\r • Assisted with Synapse queries and data transformation within Azure Databricks using Python, structuring into dimension/fact tables. \\n\\r • Integrated Power BI with Databricks for streamlined embedded and direct reporting. \\n\\r • Orchestrated DevOps Pipelines to automate DACPAC SQL deployments, OBO token generation, RBAC/IAM enforcement within a secure network, and running scheduled parametrized Databricks workflows - leveraging preview features outside the scope of the terraform provider when needed. \\n\\r • Refactored codebase for alignment with industry best practices, improving maintainability and functionality. \\n\\r • Orchestrated DevOps Pipelines to automate DACPAC SQL deployments, OBO token generation, RBAC/IAM enforcement within a secure network, and running scheduled parametrized Databricks workflows - leveraging preview features outside the scope of the terraform provider when needed. \\n\\r • Refactored codebase for alignment with industry best practices, improving maintainability and functionality. \\n\\r • Provided expertise in maintaining and enhancing Terraform modules, bolstering infrastructure deployment. \\n\\r • Standardized and innovated using advanced Azure DevOps YAML scripting for better CI/CD pipeline management. \\n\\r • Implemented robust Powershell scripting for build and release validations, credential and certificate management, and infrastructure management, reducing errors and improving build success rates, standardizing scripting practices, ensuring uniformity and increasing automation efficiency. \\n\\r • Initiated a new product pipeline focused on partner integration, simplifying shared infrastructure management and accelerating partner onboarding and collaboration. \\n\\r • Configured RBAC in Terraform, managing roles, service principals, and securing permissions at various levels, reinforcing security policies and compliance standards.',
           startDate: '2023 (April)',
           endDate: 'Present',
           dateCreated: '2023-05-30',
-          comments: 'add Motion Recruitment Partners'
+          comments: 'add Motion Recruitment Partners; add Lazlo details'
         },
         {
           id: 22,
