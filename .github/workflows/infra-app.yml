@@ -107,13 +107,18 @@ jobs:
         with:
           node-version: latest
 
-      - name: Install dependencies
+      - uses: pnpm/action-setup@v4
         if: ${{ github.ref != 'refs/heads/main' }}
-        working-directory: app
-        run: |
-          npm install --global vite pnpm
-          pnpm --version
-          pnpm i
+        with:
+          version: 10
+          run_install: |
+            - recursive: true
+            - args: [--global, vite]
+
+        # run: |
+        #   npm install --global vite pnpm
+        #   pnpm --version
+        #   pnpm i
 
       - name: Build
         if: ${{ github.ref != 'refs/heads/main' }}
