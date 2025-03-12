@@ -15,7 +15,7 @@ on:
       - develop
     paths:
       - ".iac/infra_app/**"
-      - '.github/workflows/infra-app.yml'
+      - ".github/workflows/infra-app.yml"
       - "app/**"
   push:
     branches:
@@ -24,16 +24,16 @@ on:
       - develop
     paths:
       - ".iac/infra_app/**"
-      - '.github/workflows/infra-app.yml'
+      - ".github/workflows/infra-app.yml"
       - "app/**"
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
   release:
     types:
       - published
     paths:
       - ".iac/infra_app/**"
-      - '.github/workflows/infra-app.yml'
+      - ".github/workflows/infra-app.yml"
       - "app/**"
 
 permissions:
@@ -42,23 +42,22 @@ permissions:
 
 jobs:
   paths-filter:
-    if:
-      (
-        (startsWith(github.ref, 'refs/pull') &&
-        endsWith(github.ref, '/merge') &&
-        github.head_ref == 'uat' &&
-        github.base_ref == 'main' &&
-        github.event_name == 'pull_request')
+    if: (
+      (startsWith(github.ref, 'refs/pull') &&
+      endsWith(github.ref, '/merge') &&
+      github.head_ref == 'uat' &&
+      github.base_ref == 'main' &&
+      github.event_name == 'pull_request')
       ) ||
       (github.event_name == 'push' &&
-        (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
+      (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main')
       ) ||
       github.event_name == 'release'
     outputs:
       infra_app: ${{ steps.filter.outputs.infra_app }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v2
         id: filter
         with:
@@ -77,7 +76,7 @@ jobs:
     outputs:
       build-artifact-uuid: ${{ steps.set-env.outputs.BUILD_ARTIFACT_UUID }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set Env
         id: set-env
