@@ -131,7 +131,7 @@ jobs:
       - name: Upload build
         if: ${{ github.ref != 'refs/heads/main' }}
         id: upload-build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.set-env.outputs.BUILD_ARTIFACT_UUID }}
           path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}/${{ env.BUILD_ARTIFACT }}.zip"
