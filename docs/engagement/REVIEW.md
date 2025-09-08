@@ -9,10 +9,10 @@
 
 ## Executive Summary
 
-- **Plan Status**: Two complementary plans exist - one overly automated, one appropriately procedural
-- **Architectural Alignment**: Both align with Vue 3 + Vite SSG architecture, but differ in execution approach
-- **Consolidation Impact**: Opportunity to merge best elements while removing over-engineering
-- **Recommended Action**: **MODIFY** - Create hybrid approach with manual "before capture" phase and selective automation
+- **Plan Status**: Two complementary plans exist — one overly automated, one appropriately procedural.
+- **Architectural Alignment**: Both fit the Vue 3 + Vite SSG setup and the repo rules in `AGENTS.md` (small, focused diffs; tests/lint/build before PR).
+- **Consolidation Impact**: Merge best elements while removing over‑engineering; keep PLAN‑codex as canonical delivery loop.
+- **Recommended Action**: **MODIFY** — adopt a hybrid with a manual "before capture" phase and selective automation.
 
 ## Current State Analysis
 
@@ -127,6 +127,13 @@ docs/engagement/templates/
 - Decision rationale
 - Lesson learned capture
 - Article drafting
+
+## Repo Alignment Check (Context & Patterns)
+
+- **Docs root**: Uses `docs/` as primary; artifacts/journal under `docs/engagement/` matches established layout.
+- **Commands**: Validation steps (`pnpm lint`, `pnpm test`, `pnpm build`, `pnpm preview`) align with README and `AGENTS.md` guidance.
+- **Change scope**: No code or CI changes required by this review; keep deltas ≤2–3 days per repo guidelines.
+- **Consolidation**: Treat `PLAN-codex.md` as canonical; retain `PLAN-claude.md` as reference for templates only. Optionally add `docs/engagement/templates/` and an index file later.
 
 ## Consolidated Implementation Plan
 
@@ -252,6 +259,11 @@ docs/engagement/artifacts/<YYYY-MM-DD>-<slug>/
 - **Premature optimization**: No complex utilities before need
 - **Over-engineering**: Simple markdown over TypeScript interfaces
 - **Tool obsession**: Focus on content, not capture mechanism
+
+### References Scanned
+
+- No `lessons-learned-index.md`, `PROJECT_RULES.md`, `self-improvement-cycle.md`, or `code-reduction.md` found.
+- Used `AGENTS.md`, `README.md`, and engagement transcripts (`docs/engagement/chatgpt/*`, `docs/engagement/claude/*`) as the basis for lessons and reduction guidance.
 
 ## Additional Future Considerations
 
