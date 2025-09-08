@@ -1,6 +1,5 @@
 {
-  // "extends": "./node_modules/@vue/tsconfig/tsconfig.web.json",
-  "extends": "@vue/tsconfig/tsconfig.web.json",
+  // "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
     "../env.d.ts",
     "src/**/*",
@@ -17,13 +16,6 @@
     "src/_boilerplate/**/*",
     "src/__check/**/*",
   ],
-  "vueCompilerOptions": {
-    "plugins": [
-      "@vue-macros/volar/define-model",
-      "@vue-macros/volar/define-slots",
-      "vite-plugin-vue-component-preview/tooling"
-    ]
-  },
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "build",
@@ -33,10 +25,13 @@
       ]
     },
     "module": "ESNext",
-    "target": "ESNext",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
     "lib": [
-      "ESNext",
-      "DOM"
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
     ],
     "esModuleInterop": true,
     "jsx": "preserve",
@@ -48,17 +43,12 @@
     "noUnusedLocals": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "importsNotUsedAsValues": "remove",
+    "verbatimModuleSyntax": false,
     "types": [
       "node",
       "vitest",
       "vite/client",
-      "vue/ref-macros",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-component-preview/client",
-      "vite-plugin-vue-layouts/client",
-      "vite-plugin-pwa/client",
-      "unplugin-vue-macros/macros-global",
       "jquery",
       "bootstrap",
     ],
