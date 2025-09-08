@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:shortpoet.com)",
+      "Bash(pnpm:*)",
+      "Read(//Users/Shared/source/repos/shortpoet/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

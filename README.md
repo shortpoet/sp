@@ -1,79 +1,74 @@
-# sp
+# Shortpoet — Resume & Articles
 
-## npm upgrades
+Live: <https://shortpoet.com>
 
-```out
-ncu --upgrade
-Upgrading /Users/Shared/source/repos/shortpoet/sp/app/package.json
-[====================] 51/51 100%
+## Purpose & Context
 
- @fortawesome/fontawesome-free              ^5.15.4  →   ^6.3.0
- @fortawesome/fontawesome-svg-core          ^1.2.36  →   ^6.3.0
- @fortawesome/free-brands-svg-icons         ^5.15.4  →   ^6.3.0
- @fortawesome/free-regular-svg-icons        ^5.15.4  →   ^6.3.0
- @fortawesome/free-solid-svg-icons          ^5.15.4  →   ^6.3.0
- @fortawesome/vue-fontawesome               ^0.1.10  →   ^3.0.3
- @fullhuman/postcss-purgecss                 ^4.0.3  →   ^5.0.0
- @vue/cli-plugin-babel                      ^4.5.13  →   ^5.0.8
- @vue/cli-plugin-eslint                     ^4.5.13  →   ^5.0.8
- @vue/cli-plugin-router                     ^4.5.13  →   ^5.0.8
- @vue/cli-plugin-unit-jest                  ^4.5.13  →   ^5.0.8
- @vue/cli-plugin-vuex                       ^4.5.13  →   ^5.0.8
- @vue/cli-service                           ^4.5.13  →   ^5.0.8
- @vue/test-utils                      1.0.0-beta.31  →   2.2.10
- axios                                      ^0.21.4  →   ^1.3.3
- bootstrap                                   ^4.6.0  →   ^5.2.3
- chalk                                       ^4.1.2  →   ^5.2.0
- core-js                                    ^3.18.1  →  ^3.28.0
- eslint                                      ^6.7.2  →  ^8.34.0
- eslint-plugin-vue                           ^6.1.2  →   ^9.9.0
- fontfaceobserver                            ^2.1.0  →   ^2.3.0
- html2canvas                                 ^1.3.2  →   ^1.4.1
- jest                                       ^25.5.4  →  ^29.4.2
- jest-canvas-mock                            ^2.3.1  →   ^2.4.0
- jquery                                      ^3.6.0  →   ^3.6.3
- js-yaml                                    ^3.14.1  →   ^4.1.0
- jsdom                                      ^16.7.0  →  ^21.1.0
- jspdf                                       ^2.4.0  →   ^2.5.1
- markdown-it                                ^11.0.1  →  ^13.0.1
- moment                                     ^2.29.1  →  ^2.29.4
- portal-vue                                  ^2.1.7  →   ^3.0.0
- postcss-preset-env                          ^6.7.0  →   ^8.0.1
- sass                                       ^1.42.1  →  ^1.58.1
- sass-loader                                 ^8.0.2  →  ^13.2.0
- vue                                        ^2.6.14  →  ^3.2.47
- vue-markdown-loader                         ^2.4.1  →   ^2.5.0
- vue-router                                  ^3.5.2  →   ^4.1.6
- vue-template-compiler                      ^2.6.14  →  ^2.7.14
- vuex                                        ^3.6.2  →   ^4.1.0
-```
+**What**: Personal portfolio site showcasing Carlos Soriano's professional experience and technical expertise.
 
-## deploy
+**Why**: Multilingual résumé platform with PDF export for professional networking, recruitment, and career opportunities.
+
+**How**: Vue 3 SSG with article authoring, i18n support (18+ languages), and print-friendly views.
+
+**For Whom**: Recruiters, potential employers, technical collaborators, and professional contacts.
+
+Vue 3 + Vite SSG site for a multilingual résumé, PDF export, and a small articles section rendered from Markdown. Infra is managed separately via Terraform and deployed with GitHub Actions.
+
+## Project Structure
+
+- `app/`: Frontend app (Vue 3, Vite, vite-ssg).
+  - `app/src/views/`: Main pages (`Landing`, `Start` at `/resume`, `PDF`, `About`, `Articles`).
+  - `app/src/components/`: Feature components (Landing, Articles, PDF, etc.).
+  - `app/locales/`: i18n resources (default `en`).
+  - `app/public/`: Static assets. Build output: `app/build/`.
+- `.iac/`: Infrastructure-as-code (Cloudflare/AWS). See “Infra”.
+- `.github/workflows/`: Build/deploy pipelines for app and infra.
+
+## Getting Started
+
+Prereqs: Node 18+ and pnpm (CI uses pnpm 10; local 7+ works).
 
 ```bash
-aws_assume_role
-export CLOUDFLARE_API_TOKEN=$(pass Cloud/cloudflare/Terraform_Token)
+cd app
+pnpm i           # install
+pnpm dev         # start dev server on :8888
+pnpm build       # SSG build to app/build
+pnpm preview     # preview local build
+pnpm test        # unit tests (Vitest)
+pnpm lint        # ESLint + Prettier
+pnpm type-check  # TS checks
 ```
 
-## cloudflare
+## Notes on Testing & Linting
 
-```bash
-terraform import cloudflare_zone.shortpoet d4e2...
-```
+- Unit tests run with Vitest (jsdom). Default glob is `test/**/*.test.ts` (update if you prefer colocated `*.spec.ts`).
+- Legacy Jest config exists, but `pnpm test` uses Vitest by default.
+- ESLint config: `app/.eslintrc.esm`; Prettier: `app/.prettierrc.json`.
 
-```bash
-get_cloudflare_record_id() {
-  zones=$(curl -X GET "https://api.cloudflare.com/client/v4/zones/$(pass Cloud/cloudflare/zone_id)/dns_records" \
-    -H "Content-Type:application/json" \
-    -H "Authorization: Bearer $(pass Cloud/cloudflare/Terraform_Token)")
-  echo $zones | jq -r '.result[] | select(.name == "dev.shortpoet.com") | .id'
-  echo $zones | jq -r '.result[] | select(.name == "shortpoet.com") | .id'
-}
-```
+## Routing & Content
 
-## instructions
+- Routes: `/` (Landing), `/resume` (interactive résumé), `/pdf` (print-friendly), `/about`, `/articles` (redirects to first post).
+- Articles authored in Markdown with Shiki highlighting; see `app/src/components/Articles/Content`.
+- NProgress and i18n registered via user modules in `app/src/modules/`.
 
-- on dev
+## CI/CD & Infra
+
+- App build/deploy: [`.github/workflows/infra-app.yml`](.github/workflows/infra-app.yml) (reusable workflow). Uses pnpm 10, Node latest, outputs zipped from `app/build`.
+- Base infra: [`.github/workflows/infra-base.yml`](.github/workflows/infra-base.yml).
+- Terraform & linting live under [`.iac/`](.iac/) with TFLint configured in [`.tflint.hcl`](.tflint.hcl).
+- Deployment targets: Cloudflare (primary), AWS (secondary) via GitHub Actions.
+- Optional: install pre-commit hooks to lint Terraform and inject docs blocks: `pre-commit install`.
+
+## SEO tip
+
+Sitemap currently emits `http://localhost` links. Set a hostname in `vite.config.ts` (vite-ssg-sitemap) for production, e.g. `generateSitemap({ hostname: 'https://shortpoet.com', outDir: 'build' })`.
+
+## Troubleshooting
+
+- **pnpm version**: Local development works with pnpm 7+ (tested with 7.27.1), but CI uses pnpm 10.
+- **Test runner**: `pnpm test` uses Vitest by default; legacy Jest config exists but is not the primary runner.
+- **Production site**: Requires JavaScript - site shows message if JS is disabled.
+- **Sitemap URLs**: Production sitemap shows `localhost` URLs due to missing hostname config in `vite.config.ts`.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
