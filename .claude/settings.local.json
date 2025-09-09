@@ -6,7 +6,8 @@
       "Read(//Users/Shared/source/repos/shortpoet/**)",
       "Read(//Users/carlos/Library/Mobile Documents/iCloud~md~obsidian/Documents/shortpoet-notes/articles/_process/**)",
       "Read(//Users/carlos/Library/Mobile Documents/iCloud~md~obsidian/Documents/shortpoet-notes/articles/PDF-Refactor/**)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Read(//Users/Shared/source/repos/shortpoet-dots/typescript/docs/plans/workflow-system/**)"
     ],
     "deny": [],
     "ask": []
