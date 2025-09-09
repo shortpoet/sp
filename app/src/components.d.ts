@@ -9,12 +9,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ArticleLayout: typeof import('./components/Articles/ArticleLayout.vue')['default']
     ArticleList: typeof import('./components/Articles/ArticleList.vue')['default']
     ArticleNav: typeof import('./components/Articles/ArticleNav.vue')['default']
     LandingAbout: typeof import('./components/Landing/LandingAbout.vue')['default']
     LandingNav: typeof import('./components/Landing/LandingNav.vue')['default']
     LandingSocials: typeof import('./components/Landing/LandingSocials.vue')['default']
+    LazloExitJourney1000MilesEn: typeof import('./components/Articles/Content/lazlo-exit-journey-1000-miles-en.md')['default']
+    LazloExitJourney1000MilesEs: typeof import('./components/Articles/Content/lazlo-exit-journey-1000-miles-es.md')['default']
     LearningToUnitTestEn: typeof import('./components/Articles/Content/learning-to-unit-test-en.md')['default']
     LearningToUnitTestEs: typeof import('./components/Articles/Content/learning-to-unit-test-es.md')['default']
     PDFAbout: typeof import('./components/Resume/PDF/PDFAbout.vue')['default']

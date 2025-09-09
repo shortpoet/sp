@@ -3,7 +3,7 @@
     <button class="bowton landing-button" @click="showResume">
       Resume
     </button>
-    <router-link tag="button" to="/articles/learning-to-unit-test-en" class="bowton landing-button mx-5">
+    <router-link tag="button" to="/articles" class="bowton landing-button mx-5">
       Articles
     </router-link>
     <a tag="button" :href="demoUrl" class="bowton landing-button mr-5">
