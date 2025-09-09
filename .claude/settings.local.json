@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:shortpoet.com)",
       "Bash(pnpm:*)",
-      "Read(//Users/Shared/source/repos/shortpoet/**)"
+      "Read(//Users/Shared/source/repos/shortpoet/**)",
+      "Read(//Users/carlos/Library/Mobile Documents/iCloud~md~obsidian/Documents/shortpoet-notes/articles/_process/**)",
+      "Read(//Users/carlos/Library/Mobile Documents/iCloud~md~obsidian/Documents/shortpoet-notes/articles/PDF-Refactor/**)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []
