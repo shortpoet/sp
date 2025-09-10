@@ -22,6 +22,10 @@ const paths = [
     view: 'PDF'
   },
   {
+    path: '/print',
+    view: 'PDFPrint'
+  },
+  {
     path: '/articles',
     view: 'Articles',
     props: true,
