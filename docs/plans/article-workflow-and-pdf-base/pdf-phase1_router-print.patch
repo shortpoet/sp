@@ -1,0 +1,13 @@
+diff --git a/app/src/router/paths.js b/app/src/router/paths.js
+--- a/app/src/router/paths.js
++++ b/app/src/router/paths.js
+@@
+   {
+     path: '/pdf',
+     view: 'PDF'
+   },
++  {
++    path: '/print',
++    view: 'PDFPrint'
++  },
+

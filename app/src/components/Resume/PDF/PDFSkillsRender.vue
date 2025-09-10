@@ -1,29 +1,43 @@
 <template>
   <section class="resume-section mt-3" id="skills">
     <div class="my-auto">
-      <h4 style="font-family: 'Saira Extra Condensed';" class="heading-pdf heading-4 subheading mb-3 ms-0">
+      <h4
+        style="font-family: 'Saira Extra Condensed'"
+        class="heading-pdf heading-4 subheading mb-3 ms-0">
         Programming Languages &amp; Tools
       </h4>
-      <div id="skill-grid-container" class="d-flex flex-column justify-content-between">
+      <div
+        id="skill-grid-container"
+        class="d-flex flex-column justify-content-between">
         <div class="skill-grid-row-1 d-flex flex-row justify-content-between">
           <div v-for="(type, it) in skills" :key="it" class="skill-grid-render">
             <div class="list-devicons-pdf d-flex justify-content-around">
-              <PDFDevIcon v-for="(icon, ii) in mapIcons(type.type)" :key="ii" :source="icon.icon" :name="icon.name" />
+              <PDFDevIcon
+                v-for="(icon, ii) in mapIcons(type.type)"
+                :key="ii"
+                :source="icon.icon"
+                :name="icon.name" />
             </div>
-            <div class="skill-type-render d-flex flex-row align-items-center justify-content-around my-0">
+            <div
+              class="skill-type-render d-flex flex-row align-items-center justify-content-around my-0">
               <div>
-                <div :class="'pdf-skill-type-' + (it + 1)" style="font-family: 'Open Sans';">{{ typeFilter(type.type) }}
+                <div
+                  :class="'pdf-skill-type-' + (it + 1)"
+                  style="font-family: 'Open Sans'">
+                  {{ typeFilter(type.type) }}
                 </div>
               </div>
             </div>
-            <PDFBorder class="d-block my-2" :size=".25" />
+            <PDFBorder class="d-block my-2" :size="0.25" />
             <div class="skill-list-container d-flex flex-column mb-2">
-              <div v-for="(skill, is) in listSkills(type.details)" :key="is"
-                class="skill-list d-flex flex-column mx-2 mb-2">
+              <div
+                v-for="(skill, is) in listSkills(type.details)"
+                :key="is"
+                class="skill-list d-flex flex-column mx-1 mb-1">
                 <div class="skill-pill-container d-flex justify-content-around">
                   <!-- adding extra spans to create grid -->
                   <span></span>
-                  <span style="font-family: 'Open Sans';" class="skill-render">
+                  <span style="font-family: 'Open Sans'" class="skill-render">
                     {{ skill }}
                   </span>
                   <span></span>
@@ -38,9 +52,9 @@
 </template>
 
 <script>
-import PDFDevIcon from '@/components/Resume/PDF/PDFDevIcon.vue'
-import PDFBorder from '@/components/Resume/PDF/PDFBorder.vue'
-import icons from '@/assets/icons/icons.js'
+import PDFDevIcon from '@/components/Resume/PDF/PDFDevIcon.vue';
+import PDFBorder from '@/components/Resume/PDF/PDFBorder.vue';
+import icons from '@/assets/icons/icons.js';
 
 export default {
   name: 'PDFSkillsRender',
@@ -59,53 +73,52 @@ export default {
       iconMap: icons.iconMap,
       windowWidth: window.innerWidth,
       isMediumLarge: false
-    }
+    };
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     listSkills(skills) {
-      return skills.split(',')
+      return skills.split(',');
     },
     mapIcons(skill) {
       let iconKeys = this.iconMap.filter(im => {
-        console.log(im.skill, skill)
-        return im.skill === skill
-      })[0]['icons']
+        console.log(im.skill, skill);
+        return im.skill === skill;
+      })[0]['icons'];
       return iconKeys.map(ik => {
-        console.log(ik)
-        return this.icons.filter(i => i.name === ik)[0]
-      })
+        console.log(ik);
+        return this.icons.filter(i => i.name === ik)[0];
+      });
     },
     screenCheck() {
       // console.log(document)
       // let skillGridWidth = document.getElementById('skill-grid-container').scrollWidth
-      let windowWidth = this.windowWidth
+      let windowWidth = this.windowWidth;
       // for medium-large screens
       if (768 < windowWidth && windowWidth < 985) {
-        console.log('the grid should be medium-large')
-        this.isMediumLarge = true
+        console.log('the grid should be medium-large');
+        this.isMediumLarge = true;
       } else {
-        this.isMediumLarge = false
+        this.isMediumLarge = false;
       }
     },
     typeFilter(type) {
       if (type === 'Document Db') {
-        type = 'Doc Db'
+        type = 'Doc Db';
       } else if (type === 'Data Vizualization') {
-        type = 'Data Viz'
+        type = 'Data Viz';
       }
-      return type
+      return type;
     }
   },
   mounted() {
-    this.screenCheck()
+    this.screenCheck();
   }
-}
+};
 </script>
 <style lang="scss">
 .fa-user-ninja:before {
   font-family: 'Font Awesome 5 Free';
-  content: "\f504";
+  content: '\f504';
 }
 </style>

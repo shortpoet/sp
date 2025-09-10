@@ -9,6 +9,7 @@
 ### **Current State Analysis**
 
 **Problems Identified:**
+
 1. **Image-based PDFs**: html2canvas renders DOM as bitmap → large files (5-20MB+)
 2. **No Text Selection**: Content is rasterized, not searchable or accessible
 3. **Quality Issues**: Fonts render poorly, especially at different scales
@@ -16,6 +17,7 @@
 5. **Performance**: Client-side rendering is slow and memory-intensive
 
 **Current Implementation (`app/src/utils/toPDF.js`):**
+
 - Uses html2canvas to capture DOM element as canvas
 - Converts canvas to JPEG/PNG image
 - Embeds image in PDF using jsPDF
@@ -31,6 +33,7 @@
 ### Step 1.1: Create Print-Optimized Route
 
 **Create `app/src/views/PDFPrint.vue`:**
+
 ```vue
 <template>
   <div id="pdf-print-container">
@@ -124,6 +127,7 @@ onMounted(async () => {
 ### Step 1.2: Update PDF Generation Utility
 
 **Create `app/src/utils/pdf.ts`:**
+
 ```typescript
 export interface PDFOptions {
   method: 'print' | 'worker' | 'jspdf-html'
@@ -273,6 +277,7 @@ export function usePDF() {
 ### Step 1.3: Update Vue Component
 
 **Update PDF button component:**
+
 ```vue
 <template>
   <div class="pdf-controls">
@@ -307,6 +312,7 @@ const { generatePDF, isGenerating, error } = usePDF()
 ### Step 2.1: Create PDF Worker
 
 **Initialize Worker project:**
+
 ```bash
 npm create cloudflare@latest -- pdf-worker
 cd pdf-worker
@@ -314,6 +320,7 @@ npm i -D @cloudflare/playwright
 ```
 
 **`wrangler.toml`:**
+
 ```toml
 name = "shortpoet-pdf"
 main = "src/index.ts"
@@ -335,6 +342,7 @@ PDF_CACHE_DURATION = "3600"
 ```
 
 **`src/index.ts`:**
+
 ```typescript
 import { launch, type BrowserWorker } from '@cloudflare/playwright'
 import { extractText, getDocumentProxy } from 'unpdf'
@@ -687,6 +695,7 @@ async function addWatermark(
 ### Step 2.2: Frontend Integration
 
 **Update `app/src/services/pdf.service.ts`:**
+
 ```typescript
 interface WorkerPDFOptions {
   method?: 'url' | 'html'
@@ -835,6 +844,7 @@ export class PDFService {
 ### Step 2.3: Advanced Vue Component
 
 **Create `app/src/components/PDFGenerator.vue`:**
+
 ```vue
 <template>
   <div class="pdf-generator">
@@ -1246,6 +1256,7 @@ async function copyDownloadLink() {
 ### 3.1: Performance Optimization with Durable Objects
 
 **Create `src/browser-session.ts`:**
+
 ```typescript
 export class BrowserSession {
   private browser: Browser | null = null
@@ -1309,6 +1320,7 @@ export class BrowserSession {
 ### 3.2: Queue-Based Processing for Batch Jobs
 
 **Create `src/pdf-queue-handler.ts`:**
+
 ```typescript
 interface PDFQueueMessage {
   id: string
@@ -1384,6 +1396,7 @@ async function processMessage(
 ### 3.3: Edge Caching for Frequent PDFs
 
 **Add to Worker `src/index.ts`:**
+
 ```typescript
 async function handleGenerateWithCache(
   request: Request,
@@ -1426,24 +1439,28 @@ async function handleGenerateWithCache(
 ## Migration Timeline
 
 ### Week 1: Phase 1 Implementation
+
 - **Day 1**: Implement browser print method
 - **Day 2-3**: Create print-optimized route and styles
 - **Day 4**: Update Vue components
 - **Day 5**: Testing and bug fixes
 
 ### Week 2: Phase 2 Development
+
 - **Day 1-2**: Set up Cloudflare Worker project
 - **Day 3-4**: Implement core PDF generation
 - **Day 5-6**: Add AI enrichment features
 - **Day 7**: Frontend integration
 
 ### Week 3: Testing & Deployment
+
 - **Day 1-2**: Comprehensive testing
 - **Day 3**: Performance optimization
 - **Day 4**: Deploy to production
 - **Day 5**: Monitor and fix issues
 
 ### Week 4: Advanced Features
+
 - **Day 1-2**: Implement Durable Objects
 - **Day 3-4**: Add queue processing
 - **Day 5**: Documentation and training
@@ -1453,11 +1470,13 @@ async function handleGenerateWithCache(
 ## Cost Analysis
 
 ### Phase 1 (Browser Print)
+
 - **Cost**: $0 (client-side only)
 - **File Size**: ~100KB (95% reduction)
 - **Quality**: Perfect text selection
 
 ### Phase 2 (Cloudflare Workers)
+
 - **Workers**: Free tier includes 100,000 requests/day
 - **Browser Rendering**: ~$5/month for 1,000 PDFs
 - **R2 Storage**: $0.015/GB/month
@@ -1469,6 +1488,7 @@ async function handleGenerateWithCache(
 ## Testing Strategy
 
 ### Unit Tests
+
 ```typescript
 // app/tests/unit/pdf/pdf-generator.spec.ts
 import { describe, it, expect, vi } from 'vitest'
@@ -1503,6 +1523,7 @@ describe('PDFGenerator', () => {
 ```
 
 ### E2E Tests
+
 ```typescript
 // app/tests/e2e/pdf-generation.spec.ts
 import { test, expect } from '@playwright/test'
@@ -1553,6 +1574,7 @@ test.describe('PDF Generation', () => {
 ## Monitoring & Analytics
 
 ### Performance Metrics
+
 ```typescript
 // Add to Worker
 async function trackMetrics(
@@ -1580,6 +1602,7 @@ async function trackMetrics(
 ```
 
 ### Error Tracking
+
 ```typescript
 // Add to Worker
 async function logError(
@@ -1606,11 +1629,13 @@ async function logError(
 ## Rollback Plan
 
 ### Phase 1 Rollback
+
 1. Keep original `toPDF.js` as `toPDF.legacy.js`
 2. Add feature flag: `VUE_APP_USE_LEGACY_PDF`
 3. Toggle in `.env` if issues arise
 
 ### Phase 2 Rollback
+
 1. Maintain Worker versioning with Wrangler
 2. Use gradual rollout with `compatibility_flags`
 3. Implement circuit breaker pattern
@@ -1634,11 +1659,13 @@ async function generatePDFWithFallback() {
 ## Documentation Updates
 
 ### User Documentation
+
 1. Update user guide with new PDF options
 2. Create video tutorial for cloud features
 3. Add FAQ for common issues
 
 ### Developer Documentation
+
 1. API documentation for Worker endpoints
 2. Architecture diagrams
 3. Troubleshooting guide
@@ -1648,6 +1675,7 @@ async function generatePDFWithFallback() {
 ## Success Metrics
 
 ### Target Improvements
+
 - **File Size**: 95% reduction (20MB → 200KB)
 - **Generation Time**: 50% faster
 - **Text Selection**: 100% selectable text
@@ -1655,6 +1683,7 @@ async function generatePDFWithFallback() {
 - **User Satisfaction**: Measure via feedback form
 
 ### KPIs to Track
+
 1. Average PDF file size
 2. Generation success rate
 3. Time to generate
