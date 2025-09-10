@@ -1,0 +1,12 @@
+diff --git a/app/src/views/PDF.vue b/app/src/views/PDF.vue
+index d311188..b3add0d 100644
+--- a/app/src/views/PDF.vue
++++ b/app/src/views/PDF.vue
+@@ -74 +74,2 @@ export default {
+-          height: '297mm',
++          // setting height restricts it to one page
++          // height: '297mm',
+@@ -100 +101 @@ export default {
+-    const env = import.meta.envNODE_ENV
++    const env = import.meta.env.NODE_ENV
+

@@ -215,6 +215,9 @@ declare global {
   const useObjectUrl: typeof import('@vueuse/core')['useObjectUrl']
   const useOffsetPagination: typeof import('@vueuse/core')['useOffsetPagination']
   const useOnline: typeof import('@vueuse/core')['useOnline']
+  const usePDFButtonInteractions: typeof import('./composables/usePDFButtonInteractions.js')['usePDFButtonInteractions']
+  const usePDFGeneration: typeof import('./composables/usePDFGeneration.js')['usePDFGeneration']
+  const usePDFPageSaveButton: typeof import('./composables/usePDFButtonInteractions.js')['usePDFPageSaveButton']
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
   const useParallax: typeof import('@vueuse/core')['useParallax']
   const usePermission: typeof import('@vueuse/core')['usePermission']
@@ -230,6 +233,7 @@ declare global {
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
+  const useResumePagePDFButton: typeof import('./composables/usePDFButtonInteractions.js')['useResumePagePDFButton']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useScreenOrientation: typeof import('@vueuse/core')['useScreenOrientation']
@@ -518,6 +522,9 @@ declare module 'vue' {
     readonly useObjectUrl: UnwrapRef<typeof import('@vueuse/core')['useObjectUrl']>
     readonly useOffsetPagination: UnwrapRef<typeof import('@vueuse/core')['useOffsetPagination']>
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
+    readonly usePDFButtonInteractions: UnwrapRef<typeof import('./composables/usePDFButtonInteractions.js')['usePDFButtonInteractions']>
+    readonly usePDFGeneration: UnwrapRef<typeof import('./composables/usePDFGeneration.js')['usePDFGeneration']>
+    readonly usePDFPageSaveButton: UnwrapRef<typeof import('./composables/usePDFButtonInteractions.js')['usePDFPageSaveButton']>
     readonly usePageLeave: UnwrapRef<typeof import('@vueuse/core')['usePageLeave']>
     readonly useParallax: UnwrapRef<typeof import('@vueuse/core')['useParallax']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
@@ -533,6 +540,7 @@ declare module 'vue' {
     readonly useRafFn: UnwrapRef<typeof import('@vueuse/core')['useRafFn']>
     readonly useRefHistory: UnwrapRef<typeof import('@vueuse/core')['useRefHistory']>
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
+    readonly useResumePagePDFButton: UnwrapRef<typeof import('./composables/usePDFButtonInteractions.js')['useResumePagePDFButton']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useScreenOrientation: UnwrapRef<typeof import('@vueuse/core')['useScreenOrientation']>
