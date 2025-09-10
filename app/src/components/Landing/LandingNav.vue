@@ -5,8 +5,10 @@
       Resume
       <div class="resume-tooltip">View resume with PDF download option</div>
     </button>
-    <button class="bowton landing-button position-relative ms-5" @click="openPDF">
-      PDF
+    <button
+      class="bowton landing-button position-relative ms-5"
+      @click="openPDF">
+      ⬇️ PDF
       <div class="resume-tooltip">Download PDF version of resume</div>
     </button>
     <router-link
@@ -20,8 +22,17 @@
 </template>
 
 <script>
+import { usePDFGeneration } from '@/composables/usePDFGeneration';
+
 export default {
   name: 'LandingNav',
+  setup() {
+    const { openPDFPrint } = usePDFGeneration();
+    
+    return {
+      openPDFPrint
+    };
+  },
   data() {
     return {};
   },
@@ -30,7 +41,7 @@ export default {
       this.$emit('show-resume');
     },
     openPDF() {
-      window.open('/print?print=true', '_blank');
+      this.openPDFPrint();
     }
   },
   computed: {

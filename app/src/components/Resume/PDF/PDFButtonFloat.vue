@@ -3,30 +3,43 @@
     <div class="button-float-container">
       <div ref="buttonRef" class="button-float" @click="showModal">
         <font-awesome-layers class="button-float-icon-layer fa-lg">
-          <font-awesome-icon class="button-float-icon-circle" size="2x" icon="circle" />
-          <font-awesome-icon class="button-float-icon" size="2x" 
-            :transform="_icon.transform" :icon="_icon.icon" />
+          <font-awesome-icon
+            class="button-float-icon-circle"
+            size="2x"
+            icon="circle" />
+          <font-awesome-icon
+            class="button-float-icon"
+            size="2x"
+            :transform="_icon.transform"
+            :icon="_icon.icon" />
         </font-awesome-layers>
       </div>
-      <div v-if="showFirstTimeTooltip" class="first-time-tooltip" @click="dismissTooltip">
+      <div
+        v-if="showFirstTimeTooltip"
+        class="first-time-tooltip"
+        @click="dismissTooltip">
         <div class="tooltip-arrow"></div>
         <span>{{ tooltipText }}</span>
       </div>
     </div>
     <div class="modal-slot">
-      <PDFModal v-show="isModalVisible" @close="closeModal" @print-pdf="printPDF" />
+      <PDFModal
+        v-show="isModalVisible"
+        @close="closeModal"
+        @print-pdf="printPDF" />
     </div>
   </portal>
 </template>
 
 <script>
-import PDFModal from "@/components/Resume/PDF/PDFModal.vue";
-import { usePDFPageSaveButton } from '@/composables/usePDFButtonInteractions'
+import PDFModal from '@/components/Resume/PDF/PDFModal.vue';
+import { usePDFPageSaveButton } from '@/composables/usePDFButtonInteractions';
+import { usePDFGeneration } from '@/composables/usePDFGeneration';
 
 export default {
-  name: "PDFButtonFloat",
-  components: { 
-    PDFModal 
+  name: 'PDFButtonFloat',
+  components: {
+    PDFModal
   },
   props: {
     target: {
@@ -46,22 +59,25 @@ export default {
       buttonRef,
       dismissTooltip,
       tooltipText
-    } = usePDFPageSaveButton()
+    } = usePDFPageSaveButton();
+
+    const { openPDFPrint } = usePDFGeneration();
 
     return {
       hasScrollTriggered,
       showFirstTimeTooltip,
       buttonRef,
       dismissTooltip,
-      tooltipText
-    }
+      tooltipText,
+      openPDFPrint
+    };
   },
   data() {
     return {
       iconMap: {
         save: {
-          icon: "save",
-          transform: "shrink-5 right-1"
+          icon: 'save',
+          transform: 'shrink-5 right-1'
         }
       },
       isModalVisible: false
@@ -80,7 +96,7 @@ export default {
       this.isModalVisible = false;
     },
     printPDF() {
-      window.open('/print?print=true', '_blank');
+      this.openPDFPrint();
       this.closeModal();
     }
   }
@@ -89,53 +105,69 @@ export default {
 
 <style lang="scss">
 @keyframes bounce-in {
-  0% { 
-    transform: scale(0.8); 
-    opacity: 0.5; 
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
   }
-  50% { 
-    transform: scale(1.1); 
+  50% {
+    transform: scale(1.1);
     opacity: 0.8;
     box-shadow: 0 0 20px rgba(11, 102, 35, 0.6);
   }
-  100% { 
-    transform: scale(1); 
+  100% {
+    transform: scale(1);
     opacity: 1;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -2px rgba(0, 0, 0, 0.2);
   }
 }
 
 @keyframes gentle-pulse {
-  0%, 100% { 
-    transform: scale(1); 
-    opacity: 1; 
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
-  50% { 
-    transform: scale(1.05); 
-    opacity: 0.9; 
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
   }
 }
 
 @keyframes breathing {
-  0%, 100% { 
-    transform: scale(1); 
-    opacity: 0.8; 
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
   }
-  50% { 
-    transform: scale(1.02); 
-    opacity: 0.9; 
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
   }
 }
 
 @keyframes scroll-wiggle {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  25% { transform: rotate(-3deg) scale(1.1); }
-  75% { transform: rotate(3deg) scale(1.1); }
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-3deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(3deg) scale(1.1);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .button-float-container {
@@ -148,7 +180,7 @@ export default {
   animation-delay: 1s;
   animation-fill-mode: both;
   cursor: pointer;
-  
+
   // Layered animations: bounce-in first, then breathing continuously
   &:not(:hover) {
     animation-name: bounce-in, breathing;
@@ -158,12 +190,12 @@ export default {
     animation-timing-function: ease-out, ease-in-out;
     animation-fill-mode: both, forwards;
   }
-  
+
   // Scroll wiggle effect
   &.scroll-wiggle {
     animation: scroll-wiggle 0.5s ease-in-out !important;
   }
-  
+
   // Enhanced hover state
   &:hover {
     animation: none !important;
@@ -186,7 +218,7 @@ export default {
   z-index: 10001;
   animation: fadeIn 0.3s ease-in;
   cursor: pointer;
-  
+
   .tooltip-arrow {
     position: absolute;
     top: 100%;
@@ -197,7 +229,7 @@ export default {
     border-right: 5px solid transparent;
     border-top: 5px solid rgba(0, 0, 0, 0.8);
   }
-  
+
   &:hover {
     background: rgba(0, 0, 0, 0.9);
   }

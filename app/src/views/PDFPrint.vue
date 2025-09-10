@@ -1,6 +1,6 @@
 <template>
   <div id="pdf-print-container" v-if="getResumeLoaded">
-    <div class="p-10">
+      <div class="p-10">
       <PDFAbout :name="getResume.name" :surname="getResume.surname" :email="getResume.email" :address="getResume.address"
         :citizenship="getResume.citizenship" :flags="getResume.flags" :renderPDF="true"
         :socials="getResume.socials" />
@@ -21,8 +21,8 @@
         <div id="interests-container" class="col-12">
           <PDFInterests :interests="getResume.interests" :renderPDF="true" />
         </div>
+        </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -43,8 +43,40 @@ export default {
     this.loadEnv(env)
     await this.loadResume()
     
-    // Auto-trigger print if query param present
+    // Set document title from query param for PDF filename
     const urlParams = new URLSearchParams(window.location.search)
+    const title = urlParams.get('title')
+    const originalTitle = document.title
+    
+    if (title) {
+      try { 
+        document.title = decodeURIComponent(title) 
+      } catch { 
+        document.title = title 
+      }
+    } else {
+      document.title = 'Carlos_Soriano_Resume'
+    }
+    
+    // Ensure title is set for print dialog using beforeprint event
+    window.addEventListener('beforeprint', () => {
+      if (title) {
+        try {
+          document.title = decodeURIComponent(title)
+        } catch {
+          document.title = title
+        }
+      } else {
+        document.title = 'Carlos_Soriano_Resume'
+      }
+    })
+    
+    // Restore original title after printing
+    window.addEventListener('afterprint', () => {
+      document.title = originalTitle
+    })
+    
+    // Auto-trigger print if query param present
     if (urlParams.get('print') === 'true') {
       setTimeout(() => window.print(), 750)
     }
@@ -73,7 +105,7 @@ export default {
 @media print {
   @page {
     size: A4;
-    margin: 12mm;
+    margin: 0; // Minimize space for browser headers/footers
   }
   
   * {
@@ -90,8 +122,9 @@ export default {
   #pdf-print-container {
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0.5in; // Add padding to content instead of page margin
   }
+  
   
   // Hide UI elements
   nav, footer, .modal, button, .no-print {
