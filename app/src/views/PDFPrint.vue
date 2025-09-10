@@ -28,9 +28,27 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import { useHead } from '@vueuse/head'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
 export default {
   name: 'PDFPrint',
+  // Set page title via head manager so Safari and other browsers honor it.
+  // We intentionally avoid imperative document.title mutations.
+  setup() {
+    const route = useRoute()
+    const printTitle = computed(() => {
+      const t = route.query.title
+      if (typeof t === 'string') {
+        try { return decodeURIComponent(t) } catch { return t }
+      }
+      return 'Carlos_Soriano_Resume'
+    })
+    // Override any global title template; use provided title as-is
+    useHead({ title: printTitle, titleTemplate: null })
+    return {}
+  },
   computed: {
     ...mapGetters('resume', ['getResume', 'getResumeLoaded'])
   },
@@ -42,41 +60,8 @@ export default {
     const env = import.meta.env.NODE_ENV
     this.loadEnv(env)
     await this.loadResume()
-    
-    // Set document title from query param for PDF filename
-    const urlParams = new URLSearchParams(window.location.search)
-    const title = urlParams.get('title')
-    const originalTitle = document.title
-    
-    if (title) {
-      try { 
-        document.title = decodeURIComponent(title) 
-      } catch { 
-        document.title = title 
-      }
-    } else {
-      document.title = 'Carlos_Soriano_Resume'
-    }
-    
-    // Ensure title is set for print dialog using beforeprint event
-    window.addEventListener('beforeprint', () => {
-      if (title) {
-        try {
-          document.title = decodeURIComponent(title)
-        } catch {
-          document.title = title
-        }
-      } else {
-        document.title = 'Carlos_Soriano_Resume'
-      }
-    })
-    
-    // Restore original title after printing
-    window.addEventListener('afterprint', () => {
-      document.title = originalTitle
-    })
-    
     // Auto-trigger print if query param present
+    const urlParams = new URLSearchParams(window.location.search)
     if (urlParams.get('print') === 'true') {
       setTimeout(() => window.print(), 750)
     }

@@ -8,7 +8,8 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
 - Command:
   `git --no-pager show -U0 21e5a3c -- app/src/views/PDF.vue`
 - Output (excerpt):
-```
+
+```diff
 @@ -74 +74,2 @@ export default {
 -          height: '297mm',
 +          // setting height restricts it to one page
@@ -24,6 +25,7 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
 - Command:
   `git --no-pager show -U0 1a584d7 -- app/src/assets/scss/pdf/_global-pdf.scss`
 - Output (excerpt):
+
 ```
 @@ -49 +49 @@ a {
 -  // padding: 0rem !important;
@@ -41,7 +43,8 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
 - Command:
   `git --no-pager show -U0 ade9293 -- app/src/assets/scss/pdf/_global-pdf.scss`
 - Output (excerpt):
-```
+
+```diff
 @@ -9 +9 @@
 -  padding: .25rem 1rem 0rem 1rem;
 +  // padding: .25rem 1rem 0rem 1rem;
@@ -53,7 +56,8 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
 - Command:
   `git --no-pager diff -U0 main...HEAD -- app/src/assets/scss/start/_button-float.scss`
 - Output (excerpt):
-```
+
+```diff
 @@ -250,0 +251,101 @@
 +// Enhanced animations for PDF button discoverability
 +@keyframes bounce-in { /* ... */ }
@@ -73,7 +77,8 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
   - Command:
     `sed -n '1,120p' app/src/router/paths.js`
   - Output (excerpt):
-```
+
+```javascript
   {
     path: '/print',
     view: 'PDFPrint'
@@ -86,6 +91,7 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
 - Command:
   `git --no-pager diff -U0 main...HEAD -- app/src/components/Resume/PDF/PDFButtonFloat.vue`
 - Output (excerpt):
+
 ```
 @@ -3,11 +3,21 @@
 -    <div type="input" :class="classObject" @click="showModal"> ...
@@ -124,3 +130,39 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
 - Simpler export: Removed heavy rasterization pipeline in favor of native print.
 
 Link the diff receipts (stat + patch) for engineers; keep the bullets and one before/after image for everyone else.
+
+## 7) PDFPrint.vue — Route‑managed title (Safari‑safe)
+
+- Impact: Timestamped filename appears as the tab/print title; fixes Safari not applying document.title.
+- Command:
+  `git --no-pager diff -U0 main...HEAD -- app/src/views/PDFPrint.vue`
+- Output (excerpt):
+
+```diff
+@@ -1,6 +1,9 @@
+-<script>
+-import { mapGetters, mapActions } from 'vuex'
++<script>
++import { mapGetters, mapActions } from 'vuex'
++import { useHead } from '@vueuse/head'
++import { useRoute } from 'vue-router'
++import { computed } from 'vue'
+@@ export default {
+   name: 'PDFPrint',
++  setup() {
++    const route = useRoute()
++    const printTitle = computed(() => {
++      const t = route.query.title
++      if (typeof t === 'string') { try { return decodeURIComponent(t) } catch { return t } }
++      return 'Carlos_Soriano_Resume'
++    })
++    useHead({ title: printTitle, titleTemplate: null })
++    return {}
++  },
+@@   async mounted() {
+-    // document.title listeners removed — head manager owns title
+     const urlParams = new URLSearchParams(window.location.search)
+     if (urlParams.get('print') === 'true') {
+       setTimeout(() => window.print(), 750)
+     }
+```
