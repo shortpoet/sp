@@ -1,6 +1,6 @@
 # PDF Modernization
 
-With updates resumes to submit, the first step was to enhance the PDF generation feature of my website. This site was first built right at the start of my coding journey -- back when vibe coding involved stack overflow, github sample repos, and the debugger. The PDF generation using the canvas API seemed like magic. It rasterizes the DOM and uses another library to convert to PDF. This worked great, but I often found myself having to resize the PDF or simply copy/paste the content to adhere to updload size and/or OCR (optical character recognition) requirements.
+With updated resumes to submit, the first step was to enhance the PDF generation feature of my website. This site was first built right at the start of my coding journey -- back when vibe coding involved stack overflow, github sample repos, and the debugger. The PDF generation using the canvas API seemed like magic. It rasterizes the DOM and uses another library to convert to PDF. This worked great, but I often found myself having to resize the PDF or simply copy/paste the content to adhere to updload size and/or OCR (optical character recognition) requirements.
 
 When speaking with site visitors, many didn't seem to make it to the PDF generation. Part of my desire is to streamline the resume requests, which require good discoverability. So as part of this feature, I added and additinal landing page button as well as slight animations on scroll and page load to draw the user's attention.
 
@@ -13,6 +13,7 @@ The browser print option is the quick win that allows me to ship the solution. T
 
 The Cloudflare Worker option offers some distinct advantages that I am looking forward to exploring. Particularly, as it builds on some of my previous cloudflare edge working experimentation which can be found at [edge auth playground](https://ssr-dev.shortpoet.com/).
 
+And, for a bit of sensationalism... Of course there was a pitfall - "Browser wars." Somehow, years later, it feels like much of tech, and by extension, our lives, are determined by the desire to control what users browse. No big surprise there. And so, of course, I had to deal with a Chrome edgecase.
 
 * **PDF modernization (Phase 1):** print-optimized route, selectable text, before/after (size, time-to-first-display).
   Post: *“Optimization as Product Decision: when 95% smaller isn’t the whole story.”*

@@ -218,10 +218,12 @@ span.skill {
   color: $primary;
 }
 .skill-type {
-  // margin: .5rem;
+  // Adjusted for balance with body text in PDF
+  // Previously .80rem felt heavy relative to paragraphs/headings
+  // Keep capitalization but reduce size for better visual hierarchy
   color: $primary;
   text-transform: capitalize;
-  font-size: .80rem;
+  font-size: .80rem; // was .80rem
 }
 .skill-grid-render {
   padding: .1rem
@@ -242,10 +244,12 @@ span.skill {
 }
 
 .skill-render {
+  // Pill text for individual skills — tone it down slightly
+  // Smaller text + same padding preserves readability while reducing visual weight
   color: $forest-green;
   display: inline-block;
   padding: 0.05rem 0.15rem 0.05rem 0.15rem;
-  font-size: 80%;
+  font-size: 70%; // was 80%
   // font-weight: 700;
   line-height: 1;
   text-align: center;
@@ -275,4 +279,75 @@ span.skill {
 
 .workingKnowledge {
   color: lighten($forest-green, 45%)
+}
+
+/*
+ * Print: stabilize header spacing in Experience entries
+ * -----------------------------------------------------
+ * WHAT: Normalize heading margins/line-height, prevent intra-block page breaks,
+ *       and align baselines for the row containing job title and dates.
+ * WHY:  Chrome's print UA styles + condensed display font can introduce a
+ *       visible gap between job title and company. Page-break decisions can
+ *       also leave stray space. Resetting margins, tightening line-height,
+ *       and avoiding breaks keeps the block visually tight and consistent.
+ * HOW:  Scope to @media print so screen layout remains unchanged.
+ */
+@media print {
+  // Reset UA defaults and tame line-height for condensed headings
+  .heading-pdf {
+    margin: 0;                 // remove default heading margins that create gaps
+    line-height: 1.1;          // match condensed font metrics in print
+    letter-spacing: normal;    // ensure no unintended tracking expansion
+    word-spacing: normal;
+  }
+
+  // Ensure specific heading levels used in Experience also reset
+  h5.heading-5,
+  h6.heading-6 {
+    margin: 0;                 // eliminate residual top/bottom margins
+    line-height: 1.1;          // keep baselines consistent across lines
+  }
+
+  // Keep the three-line header (title, company, dates) together
+  #job-position,
+  .pdf-company,
+  .pdf-experience-dates {
+    break-inside: avoid;       // avoid internal page breaks that leave gaps
+    page-break-inside: avoid;
+  }
+
+  .pdf-experience-dates {
+    white-space: nowrap;       // prevent wrap that can push adjacent lines down
+    margin: 0;                 // guard against UA margins
+    line-height: 1.1;
+  }
+
+  .pdf-company {
+    // a subtle top margin keeps separation without introducing a visible gap
+    margin: 0.1rem 0 0 0;
+    line-height: 1.1;
+  }
+
+  // Align title and dates on their typographic baselines for a tighter row
+  .d-flex.flex-row.justify-content-between {
+    align-items: baseline !important;
+  }
+}
+
+/*
+ * Print-only spacing for skill lists
+ * ----------------------------------
+ * WHAT: Reduce the vertical gap between skill rows without tightening text line-height.
+ * WHY:  Bootstrap's `.mb-2` adds generous spacing that feels oversized in the print layout.
+ * HOW:  Override only within print media for the two containers used in PDF skills sections.
+ */
+@media print {
+  // Explicitly override Bootstrap margins on each row item
+  // Reduce vertical gap between stacked skill rows without affecting column gutters
+  .skill-list-container .skill-list.mb-2 {
+    margin-bottom: 0.16rem !important; // was ~0.5rem; tuned for condensed print
+  }
+  .skill-list-container .skill-list:last-child {
+    margin-bottom: 0 !important; // avoid trailing whitespace at the block end
+  }
 }

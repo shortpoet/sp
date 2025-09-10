@@ -216,6 +216,7 @@ declare global {
   const useOffsetPagination: typeof import('@vueuse/core')['useOffsetPagination']
   const useOnline: typeof import('@vueuse/core')['useOnline']
   const usePDFButtonInteractions: typeof import('./composables/usePDFButtonInteractions.js')['usePDFButtonInteractions']
+  const usePDFGeneration: typeof import('./composables/usePDFGeneration.js')['usePDFGeneration']
   const usePDFPageSaveButton: typeof import('./composables/usePDFButtonInteractions.js')['usePDFPageSaveButton']
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
   const useParallax: typeof import('@vueuse/core')['useParallax']
@@ -522,6 +523,7 @@ declare module 'vue' {
     readonly useOffsetPagination: UnwrapRef<typeof import('@vueuse/core')['useOffsetPagination']>
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
     readonly usePDFButtonInteractions: UnwrapRef<typeof import('./composables/usePDFButtonInteractions.js')['usePDFButtonInteractions']>
+    readonly usePDFGeneration: UnwrapRef<typeof import('./composables/usePDFGeneration.js')['usePDFGeneration']>
     readonly usePDFPageSaveButton: UnwrapRef<typeof import('./composables/usePDFButtonInteractions.js')['usePDFPageSaveButton']>
     readonly usePageLeave: UnwrapRef<typeof import('@vueuse/core')['usePageLeave']>
     readonly useParallax: UnwrapRef<typeof import('@vueuse/core')['useParallax']>
