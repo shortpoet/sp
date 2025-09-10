@@ -3,6 +3,7 @@
 ## 🚀 Quick Start Commands
 
 ### Phase 1: Browser Print (Today!)
+
 ```bash
 # 1. Create new branch
 git checkout -b feature/pdf-modernization
@@ -21,6 +22,7 @@ pnpm dev
 ```
 
 ### Phase 2: Cloudflare Worker (Week 2)
+
 ```bash
 # 1. Create Worker project
 npm create cloudflare@latest -- pdf-worker
@@ -55,6 +57,7 @@ npx wrangler deploy
 ## 🔧 Configuration Files
 
 ### Print CSS (`app/public/print.css`)
+
 ```css
 @page { 
   size: A4; 
@@ -79,6 +82,7 @@ npx wrangler deploy
 ```
 
 ### Wrangler Configuration (`pdf-worker/wrangler.toml`)
+
 ```toml
 name = "shortpoet-pdf"
 main = "src/index.ts"
@@ -98,6 +102,7 @@ ALLOWED_ORIGINS = "https://shortpoet.com,http://localhost:8888"
 ## 🎯 Implementation Checklist
 
 ### Day 1 - Quick Win
+
 - [ ] Backup current toPDF.js as toPDF.legacy.js
 - [ ] Create new pdf.ts with browser print method
 - [ ] Add print-optimized route/styles
@@ -106,6 +111,7 @@ ALLOWED_ORIGINS = "https://shortpoet.com,http://localhost:8888"
 - [ ] Commit and push
 
 ### Week 1 - Phase 1 Complete
+
 - [ ] Full browser print implementation
 - [ ] Print route with auto-trigger
 - [ ] Fallback to jsPDF.html()
@@ -114,6 +120,7 @@ ALLOWED_ORIGINS = "https://shortpoet.com,http://localhost:8888"
 - [ ] Deploy to staging
 
 ### Week 2 - Phase 2 Core
+
 - [ ] Set up Cloudflare Worker
 - [ ] Implement basic PDF generation
 - [ ] Add R2 storage
@@ -122,6 +129,7 @@ ALLOWED_ORIGINS = "https://shortpoet.com,http://localhost:8888"
 - [ ] Deploy Worker
 
 ### Week 3 - Testing
+
 - [ ] Unit tests for PDF utilities
 - [ ] E2E tests for generation flow
 - [ ] Performance benchmarks
@@ -130,6 +138,7 @@ ALLOWED_ORIGINS = "https://shortpoet.com,http://localhost:8888"
 - [ ] Fix identified issues
 
 ### Week 4 - Advanced Features
+
 - [ ] AI summarization
 - [ ] Translation support
 - [ ] Watermarking
@@ -140,13 +149,17 @@ ALLOWED_ORIGINS = "https://shortpoet.com,http://localhost:8888"
 ## 🐛 Common Issues & Solutions
 
 ### Issue: Fonts not loading in print
+
 **Solution**: Wait for fonts before printing
+
 ```javascript
 await document.fonts.ready
 ```
 
 ### Issue: Worker timeout
+
 **Solution**: Increase timeout and optimize
+
 ```typescript
 // In wrangler.toml
 [limits]
@@ -154,13 +167,17 @@ cpu_ms = 50  // Increase if needed
 ```
 
 ### Issue: CORS errors with Worker
+
 **Solution**: Check allowed origins
+
 ```typescript
 const allowedOrigins = env.ALLOWED_ORIGINS.split(',')
 ```
 
 ### Issue: Large HTML payload
+
 **Solution**: Extract and send only necessary HTML
+
 ```javascript
 const content = document.querySelector('#resume-content')
 const cleaned = content.cloneNode(true)
@@ -171,6 +188,7 @@ cleaned.querySelectorAll('.no-print').forEach(el => el.remove())
 ## 📈 Monitoring & Metrics
 
 ### Key Metrics to Track
+
 ```typescript
 // Add to Worker
 const metrics = {
@@ -188,6 +206,7 @@ await env.ANALYTICS.writeDataPoint({
 ```
 
 ### Success Metrics
+
 - File size reduction: Target 95% (20MB → 200KB)
 - Generation time: Target < 2 seconds
 - Error rate: Target < 1%
@@ -196,17 +215,20 @@ await env.ANALYTICS.writeDataPoint({
 ## 🔗 Resources
 
 ### Documentation
+
 - [Browser Print API](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_paged_media)
 - [Cloudflare Browser Rendering](https://developers.cloudflare.com/browser-rendering/)
 - [Playwright PDF](https://playwright.dev/docs/api/class-page#page-pdf)
 - [R2 Storage](https://developers.cloudflare.com/r2/)
 
 ### Example Implementations
+
 - [Lazy Invoice](https://github.com/adamschwartz/lazy.invoice.workers.dev)
 - [Text-to-PDF Worker](https://github.com/willswire/text-to-pdf)
 - [PDF Summarizer](https://github.com/harshil1712/pdf-summarizer-r2-event-notification)
 
 ### Support
+
 - Cloudflare Discord: #browser-rendering
 - Stack Overflow: [cloudflare-workers] + [pdf]
 - GitHub Issues: Track progress in your repo
@@ -223,6 +245,7 @@ await env.ANALYTICS.writeDataPoint({
 ## 🎉 Expected Outcomes
 
 After implementation:
+
 - ✅ 95% smaller file sizes
 - ✅ Perfect text selection
 - ✅ Searchable content
