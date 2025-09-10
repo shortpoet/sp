@@ -38,3 +38,52 @@ diff --git a/app/src/router/paths.js b/app/src/router/paths.js
 +    view: 'PDFPrint'
 +  },
 
+diff --git a/app/src/components/Resume/PDF/PDFButtonFloat.vue b/app/src/components/Resume/PDF/PDFButtonFloat.vue
+--- a/app/src/components/Resume/PDF/PDFButtonFloat.vue
++++ b/app/src/components/Resume/PDF/PDFButtonFloat.vue
+@@ -3,11 +3,21 @@
+-    <div type="input" :class="classObject" @click="showModal">
+-      <font-awesome-layers class="button-float-icon-layer fa-lg">
+-        <font-awesome-icon class="button-float-icon-circle" size="2x" icon="circle" />
+-        <font-awesome-icon class="button-float-icon" size="2x" :transform="_icon.transform"
+-          :icon="_icon.icon"></font-awesome-icon>
+-      </font-awesome-layers>
++    <div class="button-float-container">
++      <div ref="buttonRef" class="button-float" @click="showModal">
++        <font-awesome-layers class="button-float-icon-layer fa-lg">
++          <font-awesome-icon class="button-float-icon-circle" size="2x" icon="circle" />
++          <font-awesome-icon class="button-float-icon" size="2x" :transform="_icon.transform" :icon="_icon.icon" />
++        </font-awesome-layers>
++      </div>
++      <div v-if="showFirstTimeTooltip" class="first-time-tooltip" @click="dismissTooltip">
++        <div class="tooltip-arrow"></div>
++        <span>{{ tooltipText }}</span>
++      </div>
+@@ -16,11 +26,4 @@
+-      <PDFModal v-show="isModalVisible" @close="closeModal" @to-pdf="savePDF" @to-page="toPage" @to-canvas="toCanvas">
+-      </PDFModal>
++      <PDFModal v-show="isModalVisible" @close="closeModal" @print-pdf="printPDF" />
+@@ -32,15 +35,3 @@
+-import jsPDF from 'jspdf';
+-import html2canvas from '@trainiac/html2canvas';
+-import FontFaceObserver from 'fontfaceobserver';
+-import moment from 'moment';
++import { usePDFPageSaveButton } from '@/composables/usePDFButtonInteractions';
++import { usePDFGeneration } from '@/composables/usePDFGeneration';
+@@ -106,49 +98,7 @@
+-    toCanvas() { /* ... */ }
+-    getCanvas() { /* ... */ }
+-    toPDF() { /* ... */ }
++    printPDF() { this.openPDFPrint(); this.closeModal(); }
+
+diff --git a/app/src/assets/scss/start/_button-float.scss b/app/src/assets/scss/start/_button-float.scss
+--- a/app/src/assets/scss/start/_button-float.scss
++++ b/app/src/assets/scss/start/_button-float.scss
+@@ -250,0 +251,20 @@
++// Enhanced animations and tooltip styles for FAB discoverability
++@keyframes bounce-in { /* ... */ }
++@keyframes breathing { /* ... */ }
++@keyframes scroll-wiggle { /* ... */ }
++@keyframes fadeIn { /* ... */ }
++.icon-circle { /* bounce + breathing + hover */ }
++.first-time-tooltip { /* positioning + arrow + fadeIn */ }

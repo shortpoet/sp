@@ -47,6 +47,23 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
 +  // padding: .25rem 1rem 0rem 1rem;
 ```
 
+## 3) Start page FAB — motion and tooltip styles
+
+- Impact: Improved discoverability with tasteful motion; tooltip clarity.
+- Command:
+  `git --no-pager diff -U0 main...HEAD -- app/src/assets/scss/start/_button-float.scss`
+- Output (excerpt):
+```
+@@ -250,0 +251,101 @@
++// Enhanced animations for PDF button discoverability
++@keyframes bounce-in { /* ... */ }
++@keyframes breathing { /* ... */ }
++@keyframes scroll-wiggle { /* ... */ }
++@keyframes fadeIn { /* ... */ }
++.icon-circle { /* bounce + breathing + hover */ }
++.first-time-tooltip { /* positioning + arrow + fadeIn */ }
+```
+
 ## 4) Print route + view — user‑friendly print page
 
 - Impact: Dedicated print view enables accessible, selectable‑text PDFs.
@@ -63,13 +80,40 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
   },
 ```
 
-## 5) Human‑readable receipts for articles
+## 5) PDFButtonFloat.vue — simplify to print route, add tooltip
+
+- Impact: Replaced heavy canvas/jsPDF pipeline with clean print route; added first‑time tooltip and composables.
+- Command:
+  `git --no-pager diff -U0 main...HEAD -- app/src/components/Resume/PDF/PDFButtonFloat.vue`
+- Output (excerpt):
+```
+@@ -3,11 +3,21 @@
+-    <div type="input" :class="classObject" @click="showModal"> ...
++    <div class="button-float-container"> ... <div v-if="showFirstTimeTooltip" class="first-time-tooltip"> ...
+@@ -16,11 +26,4 @@
+-      <PDFModal v-show="isModalVisible" @to-pdf ...>
++      <PDFModal v-show="isModalVisible" @print-pdf="printPDF" />
+@@ -32,15 +35,3 @@
+-import jsPDF from 'jspdf';
+-import html2canvas from '@trainiac/html2canvas';
+-import FontFaceObserver from 'fontfaceobserver';
+-import moment from 'moment';
++import { usePDFPageSaveButton } from '@/composables/usePDFButtonInteractions';
++import { usePDFGeneration } from '@/composables/usePDFGeneration';
+@@ -106,49 +98,7 @@
+-    toCanvas() { /* ... rasterization ... */ }
+-    getCanvas() { /* ... */ }
+-    toPDF() { /* ... jsPDF ... */ }
++    printPDF() { this.openPDFPrint(); this.closeModal(); }
+```
+
+## 6) Human‑readable receipts for articles
 
 - Create compact stats and full patch for the artifact folder:
   - Command:
-    `git --no-pager diff --stat main...HEAD -- app/src/views/PDF.vue app/src/views/PDFPrint.vue app/src/router/paths.js app/src/assets/scss/pdf/** > docs/engagement/artifacts/<YYYY-MM-DD>-pdf-phase1/diff.stat.txt`
+    `git --no-pager diff --stat main...HEAD -- app/src/views/PDF.vue app/src/views/PDFPrint.vue app/src/router/paths.js app/src/assets/scss/pdf/** app/src/components/Resume/PDF/PDFButtonFloat.vue app/src/assets/scss/start/_button-float.scss > docs/engagement/artifacts/<YYYY-MM-DD>-pdf-phase1/diff.stat.txt`
   - Command:
-    `git --no-pager diff -U0 main...HEAD -- app/src/views/PDF.vue app/src/views/PDFPrint.vue app/src/router/paths.js app/src/assets/scss/pdf/** > docs/engagement/artifacts/<YYYY-MM-DD>-pdf-phase1/diff.patch`
+    `git --no-pager diff -U0 main...HEAD -- app/src/views/PDF.vue app/src/views/PDFPrint.vue app/src/router/paths.js app/src/assets/scss/pdf/** app/src/components/Resume/PDF/PDFButtonFloat.vue app/src/assets/scss/start/_button-float.scss > docs/engagement/artifacts/<YYYY-MM-DD>-pdf-phase1/diff.patch`
 
 ## 6) Non‑technical summary (ready for LinkedIn/article)
 
@@ -77,5 +121,6 @@ This file summarizes high‑impact, non‑technical‑friendly changes and inclu
 - Cleaner print layout: More content per page; less whitespace.
 - Reliable builds: Fixed environment detection to avoid glitches.
 - Dedicated print view: Selectable‑text PDFs with better accessibility.
+- Simpler export: Removed heavy rasterization pipeline in favor of native print.
 
 Link the diff receipts (stat + patch) for engineers; keep the bullets and one before/after image for everyone else.

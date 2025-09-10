@@ -1,0 +1,3 @@
+# Documenting vs Progress
+
+In this series of videos, an often recurring commen is that prootin reuires documentation and self-promotion. It requires objectives and force multipliers. While this may impede progress at times due to the overhead. Once in place, they are worth their weight in gold. If a tree falls in the woods and no one hers it? If a pope sings in the woods and no one hears it? If the monk chants in the temple? While i would have beeen able to ship more improvements ('improvements" to my website and tooling in less time w/o having to doucment, it would have been less valuage as both promotional and teaching learning moments for myself. By constantly iterating and extractng lessons learned, we montior our feedback loop and improvein each dcycle.')
