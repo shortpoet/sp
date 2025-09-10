@@ -10,12 +10,14 @@
 ### 1. Files Changed Overview
 
 **Command:**
+
 ```bash
 git diff HEAD~1 --name-only
 ```
 
 **Output:**
-```
+
+```diff
 .claude/settings.local.json
 app/src/components/Landing/LandingNav.vue
 app/src/components/Resume/PDF/PDFButtonFloat.vue
@@ -42,12 +44,14 @@ docs/plans/article-workflow-and-pdf-base/ui-review-and-micro-plan.md
 ### 2. Dependencies Eliminated
 
 **Command:**
+
 ```bash
 git diff HEAD~1 app/package.json | grep -E "^\-.*\b(html2canvas|jspdf|canvas2pdf)" --color=always
 ```
 
 **Output:**
-```
+
+```diff
 -    "@trainiac/html2canvas": "^1.0.0",
 -    "html2canvas": "^1.4.1",
 -    "jspdf": "^2.5.2",
@@ -58,11 +62,13 @@ git diff HEAD~1 app/package.json | grep -E "^\-.*\b(html2canvas|jspdf|canvas2pdf
 ### 3. New Simple Route Added
 
 **Command:**
+
 ```bash
 git diff HEAD~1 app/src/router/paths.js
 ```
 
 **Output:**
+
 ```javascript
 +  {
 +    path: '/print',
@@ -75,11 +81,13 @@ git diff HEAD~1 app/src/router/paths.js
 ### 4. Component Simplification
 
 **Command:**
+
 ```bash
 git diff HEAD~1 app/src/components/Resume/PDF/PDFButtonFloat.vue | head -20
 ```
 
 **Output (Before/After):**
+
 ```diff
 -    <div type="input" :class="classObject" @click="showModal">
 -      <font-awesome-layers class="button-float-icon-layer fa-lg">
@@ -96,6 +104,7 @@ git diff HEAD~1 app/src/components/Resume/PDF/PDFButtonFloat.vue | head -20
 ### 5. Overall Change Statistics
 
 **Command:**
+
 ```bash
 git diff HEAD~1 --numstat | wc -l && 
 git diff HEAD~1 --numstat | awk '{removed += $2} END {print removed}' && 
@@ -103,7 +112,8 @@ git diff HEAD~1 --numstat | awk '{added += $1} END {print added}'
 ```
 
 **Output:**
-```
+
+```diff
 Files changed: 15
 Lines removed: 741
 Lines added: 838
@@ -114,12 +124,14 @@ Lines added: 838
 ### 6. Before/After Architecture Comparison
 
 **Command:**
+
 ```bash
 git show HEAD~1:app/src/components/Resume/PDF/PDFModal.vue | head -15 &&
 head -15 app/src/views/PDFPrint.vue
 ```
 
 **Output:**
+
 ```javascript
 // OLD APPROACH (removed):
 <script>
@@ -143,12 +155,14 @@ export default {
 ### 7. Dependency Impact Summary
 
 **Command:**
+
 ```bash
 git diff HEAD~1 app/package.json | grep "^\-" | grep -E "(html2canvas|jspdf|canvas)"
 ```
 
 **Output:**
-```
+
+```diff
 Dependencies REMOVED:
 -    "@trainiac/html2canvas": "^1.0.0",
 -    "html2canvas": "^1.4.1", 
@@ -162,6 +176,7 @@ No new PDF dependencies added - using browser native print API
 ## Key Metrics for Non-Technical Audience
 
 ### Business Impact Numbers
+
 - ✅ **File size**: 8.4MB → ~200KB (95% reduction)
 - ✅ **Dependencies removed**: 3 (html2canvas, jspdf, @trainiac/html2canvas)
 - ✅ **New dependencies added**: 0 (browser-native solution)
@@ -169,6 +184,7 @@ No new PDF dependencies added - using browser native print API
 - ✅ **Load time**: Faster for recruiters viewing resume
 
 ### Engineering Metrics
+
 - **Files changed**: 15
 - **Lines removed**: 741
 - **Lines added**: 838
@@ -178,24 +194,29 @@ No new PDF dependencies added - using browser native print API
 ## Content-Ready Narrative Elements
 
 ### Hook (LinkedIn/Article Lead)
+>
 > "My resume PDF was 8.4MB and used 3 JavaScript libraries just to generate it. Here's how I made it 95% smaller by *removing* code instead of adding it."
 
 ### The Problem (Visual)
+
 - Screenshot showing 8.4MB file in downloads folder
 - Package.json showing 3 PDF-related dependencies
 
 ### The Solution (Code Diff)
+
 - Dependencies: -3, +0
 - Routes: +1 simple path
 - Components: Modal complexity → Direct rendering
 
 ### The Result (Metrics)
+
 - 95% file size reduction
 - Better accessibility (selectable text)
 - Faster loading
 - Cleaner codebase
 
 ### The Lesson (Insight)
+>
 > "Sometimes the best engineering solution isn't building more—it's building smarter. The browser already knows how to print. I just needed to let it."
 
 ## Why This Story Works for Non-Technical Audiences
@@ -209,11 +230,13 @@ No new PDF dependencies added - using browser native print API
 ### 8. New Composable Creation
 
 **Command:**
+
 ```bash
 head -20 app/src/composables/usePDFGeneration.js
 ```
 
 **Output:**
+
 ```javascript
 /**
  * Composable for PDF generation functionality
@@ -240,11 +263,13 @@ export function usePDFGeneration() {
 ### 9. Component Simplification
 
 **Command:**
+
 ```bash
 git diff HEAD~1 app/src/components/Resume/PDF/PDFButtonFloat.vue | grep -A5 -B5 "printPDF"
 ```
 
 **Output:**
+
 ```diff
      printPDF() {
 -      window.open('/print?print=true', '_blank');
@@ -258,11 +283,13 @@ git diff HEAD~1 app/src/components/Resume/PDF/PDFButtonFloat.vue | grep -A5 -B5 
 ### 10. Cross-Component Consistency
 
 **Command:**
+
 ```bash
 git diff HEAD~1 app/src/components/Landing/LandingNav.vue | grep -A10 -B5 "openPDF"
 ```
 
 **Output:**
+
 ```diff
 +import { usePDFGeneration } from '@/composables/usePDFGeneration';
 +
@@ -286,6 +313,7 @@ git diff HEAD~1 app/src/components/Landing/LandingNav.vue | grep -A10 -B5 "openP
 ## Updated Key Metrics for Non-Technical Audience
 
 ### Enhanced Business Impact Numbers
+
 - ✅ **File size**: 8.4MB → ~200KB (95% reduction)
 - ✅ **Headers/footers**: Successfully eliminated without user action required
 - ✅ **Filename timestamps**: Now included automatically (e.g., `Carlos_Soriano_Resume_2025-09-10_14-30`)
@@ -295,6 +323,7 @@ git diff HEAD~1 app/src/components/Landing/LandingNav.vue | grep -A10 -B5 "openP
 - ✅ **Visual documentation**: Complete before/after screenshot collection
 
 ### Final Engineering Metrics
+
 - **Files changed**: 19 (includes comprehensive documentation)
 - **Lines added**: 318 (mostly documentation and visual assets)
 - **Lines removed**: 56 (eliminated complexity)
@@ -305,14 +334,17 @@ git diff HEAD~1 app/src/components/Landing/LandingNav.vue | grep -A10 -B5 "openP
 ## Enhanced Content-Ready Narrative Elements
 
 ### Updated Hook (LinkedIn/Article Lead)
+>
 > "My resume PDF was 8.4MB and inconsistent across download buttons. Here's how I made it 95% smaller, eliminated browser headers/footers automatically, and unified the experience - all by *removing* dependencies instead of adding them."
 
 ### The Complete Problem (Visual)
+
 - Screenshot showing 8.4MB file in downloads folder
 - Browser headers/footers visible in old PDF
 - Different behavior between landing page and resume page buttons
 
 ### The Elegant Solution (Code + Visual)
+
 - Dependencies: -3, +0
 - Composable: +1 (shared logic)
 - Headers/footers: Eliminated via CSS margins
@@ -320,6 +352,7 @@ git diff HEAD~1 app/src/components/Landing/LandingNav.vue | grep -A10 -B5 "openP
 - Consistency: Both buttons identical behavior
 
 ### The Results (Comprehensive)
+
 - 95% file size reduction
 - No more browser watermarks
 - Timestamp in every filename
@@ -327,6 +360,7 @@ git diff HEAD~1 app/src/components/Landing/LandingNav.vue | grep -A10 -B5 "openP
 - Cleaner, more maintainable codebase
 
 ### The Advanced Lesson (Engineering Excellence)
+>
 > "The best solutions often involve three things: removing what you don't need, organizing what you keep, and making it consistent everywhere. The browser already knows how to print cleanly - I just needed to let it, and then make that experience identical across my app."
 
 ## Why This Enhanced Story Works Even Better
