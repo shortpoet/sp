@@ -16,7 +16,7 @@ module "common_vars" {
 module "s3_object_uat" {
   # source                  = "../../modules/s3"
   # source                  = "../../../../../../../sp-cloud/tf-aws-website/modules/s3_object"
-  source = "git@github.com:shortpoet-cloud/tf-aws-website.git//modules/s3_object?ref=v0.1.0-rc.1"
+  source = "git@github.com:shortpoet-cloud/tf-aws-website.git//modules/s3_object?ref=v0.1.0"
   bucket = data.terraform_remote_state.s3_bucket_uat.outputs.s3.website_bucket_id
 
   cache_control    = "max-age=31536000, immutable"
