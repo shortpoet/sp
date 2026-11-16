@@ -1,10 +1,10 @@
 terraform {
   backend "s3" {
-    region         = "us-east-1"
-    bucket         = "litos-terraform-backend"
-    key            = "sp/infra_app/aws/envs/uat/terraform.tfstate"
-    dynamodb_table = "terraform-backend-lock"
-    profile        = "terraform-admin"
-    encrypt        = "true"
+    region       = "us-east-1"
+    bucket       = "litos-terraform-backend"
+    key          = "sp/infra_app/aws/envs/uat/terraform.tfstate"
+    use_lockfile = true
+    profile      = "terraform-admin"
+    encrypt      = "true"
   }
 }
