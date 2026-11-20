@@ -142,7 +142,13 @@ jobs:
           path: "${{ env.APP_DIR }}/${{ env.BUILD_DIR }}/${{ env.BUILD_ARTIFACT }}.zip"
 
   deploy:
-    uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@v0.2.1
+    uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@v0.3.0
+    # What the shared plan and apply jobs need; only this job can request an OIDC token.
+    permissions:
+      contents: read
+      pull-requests: write
+      actions: read
+      id-token: write
     # uses: shortpoet/.github/.github/workflows/deploy-dev_push-uat_merge-prod_release.yml@main
     secrets: inherit
     needs: [paths-filter, build-node]
